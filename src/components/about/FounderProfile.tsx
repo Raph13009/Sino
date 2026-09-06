@@ -12,7 +12,6 @@ export type FounderProfileData = {
   role: string;
   focus: string;
   bio: readonly string[];
-  pending?: boolean;
 };
 
 function resolveTeamMedia(key: string) {
@@ -60,22 +59,19 @@ export function FounderProfile({
           reverse ? "md:col-start-1 md:row-start-1" : "md:col-start-7",
         )}
       >
-        <Eyebrow accent={Boolean(founder.pending)}>
-          {founder.pending
-            ? founder.focus
-            : `${founder.role} · ${founder.focus}`}
+        <Eyebrow>
+          {founder.focus
+            ? `${founder.role} · ${founder.focus}`
+            : founder.role}
         </Eyebrow>
         <h3 className="mt-4 text-[1.75rem] leading-tight tracking-[-0.02em] md:text-[2.25rem]">
           {founder.name}
         </h3>
-        <p
-          className={cn(
-            "mt-2 text-[0.9375rem] font-medium",
-            founder.pending ? "text-accent" : "text-charcoal",
-          )}
-        >
-          {founder.role}
-        </p>
+        {founder.focus ? (
+          <p className="mt-2 text-[0.9375rem] font-medium text-charcoal">
+            {founder.focus}
+          </p>
+        ) : null}
         <div className="prose-editorial mt-6 max-w-xl">
           {founder.bio.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

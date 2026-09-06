@@ -271,26 +271,26 @@ export const en = {
         "CIVEP is built by co-founders working across the China–Europe corridor — with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
       items: [
         {
+          id: "max-marchesseau-laskar",
+          mediaKey: "maxMarchesseauLaskar",
+          name: "Max Marchesseau Laskar",
+          role: "Co-founder",
+          focus: "",
+          bio: [
+            "Co-founder of CIVEP, working on the commercial bridge between Chinese industrial expansion goals and practical European market entry.",
+            "Focuses on building a partner that can move from market understanding to usable commercial execution.",
+          ],
+        },
+        {
           id: "raphael-levy",
           mediaKey: "raphaelLevy",
-          name: "Raphael Levy",
+          name: "Raphael Sacha Antoine Levy",
           role: "Co-founder",
           focus: "Europe",
           bio: [
             "Works from the European side of CIVEP’s model: how industrial buyers evaluate suppliers, how commercial cycles actually unfold, and what Chinese companies need in order to be taken seriously on the ground.",
             "Focuses on practical market-entry and commercial execution — connecting strategy to sales capability, local expertise and follow-through.",
           ],
-        },
-        {
-          id: "cofounder-mm",
-          mediaKey: "cofounderMm",
-          name: "TODO — Confirm co-founder name",
-          role: "Co-founder",
-          focus: "TODO — Confirm geographic focus",
-          bio: [
-            "TODO — Replace with an approved biography. Keep it concrete: China–Europe positioning, commercial relevance and how this founder strengthens client trust. Do not invent tenure, titles, metrics or credentials.",
-          ],
-          pending: true,
         },
       ],
     },

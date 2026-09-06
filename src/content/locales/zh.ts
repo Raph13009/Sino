@@ -271,26 +271,26 @@ export const zh = {
         "CIVEP 由横跨中国—欧洲走廊的联合创始人共同创建——一只脚在欧洲商业现实中，另一只脚在中国工业拓展的实际需求中。",
       items: [
         {
+          id: "max-marchesseau-laskar",
+          mediaKey: "maxMarchesseauLaskar",
+          name: "Max Marchesseau Laskar",
+          role: "联合创始人",
+          focus: "",
+          bio: [
+            "CIVEP 联合创始人，致力于在中国工业拓展目标与务实的欧洲市场进入之间建立商业桥梁。",
+            "专注于打造能够从市场理解走向可用商业执行的合作伙伴。",
+          ],
+        },
+        {
           id: "raphael-levy",
           mediaKey: "raphaelLevy",
-          name: "Raphael Levy",
+          name: "Raphael Sacha Antoine Levy",
           role: "联合创始人",
           focus: "欧洲",
           bio: [
             "立足 CIVEP 模式的欧洲一侧：工业买家如何评估供应商、商业周期如何真正展开，以及中国企业要在当地被认真对待需要什么。",
             "专注务实的市场进入与商业执行——把战略连接到销售能力、本地专业力量与持续跟进。",
           ],
-        },
-        {
-          id: "cofounder-mm",
-          mediaKey: "cofounderMm",
-          name: "待办 — 确认联合创始人姓名",
-          role: "联合创始人",
-          focus: "待办 — 确认地理侧重点",
-          bio: [
-            "待办 — 替换为已批准的简介。请保持具体：中国—欧洲定位、商业相关性，以及这位创始人如何增强客户信任。请勿编造年限、头衔、数据或资质。",
-          ],
-          pending: true,
         },
       ],
     },
