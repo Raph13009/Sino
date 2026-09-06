@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { FounderProfile } from "@/components/about/FounderProfile";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { MediaImage } from "@/components/ui/MediaImage";
 import {
   Container,
   Eyebrow,
@@ -11,7 +10,6 @@ import {
   SectionHeading,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { media } from "@/content/media";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
@@ -38,7 +36,6 @@ export default async function AboutPage({ params }: Props) {
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
   const copy = dict.about;
-  const heroImage = media.about.main;
 
   return (
     <>
@@ -52,7 +49,7 @@ export default async function AboutPage({ params }: Props) {
         )}
       />
 
-      {/* Hero */}
+      {/* Hero — text only */}
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
           <Breadcrumbs
@@ -61,86 +58,14 @@ export default async function AboutPage({ params }: Props) {
               { label: copy.eyebrow },
             ]}
           />
-          <div className="mt-10 grid items-end gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <Eyebrow accent>{copy.eyebrow}</Eyebrow>
-              <h1 className="mt-4 text-[2.5rem] leading-[1.04] tracking-[-0.03em] md:text-[3.75rem]">
-                {copy.title}
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal md:text-xl">
-                {copy.lead}
-              </p>
-            </div>
-            <div className="lg:col-span-5 lg:col-start-8">
-              <MediaImage
-                src={heroImage.src}
-                alt={heroImage.alt}
-                width={heroImage.width}
-                height={heroImage.height}
-                priority
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                frameClassName="aspect-[4/5] md:aspect-[3/4]"
-                caption={copy.caption}
-              />
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Why CIVEP exists */}
-      <Section className="py-16 md:py-24">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-5">
-              <SectionHeading
-                number={copy.why.number}
-                eyebrow={copy.why.eyebrow}
-                title={copy.why.title}
-              />
-            </div>
-            <div className="prose-editorial lg:col-span-6 lg:col-start-7">
-              {copy.why.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Built between China and Europe / Advisory + execution */}
-      <Section tone="white" className="border-y border-border py-16 md:py-24">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <SectionHeading
-                number={copy.bridge.number}
-                eyebrow={copy.bridge.eyebrow}
-                title={copy.bridge.title}
-              />
-            </div>
-            <div className="prose-editorial lg:col-span-6 lg:col-start-7">
-              {copy.bridge.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-14 grid gap-0 border-t border-border md:grid-cols-3">
-            {copy.bridge.points.map((point, index) => (
-              <article
-                key={point.title}
-                className={`border-b border-border py-8 md:border-b-0 md:px-8 md:py-10 ${
-                  index < copy.bridge.points.length - 1 ? "md:border-r" : ""
-                } ${index === 0 ? "md:pl-0" : ""} ${
-                  index === copy.bridge.points.length - 1 ? "md:pr-0" : ""
-                }`}
-              >
-                <h3 className="text-xl tracking-[-0.02em]">{point.title}</h3>
-                <p className="mt-3 text-[1.0625rem] leading-relaxed text-charcoal">
-                  {point.body}
-                </p>
-              </article>
-            ))}
+          <div className="mt-10 max-w-3xl">
+            <Eyebrow accent>{copy.eyebrow}</Eyebrow>
+            <h1 className="mt-4 text-[2.5rem] leading-[1.04] tracking-[-0.03em] md:text-[3.75rem]">
+              {copy.title}
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-charcoal md:text-xl">
+              {copy.lead}
+            </p>
           </div>
         </Container>
       </Section>
@@ -162,6 +87,63 @@ export default async function AboutPage({ params }: Props) {
                 founder={founder}
                 reverse={index % 2 === 1}
               />
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Why CIVEP exists */}
+      <Section tone="white" className="border-y border-border py-16 md:py-24">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                number={copy.why.number}
+                eyebrow={copy.why.eyebrow}
+                title={copy.why.title}
+              />
+            </div>
+            <div className="prose-editorial lg:col-span-6 lg:col-start-7">
+              {copy.why.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Advisory + execution */}
+      <Section className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                number={copy.bridge.number}
+                eyebrow={copy.bridge.eyebrow}
+                title={copy.bridge.title}
+              />
+            </div>
+            <div className="prose-editorial lg:col-span-6 lg:col-start-7">
+              {copy.bridge.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-0 border-t border-border md:grid-cols-3">
+            {copy.bridge.points.map((point, index) => (
+              <article
+                key={point.title}
+                className={cn(
+                  "border-b border-border px-8 py-8 md:border-b-0 md:py-10",
+                  index < copy.bridge.points.length - 1 && "md:border-r",
+                )}
+              >
+                <h3 className="text-xl tracking-[-0.02em]">{point.title}</h3>
+                <p className="mt-3 text-[1.0625rem] leading-relaxed text-charcoal">
+                  {point.body}
+                </p>
+              </article>
             ))}
           </div>
         </Container>
@@ -217,7 +199,6 @@ export default async function AboutPage({ params }: Props) {
               <p className="text-[0.9375rem] leading-relaxed text-charcoal/80">
                 {copy.proof.todoNote}
               </p>
-              {/* Reserved for future founder intro videos / client feedback media */}
               <div
                 className="mt-10 grid gap-4 border border-dashed border-border p-6 md:grid-cols-2 md:p-8"
                 aria-hidden

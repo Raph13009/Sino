@@ -232,7 +232,7 @@ export const zh = {
     lead: "CIVEP 助力中国工业与绿色技术企业进入欧洲、完成销售并实现增长——依托本地理解、合适的专业力量，以及能够落到执行的商业工作。",
     caption: "中国 → 欧洲 / 工业拓展",
     why: {
-      number: "01",
+      number: "02",
       eyebrow: "我们为何存在",
       title: "仅有建议，往往打不开欧洲市场。",
       paragraphs: [
@@ -241,7 +241,7 @@ export const zh = {
       ],
     },
     bridge: {
-      number: "02",
+      number: "03",
       eyebrow: "我们的定位",
       title: "具备执行能力的咨询。",
       paragraphs: [
@@ -264,7 +264,7 @@ export const zh = {
       ],
     },
     founders: {
-      number: "03",
+      number: "01",
       eyebrow: "领导团队",
       title: "创始人。",
       description:

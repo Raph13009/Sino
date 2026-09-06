@@ -232,7 +232,7 @@ export const en = {
     lead: "CIVEP helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through local understanding, the right specialists and commercial work that reaches execution.",
     caption: "China → Europe / Industrial expansion",
     why: {
-      number: "01",
+      number: "02",
       eyebrow: "Why we exist",
       title: "Advice alone rarely opens a European market.",
       paragraphs: [
@@ -241,7 +241,7 @@ export const en = {
       ],
     },
     bridge: {
-      number: "02",
+      number: "03",
       eyebrow: "Our position",
       title: "Advisory with the capability to execute.",
       paragraphs: [
@@ -264,7 +264,7 @@ export const en = {
       ],
     },
     founders: {
-      number: "03",
+      number: "01",
       eyebrow: "Leadership",
       title: "The founders.",
       description:
