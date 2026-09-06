@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Dictionary } from "@/content/locales/types";
-import { getInsights } from "@/content/localized";
+import { getInsightSummaries } from "@/content/insights/load";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
 import {
@@ -17,8 +17,10 @@ export function HomeInsight({
   locale: Locale;
   dict: Dictionary;
 }) {
-  const featured = getInsights(locale, dict)[0];
+  const featured = getInsightSummaries(locale)[0];
   const copy = dict.home.insight;
+
+  if (!featured) return null;
 
   return (
     <Section tone="white" className="py-20 md:py-28">

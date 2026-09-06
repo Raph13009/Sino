@@ -16,6 +16,9 @@ type PageMetadataInput = {
   ogImage?: string;
   noIndex?: boolean;
   type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
 };
 
 export function createMetadata({
@@ -26,6 +29,9 @@ export function createMetadata({
   ogImage = siteConfig.ogImage,
   noIndex = false,
   type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
 }: PageMetadataInput): Metadata {
   const localizedPath = localePath(locale, path);
   const url = absoluteUrl(localizedPath);
@@ -63,6 +69,13 @@ export function createMetadata({
           alt: siteConfig.name,
         },
       ],
+      ...(type === "article"
+        ? {
+            publishedTime,
+            modifiedTime: modifiedTime ?? publishedTime,
+            authors,
+          }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
@@ -156,23 +169,25 @@ export function articleJsonLd(
     path: string;
     datePublished: string;
     dateModified?: string;
+    author: string;
     image?: string;
   },
   locale: Locale,
 ) {
+  const url = absoluteUrl(localePath(locale, input.path));
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: input.title,
     description: input.description,
-    url: absoluteUrl(localePath(locale, input.path)),
+    url,
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
     image: absoluteUrl(input.image ?? siteConfig.ogImage),
     inLanguage: locale === "zh" ? "zh-Hans" : "en",
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@type": input.author === siteConfig.name ? "Organization" : "Person",
+      name: input.author,
     },
     publisher: {
       "@type": "Organization",
@@ -182,6 +197,9 @@ export function articleJsonLd(
         url: absoluteUrl("/brand/civep-logo-light.png"),
       },
     },
-    mainEntityOfPage: absoluteUrl(localePath(locale, input.path)),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
   };
 }

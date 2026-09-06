@@ -20,6 +20,7 @@ export const en = {
     menu: "Menu",
     optional: "optional",
     published: "Published",
+    updated: "Updated",
     clientProblem: "Client problem.",
     purpose: "Purpose",
     typicalScope: "Typical scope",
@@ -371,9 +372,8 @@ export const en = {
     submit: "Discuss your European expansion",
     sending: "Sending…",
     successEyebrow: "Received",
-    successTitle: "Thank you. We will be in touch.",
-    successBody:
-      "Your enquiry has been received. A member of the CIVEP team will respond to discuss your European expansion.",
+    successTitle: "Thank you. Your message has been received.",
+    successBody: "We’ll get back to you shortly.",
     industryOptions: [
       "Industrial Equipment",
       "Advanced Manufacturing",
@@ -384,6 +384,7 @@ export const en = {
     errors: {
       required: "This field is required.",
       email: "Please enter a valid work email.",
+      phone: "Please enter a valid phone number or WeChat ID.",
       generic: "Something went wrong. Please try again.",
     },
   },
@@ -834,62 +835,6 @@ export const en = {
       seoTitle: "Mobility & Infrastructure Market Entry | CIVEP",
       seoDescription:
         "European expansion support for Chinese mobility and infrastructure industrial companies.",
-    },
-  },
-
-  insights: {
-    "european-market-entry-for-chinese-industrial-companies": {
-      title:
-        "What European market entry requires of Chinese industrial companies",
-      excerpt:
-        "Entering Europe is less about finding a single distributor and more about building market readiness, local expertise and commercial execution.",
-      date: "2026-03-12",
-      readingTime: "7 min",
-      category: "Market Entry",
-      seoTitle:
-        "European Market Entry for Chinese Industrial Companies | CIVEP Insights",
-      seoDescription:
-        "A practical view of what Chinese industrial companies need to enter European markets: readiness, local specialists and commercial execution.",
-      content: [
-        "Chinese industrial companies often arrive in Europe with a strong product and a proven domestic commercial model. That is necessary — but rarely sufficient.",
-        "European buyers expect clear positioning, credible local support and a sales process that matches longer procurement cycles. Market entry therefore requires more than a translated brochure or an opportunistic distributor introduction.",
-        "A practical entry approach usually starts with prioritization: which countries, customer segments and routes to market justify first investment. From there, companies need a commercial plan that accounts for local specialists, regulatory context and the realities of industrial selling.",
-        "CIVEP works with industrial and green-tech companies across this journey — through sales enablement, expert and partner sourcing, outsourced European sales representation and AI-enabled commercial operations where needed.",
-      ],
-    },
-    "selling-to-european-industrial-buyers": {
-      title: "How Chinese sales teams adapt to European industrial buyers",
-      excerpt:
-        "European B2B buying is technical, relationship-driven and often slower. Sales methods that work at home usually need deliberate adaptation.",
-      date: "2026-02-18",
-      readingTime: "6 min",
-      category: "Sales",
-      seoTitle: "Selling to European Industrial Buyers | CIVEP Insights",
-      seoDescription:
-        "How Chinese industrial sales teams adapt messaging, qualification and negotiation for European B2B buyers.",
-      content: [
-        "European industrial buyers typically involve technical evaluators, procurement teams and longer internal approval processes. Speed alone rarely wins the deal.",
-        "Chinese commercial teams expanding into Europe often need to recalibrate prospecting, qualification and follow-up. Messaging must speak to local buyer priorities — reliability, service, total cost and operational fit — rather than only product features.",
-        "Sales enablement helps internal teams build those practices. Where companies need immediate market presence, outsourced European sales professionals can represent the client directly under the client’s identity through long negotiation cycles.",
-        "The objective is commercial capability in Europe, not short-term lead volume.",
-      ],
-    },
-    "finding-european-distributors-and-specialists": {
-      title: "Finding the right European distributors and specialists",
-      excerpt:
-        "A partner network is useful only when specialists are identified and qualified against a specific expansion need.",
-      date: "2026-01-22",
-      readingTime: "5 min",
-      category: "Partners",
-      seoTitle: "European Distributors and Specialists for Market Entry | CIVEP",
-      seoDescription:
-        "How Chinese industrial companies should approach European distributors, legal, regulatory and technical specialists during expansion.",
-      content: [
-        "Many market-entry plans stall at the partner stage. Companies know they need local support — legal, regulatory, distribution, recruitment or technical — but struggle to identify who is relevant and credible.",
-        "Treating Europe as a contact database creates risk. The stronger approach is to define the commercial need first, then identify and qualify specialists against that need.",
-        "Distributors, for example, are not interchangeable. Coverage, technical capability, customer access and commercial incentives must align with the product and target segment.",
-        "CIVEP’s Expert & Partner Sourcing is built around that qualification logic: connecting industrial clients with the local expertise their expansion actually requires.",
-      ],
     },
   },
 } as const;

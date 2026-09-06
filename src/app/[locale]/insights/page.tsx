@@ -9,14 +9,16 @@ import {
   Section,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { getInsightSummaries } from "@/content/insights/load";
 import { getDictionary } from "@/content/locales";
-import { getInsights } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export const dynamic = "force-static";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam } = await params;
@@ -34,7 +36,7 @@ export default async function InsightsPage({ params }: Props) {
   const { locale: localeParam } = await params;
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
-  const insights = getInsights(locale, dict);
+  const insights = getInsightSummaries(locale);
 
   return (
     <>

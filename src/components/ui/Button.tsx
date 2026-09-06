@@ -78,7 +78,10 @@ export function Button({
 
   const buttonProps = props as ButtonAsButton;
   return (
-    <button className={classes} {...buttonProps}>
+    <button
+      {...buttonProps}
+      className={cn(classes, buttonProps.disabled && "cursor-wait opacity-70")}
+    >
       {content}
     </button>
   );

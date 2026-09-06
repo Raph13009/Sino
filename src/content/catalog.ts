@@ -64,36 +64,3 @@ export const industryMeta: Record<
     image: media.industries.mobilityInfrastructure,
   },
 };
-
-export const insightSlugs = [
-  "european-market-entry-for-chinese-industrial-companies",
-  "selling-to-european-industrial-buyers",
-  "finding-european-distributors-and-specialists",
-] as const;
-
-export type InsightSlug = (typeof insightSlugs)[number];
-
-export const insightMeta: Record<
-  InsightSlug,
-  {
-    image: (typeof media.insights)[keyof typeof media.insights];
-    relatedServices: ServiceSlug[];
-    relatedIndustries: IndustrySlug[];
-  }
-> = {
-  "european-market-entry-for-chinese-industrial-companies": {
-    image: media.insights.marketEntry,
-    relatedServices: ["expert-partner-sourcing", "sales-enablement"],
-    relatedIndustries: ["industrial-equipment", "advanced-manufacturing"],
-  },
-  "selling-to-european-industrial-buyers": {
-    image: media.insights.europeanSales,
-    relatedServices: ["sales-enablement", "outsourced-sales"],
-    relatedIndustries: ["industrial-equipment", "green-technology"],
-  },
-  "finding-european-distributors-and-specialists": {
-    image: media.insights.distributorStrategy,
-    relatedServices: ["expert-partner-sourcing", "sales-ai-automation"],
-    relatedIndustries: ["advanced-manufacturing", "mobility-infrastructure"],
-  },
-};

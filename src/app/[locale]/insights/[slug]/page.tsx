@@ -10,13 +10,14 @@ import {
   Section,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { insightSlugs } from "@/content/catalog";
-import { getDictionary } from "@/content/locales";
 import {
-  getIndustry,
-  getInsight,
-  getService,
-} from "@/content/localized";
+  assertInsightLocalesAligned,
+  getInsightBySlug,
+  getInsightSlugs,
+} from "@/content/insights/load";
+import { renderInsightMdx } from "@/content/insights/render";
+import { getDictionary } from "@/content/locales";
+import { getIndustry, getService } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import {
   articleJsonLd,
@@ -28,23 +29,28 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
-  return insightSlugs.map((slug) => ({ slug }));
+  assertInsightLocalesAligned();
+  return getInsightSlugs("en").map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;
   const locale = getLocaleFromParams(localeParam);
-  const dict = getDictionary(locale);
-  const insight = getInsight(locale, dict, slug);
+  const insight = getInsightBySlug(locale, slug);
   if (!insight) return {};
   return createMetadata({
     title: insight.seoTitle,
-    description: insight.seoDescription,
+    description: insight.description,
     path: `/insights/${slug}`,
     locale,
     ogImage: insight.image.src,
     type: "article",
+    publishedTime: insight.date,
+    modifiedTime: insight.updatedAt,
+    authors: [insight.author],
   });
 }
 
@@ -52,8 +58,10 @@ export default async function InsightArticlePage({ params }: Props) {
   const { locale: localeParam, slug } = await params;
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
-  const insight = getInsight(locale, dict, slug);
+  const insight = getInsightBySlug(locale, slug);
   if (!insight) notFound();
+
+  const content = await renderInsightMdx(insight.body);
 
   const relatedServices = insight.relatedServices
     .map((item) => getService(locale, dict, item))
@@ -77,9 +85,11 @@ export default async function InsightArticlePage({ params }: Props) {
           articleJsonLd(
             {
               title: insight.title,
-              description: insight.excerpt,
+              description: insight.description,
               path: `/insights/${slug}`,
               datePublished: insight.date,
+              dateModified: insight.updatedAt,
+              author: insight.author,
               image: insight.image.src,
             },
             locale,
@@ -109,9 +119,17 @@ export default async function InsightArticlePage({ params }: Props) {
             <p className="mt-6 text-lg leading-relaxed text-charcoal">
               {insight.excerpt}
             </p>
-            <p className="eyebrow mt-8 text-charcoal">
-              {dict.common.published} {insight.date}
-            </p>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[0.8125rem] uppercase tracking-[0.08em] text-charcoal">
+              <p>
+                {dict.common.published} {insight.date}
+              </p>
+              <p>{insight.author}</p>
+              {insight.updatedAt !== insight.date ? (
+                <p>
+                  {dict.common.updated} {insight.updatedAt}
+                </p>
+              ) : null}
+            </div>
           </div>
         </Container>
       </Section>
@@ -133,11 +151,7 @@ export default async function InsightArticlePage({ params }: Props) {
 
       <Section className="pb-16 md:pb-24">
         <Container>
-          <div className="prose-editorial mx-auto">
-            {insight.content.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <div className="prose-editorial mx-auto max-w-3xl">{content}</div>
 
           <div className="mx-auto mt-16 grid max-w-3xl gap-10 border-t border-border pt-10 md:grid-cols-2">
             <div>

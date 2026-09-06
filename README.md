@@ -43,11 +43,21 @@ npm start
 
 ## Environment
 
+See `.env.example`. Required for contact form delivery:
+
+```bash
+RESEND_API_KEY=
+```
+
 Optional:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.civep.com
+RESEND_FROM_EMAIL=
+CONTACT_NOTIFICATION_EMAIL=raphaellevy027@gmail.com
 ```
+
+Setup details: `docs/CONTACT-FORM.md`.
 
 ## Notes
 
@@ -57,7 +67,7 @@ NEXT_PUBLIC_SITE_URL=https://www.civep.com
 - Do not invent proof, logos, testimonials or metrics.
 - Placeholder media is centrally managed in `src/content/media.ts` and listed in `docs/MEDIA-INVENTORY.md`.
 - Analytics / Search Console: readiness stubs only — no tracking scripts or IDs yet (`src/lib/analytics.ts`).
-- Contact form delivery: validation only until a transactional email provider is wired (see TODO in `src/lib/contact/actions.ts`).
+- Contact form delivery: native Server Action + Resend. Requires `RESEND_API_KEY` (see `docs/CONTACT-FORM.md`).
 - Legal / privacy pages are placeholders pending review.
 
 ## Locales (English + Simplified Chinese)

@@ -1,29 +1,47 @@
 "use server";
 
-import { z } from "zod";
+import { headers } from "next/headers";
 import { getDictionary } from "@/content/locales";
 import { isLocale, type Locale } from "@/i18n/config";
-import { siteConfig } from "@/lib/site";
+import { sendContactEmails } from "@/lib/contact/email";
+import {
+  allowContactAttempt,
+  beginSubmission,
+  endSubmission,
+  getClientIp,
+  markSubmitted,
+  submissionKey,
+  wasRecentlySubmitted,
+} from "@/lib/contact/rate-limit";
+import {
+  createContactSchema,
+  readContactValues,
+  type ContactFieldName,
+  type ContactFormValues,
+} from "@/lib/contact/schema";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
   message?: string;
-  errors?: Partial<
-    Record<
-      "name" | "company" | "email" | "country" | "industry" | "phone" | "message",
-      string
-    >
-  >;
+  errors?: Partial<Record<ContactFieldName, string>>;
+  values?: ContactFormValues;
+  revision?: number;
 };
 
-/**
- * Contact form server action.
- *
- * Temporary contact destination/reference: siteConfig.email
- *
- * TODO — Email delivery:
- * Wire submission to a transactional provider using environment variables only.
- */
+function failedState(
+  message: string,
+  values: ContactFormValues,
+  errors?: ContactFormState["errors"],
+): ContactFormState {
+  return {
+    status: "error",
+    message,
+    errors,
+    values,
+    revision: Date.now(),
+  };
+}
+
 export async function submitContactForm(
   _prev: ContactFormState,
   formData: FormData,
@@ -31,55 +49,55 @@ export async function submitContactForm(
   const localeRaw = String(formData.get("locale") ?? "en");
   const locale: Locale = isLocale(localeRaw) ? localeRaw : "en";
   const dict = getDictionary(locale);
+  const values = readContactValues(formData);
+  const honeypot = String(formData.get("website") ?? "").trim();
 
-  const raw = {
-    name: String(formData.get("name") ?? ""),
-    company: String(formData.get("company") ?? ""),
-    email: String(formData.get("email") ?? ""),
-    country: String(formData.get("country") ?? ""),
-    industry: String(formData.get("industry") ?? ""),
-    phone: String(formData.get("phone") ?? ""),
-    message: String(formData.get("message") ?? ""),
-    website: String(formData.get("website") ?? ""),
-  };
+  const headerList = await headers();
+  const ip = getClientIp(headerList);
 
-  if (raw.website) {
+  if (!allowContactAttempt(ip)) {
+    return failedState(dict.form.errors.generic, values);
+  }
+
+  if (honeypot) {
     return { status: "success" };
   }
 
-  const contactSchema = z.object({
-    name: z.string().trim().min(2, dict.form.errors.required),
-    company: z.string().trim().min(2, dict.form.errors.required),
-    email: z.string().trim().email(dict.form.errors.email),
-    country: z.string().trim().min(2, dict.form.errors.required),
-    industry: z.string().trim().min(2, dict.form.errors.required),
-    phone: z.string().trim().optional(),
-    message: z.string().trim().min(20, dict.form.errors.required),
-  });
-
-  const parsed = contactSchema.safeParse(raw);
+  const parsed = createContactSchema(dict).safeParse(values);
   if (!parsed.success) {
     const errors: ContactFormState["errors"] = {};
     for (const issue of parsed.error.issues) {
       const key = issue.path[0];
-      if (typeof key === "string" && !errors[key as keyof typeof errors]) {
-        errors[key as keyof typeof errors] = issue.message;
+      if (typeof key === "string" && !errors[key as ContactFieldName]) {
+        errors[key as ContactFieldName] = issue.message;
       }
     }
-    return {
-      status: "error",
-      message: dict.form.errors.generic,
-      errors,
-    };
+    return failedState(dict.form.errors.generic, values, errors);
   }
 
-  console.info("[contact] submission (delivery not configured)", {
-    to: siteConfig.email,
-    locale,
-    ...parsed.data,
-    phone: parsed.data.phone || undefined,
-    receivedAt: new Date().toISOString(),
-  });
+  const key = submissionKey(ip, parsed.data.email);
+  if (wasRecentlySubmitted(key)) {
+    return { status: "success" };
+  }
 
-  return { status: "success" };
+  if (!beginSubmission(key)) {
+    return failedState(dict.form.errors.generic, values);
+  }
+
+  try {
+    const result = await sendContactEmails(parsed.data, locale);
+    if (!result.ok) {
+      return failedState(dict.form.errors.generic, values);
+    }
+
+    markSubmitted(key);
+    return { status: "success" };
+  } catch (error) {
+    console.error("[contact] unexpected delivery failure", {
+      name: error instanceof Error ? error.name : "Error",
+    });
+    return failedState(dict.form.errors.generic, values);
+  } finally {
+    endSubmission(key);
+  }
 }

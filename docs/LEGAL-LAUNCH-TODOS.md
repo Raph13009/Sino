@@ -10,6 +10,7 @@ Outstanding items before treating `/legal` and `/privacy` as final.
 - Temporary contact email: **raphaellevy027@gmail.com**
 - Activity: European market-entry, commercial advisory and outsourced sales for Chinese industrial and green-tech companies
 - Analytics: **not active** (no Google Analytics / Search Console configured yet)
+- Contact form email delivery: **Resend** (see `docs/CONTACT-FORM.md`)
 
 ## Must complete
 

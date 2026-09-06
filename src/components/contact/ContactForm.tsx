@@ -26,6 +26,7 @@ export function ContactForm() {
       <div
         className="border border-border bg-white-warm p-8 md:p-10"
         role="status"
+        aria-live="polite"
       >
         <p className="eyebrow text-accent">{dict.form.successEyebrow}</p>
         <h2 className="mt-4 text-2xl">{dict.form.successTitle}</h2>
@@ -37,7 +38,16 @@ export function ContactForm() {
   }
 
   return (
-    <form action={formAction} className="space-y-6" noValidate>
+    <form
+      key={state.revision ?? "idle"}
+      action={formAction}
+      className={cn("space-y-6", pending && "pointer-events-none")}
+      noValidate
+      aria-busy={pending}
+      onSubmit={(event) => {
+        if (pending) event.preventDefault();
+      }}
+    >
       <input type="hidden" name="locale" value={locale} />
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -47,6 +57,7 @@ export function ContactForm() {
           required
           autoComplete="name"
           error={state.errors?.name}
+          defaultValue={state.values?.name}
         />
         <Field
           label={dict.form.company}
@@ -54,6 +65,7 @@ export function ContactForm() {
           required
           autoComplete="organization"
           error={state.errors?.company}
+          defaultValue={state.values?.company}
         />
       </div>
 
@@ -65,6 +77,7 @@ export function ContactForm() {
           required
           autoComplete="email"
           error={state.errors?.email}
+          defaultValue={state.values?.email}
         />
         <Field
           label={dict.form.country}
@@ -72,6 +85,7 @@ export function ContactForm() {
           required
           autoComplete="country-name"
           error={state.errors?.country}
+          defaultValue={state.values?.country}
         />
       </div>
 
@@ -84,9 +98,13 @@ export function ContactForm() {
             id="industry"
             name="industry"
             required
-            defaultValue=""
+            aria-required="true"
+            defaultValue={state.values?.industry ?? ""}
             className={fieldClass(Boolean(state.errors?.industry))}
             aria-invalid={Boolean(state.errors?.industry)}
+            aria-describedby={
+              state.errors?.industry ? "industry-error" : undefined
+            }
           >
             <option value="" disabled>
               {dict.form.selectIndustry}
@@ -98,7 +116,7 @@ export function ContactForm() {
             ))}
           </select>
           {state.errors?.industry ? (
-            <p className="mt-2 text-sm text-accent" role="alert">
+            <p id="industry-error" className="mt-2 text-sm text-accent" role="alert">
               {state.errors.industry}
             </p>
           ) : null}
@@ -109,6 +127,7 @@ export function ContactForm() {
           autoComplete="tel"
           optionalLabel={dict.common.optional}
           error={state.errors?.phone}
+          defaultValue={state.values?.phone}
         />
       </div>
 
@@ -120,12 +139,15 @@ export function ContactForm() {
           id="message"
           name="message"
           required
+          aria-required="true"
           rows={6}
+          defaultValue={state.values?.message}
           className={cn(fieldClass(Boolean(state.errors?.message)), "resize-y")}
           aria-invalid={Boolean(state.errors?.message)}
+          aria-describedby={state.errors?.message ? "message-error" : undefined}
         />
         {state.errors?.message ? (
-          <p className="mt-2 text-sm text-accent" role="alert">
+          <p id="message-error" className="mt-2 text-sm text-accent" role="alert">
             {state.errors.message}
           </p>
         ) : null}
@@ -153,13 +175,24 @@ export function ContactForm() {
         .
       </p>
 
-      {state.status === "error" && state.message ? (
-        <p className="text-sm text-accent" role="alert">
-          {state.message}
-        </p>
-      ) : null}
+      <div aria-live="assertive">
+        {state.status === "error" && state.message ? (
+          <p className="text-sm text-accent" role="alert">
+            {state.message}
+          </p>
+        ) : null}
+      </div>
 
-      <Button type="submit" disabled={pending} showArrow={!pending}>
+      <span className="sr-only" aria-live="polite">
+        {pending ? dict.form.sending : ""}
+      </span>
+
+      <Button
+        type="submit"
+        disabled={pending}
+        showArrow={!pending}
+        aria-disabled={pending}
+      >
         {pending ? dict.form.sending : dict.form.submit}
       </Button>
     </form>
@@ -174,6 +207,7 @@ function Field({
   autoComplete,
   optionalLabel,
   error,
+  defaultValue,
 }: {
   label: string;
   name: string;
@@ -182,7 +216,10 @@ function Field({
   autoComplete?: string;
   optionalLabel?: string;
   error?: string;
+  defaultValue?: string;
 }) {
+  const errorId = `${name}-error`;
+
   return (
     <div>
       <label htmlFor={name} className="eyebrow block">
@@ -194,12 +231,15 @@ function Field({
         name={name}
         type={type}
         required={required}
+        aria-required={required || undefined}
         autoComplete={autoComplete}
+        defaultValue={defaultValue}
         className={fieldClass(Boolean(error))}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
       />
       {error ? (
-        <p className="mt-2 text-sm text-accent" role="alert">
+        <p id={errorId} className="mt-2 text-sm text-accent" role="alert">
           {error}
         </p>
       ) : null}

@@ -1,16 +1,12 @@
 import type { MetadataRoute } from "next";
-import {
-  industrySlugs,
-  insightSlugs,
-  serviceSlugs,
-} from "@/content/catalog";
-import { getDictionary } from "@/content/locales";
+import { industrySlugs, serviceSlugs } from "@/content/catalog";
+import { getInsightSummaries } from "@/content/insights/load";
 import { locales, localePath } from "@/i18n/config";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const enDict = getDictionary("en");
+  const insights = getInsightSummaries("en");
 
   const staticPaths = [
     "/",
@@ -51,9 +47,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
 
   const insightRoutes = locales.flatMap((locale) =>
-    insightSlugs.map((slug) => ({
-      url: absoluteUrl(localePath(locale, `/insights/${slug}`)),
-      lastModified: new Date(enDict.insights[slug].date),
+    insights.map((insight) => ({
+      url: absoluteUrl(localePath(locale, `/insights/${insight.slug}`)),
+      lastModified: new Date(insight.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
