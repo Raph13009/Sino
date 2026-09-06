@@ -390,34 +390,253 @@ export const en = {
 
   legal: {
     meta: {
-      title: "Legal notice",
-      description: "Legal notice for CIVEP.",
+      title: "Legal Notice",
+      description:
+        "Legal notice for the CIVEP website — publisher, hosting, intellectual property and liability information.",
     },
     eyebrow: "Legal",
-    title: "Legal notice",
-    todoEyebrow: "TODO — Pending legal review",
-    todoBody:
-      "This page is a placeholder. Final legal entity details, registered address, and publisher information must be provided and reviewed before launch. Do not treat the text below as approved legal copy.",
-    body: [
-      "This website is operated by CIVEP. Company registration details, registered address and responsible publisher information will be published here once finalized.",
-      "For enquiries, contact us by email.",
+    title: "Legal Notice",
+    lastUpdated: "Last updated: September 2026",
+    noticeEyebrow: "TODO — Complete before launch",
+    noticeBody:
+      "Confirmed details are published below. Missing items are marked TODO and must be completed before treating this page as final legal copy.",
+    sections: [
+      {
+        id: "publisher",
+        title: "Website publisher",
+        paragraphs: [
+          "CIVEP is operated by a French individual entrepreneur / micro-entrepreneur. The website presents European market-entry, commercial advisory and outsourced sales services for Chinese industrial and green-tech companies.",
+        ],
+        fields: [
+          { label: "Business name", value: "CIVEP" },
+          {
+            label: "Legal operator",
+            value: "TODO — insert full legal name",
+            todo: true,
+          },
+          {
+            label: "Legal status",
+            value:
+              "Individual entrepreneur / micro-entrepreneur registered in France",
+          },
+          { label: "SIRET", value: "92011864300021" },
+          {
+            label: "Registered address",
+            value: "TODO — insert professional address",
+            todo: true,
+          },
+          { label: "Email", value: "raphaellevy027@gmail.com" },
+          {
+            label: "Publication director",
+            value: "TODO — insert full legal name",
+            todo: true,
+          },
+        ],
+      },
+      {
+        id: "hosting",
+        title: "Hosting",
+        paragraphs: [
+          "This website is delivered through a cloud hosting provider. Final legal hosting details will be completed once confirmed.",
+        ],
+        fields: [
+          {
+            label: "Hosting provider",
+            value:
+              "TODO — confirm final hosting provider (if Vercel: complete with Vercel’s published legal entity name and address once verified)",
+            todo: true,
+          },
+          {
+            label: "Hosting address",
+            value:
+              "TODO — insert verified registered address of the hosting provider",
+            todo: true,
+          },
+        ],
+      },
+      {
+        id: "intellectual-property",
+        title: "Intellectual property",
+        paragraphs: [
+          "The structure of this website, the CIVEP brand elements, original texts and original visual materials are owned by CIVEP or used with permission.",
+          "Any unauthorised reproduction, representation, adaptation or commercial reuse is prohibited, except where permitted by applicable law.",
+          "Third-party trademarks, images and other materials remain the property of their respective owners.",
+        ],
+      },
+      {
+        id: "liability",
+        title: "Liability",
+        paragraphs: [
+          "CIVEP aims to keep the information on this website accurate and reasonably current. Content is provided for general information about CIVEP’s services and market-entry approach.",
+          "Unless expressly stated in a signed client engagement, website content does not constitute legal, tax, regulatory, investment or other professional advice.",
+          "CIVEP cannot guarantee uninterrupted or error-free availability of the website. Users remain responsible for decisions they make based on website content.",
+        ],
+      },
+      {
+        id: "external-links",
+        title: "External links",
+        paragraphs: [
+          "This website may contain links to third-party websites. CIVEP is not responsible for the content, policies or availability of those external sites.",
+        ],
+      },
     ],
   },
 
   privacy: {
     meta: {
-      title: "Privacy policy",
-      description: "Privacy policy for CIVEP.",
+      title: "Privacy Policy",
+      description:
+        "Privacy policy for the CIVEP website — how enquiry data is handled under GDPR principles.",
     },
     eyebrow: "Legal",
-    title: "Privacy policy",
-    todoEyebrow: "TODO — Pending legal review",
-    todoBody:
-      "This page is a placeholder outline only. A counsel-approved privacy policy is required before production launch. The summary below is not approved legal text.",
-    paragraphs: [
-      "Contact enquiries submitted through this website are intended to be used only to respond to business requests. Analytics and cookie tooling are not configured on this site yet.",
-      "Information typically collected through the contact form includes name, company, work email, country, industry and project details. Optional phone or WeChat details may also be provided.",
-      "Temporary contact for privacy-related requests is available by email.",
+    title: "Privacy Policy",
+    lastUpdated: "Last updated: September 2026",
+    noticeEyebrow: "TODO — Complete before launch",
+    noticeBody:
+      "This policy reflects the current website setup. Missing controller identity details are marked TODO. Update this page if analytics, advertising or additional tracking are introduced.",
+    sections: [
+      {
+        id: "controller",
+        title: "Who controls your data",
+        fields: [
+          {
+            label: "Data controller",
+            value:
+              "TODO — insert full legal name, operating under the CIVEP brand",
+            todo: true,
+          },
+          { label: "SIRET", value: "92011864300021" },
+          { label: "Contact", value: "raphaellevy027@gmail.com" },
+          {
+            label: "Address",
+            value: "TODO — insert professional address",
+            todo: true,
+          },
+        ],
+      },
+      {
+        id: "data-collected",
+        title: "Data we may collect",
+        paragraphs: [
+          "The website may collect information you voluntarily submit through the contact form, including:",
+        ],
+        bullets: [
+          "name",
+          "company",
+          "email address",
+          "phone number",
+          "WeChat details if provided",
+          "country",
+          "industry",
+          "project / expansion information",
+          "any message you submit",
+        ],
+      },
+      {
+        id: "technical-data",
+        title: "Technical data",
+        paragraphs: [
+          "Technical data necessary for website delivery and security may also be processed by hosting or infrastructure providers (for example connection and security logs).",
+        ],
+      },
+      {
+        id: "purposes",
+        title: "Why we use the data",
+        paragraphs: ["Personal data is used only for purposes such as:"],
+        bullets: [
+          "responding to enquiries",
+          "discussing potential projects",
+          "providing requested information",
+          "managing prospective or existing client relationships",
+          "operating and securing the website",
+          "complying with legal obligations",
+        ],
+      },
+      {
+        id: "legal-basis",
+        title: "Legal basis",
+        paragraphs: [
+          "Depending on the context, processing may rely on:",
+        ],
+        bullets: [
+          "steps taken at your request before entering into a contract",
+          "performance of a contract",
+          "legitimate interests in responding to business enquiries and managing professional relationships",
+          "legal obligations",
+          "consent where specifically required",
+        ],
+      },
+      {
+        id: "retention",
+        title: "Data retention",
+        paragraphs: [
+          "Personal data is retained only for as long as necessary for the purpose for which it was collected and to meet applicable legal or contractual obligations.",
+        ],
+      },
+      {
+        id: "recipients",
+        title: "Who receives the data",
+        paragraphs: [
+          "Personal data may be accessed only by:",
+        ],
+        bullets: [
+          "CIVEP / the business operator",
+          "relevant service providers used to operate the website or manage communications",
+          "authorities where legally required",
+        ],
+      },
+      {
+        id: "no-sale",
+        title: "No sale of personal data",
+        paragraphs: ["CIVEP does not sell personal data."],
+      },
+      {
+        id: "transfers",
+        title: "Hosting and international transfers",
+        paragraphs: [
+          "Some technical service providers may process data outside the European Economic Area. Where this happens, appropriate GDPR safeguards should be used.",
+          "Specific transfer mechanisms will be documented once hosting and communication providers are finally confirmed.",
+        ],
+      },
+      {
+        id: "cookies",
+        title: "Analytics and cookies",
+        paragraphs: [
+          "CIVEP does not currently use advertising cookies or third-party analytics tools requiring consent. This policy will be updated if analytics, advertising or additional tracking technologies are introduced.",
+          "Essential technical cookies or storage required for website functionality may still be used.",
+        ],
+      },
+      {
+        id: "rights",
+        title: "Your GDPR rights",
+        paragraphs: [
+          "Subject to applicable law, you may have rights including:",
+        ],
+        bullets: [
+          "access",
+          "rectification",
+          "erasure",
+          "restriction",
+          "objection",
+          "data portability where applicable",
+          "withdrawal of consent where processing relies on consent",
+        ],
+      },
+      {
+        id: "requests",
+        title: "How to contact us",
+        paragraphs: [
+          "Requests relating to your personal data can be sent to raphaellevy027@gmail.com.",
+          "You may also lodge a complaint with the competent data protection authority. In France, this is the CNIL (Commission Nationale de l’Informatique et des Libertés).",
+        ],
+      },
+      {
+        id: "updates",
+        title: "Updates to this policy",
+        paragraphs: [
+          "This privacy policy may be updated when the website, services or legal requirements change. The “Last updated” date at the top of this page will be revised accordingly.",
+        ],
+      },
     ],
   },
 

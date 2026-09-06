@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Container,
-  Eyebrow,
-  Section,
-} from "@/components/ui/Section";
+import { LegalDoc } from "@/components/legal/LegalDoc";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Container, Section } from "@/components/ui/Section";
 import { getDictionary } from "@/content/locales";
-import { getLocaleFromParams } from "@/i18n/config";
+import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -22,7 +20,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.legal.meta.description,
     path: "/legal",
     locale,
-    noIndex: true,
   });
 }
 
@@ -32,27 +29,24 @@ export default async function LegalPage({ params }: Props) {
   const dict = getDictionary(locale);
 
   return (
-    <Section className="py-14 md:py-20">
+    <Section className="border-b border-border py-14 md:py-20">
       <Container>
-        <Eyebrow>{dict.legal.eyebrow}</Eyebrow>
-        <h1 className="mt-4 text-[2.5rem]">{dict.legal.title}</h1>
-
-        <aside className="mt-8 border border-border bg-concrete px-5 py-4 text-[0.9375rem] leading-relaxed text-charcoal">
-          <p className="eyebrow text-accent">{dict.legal.todoEyebrow}</p>
-          <p className="mt-3">{dict.legal.todoBody}</p>
-        </aside>
-
-        <div className="prose-editorial mt-10 space-y-4">
-          {dict.legal.body.map((paragraph, index) =>
-            index === dict.legal.body.length - 1 ? (
-              <p key={paragraph}>
-                {paragraph}{" "}
-                <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-              </p>
-            ) : (
-              <p key={paragraph}>{paragraph}</p>
-            ),
-          )}
+        <Breadcrumbs
+          items={[
+            { label: dict.common.home, href: localePath(locale, "/") },
+            { label: dict.legal.title },
+          ]}
+        />
+        <div className="mt-10">
+          <LegalDoc
+            eyebrow={dict.legal.eyebrow}
+            title={dict.legal.title}
+            lastUpdated={dict.legal.lastUpdated}
+            noticeEyebrow={dict.legal.noticeEyebrow}
+            noticeBody={dict.legal.noticeBody}
+            sections={dict.legal.sections}
+            email={siteConfig.email}
+          />
         </div>
       </Container>
     </Section>

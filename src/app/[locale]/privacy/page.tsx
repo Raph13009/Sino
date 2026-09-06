@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Container,
-  Eyebrow,
-  Section,
-} from "@/components/ui/Section";
+import { LegalDoc } from "@/components/legal/LegalDoc";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Container, Section } from "@/components/ui/Section";
 import { getDictionary } from "@/content/locales";
-import { getLocaleFromParams } from "@/i18n/config";
+import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -22,7 +20,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.privacy.meta.description,
     path: "/privacy",
     locale,
-    noIndex: true,
   });
 }
 
@@ -32,27 +29,24 @@ export default async function PrivacyPage({ params }: Props) {
   const dict = getDictionary(locale);
 
   return (
-    <Section className="py-14 md:py-20">
+    <Section className="border-b border-border py-14 md:py-20">
       <Container>
-        <Eyebrow>{dict.privacy.eyebrow}</Eyebrow>
-        <h1 className="mt-4 text-[2.5rem]">{dict.privacy.title}</h1>
-
-        <aside className="mt-8 border border-border bg-concrete px-5 py-4 text-[0.9375rem] leading-relaxed text-charcoal">
-          <p className="eyebrow text-accent">{dict.privacy.todoEyebrow}</p>
-          <p className="mt-3">{dict.privacy.todoBody}</p>
-        </aside>
-
-        <div className="prose-editorial mt-10">
-          {dict.privacy.paragraphs.map((paragraph, index) =>
-            index === dict.privacy.paragraphs.length - 1 ? (
-              <p key={paragraph}>
-                {paragraph}{" "}
-                <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-              </p>
-            ) : (
-              <p key={paragraph}>{paragraph}</p>
-            ),
-          )}
+        <Breadcrumbs
+          items={[
+            { label: dict.common.home, href: localePath(locale, "/") },
+            { label: dict.privacy.title },
+          ]}
+        />
+        <div className="mt-10">
+          <LegalDoc
+            eyebrow={dict.privacy.eyebrow}
+            title={dict.privacy.title}
+            lastUpdated={dict.privacy.lastUpdated}
+            noticeEyebrow={dict.privacy.noticeEyebrow}
+            noticeBody={dict.privacy.noticeBody}
+            sections={dict.privacy.sections}
+            email={siteConfig.email}
+          />
         </div>
       </Container>
     </Section>

@@ -10,6 +10,8 @@ export const siteConfig = {
   defaultLocale: "en" as const,
   /** Temporary public contact destination until a production inbox is set. */
   email: "raphaellevy027@gmail.com",
+  /** French micro-entrepreneur SIRET — confirmed. */
+  siret: "92011864300021",
   linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
   founders: {
     maxMarchesseauLaskar: {
