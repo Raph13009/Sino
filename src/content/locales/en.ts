@@ -50,11 +50,17 @@ export const en = {
     megaMenu: {
       title: "Services",
       viewAll: "View all services",
+      viewAllIndustries: "View all industries",
     },
     aria: {
       primary: "Primary",
       mobile: "Mobile",
       servicesMenu: "Services menu",
+      industriesMenu: "Industries menu",
+      expandServices: "Expand services",
+      collapseServices: "Collapse services",
+      expandIndustries: "Expand industries",
+      collapseIndustries: "Collapse industries",
     },
   },
 

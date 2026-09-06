@@ -52,11 +52,17 @@ export const zh = {
     megaMenu: {
       title: "服务",
       viewAll: "查看全部服务",
+      viewAllIndustries: "查看全部行业",
     },
     aria: {
       primary: "主导航",
       mobile: "移动导航",
       servicesMenu: "服务菜单",
+      industriesMenu: "行业菜单",
+      expandServices: "展开服务",
+      collapseServices: "收起服务",
+      expandIndustries: "展开行业",
+      collapseIndustries: "收起行业",
     },
   },
 
