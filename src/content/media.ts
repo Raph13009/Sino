@@ -205,6 +205,33 @@ export const media = {
         "Replace with China–Europe industrial / commercial context photography — avoid flags and clichés",
     },
   },
+  team: {
+    raphaelLevy: {
+      id: "team-raphael-levy",
+      src: "/images/team/profile-RL-2026.webp",
+      alt: "Portrait of Raphael Levy, co-founder of CIVEP",
+      width: 1122,
+      height: 1402,
+      aspectRatio: "4:5",
+      page: "about",
+      section: "founders",
+      status: "final" as const,
+      replacementNote: "Founder portrait — Raphael Levy (Europe)",
+    },
+    cofounderMm: {
+      id: "team-cofounder-mm",
+      src: "/images/team/profile-MM-2026.webp",
+      alt: "Portrait of a CIVEP co-founder",
+      width: 1122,
+      height: 1402,
+      aspectRatio: "4:5",
+      page: "about",
+      section: "founders",
+      status: "final" as const,
+      replacementNote:
+        "TODO — Update alt text and registry label when co-founder full name is confirmed (source: profile-MM-2026)",
+    },
+  },
   insights: {
     marketEntry: {
       id: "insight-market-entry",

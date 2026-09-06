@@ -225,35 +225,116 @@ export const en = {
     meta: {
       title: "About",
       description:
-        "CIVEP is the European market-entry and commercial partner for Chinese industrial and green-tech companies.",
+        "CIVEP is the European market-entry and commercial partner for Chinese industrial and green-tech companies — built between China and Europe.",
     },
     eyebrow: "About",
-    title: "European market-entry and commercial partnership.",
-    lead: "CIVEP helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through strategy, local expertise and commercial execution.",
-    caption: "Industrial expansion / Europe",
-    whatWeDo: {
-      eyebrow: "What we do",
-      title: "Advisory with the capability to execute.",
+    title: "Built between China and Europe.",
+    lead: "CIVEP helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through local understanding, the right specialists and commercial work that reaches execution.",
+    caption: "China → Europe / Industrial expansion",
+    why: {
+      number: "01",
+      eyebrow: "Why we exist",
+      title: "Advice alone rarely opens a European market.",
       paragraphs: [
-        "CIVEP is built for Chinese SMEs and mid-sized industrial companies — typically around 60 to 500 employees — seeking to enter or accelerate growth in the European Union.",
-        "The model combines sales enablement, expert and partner sourcing, outsourced European sales representation and AI-enabled commercial operations. European sales professionals can represent the client directly under the client’s identity through long commercial cycles.",
-        "Team biographies and credentials will be published here once finalized.",
+        "Chinese industrial companies expanding into Europe often discover that strategy decks are not enough. Buyers move differently. Sales cycles run longer. Local specialists matter. Commercial presence has to be credible on the ground.",
+        "CIVEP exists for that gap: the space between market ambition and practical European execution. We help companies clarify the route, find the right local expertise, strengthen sales capability and, when needed, deploy people who can sell under the client’s own identity.",
       ],
     },
-    pillars: [
-      {
-        title: "Focus",
-        body: "China → Europe. Industrial and green-tech companies first.",
-      },
-      {
-        title: "Approach",
-        body: "Practical commercial work — not abstract strategy theatre.",
-      },
-      {
-        title: "Outcome",
-        body: "Market access, local capability and sustained European sales presence.",
-      },
-    ],
+    bridge: {
+      number: "02",
+      eyebrow: "Our position",
+      title: "Advisory with the capability to execute.",
+      paragraphs: [
+        "CIVEP is a European market-entry and commercial partner for Chinese industrial and green-tech companies — typically mid-sized organisations seeking a serious path into the European Union.",
+        "The work sits between consulting and operations: sales enablement, expert and partner sourcing, outsourced European sales representation, and AI-enabled commercial workflows. Recommendations are only useful when they can be carried into real buyer conversations.",
+      ],
+      points: [
+        {
+          title: "Local understanding",
+          body: "European industrial buyers evaluate reliability, service, technical fit and total cost — not only product features.",
+        },
+        {
+          title: "The right specialists",
+          body: "Expansion usually requires qualified local expertise: legal, compliance, distribution, recruitment or technical partners.",
+        },
+        {
+          title: "Commercial follow-through",
+          body: "Market entry has to become meetings, negotiation and sustained presence — not a report that stops at the recommendation.",
+        },
+      ],
+    },
+    founders: {
+      number: "03",
+      eyebrow: "Leadership",
+      title: "The founders.",
+      description:
+        "CIVEP is built by co-founders working across the China–Europe corridor — with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
+      items: [
+        {
+          id: "raphael-levy",
+          mediaKey: "raphaelLevy",
+          name: "Raphael Levy",
+          role: "Co-founder",
+          focus: "Europe",
+          bio: [
+            "Works from the European side of CIVEP’s model: how industrial buyers evaluate suppliers, how commercial cycles actually unfold, and what Chinese companies need in order to be taken seriously on the ground.",
+            "Focuses on practical market-entry and commercial execution — connecting strategy to sales capability, local expertise and follow-through.",
+          ],
+        },
+        {
+          id: "cofounder-mm",
+          mediaKey: "cofounderMm",
+          name: "TODO — Confirm co-founder name",
+          role: "Co-founder",
+          focus: "TODO — Confirm geographic focus",
+          bio: [
+            "TODO — Replace with an approved biography. Keep it concrete: China–Europe positioning, commercial relevance and how this founder strengthens client trust. Do not invent tenure, titles, metrics or credentials.",
+          ],
+          pending: true,
+        },
+      ],
+    },
+    expect: {
+      number: "04",
+      eyebrow: "Working with us",
+      title: "What clients can expect.",
+      description:
+        "Engagements are built around clarity and commercial usefulness — not theatre.",
+      items: [
+        {
+          title: "Clear framing",
+          body: "A realistic view of the European market opportunity, constraints and commercial model.",
+        },
+        {
+          title: "Local expertise",
+          body: "Access to the European specialists and partners a specific expansion actually requires.",
+        },
+        {
+          title: "Stronger sales capability",
+          body: "Support to adapt messaging, prospecting, qualification and negotiation to European B2B buyers.",
+        },
+        {
+          title: "Execution on the ground",
+          body: "Where needed, European sales professionals who represent the client directly under the client’s identity.",
+        },
+        {
+          title: "Operational follow-through",
+          body: "Practical workflows — including AI-enabled commercial operations — that improve research, CRM quality and sales consistency.",
+        },
+        {
+          title: "A serious counterpart",
+          body: "People who understand both Chinese expansion goals and European commercial expectations.",
+        },
+      ],
+    },
+    proof: {
+      number: "05",
+      eyebrow: "Proof",
+      title: "Client perspective and credentials.",
+      body: "Founder introductions, client perspectives and selected credentials will be published here once approved.",
+      todoNote:
+        "TODO — Add founder intro videos, client feedback and partner proof when available. Do not fabricate media, logos or testimonials.",
+    },
   },
 
   contact: {

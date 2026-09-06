@@ -22,6 +22,8 @@ Source of truth for paths and alt text: `/src/content/media.ts`
 | industry-green-technology | Industries | Green Technology | `/images/industries/industry-green-technology.jpg` | Image | 3:2 | Placeholder | Replace with green-tech / energy equipment photography |
 | industry-mobility-infrastructure | Industries | Mobility & Infrastructure | `/images/industries/industry-mobility-infrastructure.jpg` | Image | 16:9 | Placeholder | Replace with mobility / infrastructure photography |
 | about-main-01 | About | Hero | `/images/about/about-china-europe.jpg` | Image | 3:2 | Placeholder | Replace with China–Europe industrial context — no flags/clichés |
+| team-raphael-levy | About | Founders | `/images/team/profile-RL-2026.webp` (+ `.png`) | Image | 4:5 | Final | Founder portrait — Raphael Levy |
+| team-cofounder-mm | About | Founders | `/images/team/profile-MM-2026.webp` (+ `.png`) | Image | 4:5 | Final | TODO — Update alt/label when co-founder full name is confirmed |
 | insight-market-entry | Insights | Article | `/images/insights/insight-market-entry.jpg` | Image | 3:2 | Placeholder | Replace with article-specific industrial photography |
 | insight-european-sales | Insights | Article | `/images/insights/insight-european-sales.jpg` | Image | 3:2 | Placeholder | Replace with article-specific industrial photography |
 | insight-distributor-strategy | Insights | Article | `/images/insights/insight-distributor-strategy.jpg` | Image | 3:2 | Placeholder | Replace with logistics / distribution photography |
