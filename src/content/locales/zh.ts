@@ -275,10 +275,10 @@ export const zh = {
           mediaKey: "maxMarchesseauLaskar",
           name: "Max Marchesseau Laskar",
           role: "联合创始人",
-          focus: "",
+          focus: "亚洲",
           bio: [
-            "CIVEP 联合创始人，致力于在中国工业拓展目标与务实的欧洲市场进入之间建立商业桥梁。",
-            "专注于打造能够从市场理解走向可用商业执行的合作伙伴。",
+            "立足 CIVEP 模式的亚洲一侧：理解中国工业企业的拓展目标，以及它们要有效进入欧洲市场需要什么。",
+            "专注于在中国—欧洲走廊上，把市场雄心与商业执行之间的务实桥梁建立起来。",
           ],
         },
         {

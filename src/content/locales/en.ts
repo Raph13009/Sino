@@ -275,10 +275,10 @@ export const en = {
           mediaKey: "maxMarchesseauLaskar",
           name: "Max Marchesseau Laskar",
           role: "Co-founder",
-          focus: "",
+          focus: "Asia",
           bio: [
-            "Co-founder of CIVEP, working on the commercial bridge between Chinese industrial expansion goals and practical European market entry.",
-            "Focuses on building a partner that can move from market understanding to usable commercial execution.",
+            "Works from the Asian side of CIVEP’s model: understanding Chinese industrial companies’ expansion goals and what they need in order to enter European markets effectively.",
+            "Focuses on building a practical bridge between market ambition and commercial execution across the China–Europe corridor.",
           ],
         },
         {

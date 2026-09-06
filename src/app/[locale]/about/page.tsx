@@ -15,6 +15,7 @@ import { media } from "@/content/media";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -180,7 +181,11 @@ export default async function AboutPage({ params }: Props) {
             {copy.expect.items.map((item, index) => (
               <article
                 key={item.title}
-                className="border-b border-border py-8 sm:px-6 sm:odd:border-r sm:odd:pl-0 sm:even:pr-0 lg:border-r lg:px-8 lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(3n+1)]:pl-0 lg:[&:nth-child(3n)]:pr-0"
+                className={cn(
+                  "border-b border-border px-8 py-8 md:py-10",
+                  index % 2 === 0 && "sm:max-lg:border-r",
+                  index % 3 !== 2 && "lg:border-r",
+                )}
               >
                 <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="mt-4 text-xl tracking-[-0.02em]">{item.title}</h3>
