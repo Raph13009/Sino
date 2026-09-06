@@ -280,6 +280,8 @@ export const zh = {
             "立足 CIVEP 模式的亚洲一侧：理解中国工业企业的拓展目标，以及它们要有效进入欧洲市场需要什么。",
             "专注于在中国—欧洲走廊上，把市场雄心与商业执行之间的务实桥梁建立起来。",
           ],
+          linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",
+          linkedInLabel: "LinkedIn",
         },
         {
           id: "raphael-levy",
@@ -291,6 +293,8 @@ export const zh = {
             "立足 CIVEP 模式的欧洲一侧：工业买家如何评估供应商、商业周期如何真正展开，以及中国企业要在当地被认真对待需要什么。",
             "专注务实的市场进入与商业执行——把战略连接到销售能力、本地专业力量与持续跟进。",
           ],
+          linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+          linkedInLabel: "LinkedIn",
         },
       ],
     },

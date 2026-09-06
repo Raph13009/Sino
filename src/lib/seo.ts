@@ -84,7 +84,11 @@ export function organizationJsonLd(locale: Locale = defaultLocale) {
     url: siteConfig.url,
     description: siteConfig.description,
     logo: absoluteUrl("/brand/civep-logo-light.png"),
-    sameAs: [siteConfig.linkedIn],
+    sameAs: [
+      siteConfig.linkedIn,
+      siteConfig.founders.maxMarchesseauLaskar.linkedIn,
+      siteConfig.founders.raphaelLevy.linkedIn,
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",

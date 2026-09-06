@@ -1,4 +1,5 @@
 import { MediaImage } from "@/components/ui/MediaImage";
+import { LinkedInLink } from "@/components/ui/LinkedInLink";
 import { Eyebrow } from "@/components/ui/Section";
 import { media } from "@/content/media";
 import { cn } from "@/lib/utils";
@@ -12,6 +13,8 @@ export type FounderProfileData = {
   role: string;
   focus: string;
   bio: readonly string[];
+  linkedIn?: string;
+  linkedInLabel?: string;
 };
 
 function resolveTeamMedia(key: string) {
@@ -77,6 +80,15 @@ export function FounderProfile({
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
+        {founder.linkedIn ? (
+          <div className="mt-8">
+            <LinkedInLink
+              href={founder.linkedIn}
+              label={founder.linkedInLabel ?? "LinkedIn"}
+              ariaLabel={`${founder.linkedInLabel ?? "LinkedIn"} — ${founder.name}`}
+            />
+          </div>
+        ) : null}
       </div>
     </article>
   );

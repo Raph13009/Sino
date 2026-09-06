@@ -280,6 +280,8 @@ export const en = {
             "Works from the Asian side of CIVEP’s model: understanding Chinese industrial companies’ expansion goals and what they need in order to enter European markets effectively.",
             "Focuses on building a practical bridge between market ambition and commercial execution across the China–Europe corridor.",
           ],
+          linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",
+          linkedInLabel: "LinkedIn",
         },
         {
           id: "raphael-levy",
@@ -291,6 +293,8 @@ export const en = {
             "Works from the European side of CIVEP’s model: how industrial buyers evaluate suppliers, how commercial cycles actually unfold, and what Chinese companies need in order to be taken seriously on the ground.",
             "Focuses on practical market-entry and commercial execution — connecting strategy to sales capability, local expertise and follow-through.",
           ],
+          linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+          linkedInLabel: "LinkedIn",
         },
       ],
     },

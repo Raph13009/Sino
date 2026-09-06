@@ -11,6 +11,14 @@ export const siteConfig = {
   /** Temporary public contact destination until a production inbox is set. */
   email: "raphaellevy027@gmail.com",
   linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+  founders: {
+    maxMarchesseauLaskar: {
+      linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",
+    },
+    raphaelLevy: {
+      linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+    },
+  },
   primaryCta: {
     label: "Discuss your European expansion",
     href: "/contact",
