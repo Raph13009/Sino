@@ -49,10 +49,10 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Logo variant="dark" href={path("/")} />
-            <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-sand">
+            <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-white-warm/70">
               {dict.footer.description}
             </p>
-            <p className="eyebrow mt-8 text-sand">{dict.footer.tagline}</p>
+            <p className="eyebrow eyebrow-accent mt-8">{dict.footer.tagline}</p>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3">
@@ -61,12 +61,12 @@ export function SiteFooter() {
             <div>
               <FooterColumn title={dict.nav.footer.company} links={company} />
               <div className="mt-8">
-                <p className="eyebrow text-sand">{dict.nav.footer.connect}</p>
+                <p className="eyebrow eyebrow-accent">{dict.nav.footer.connect}</p>
                 <ul className="mt-4 space-y-3 text-[0.9375rem]">
                   <li>
                     <a
                       href={siteConfig.linkedIn}
-                      className="text-white-warm/90 transition-colors hover:text-accent"
+                      className="text-white-warm transition-colors hover:text-accent"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -76,7 +76,7 @@ export function SiteFooter() {
                   <li>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="text-white-warm/90 transition-colors hover:text-accent"
+                      className="text-white-warm transition-colors hover:text-accent"
                     >
                       {siteConfig.email}
                     </a>
@@ -88,14 +88,17 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-border-dark pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-sand">
+          <p className="text-sm text-white-warm/55">
             © {new Date().getFullYear()} {siteConfig.name}.{" "}
             {dict.common.allRightsReserved}
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-sand">
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white-warm/55">
             {legal.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-white-warm">
+                <Link
+                  href={item.href}
+                  className="transition-colors hover:text-white-warm"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -116,13 +119,13 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="eyebrow text-sand">{title}</p>
+      <p className="eyebrow eyebrow-accent">{title}</p>
       <ul className="mt-4 space-y-3 text-[0.9375rem]">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-white-warm/90 transition-colors hover:text-accent"
+              className="text-white-warm transition-colors hover:text-accent"
             >
               {link.label}
             </Link>

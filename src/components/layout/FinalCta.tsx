@@ -17,11 +17,11 @@ export function FinalCta({
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
-            <Eyebrow className="text-sand">{copy.eyebrow}</Eyebrow>
+            <Eyebrow accent>{copy.eyebrow}</Eyebrow>
             <h2 className="mt-4 max-w-3xl text-[2.25rem] leading-[1.05] text-white-warm md:text-[3.25rem]">
               {copy.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-sand">
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white-warm/70">
               {copy.description}
             </p>
           </div>
