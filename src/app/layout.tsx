@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
+  verification: {
+    google: "rHUUJuvSKCCa1p4kSs-iUNEvARFWVFWBPalDjZgo-4M",
+  },
   icons: {
     icon: [
       { url: "/brand/favicon.ico" },
