@@ -4,7 +4,7 @@ This file records confirmed project decisions.
 
 ## Business
 
-- Working company name: CIVEP
+- Working company name: OPOPA
 - Primary direction: China → European Union
 - Core audience: Chinese industrial and green-tech SMEs / mid-sized companies
 - Typical client size: approximately 60–500 employees

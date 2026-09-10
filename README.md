@@ -1,6 +1,6 @@
-# CIVEP Website
+# OPOPA Website
 
-Production website for **CIVEP** — European market-entry and commercial partner for Chinese industrial and green-tech companies.
+Production website for **OPOPA** — European market-entry and commercial partner for Chinese industrial and green-tech companies.
 
 ## Stack
 
@@ -14,7 +14,7 @@ Production website for **CIVEP** — European market-entry and commercial partne
 
 All positioning, services, IA, design and SEO decisions live in:
 
-`/CIVEP_Website_Brief/`
+`/OPOPA_Website_Brief/`
 
 ## Development
 
@@ -52,7 +52,7 @@ RESEND_API_KEY=
 Optional:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://www.civep.com
+NEXT_PUBLIC_SITE_URL=https://www.opopa-partners.com
 RESEND_FROM_EMAIL=
 CONTACT_NOTIFICATION_EMAIL=raphaellevy027@gmail.com
 ```

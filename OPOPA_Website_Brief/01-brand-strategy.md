@@ -2,13 +2,13 @@
 
 ## Working brand name
 
-**CIVEP**
+**OPOPA**
 
 The name is temporary and may change. The website architecture and design must therefore avoid over-relying on the current name.
 
-## What CIVEP is
+## What OPOPA is
 
-CIVEP is a **European market-entry and commercial partner for Chinese industrial and green-tech companies**.
+OPOPA is a **European market-entry and commercial partner for Chinese industrial and green-tech companies**.
 
 The company combines consulting with operational execution. It does not only advise clients on entering Europe; it can also connect them with the right local specialists and provide European sales professionals who represent the client directly.
 
@@ -46,7 +46,7 @@ Avoid presenting the company as being focused only on cranes or one single indus
 
 ## Positioning
 
-CIVEP should be perceived as:
+OPOPA should be perceived as:
 
 - a consulting firm
 - a European market-entry partner
@@ -76,7 +76,7 @@ The brand should communicate:
 
 ## What makes the model different
 
-CIVEP should not look like a traditional consultancy that only delivers slides.
+OPOPA should not look like a traditional consultancy that only delivers slides.
 
 The intended differentiation is the ability to combine:
 1. Market-entry advisory

@@ -15,8 +15,8 @@ export const media = {
   brand: {
     logoLight: {
       id: "brand-logo-light",
-      src: "/brand/civep-logo-light.webp",
-      alt: "CIVEP",
+      src: "/brand/opopa-logo-light.webp",
+      alt: "OPOPA",
       width: 1200,
       height: 403,
       aspectRatio: "1200:403",
@@ -27,8 +27,8 @@ export const media = {
     },
     logoDark: {
       id: "brand-logo-dark",
-      src: "/brand/civep-logo-dark.webp",
-      alt: "CIVEP",
+      src: "/brand/opopa-logo-dark.webp",
+      alt: "OPOPA",
       width: 1200,
       height: 403,
       aspectRatio: "1200:403",
@@ -39,8 +39,8 @@ export const media = {
     },
     markLight: {
       id: "brand-mark-light",
-      src: "/brand/civep-mark-light.png",
-      alt: "CIVEP mark",
+      src: "/brand/opopa-mark-light.png",
+      alt: "OPOPA mark",
       width: 256,
       height: 256,
       aspectRatio: "1:1",
@@ -51,8 +51,8 @@ export const media = {
     },
     favicon: {
       id: "brand-favicon",
-      src: "/brand/civep-favicon.png",
-      alt: "CIVEP favicon",
+      src: "/brand/opopa-favicon.png",
+      alt: "OPOPA favicon",
       width: 512,
       height: 512,
       aspectRatio: "1:1",
@@ -209,7 +209,7 @@ export const media = {
     maxMarchesseauLaskar: {
       id: "team-max-marchesseau-laskar",
       src: "/images/team/profile-MM-2026.webp",
-      alt: "Portrait of Max Marchesseau Laskar, co-founder of CIVEP",
+      alt: "Portrait of Max Marchesseau Laskar, co-founder of OPOPA",
       width: 1122,
       height: 1402,
       aspectRatio: "4:5",
@@ -221,7 +221,7 @@ export const media = {
     raphaelLevy: {
       id: "team-raphael-levy",
       src: "/images/team/profile-RL-2026.webp",
-      alt: "Portrait of Raphael Sacha Antoine Levy, co-founder of CIVEP",
+      alt: "Portrait of Raphael Sacha Antoine Levy, co-founder of OPOPA",
       width: 1122,
       height: 1402,
       aspectRatio: "4:5",

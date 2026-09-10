@@ -92,7 +92,7 @@ export default async function AboutPage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* Why CIVEP exists */}
+      {/* Why OPOPA exists */}
       <Section tone="white" className="border-y border-border py-16 md:py-24">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">

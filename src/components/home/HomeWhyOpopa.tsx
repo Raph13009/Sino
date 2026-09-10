@@ -6,7 +6,7 @@ import {
   SectionHeading,
 } from "@/components/ui/Section";
 
-export function HomeWhyCivep({ dict }: { dict: Dictionary }) {
+export function HomeWhyOpopa({ dict }: { dict: Dictionary }) {
   const copy = dict.home.why;
 
   return (

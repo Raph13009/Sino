@@ -57,11 +57,11 @@ Recommended hierarchy:
 
 1. Navigation
 2. Hero
-3. Core proposition / what CIVEP helps clients achieve
+3. Core proposition / what OPOPA helps clients achieve
 4. Expertise
 5. Why Europe / market-entry challenge
 6. Industries
-7. Why CIVEP
+7. Why OPOPA
 8. Selected insight
 9. Proof / credibility section when sufficient evidence exists
 10. Final CTA
@@ -72,7 +72,7 @@ Recommended hierarchy:
 Do not overload the homepage.
 
 The homepage should establish:
-- who CIVEP serves
+- who OPOPA serves
 - what problem it solves
 - how it helps
 - why it is credible

@@ -1,8 +1,8 @@
-# CIVEP Design System
+# OPOPA Design System
 
 ## 1. Brand Direction
 
-CIVEP should feel like a serious China–Europe industrial advisory and commercial expansion firm.
+OPOPA should feel like a serious China–Europe industrial advisory and commercial expansion firm.
 
 The visual identity combines:
 
@@ -658,7 +658,7 @@ Large headline:
 
 Supporting copy:
 
-CIVEP helps industrial companies build the local expertise, relationships and sales capabilities required to expand successfully across Europe.
+OPOPA helps industrial companies build the local expertise, relationships and sales capabilities required to expand successfully across Europe.
 
 Primary CTA:
 
@@ -729,7 +729,7 @@ Numbered services.
 
 No card-heavy UI.
 
-## 04 — Why CIVEP
+## 04 — Why OPOPA
 
 China–Europe positioning.
 
@@ -906,7 +906,7 @@ The wordmark should feel simple, strong and institutional.
 
 Preferred:
 
-**CIVEP**
+**OPOPA**
 
 Uppercase geometric / grotesk wordmark.
 
@@ -976,7 +976,7 @@ This allows the identity to become recognizable without relying on a decorative 
 
 # 30. Final Creative Standard
 
-Every CIVEP page should pass the following test:
+Every OPOPA page should pass the following test:
 
 ### Does it look credible next to a major strategy consultancy?
 
@@ -1006,7 +1006,7 @@ Yes.
 
 # 31. Final Direction Summary
 
-The CIVEP identity should be built around:
+The OPOPA identity should be built around:
 
 **Deep Ink + Warm Ivory + Oxide Red**
 
@@ -1031,3 +1031,42 @@ The CIVEP identity should be built around:
 The desired perception is:
 
 > **A premium European industrial advisory firm with the commercial capability to help Chinese companies enter and grow in European markets.**
+
+# Visual Reference
+
+The primary visual reference for the OPOPA website is:
+
+`/docs/references/opopa-brand-direction.png`
+
+This image is the strongest representation of the intended brand direction.
+
+The website should preserve the same visual language:
+
+- warm ivory backgrounds
+- deep ink typography
+- restrained oxide-red accents
+- editorial typography
+- strong industrial photography
+- architectural layouts
+- thin rules and dividers
+- minimal border radius
+- generous whitespace
+- strong asymmetry
+- sophisticated consulting aesthetic
+- restrained use of small technical labels
+- premium print/editorial influence
+
+Do not copy the mockup literally.
+
+Use it as a visual benchmark for:
+- tone
+- spacing
+- hierarchy
+- typography
+- color usage
+- image treatment
+- navigation style
+- section rhythm
+- overall level of refinement
+
+The final website should feel like the digital extension of this brand identity.

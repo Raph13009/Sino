@@ -2,7 +2,7 @@
 
 ## Primary positioning statement
 
-**CIVEP is the European market-entry and commercial partner for Chinese industrial and green-tech companies.**
+**OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies.**
 
 ## Core promise
 

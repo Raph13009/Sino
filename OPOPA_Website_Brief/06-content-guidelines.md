@@ -13,7 +13,7 @@ Primary readers:
 
 ## Content goal
 
-The website must make CIVEP appear credible to experienced B2B and industrial decision-makers.
+The website must make OPOPA appear credible to experienced B2B and industrial decision-makers.
 
 Do not oversimplify industrial business.
 

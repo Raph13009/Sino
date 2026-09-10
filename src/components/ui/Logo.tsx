@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { media } from "@/content/media";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Logo({
@@ -23,7 +24,7 @@ export function Logo({
         "inline-flex shrink-0 items-center focus-visible:outline-offset-4",
         className,
       )}
-      aria-label="CIVEP home"
+      aria-label={`${siteConfig.name} home`}
     >
       <Image
         src={asset.src}

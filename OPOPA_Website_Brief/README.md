@@ -1,6 +1,6 @@
-# CIVEP Website Brief
+# OPOPA Website Brief
 
-This folder is the source of truth for the CIVEP website build.
+This folder is the source of truth for the OPOPA website build.
 
 ## Documents
 

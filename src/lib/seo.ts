@@ -96,7 +96,7 @@ export function organizationJsonLd(locale: Locale = defaultLocale) {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    logo: absoluteUrl("/brand/civep-logo-light.png"),
+    logo: absoluteUrl("/brand/opopa-logo-light.png"),
     sameAs: [
       siteConfig.linkedIn,
       siteConfig.founders.maxMarchesseauLaskar.linkedIn,
@@ -194,7 +194,7 @@ export function articleJsonLd(
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/brand/civep-logo-light.png"),
+        url: absoluteUrl("/brand/opopa-logo-light.png"),
       },
     },
     mainEntityOfPage: {

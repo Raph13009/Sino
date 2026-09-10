@@ -1,11 +1,11 @@
 import { siteConfig } from "@/lib/site";
 
 /**
- * Resend's verified onboarding sender. Use this until civep.com is verified.
- * After domain verification, set RESEND_FROM_EMAIL=CIVEP <contact@civep.com>.
- * Do not send from contact@civep.com until that domain is verified in Resend.
+ * Resend's verified onboarding sender. Use this until opopa-partners.com is verified.
+ * After domain verification, set RESEND_FROM_EMAIL=OPOPA <contact@opopa-partners.com>.
+ * Do not send from contact@opopa-partners.com until that domain is verified in Resend.
  */
-const RESEND_TEST_FROM = "CIVEP <beth.t@example.com>";
+const RESEND_TEST_FROM = "OPOPA <beth.t@example.com>";
 
 export function getResendApiKey() {
   return process.env.RESEND_API_KEY?.trim() || null;
@@ -27,5 +27,5 @@ export function getFromAddress() {
     return configured;
   }
 
-  return `CIVEP <${configured}>`;
+  return `OPOPA <${configured}>`;
 }

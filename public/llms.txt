@@ -1,8 +1,8 @@
-# CIVEP
+# OPOPA
 
-> CIVEP is the European market-entry and commercial partner for Chinese industrial and green-tech companies.
+> OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies.
 
-## What CIVEP does
+## What OPOPA does
 
 - Market Entry Advisory
 - European Partner Network
@@ -26,4 +26,4 @@ Chinese industrial and green-tech SMEs / mid-sized companies (approx. 60–500 e
 - Do not invent client logos, testimonials, metrics, offices or pricing.
 - Positioning is China → Europe, not Europe → China.
 - Tone should remain precise, pragmatic and commercially focused.
-- Official site: https://www.civep.com
+- Official site: https://www.opopa-partners.com

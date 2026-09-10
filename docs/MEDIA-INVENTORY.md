@@ -1,16 +1,16 @@
 # Media Inventory
 
-Central registry of visual assets used by the CIVEP website.
+Central registry of visual assets used by the OPOPA website.
 
 Source of truth for paths and alt text: `/src/content/media.ts`
 
 | ID | Page | Section | Current file | Type | Aspect ratio | Status | Replacement note |
 |---|---|---|---|---|---|---|---|
-| brand-logo-light | global | brand | `/brand/civep-logo-light.webp` (+ `.png`) | Image | 1200:403 | Final | Approved light-background logo lockup |
-| brand-logo-dark | global | brand | `/brand/civep-logo-dark.webp` (+ `.png`) | Image | 1200:403 | Final | Derived dark variant; preserve geometry and oxide-red |
-| brand-mark-light | global | brand | `/brand/civep-mark-light.png` | Image | 1:1 | Final | Compact monogram |
-| brand-mark-dark | global | brand | `/brand/civep-mark-dark.png` | Image | 1:1 | Final | Dark-surface monogram variant |
-| brand-favicon | global | brand | `/brand/civep-favicon.png` | Image | 1:1 | Final | Optimized favicon set also includes 16/32/ICO/apple-touch |
+| brand-logo-light | global | brand | `/brand/opopa-logo-light.webp` (+ `.png`) | Image | 1200:403 | Final | Approved light-background logo lockup |
+| brand-logo-dark | global | brand | `/brand/opopa-logo-dark.webp` (+ `.png`) | Image | 1200:403 | Final | Derived dark variant; preserve geometry and oxide-red |
+| brand-mark-light | global | brand | `/brand/opopa-mark-light.png` | Image | 1:1 | Final | Compact monogram |
+| brand-mark-dark | global | brand | `/brand/opopa-mark-dark.png` | Image | 1:1 | Final | Dark-surface monogram variant |
+| brand-favicon | global | brand | `/brand/opopa-favicon.png` | Image | 1:1 | Final | Optimized favicon set also includes 16/32/ICO/apple-touch |
 | home-hero-01 | Home | Hero | `/images/hero/hero-industrial-port.jpg` | Image | 3:2 | Placeholder | Replace with final China–Europe industrial hero |
 | home-context-01 | Home | Context | `/images/hero/hero-manufacturing-floor.jpg` | Image | 16:10 | Placeholder | Replace with documentary manufacturing photography |
 | service-sales-enablement | Services | Sales Enablement | `/images/services/service-sales-enablement.jpg` | Image | 3:2 | Placeholder | Replace with commercial training context photography |

@@ -1,6 +1,6 @@
 export const en = {
   brand: {
-    name: "CIVEP",
+    name: "OPOPA",
     tagline: "Markets in Sync",
     description:
       "European market-entry and commercial partner for Chinese industrial and green-tech companies.",
@@ -75,16 +75,16 @@ export const en = {
 
   home: {
     meta: {
-      title: "CIVEP — European Market Entry & Commercial Partner",
+      title: "OPOPA — European Market Entry & Commercial Partner",
       description:
-        "CIVEP helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through strategy, local expertise and commercial execution.",
+        "OPOPA helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through strategy, local expertise and commercial execution.",
     },
     hero: {
       eyebrow: "01 / China → Europe",
       title:
         "Turning Chinese industrial ambition into European commercial growth.",
       description:
-        "CIVEP helps industrial companies build the local expertise, relationships and sales capabilities required to expand successfully across Europe.",
+        "OPOPA helps industrial companies build the local expertise, relationships and sales capabilities required to expand successfully across Europe.",
       primaryCta: "Discuss your European expansion",
       secondaryCta: "Explore our services",
       caption: "China / Europe / Industrial Expansion",
@@ -112,10 +112,10 @@ export const en = {
     },
     why: {
       number: "04",
-      eyebrow: "Why CIVEP",
+      eyebrow: "Why OPOPA",
       title: "A commercial partner, not a slide deck.",
       description:
-        "CIVEP is designed for companies that need practical European market access — from readiness to sustained sales capability.",
+        "OPOPA is designed for companies that need practical European market access — from readiness to sustained sales capability.",
       reasons: [
         {
           number: "01",
@@ -125,7 +125,7 @@ export const en = {
         {
           number: "02",
           title: "Advisory and execution",
-          body: "Strategy alone is not enough. CIVEP combines market-entry positioning with local expertise and commercial delivery.",
+          body: "Strategy alone is not enough. OPOPA combines market-entry positioning with local expertise and commercial delivery.",
         },
         {
           number: "03",
@@ -186,7 +186,7 @@ export const en = {
     meta: {
       title: "Services",
       description:
-        "CIVEP services for Chinese industrial companies: Sales Enablement, Expert & Partner Sourcing, Outsourced Sales and Sales AI & Automation.",
+        "OPOPA services for Chinese industrial companies: Sales Enablement, Expert & Partner Sourcing, Outsourced Sales and Sales AI & Automation.",
     },
     eyebrow: "Services",
     title: "Commercial services for European market entry.",
@@ -199,7 +199,7 @@ export const en = {
     meta: {
       title: "Industries",
       description:
-        "CIVEP supports Chinese companies across industrial equipment, advanced manufacturing, green technology and mobility infrastructure.",
+        "OPOPA supports Chinese companies across industrial equipment, advanced manufacturing, green technology and mobility infrastructure.",
     },
     eyebrow: "Industries",
     title: "Industrial focus. European commercial reality.",
@@ -207,7 +207,7 @@ export const en = {
       "Broad industrial coverage — not a single niche — for companies entering and selling in European markets.",
     detailEyebrowSuffix: "Industries",
     howWeHelpBody:
-      "Across this industry, CIVEP supports sales enablement, expert and partner sourcing, outsourced sales representation and AI-enabled commercial operations where required.",
+      "Across this industry, OPOPA supports sales enablement, expert and partner sourcing, outsourced sales representation and AI-enabled commercial operations where required.",
   },
 
   insightsPage: {
@@ -226,11 +226,11 @@ export const en = {
     meta: {
       title: "About",
       description:
-        "CIVEP is the European market-entry and commercial partner for Chinese industrial and green-tech companies — built between China and Europe.",
+        "OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies — built between China and Europe.",
     },
     eyebrow: "About",
     title: "Built between China and Europe.",
-    lead: "CIVEP helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through local understanding, the right specialists and commercial work that reaches execution.",
+    lead: "OPOPA helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through local understanding, the right specialists and commercial work that reaches execution.",
     caption: "China → Europe / Industrial expansion",
     why: {
       number: "02",
@@ -238,7 +238,7 @@ export const en = {
       title: "Advice alone rarely opens a European market.",
       paragraphs: [
         "Chinese industrial companies expanding into Europe often discover that strategy decks are not enough. Buyers move differently. Sales cycles run longer. Local specialists matter. Commercial presence has to be credible on the ground.",
-        "CIVEP exists for that gap: the space between market ambition and practical European execution. We help companies clarify the route, find the right local expertise, strengthen sales capability and, when needed, deploy people who can sell under the client’s own identity.",
+        "OPOPA exists for that gap: the space between market ambition and practical European execution. We help companies clarify the route, find the right local expertise, strengthen sales capability and, when needed, deploy people who can sell under the client’s own identity.",
       ],
     },
     bridge: {
@@ -246,7 +246,7 @@ export const en = {
       eyebrow: "Our position",
       title: "Advisory with the capability to execute.",
       paragraphs: [
-        "CIVEP is a European market-entry and commercial partner for Chinese industrial and green-tech companies — typically mid-sized organisations seeking a serious path into the European Union.",
+        "OPOPA is a European market-entry and commercial partner for Chinese industrial and green-tech companies — typically mid-sized organisations seeking a serious path into the European Union.",
         "The work sits between consulting and operations: sales enablement, expert and partner sourcing, outsourced European sales representation, and AI-enabled commercial workflows. Recommendations are only useful when they can be carried into real buyer conversations.",
       ],
       points: [
@@ -269,7 +269,7 @@ export const en = {
       eyebrow: "Leadership",
       title: "The founders.",
       description:
-        "CIVEP is built by co-founders working across the China–Europe corridor — with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
+        "OPOPA is built by co-founders working across the China–Europe corridor — with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
       items: [
         {
           id: "max-marchesseau-laskar",
@@ -278,7 +278,7 @@ export const en = {
           role: "Co-founder",
           focus: "Asia",
           bio: [
-            "Works from the Asian side of CIVEP’s model: understanding Chinese industrial companies’ expansion goals and what they need in order to enter European markets effectively.",
+            "Works from the Asian side of OPOPA’s model: understanding Chinese industrial companies’ expansion goals and what they need in order to enter European markets effectively.",
             "Focuses on building a practical bridge between market ambition and commercial execution across the China–Europe corridor.",
           ],
           linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",
@@ -291,7 +291,7 @@ export const en = {
           role: "Co-founder",
           focus: "Europe",
           bio: [
-            "Works from the European side of CIVEP’s model: how industrial buyers evaluate suppliers, how commercial cycles actually unfold, and what Chinese companies need in order to be taken seriously on the ground.",
+            "Works from the European side of OPOPA’s model: how industrial buyers evaluate suppliers, how commercial cycles actually unfold, and what Chinese companies need in order to be taken seriously on the ground.",
             "Focuses on practical market-entry and commercial execution — connecting strategy to sales capability, local expertise and follow-through.",
           ],
           linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
@@ -346,7 +346,7 @@ export const en = {
     meta: {
       title: "Contact",
       description:
-        "Discuss your European expansion with CIVEP — market entry, local expertise and commercial execution for Chinese industrial companies.",
+        "Discuss your European expansion with OPOPA — market entry, local expertise and commercial execution for Chinese industrial companies.",
     },
     eyebrow: "Contact",
     title: "Discuss your European expansion.",
@@ -393,7 +393,7 @@ export const en = {
     meta: {
       title: "Legal Notice",
       description:
-        "Legal notice for the CIVEP website — publisher, hosting, intellectual property and liability information.",
+        "Legal notice for the OPOPA website — publisher, hosting, intellectual property and liability information.",
     },
     eyebrow: "Legal",
     title: "Legal Notice",
@@ -406,10 +406,10 @@ export const en = {
         id: "publisher",
         title: "Website publisher",
         paragraphs: [
-          "CIVEP is operated by a French individual entrepreneur / micro-entrepreneur. The website presents European market-entry, commercial advisory and outsourced sales services for Chinese industrial and green-tech companies.",
+          "OPOPA is operated by a French individual entrepreneur / micro-entrepreneur. The website presents European market-entry, commercial advisory and outsourced sales services for Chinese industrial and green-tech companies.",
         ],
         fields: [
-          { label: "Business name", value: "CIVEP" },
+          { label: "Business name", value: "OPOPA" },
           {
             label: "Legal operator",
             value: "TODO — insert full legal name",
@@ -459,7 +459,7 @@ export const en = {
         id: "intellectual-property",
         title: "Intellectual property",
         paragraphs: [
-          "The structure of this website, the CIVEP brand elements, original texts and original visual materials are owned by CIVEP or used with permission.",
+          "The structure of this website, the OPOPA brand elements, original texts and original visual materials are owned by OPOPA or used with permission.",
           "Any unauthorised reproduction, representation, adaptation or commercial reuse is prohibited, except where permitted by applicable law.",
           "Third-party trademarks, images and other materials remain the property of their respective owners.",
         ],
@@ -468,16 +468,16 @@ export const en = {
         id: "liability",
         title: "Liability",
         paragraphs: [
-          "CIVEP aims to keep the information on this website accurate and reasonably current. Content is provided for general information about CIVEP’s services and market-entry approach.",
+          "OPOPA aims to keep the information on this website accurate and reasonably current. Content is provided for general information about OPOPA’s services and market-entry approach.",
           "Unless expressly stated in a signed client engagement, website content does not constitute legal, tax, regulatory, investment or other professional advice.",
-          "CIVEP cannot guarantee uninterrupted or error-free availability of the website. Users remain responsible for decisions they make based on website content.",
+          "OPOPA cannot guarantee uninterrupted or error-free availability of the website. Users remain responsible for decisions they make based on website content.",
         ],
       },
       {
         id: "external-links",
         title: "External links",
         paragraphs: [
-          "This website may contain links to third-party websites. CIVEP is not responsible for the content, policies or availability of those external sites.",
+          "This website may contain links to third-party websites. OPOPA is not responsible for the content, policies or availability of those external sites.",
         ],
       },
     ],
@@ -487,7 +487,7 @@ export const en = {
     meta: {
       title: "Privacy Policy",
       description:
-        "Privacy policy for the CIVEP website — how enquiry data is handled under GDPR principles.",
+        "Privacy policy for the OPOPA website — how enquiry data is handled under GDPR principles.",
     },
     eyebrow: "Legal",
     title: "Privacy Policy",
@@ -503,7 +503,7 @@ export const en = {
           {
             label: "Data controller",
             value:
-              "TODO — insert full legal name, operating under the CIVEP brand",
+              "TODO — insert full legal name, operating under the OPOPA brand",
             todo: true,
           },
           { label: "SIRET", value: "92011864300021" },
@@ -581,7 +581,7 @@ export const en = {
           "Personal data may be accessed only by:",
         ],
         bullets: [
-          "CIVEP / the business operator",
+          "OPOPA / the business operator",
           "relevant service providers used to operate the website or manage communications",
           "authorities where legally required",
         ],
@@ -589,7 +589,7 @@ export const en = {
       {
         id: "no-sale",
         title: "No sale of personal data",
-        paragraphs: ["CIVEP does not sell personal data."],
+        paragraphs: ["OPOPA does not sell personal data."],
       },
       {
         id: "transfers",
@@ -603,7 +603,7 @@ export const en = {
         id: "cookies",
         title: "Analytics and cookies",
         paragraphs: [
-          "CIVEP does not currently use advertising cookies or third-party analytics tools requiring consent. This policy will be updated if analytics, advertising or additional tracking technologies are introduced.",
+          "OPOPA does not currently use advertising cookies or third-party analytics tools requiring consent. This policy will be updated if analytics, advertising or additional tracking technologies are introduced.",
           "Essential technical cookies or storage required for website functionality may still be used.",
         ],
       },
@@ -646,7 +646,7 @@ export const en = {
     title: "Page not found",
     description: "The page you requested does not exist or has been moved.",
     returnHome: "Return home",
-    contactCivep: "Contact CIVEP",
+    contactOpopa: "Contact OPOPA",
     orBrowse: "Or browse",
     expertise: "services",
     industries: "industries",
@@ -683,7 +683,7 @@ export const en = {
       ],
       clientProblem:
         "Home-market sales methods often underperform with European industrial buyers.",
-      seoTitle: "Sales Enablement for European B2B Markets | CIVEP",
+      seoTitle: "Sales Enablement for European B2B Markets | OPOPA",
       seoDescription:
         "Sales enablement for Chinese industrial companies selling in Europe — messaging, prospecting, qualification and negotiation practices.",
     },
@@ -709,7 +709,7 @@ export const en = {
       ],
       clientProblem:
         "Expansion requires trusted local specialists — not a generic contact list.",
-      seoTitle: "Expert & Partner Sourcing in Europe | CIVEP",
+      seoTitle: "Expert & Partner Sourcing in Europe | OPOPA",
       seoDescription:
         "Identify and qualify European specialists and partners — legal, compliance, distribution, recruitment and technical — for China–Europe industrial expansion.",
     },
@@ -735,7 +735,7 @@ export const en = {
       ],
       clientProblem:
         "Building a credible European sales presence takes time, local relationships and sustained commercial execution.",
-      seoTitle: "Outsourced Sales Representation in Europe | CIVEP",
+      seoTitle: "Outsourced Sales Representation in Europe | OPOPA",
       seoDescription:
         "Outsourced European sales professionals who represent Chinese industrial clients directly — prospecting, meetings, negotiation and closing.",
     },
@@ -761,7 +761,7 @@ export const en = {
       ],
       clientProblem:
         "Commercial teams expanding into Europe need faster research, cleaner CRM data and more consistent sales workflows — without losing industrial judgement.",
-      seoTitle: "Sales AI & Automation for Commercial Operations | CIVEP",
+      seoTitle: "Sales AI & Automation for Commercial Operations | OPOPA",
       seoDescription:
         "AI-enabled sales workflows for Chinese industrial companies expanding in Europe — research, CRM enrichment, inbound handling and commercial automation.",
     },
@@ -773,7 +773,7 @@ export const en = {
       summary:
         "Heavy machinery, construction equipment and industrial systems entering European buyer environments.",
       description:
-        "European industrial buyers evaluate equipment on technical fit, service capability, local support and long procurement cycles. CIVEP helps Chinese equipment manufacturers structure market entry and commercial execution accordingly.",
+        "European industrial buyers evaluate equipment on technical fit, service capability, local support and long procurement cycles. OPOPA helps Chinese equipment manufacturers structure market entry and commercial execution accordingly.",
       focusAreas: [
         "Heavy machinery",
         "Construction equipment",
@@ -781,7 +781,7 @@ export const en = {
         "After-sales and service readiness",
         "Distributor and direct sales models",
       ],
-      seoTitle: "Industrial Equipment Market Entry in Europe | CIVEP",
+      seoTitle: "Industrial Equipment Market Entry in Europe | OPOPA",
       seoDescription:
         "European market entry and sales support for Chinese industrial equipment and heavy machinery manufacturers.",
     },
@@ -798,7 +798,7 @@ export const en = {
         "Technical buyer engagement",
         "Local partnership models",
       ],
-      seoTitle: "Advanced Manufacturing Expansion into Europe | CIVEP",
+      seoTitle: "Advanced Manufacturing Expansion into Europe | OPOPA",
       seoDescription:
         "Market-entry and commercial support for Chinese advanced manufacturing companies expanding into Europe.",
     },
@@ -807,7 +807,7 @@ export const en = {
       summary:
         "Energy equipment and green-tech solutions navigating European commercial and regulatory expectations.",
       description:
-        "Green-technology companies face layered market, regulatory and commercial requirements in Europe. CIVEP supports practical market access and sales execution for industrial green-tech offerings.",
+        "Green-technology companies face layered market, regulatory and commercial requirements in Europe. OPOPA supports practical market access and sales execution for industrial green-tech offerings.",
       focusAreas: [
         "Energy equipment",
         "Industrial green technology",
@@ -815,7 +815,7 @@ export const en = {
         "Commercial positioning",
         "European sales development",
       ],
-      seoTitle: "Green Technology Market Entry in Europe | CIVEP",
+      seoTitle: "Green Technology Market Entry in Europe | OPOPA",
       seoDescription:
         "European market entry and commercial partnership for Chinese green-technology and energy equipment companies.",
     },
@@ -824,7 +824,7 @@ export const en = {
       summary:
         "Mobility systems and infrastructure-related industrial offerings for European markets.",
       description:
-        "Mobility and infrastructure projects involve long cycles, multiple stakeholders and local delivery expectations. CIVEP helps Chinese industrial companies approach these markets with commercial clarity.",
+        "Mobility and infrastructure projects involve long cycles, multiple stakeholders and local delivery expectations. OPOPA helps Chinese industrial companies approach these markets with commercial clarity.",
       focusAreas: [
         "Mobility systems",
         "Infrastructure equipment",
@@ -832,7 +832,7 @@ export const en = {
         "Stakeholder mapping",
         "Long-cycle commercial development",
       ],
-      seoTitle: "Mobility & Infrastructure Market Entry | CIVEP",
+      seoTitle: "Mobility & Infrastructure Market Entry | OPOPA",
       seoDescription:
         "European expansion support for Chinese mobility and infrastructure industrial companies.",
     },

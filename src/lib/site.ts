@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "CIVEP",
-  legalName: "CIVEP",
+  name: "OPOPA",
+  legalName: "OPOPA",
   tagline: "Markets in Sync",
   description:
     "European market-entry and commercial partner for Chinese industrial and green-tech companies.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.civep.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.opopa-partners.com",
   locale: "en",
   locales: ["en", "zh"] as const,
   defaultLocale: "en" as const,

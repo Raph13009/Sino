@@ -48,7 +48,7 @@ function notificationContent(payload: ContactPayload, locale: Locale) {
   ] as const;
 
   const text = [
-    "A new enquiry was submitted on the CIVEP website.",
+    "A new enquiry was submitted on the OPOPA website.",
     "",
     ...fields.map(([label, value]) => `${label}: ${value}`),
   ].join("\n");
@@ -61,7 +61,7 @@ function notificationContent(payload: ContactPayload, locale: Locale) {
     .join("");
 
   const html = `
-    <p>A new enquiry was submitted on the CIVEP website.</p>
+    <p>A new enquiry was submitted on the OPOPA website.</p>
     <table style="border-collapse:collapse;font-size:15px;line-height:1.5;">${rows}</table>
   `;
 
@@ -73,49 +73,49 @@ function confirmationContent(payload: ContactPayload, locale: Locale) {
 
   if (locale === "zh") {
     return {
-      subject: "感谢您联系 CIVEP",
+      subject: "感谢您联系 OPOPA",
       text: [
         `您好 ${name}，`,
         "",
-        "感谢您联系 CIVEP。",
+        "感谢您联系 OPOPA。",
         "",
         "我们已收到您关于欧洲拓展的咨询，并将审阅您提供的信息。",
         "",
         "我们会尽快与您联系。",
         "",
         "此致，",
-        "CIVEP",
+        "OPOPA",
       ].join("\n"),
       html: `
         <p>您好 ${escapeHtml(name)}，</p>
-        <p>感谢您联系 CIVEP。</p>
+        <p>感谢您联系 OPOPA。</p>
         <p>我们已收到您关于欧洲拓展的咨询，并将审阅您提供的信息。</p>
         <p>我们会尽快与您联系。</p>
-        <p>此致，<br />CIVEP</p>
+        <p>此致，<br />OPOPA</p>
       `,
     };
   }
 
   return {
-    subject: "Thank you for contacting CIVEP",
+    subject: "Thank you for contacting OPOPA",
     text: [
       `Hi ${name},`,
       "",
-      "Thank you for contacting CIVEP.",
+      "Thank you for contacting OPOPA.",
       "",
       "We’ve received your enquiry regarding your European expansion and will review the information you shared.",
       "",
       "We’ll get back to you shortly.",
       "",
       "Best,",
-      "CIVEP",
+      "OPOPA",
     ].join("\n"),
     html: `
       <p>Hi ${escapeHtml(name)},</p>
-      <p>Thank you for contacting CIVEP.</p>
+      <p>Thank you for contacting OPOPA.</p>
       <p>We’ve received your enquiry regarding your European expansion and will review the information you shared.</p>
       <p>We’ll get back to you shortly.</p>
-      <p>Best,<br />CIVEP</p>
+      <p>Best,<br />OPOPA</p>
     `,
   };
 }
@@ -143,7 +143,7 @@ export async function sendContactEmails(
     from,
     to: notifyTo,
     replyTo: payload.email,
-    subject: `New CIVEP enquiry — ${payload.company}`,
+    subject: `New OPOPA enquiry — ${payload.company}`,
     text: notification.text,
     html: notification.html,
   });

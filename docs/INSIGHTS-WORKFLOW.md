@@ -28,7 +28,7 @@ excerpt: "Optional card teaser; defaults to description"
 slug: "kebab-case-slug"
 date: "YYYY-MM-DD"
 updatedAt: "YYYY-MM-DD"
-author: "CIVEP"
+author: "OPOPA"
 category: "Category label"
 image: "mediaRegistryKey"
 relatedServices:

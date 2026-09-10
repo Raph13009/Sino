@@ -27,7 +27,7 @@ export default async function NotFound({ params }: Props) {
         <div className="mt-8 flex flex-wrap gap-4">
           <Button href={localePath(locale, "/")}>{copy.returnHome}</Button>
           <Button href={localePath(locale, "/contact")} variant="tertiary">
-            {copy.contactCivep}
+            {copy.contactOpopa}
           </Button>
         </div>
         <p className="mt-10 text-sm text-charcoal">

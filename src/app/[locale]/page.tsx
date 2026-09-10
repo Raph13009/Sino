@@ -5,7 +5,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { HomeIndustries } from "@/components/home/HomeIndustries";
 import { HomeInsight } from "@/components/home/HomeInsight";
 import { HomeMethod } from "@/components/home/HomeMethod";
-import { HomeWhyCivep } from "@/components/home/HomeWhyCivep";
+import { HomeWhyOpopa } from "@/components/home/HomeWhyOpopa";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams } from "@/i18n/config";
@@ -37,7 +37,7 @@ export default async function HomePage({ params }: Props) {
       <HomeHero locale={locale} dict={dict} />
       <HomeContext dict={dict} />
       <HomeServices locale={locale} dict={dict} />
-      <HomeWhyCivep dict={dict} />
+      <HomeWhyOpopa dict={dict} />
       <HomeIndustries locale={locale} dict={dict} />
       <HomeMethod dict={dict} />
       <HomeInsight locale={locale} dict={dict} />

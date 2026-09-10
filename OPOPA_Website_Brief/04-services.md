@@ -2,7 +2,7 @@
 
 ## Service architecture
 
-CIVEP combines advisory, access to local expertise, capability building and outsourced commercial execution.
+OPOPA combines advisory, access to local expertise, capability building and outsourced commercial execution.
 
 The services should be presented as parts of one European expansion journey rather than four unrelated offerings.
 
@@ -50,7 +50,7 @@ Find and connect clients with the right local European specialists required for 
 
 Do not present this as a simple contact database or generic “intermediary” service.
 
-CIVEP should be positioned as identifying, qualifying and connecting the client with relevant European specialists based on the specific business need.
+OPOPA should be positioned as identifying, qualifying and connecting the client with relevant European specialists based on the specific business need.
 
 ### Positioning language
 **Access the local expertise your European expansion requires.**
@@ -86,7 +86,7 @@ Provide European sales professionals who represent the client directly in the ma
 ### Operating model
 - The salesperson represents the Chinese client under the client's identity
 - Engagements may cover prospecting only or much broader commercial responsibility
-- CIVEP may support long sales cycles lasting several months
+- OPOPA may support long sales cycles lasting several months
 - Scope can include prospecting, qualification, meetings, relationship development, negotiation and closing
 - Sales professionals should be selected for relevant European and industry expertise
 

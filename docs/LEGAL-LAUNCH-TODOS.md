@@ -4,7 +4,7 @@ Outstanding items before treating `/legal` and `/privacy` as final.
 
 ## Confirmed
 
-- Business / brand name: **CIVEP**
+- Business / brand name: **OPOPA**
 - Status: French individual entrepreneur / micro-entrepreneur
 - SIRET: **92011864300021**
 - Temporary contact email: **raphaellevy027@gmail.com**
