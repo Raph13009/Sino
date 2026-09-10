@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Inter, Inter_Tight, Noto_Sans_SC } from "next/font/google";
 import { headers } from "next/headers";
@@ -26,22 +26,35 @@ const notoSansSc = Noto_Sans_SC({
   preload: false,
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c233c" },
+  ],
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
-  authors: [{ name: siteConfig.name }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
+  authors: [{ name: siteConfig.legalName }],
+  creator: siteConfig.legalName,
+  publisher: siteConfig.legalName,
   verification: {
     google: "rHUUJuvSKCCa1p4kSs-iUNEvARFWVFWBPalDjZgo-4M",
   },
   icons: {
     icon: [
-      { url: "/brand/favicon.ico" },
-      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon.ico", sizes: "any" },
       { url: "/brand/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/favicon.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: ["/brand/favicon.ico"],
+  },
+  other: {
+    "msapplication-TileColor": "#0c233c",
   },
 };
 

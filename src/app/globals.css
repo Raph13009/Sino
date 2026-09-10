@@ -13,7 +13,7 @@
 }
 
 @theme inline {
-  --color-ink: #171a1f;
+  --color-ink: #0c233c;
   --color-charcoal: #30353b;
   --color-ivory: #f4f1ea;
   --color-white-warm: #fbfaf7;
@@ -21,8 +21,8 @@
   --color-sand: #d7cfc1;
   --color-border: #c9c5bd;
   --color-border-dark: #454a50;
-  --color-accent: #b84336;
-  --color-accent-dark: #8e3a31;
+  --color-accent: #a71f2a;
+  --color-accent-dark: #7f1820;
 
   --radius-xs: 2px;
   --radius-sm: 4px;

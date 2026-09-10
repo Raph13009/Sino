@@ -93,10 +93,12 @@ export function organizationJsonLd(locale: Locale = defaultLocale) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.name,
+    name: siteConfig.legalName,
+    alternateName: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    logo: absoluteUrl("/brand/opopa-logo-light.png"),
+    logo: absoluteUrl("/brand/logo-light.png"),
+    image: absoluteUrl("/brand/logo-light.png"),
     sameAs: [
       siteConfig.linkedIn,
       siteConfig.founders.maxMarchesseauLaskar.linkedIn,
@@ -186,15 +188,19 @@ export function articleJsonLd(
     image: absoluteUrl(input.image ?? siteConfig.ogImage),
     inLanguage: locale === "zh" ? "zh-Hans" : "en",
     author: {
-      "@type": input.author === siteConfig.name ? "Organization" : "Person",
+      "@type":
+        input.author === siteConfig.name ||
+        input.author === siteConfig.legalName
+          ? "Organization"
+          : "Person",
       name: input.author,
     },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: siteConfig.legalName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/brand/opopa-logo-light.png"),
+        url: absoluteUrl("/brand/logo-light.png"),
       },
     },
     mainEntityOfPage: {

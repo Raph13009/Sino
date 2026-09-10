@@ -6,11 +6,11 @@ Source of truth for paths and alt text: `/src/content/media.ts`
 
 | ID | Page | Section | Current file | Type | Aspect ratio | Status | Replacement note |
 |---|---|---|---|---|---|---|---|
-| brand-logo-light | global | brand | `/brand/opopa-logo-light.webp` (+ `.png`) | Image | 1200:403 | Final | Approved light-background logo lockup |
-| brand-logo-dark | global | brand | `/brand/opopa-logo-dark.webp` (+ `.png`) | Image | 1200:403 | Final | Derived dark variant; preserve geometry and oxide-red |
-| brand-mark-light | global | brand | `/brand/opopa-mark-light.png` | Image | 1:1 | Final | Compact monogram |
-| brand-mark-dark | global | brand | `/brand/opopa-mark-dark.png` | Image | 1:1 | Final | Dark-surface monogram variant |
-| brand-favicon | global | brand | `/brand/opopa-favicon.png` | Image | 1:1 | Final | Optimized favicon set also includes 16/32/ICO/apple-touch |
+| brand-logo-light | global | brand | `/brand/logo-light.webp` (+ `.png`) | Image | 1187:318 | Final | Light-surface lockup (navy + red, transparent) |
+| brand-logo-dark | global | brand | `/brand/logo-dark.webp` (+ `.png`) | Image | 1026:289 | Final | Dark-surface lockup (white + red, transparent) |
+| brand-mark | global | brand | `/brand/mark.png` (+ `.webp`) | Image | 1:1 | Final | Architectural monogram |
+| brand-favicon | global | brand | `/brand/favicon.png` | Image | 1:1 | Final | Favicon set: 16/32/ICO/apple-touch |
+| brand-plaquette | global | brand | `/brand/plaquette.webp` (+ `.png`) | Image | 1122:1402 | Final | Brand direction reference board |
 | home-hero-01 | Home | Hero | `/images/hero/hero-industrial-port.jpg` | Image | 3:2 | Placeholder | Replace with final China–Europe industrial hero |
 | home-context-01 | Home | Context | `/images/hero/hero-manufacturing-floor.jpg` | Image | 16:10 | Placeholder | Replace with documentary manufacturing photography |
 | service-sales-enablement | Services | Sales Enablement | `/images/services/service-sales-enablement.jpg` | Image | 3:2 | Placeholder | Replace with commercial training context photography |

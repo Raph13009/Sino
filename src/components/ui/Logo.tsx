@@ -29,10 +29,11 @@ export function Logo({
       <Image
         src={asset.src}
         alt={asset.alt}
-        width={480}
-        height={161}
+        width={asset.width}
+        height={asset.height}
         priority={priority}
-        className="h-10 w-auto md:h-[3.125rem]"
+        sizes="(max-width: 768px) 140px, 180px"
+        className="h-9 w-auto md:h-11"
       />
     </Link>
   );

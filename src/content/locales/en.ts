@@ -409,7 +409,7 @@ export const en = {
           "OPOPA is operated by a French individual entrepreneur / micro-entrepreneur. The website presents European market-entry, commercial advisory and outsourced sales services for Chinese industrial and green-tech companies.",
         ],
         fields: [
-          { label: "Business name", value: "OPOPA" },
+          { label: "Business name", value: "OPOPA Partners" },
           {
             label: "Legal operator",
             value: "TODO — insert full legal name",

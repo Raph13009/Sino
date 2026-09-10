@@ -408,7 +408,7 @@ export const zh = {
           "OPOPA 由一名在法国注册的个体经营者 / 微型企业主运营。本网站介绍面向中国工业与绿色技术企业的欧洲市场进入、商业咨询与外包销售服务。",
         ],
         fields: [
-          { label: "商号", value: "OPOPA" },
+          { label: "商号", value: "OPOPA Partners" },
           {
             label: "法律经营者",
             value: "待办 — 填写完整法定姓名",

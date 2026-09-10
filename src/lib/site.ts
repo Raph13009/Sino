@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "OPOPA",
-  legalName: "OPOPA",
+  legalName: "OPOPA Partners",
   tagline: "Markets in Sync",
   description:
     "European market-entry and commercial partner for Chinese industrial and green-tech companies.",
