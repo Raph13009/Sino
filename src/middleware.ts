@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { defaultLocale, locales } from "@/i18n/config";
+import { shouldNoIndexDeployment } from "@/lib/site";
 
 const PUBLIC_FILE = /\.(.*)$/;
+
+function applyIndexHeaders(response: NextResponse) {
+  if (shouldNoIndexDeployment()) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
+  return response;
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -19,7 +27,7 @@ export function middleware(request: NextRequest) {
     pathname === "/favicon.ico" ||
     PUBLIC_FILE.test(pathname)
   ) {
-    return NextResponse.next();
+    return applyIndexHeaders(NextResponse.next());
   }
 
   const segments = pathname.split("/").filter(Boolean);
@@ -31,11 +39,11 @@ export function middleware(request: NextRequest) {
       // /en/... → redirect to unprefixed English URL
       const url = request.nextUrl.clone();
       url.pathname = "/" + segments.slice(1).join("/");
-      return NextResponse.redirect(url);
+      return applyIndexHeaders(NextResponse.redirect(url, 308));
     }
     const response = NextResponse.next();
     response.headers.set("x-locale", maybeLocale);
-    return response;
+    return applyIndexHeaders(response);
   }
 
   // English default: rewrite to /en/... internally
@@ -44,7 +52,7 @@ export function middleware(request: NextRequest) {
     pathname === "/" ? `/${defaultLocale}` : `/${defaultLocale}${pathname}`;
   const response = NextResponse.rewrite(url);
   response.headers.set("x-locale", defaultLocale);
-  return response;
+  return applyIndexHeaders(response);
 }
 
 export const config = {

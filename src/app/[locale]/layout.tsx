@@ -27,7 +27,7 @@ export default async function LocaleLayout({
 
   return (
     <LocaleProvider locale={locale} dict={dict}>
-      <JsonLd data={organizationJsonLd(locale)} />
+      <JsonLd data={organizationJsonLd()} />
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />

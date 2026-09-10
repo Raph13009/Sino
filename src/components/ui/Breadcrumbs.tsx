@@ -3,13 +3,15 @@ import { cn } from "@/lib/utils";
 
 export function Breadcrumbs({
   items,
+  label = "Breadcrumb",
   className,
 }: {
   items: { label: string; href?: string }[];
+  label?: string;
   className?: string;
 }) {
   return (
-    <nav aria-label="Breadcrumb" className={cn("eyebrow", className)}>
+    <nav aria-label={label} className={cn("eyebrow", className)}>
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-charcoal">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

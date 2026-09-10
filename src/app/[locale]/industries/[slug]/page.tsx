@@ -11,7 +11,8 @@ import {
   Section,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { industrySlugs } from "@/content/catalog";
+import { industrySlugs, type IndustrySlug } from "@/content/catalog";
+import { getInsightsForIndustry } from "@/content/insights/load";
 import { getDictionary } from "@/content/locales";
 import { getIndustry, getServices } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
@@ -30,13 +31,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
   const industry = getIndustry(locale, dict, slug);
-  if (!industry) return {};
+  if (!industry) {
+    return { robots: { index: false, follow: false } };
+  }
   return createMetadata({
     title: industry.seoTitle,
     description: industry.seoDescription,
     path: `/industries/${slug}`,
     locale,
     ogImage: industry.image.src,
+    ogImageAlt: industry.image.alt,
   });
 }
 
@@ -48,6 +52,10 @@ export default async function IndustryPage({ params }: Props) {
   if (!industry) notFound();
 
   const services = getServices(locale, dict);
+  const relatedInsights = getInsightsForIndustry(
+    locale,
+    industry.slug as IndustrySlug,
+  );
 
   return (
     <>
@@ -65,6 +73,7 @@ export default async function IndustryPage({ params }: Props) {
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
           <Breadcrumbs
+            label={dict.common.breadcrumb}
             items={[
               { label: dict.common.home, href: localePath(locale, "/") },
               {
@@ -137,6 +146,23 @@ export default async function IndustryPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+              {relatedInsights.length > 0 ? (
+                <div className="mt-12">
+                  <Eyebrow>{dict.common.relatedInsights}</Eyebrow>
+                  <ul className="mt-4 space-y-3">
+                    {relatedInsights.map((insight) => (
+                      <li key={insight.slug}>
+                        <Link
+                          href={insight.href}
+                          className="text-[1.0625rem] font-medium transition-colors hover:text-accent"
+                        >
+                          {insight.title} →
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
         </Container>

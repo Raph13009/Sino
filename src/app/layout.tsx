@@ -3,7 +3,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inter, Inter_Tight, Noto_Sans_SC } from "next/font/google";
 import { headers } from "next/headers";
 import { localeHtmlLang, type Locale } from "@/i18n/config";
-import { siteConfig } from "@/lib/site";
+import { isVercelAnalyticsEnabled } from "@/lib/analytics";
+import { shouldNoIndexDeployment, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,10 +37,18 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  applicationName: siteConfig.name,
+  applicationName: siteConfig.legalName,
   authors: [{ name: siteConfig.legalName }],
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,
+  title: {
+    default: `${siteConfig.legalName} — ${siteConfig.description}`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  robots: shouldNoIndexDeployment()
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
   verification: {
     google: "rHUUJuvSKCCa1p4kSs-iUNEvARFWVFWBPalDjZgo-4M",
   },
@@ -78,7 +87,7 @@ export default async function RootLayout({
         }`}
       >
         {children}
-        <Analytics />
+        {isVercelAnalyticsEnabled() ? <Analytics /> : null}
       </body>
     </html>
   );

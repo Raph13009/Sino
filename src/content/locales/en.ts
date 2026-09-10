@@ -26,6 +26,8 @@ export const en = {
     typicalScope: "Typical scope",
     relatedExpertise: "Related services",
     relatedIndustries: "Related industries",
+    relatedInsights: "Related insights",
+    breadcrumb: "Breadcrumb",
     focusAreas: "Focus areas",
     howWeHelp: "How we help",
     allRightsReserved: "All rights reserved.",
@@ -184,7 +186,7 @@ export const en = {
 
   servicesPage: {
     meta: {
-      title: "Services",
+      title: "Services for European Market Entry | OPOPA",
       description:
         "OPOPA services for Chinese industrial companies: Sales Enablement, Expert & Partner Sourcing, Outsourced Sales and Sales AI & Automation.",
     },
@@ -197,7 +199,7 @@ export const en = {
 
   industriesPage: {
     meta: {
-      title: "Industries",
+      title: "Industries We Serve in Europe | OPOPA",
       description:
         "OPOPA supports Chinese companies across industrial equipment, advanced manufacturing, green technology and mobility infrastructure.",
     },
@@ -212,7 +214,7 @@ export const en = {
 
   insightsPage: {
     meta: {
-      title: "Insights",
+      title: "Insights on China–Europe Expansion | OPOPA",
       description:
         "Insights on European market entry, industrial sales and commercial expansion for Chinese companies.",
     },
@@ -224,7 +226,7 @@ export const en = {
 
   about: {
     meta: {
-      title: "About",
+      title: "About OPOPA Partners",
       description:
         "OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies — built between China and Europe.",
     },
@@ -344,7 +346,7 @@ export const en = {
 
   contact: {
     meta: {
-      title: "Contact",
+      title: "Contact OPOPA Partners",
       description:
         "Discuss your European expansion with OPOPA — market entry, local expertise and commercial execution for Chinese industrial companies.",
     },

@@ -28,6 +28,8 @@ export const zh = {
     typicalScope: "典型范围",
     relatedExpertise: "相关服务",
     relatedIndustries: "相关行业",
+    relatedInsights: "相关洞察",
+    breadcrumb: "面包屑导航",
     focusAreas: "重点方向",
     howWeHelp: "我们如何助力",
     allRightsReserved: "保留所有权利。",
@@ -184,7 +186,7 @@ export const zh = {
 
   servicesPage: {
     meta: {
-      title: "服务",
+      title: "欧洲市场进入服务 | OPOPA",
       description:
         "OPOPA 为中国工业企业提供的服务：销售赋能、专家与伙伴寻源、外包销售以及销售 AI 与自动化。",
     },
@@ -197,7 +199,7 @@ export const zh = {
 
   industriesPage: {
     meta: {
-      title: "行业",
+      title: "我们服务的欧洲行业 | OPOPA",
       description:
         "OPOPA 服务中国企业，覆盖工业设备、先进制造、绿色技术以及出行与基础设施。",
     },
@@ -212,7 +214,7 @@ export const zh = {
 
   insightsPage: {
     meta: {
-      title: "洞察",
+      title: "中国–欧洲拓展洞察 | OPOPA",
       description:
         "关于欧洲市场进入、工业销售以及中国企业商业拓展的洞察。",
     },
@@ -224,7 +226,7 @@ export const zh = {
 
   about: {
     meta: {
-      title: "关于我们",
+      title: "关于 OPOPA Partners",
       description:
         "OPOPA 是面向中国工业与绿色技术企业的欧洲市场进入与商业合作伙伴——立足中国与欧洲之间。",
     },
@@ -343,7 +345,7 @@ export const zh = {
 
   contact: {
     meta: {
-      title: "联系我们",
+      title: "联系 OPOPA Partners",
       description:
         "与 OPOPA 洽谈欧洲拓展——为中国工业企业提供市场进入、本地专业能力与商业执行。",
     },

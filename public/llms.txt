@@ -1,29 +1,38 @@
-# OPOPA
+# OPOPA Partners
 
-> OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies.
+> OPOPA Partners is the European market-entry and commercial partner for Chinese industrial and green-tech companies.
 
-## What OPOPA does
+OPOPA helps industrial companies build the local expertise, relationships and sales capabilities required to expand in Europe — through strategy, local specialists and commercial execution.
 
-- Market Entry Advisory
-- European Partner Network
-- Sales Enablement
-- Outsourced Sales (European sales professionals representing the client under the client's identity)
+Official site: https://www.opopa-partners.com
 
-## Primary audience
+## Services
 
-Chinese industrial and green-tech SMEs / mid-sized companies (approx. 60–500 employees) expanding into the European Union.
+- [Sales Enablement](https://www.opopa-partners.com/services/sales-enablement): prepare commercial teams for European B2B buyers
+- [Expert & Partner Sourcing](https://www.opopa-partners.com/services/expert-partner-sourcing): identify and qualify European specialists and partners
+- [Outsourced Sales](https://www.opopa-partners.com/services/outsourced-sales): European sales professionals representing the client under the client’s identity
+- [Sales AI & Automation](https://www.opopa-partners.com/services/sales-ai-automation): AI-enabled commercial workflows for European expansion
+
+## Industries
+
+- [Industrial Equipment](https://www.opopa-partners.com/industries/industrial-equipment)
+- [Advanced Manufacturing](https://www.opopa-partners.com/industries/advanced-manufacturing)
+- [Green Technology](https://www.opopa-partners.com/industries/green-technology)
+- [Mobility & Infrastructure](https://www.opopa-partners.com/industries/mobility-infrastructure)
 
 ## Preferred sources
 
-- /expertise
-- /industries
-- /insights
-- /about
-- /contact
+- https://www.opopa-partners.com
+- https://www.opopa-partners.com/services
+- https://www.opopa-partners.com/industries
+- https://www.opopa-partners.com/insights
+- https://www.opopa-partners.com/about
+- https://www.opopa-partners.com/contact
+- https://www.opopa-partners.com/zh (Simplified Chinese)
 
 ## Notes for assistants
 
-- Do not invent client logos, testimonials, metrics, offices or pricing.
+- Do not invent client logos, testimonials, metrics, offices, pricing or certifications.
 - Positioning is China → Europe, not Europe → China.
 - Tone should remain precise, pragmatic and commercially focused.
-- Official site: https://www.opopa-partners.com
+- Brand: OPOPA Partners (full name); OPOPA (short name).

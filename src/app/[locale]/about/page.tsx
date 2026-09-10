@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FounderProfile } from "@/components/about/FounderProfile";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Button } from "@/components/ui/Button";
 import {
   Container,
   Eyebrow,
@@ -10,9 +11,15 @@ import {
   SectionHeading,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { media } from "@/content/media";
 import { getDictionary } from "@/content/locales";
+import { getServices } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
-import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  createMetadata,
+  personJsonLd,
+} from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -36,23 +43,39 @@ export default async function AboutPage({ params }: Props) {
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
   const copy = dict.about;
+  const services = getServices(locale, dict);
 
   return (
     <>
       <JsonLd
-        data={breadcrumbJsonLd(
-          [
-            { name: dict.common.home, path: "/" },
-            { name: copy.eyebrow, path: "/about" },
-          ],
-          locale,
-        )}
+        data={[
+          breadcrumbJsonLd(
+            [
+              { name: dict.common.home, path: "/" },
+              { name: copy.eyebrow, path: "/about" },
+            ],
+            locale,
+          ),
+          ...copy.founders.items.map((founder) => {
+            const portrait =
+              founder.mediaKey in media.team
+                ? media.team[founder.mediaKey as keyof typeof media.team]
+                : undefined;
+            return personJsonLd({
+              name: founder.name,
+              jobTitle: founder.role,
+              linkedIn: founder.linkedIn,
+              image: portrait?.src,
+            });
+          }),
+        ]}
       />
 
       {/* Hero — text only */}
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
           <Breadcrumbs
+            label={dict.common.breadcrumb}
             items={[
               { label: dict.common.home, href: localePath(locale, "/") },
               { label: copy.eyebrow },
@@ -146,6 +169,19 @@ export default async function AboutPage({ params }: Props) {
               </article>
             ))}
           </div>
+
+          <div className="mt-12">
+            <Eyebrow>{dict.nav.footer.services}</Eyebrow>
+            <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Button href={service.href} variant="tertiary" showArrow>
+                    {service.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Container>
       </Section>
 
@@ -196,9 +232,6 @@ export default async function AboutPage({ params }: Props) {
                 {copy.proof.body}
               </p>
               <Rule className="my-8" />
-              <p className="text-[0.9375rem] leading-relaxed text-charcoal/80">
-                {copy.proof.todoNote}
-              </p>
               <div
                 className="mt-10 grid gap-4 border border-dashed border-border p-6 md:grid-cols-2 md:p-8"
                 aria-hidden

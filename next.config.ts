@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { shouldNoIndexDeployment } from "./src/lib/site";
 
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
@@ -8,6 +9,17 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   poweredByHeader: false,
+  async headers() {
+    if (!shouldNoIndexDeployment()) return [];
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     const legacyServiceMap: Record<string, string> = {
       "market-entry-advisory": "/services",

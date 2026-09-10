@@ -8,6 +8,7 @@ import {
   parseInsightFrontmatter,
   type InsightFrontmatter,
 } from "@/content/insights/schema";
+import type { IndustrySlug, ServiceSlug } from "@/content/catalog";
 import { localePath, type Locale } from "@/i18n/config";
 
 const insightsRoot = path.join(process.cwd(), "content", "insights");
@@ -115,6 +116,18 @@ export function getInsightBySlug(
 
 export function getInsightSlugs(locale: Locale = "en"): string[] {
   return getInsightSummaries(locale).map((article) => article.slug);
+}
+
+export function getInsightsForService(locale: Locale, slug: ServiceSlug) {
+  return getInsightSummaries(locale).filter((insight) =>
+    insight.relatedServices.includes(slug),
+  );
+}
+
+export function getInsightsForIndustry(locale: Locale, slug: IndustrySlug) {
+  return getInsightSummaries(locale).filter((insight) =>
+    insight.relatedIndustries.includes(slug),
+  );
 }
 
 /** Ensures EN and ZH slug sets match at build time. */

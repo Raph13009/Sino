@@ -40,13 +40,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;
   const locale = getLocaleFromParams(localeParam);
   const insight = getInsightBySlug(locale, slug);
-  if (!insight) return {};
+  if (!insight) {
+    return { robots: { index: false, follow: false } };
+  }
   return createMetadata({
     title: insight.seoTitle,
     description: insight.description,
     path: `/insights/${slug}`,
     locale,
     ogImage: insight.image.src,
+    ogImageAlt: insight.image.alt,
     type: "article",
     publishedTime: insight.date,
     modifiedTime: insight.updatedAt,
@@ -100,13 +103,14 @@ export default async function InsightArticlePage({ params }: Props) {
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
           <Breadcrumbs
+            label={dict.common.breadcrumb}
             items={[
               { label: dict.common.home, href: localePath(locale, "/") },
               {
                 label: dict.insightsPage.eyebrow,
                 href: localePath(locale, "/insights"),
               },
-              { label: insight.category },
+              { label: insight.title },
             ]}
           />
           <div className="mx-auto mt-10 max-w-3xl">

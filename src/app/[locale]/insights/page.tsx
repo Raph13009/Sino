@@ -52,6 +52,7 @@ export default async function InsightsPage({ params }: Props) {
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
           <Breadcrumbs
+            label={dict.common.breadcrumb}
             items={[
               { label: dict.common.home, href: localePath(locale, "/") },
               { label: dict.insightsPage.eyebrow },

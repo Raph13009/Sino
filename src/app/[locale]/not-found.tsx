@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { headers } from "next/headers";
 import { Button } from "@/components/ui/Button";
 import { Container, Section } from "@/components/ui/Section";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Page not found | OPOPA",
+  },
+  robots: { index: false, follow: false },
+};
 
 type Props = {
   params?: Promise<{ locale?: string }>;

@@ -9,7 +9,8 @@ import { HomeWhyOpopa } from "@/components/home/HomeWhyOpopa";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams } from "@/i18n/config";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, websiteJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,6 +35,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={websiteJsonLd(locale)} />
       <HomeHero locale={locale} dict={dict} />
       <HomeContext dict={dict} />
       <HomeServices locale={locale} dict={dict} />

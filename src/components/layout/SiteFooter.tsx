@@ -89,7 +89,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-border-dark pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-white-warm/55">
-            © {new Date().getFullYear()} {siteConfig.name}.{" "}
+            © {new Date().getFullYear()} {siteConfig.legalName}.{" "}
             {dict.common.allRightsReserved}
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white-warm/55">

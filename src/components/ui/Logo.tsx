@@ -24,7 +24,7 @@ export function Logo({
         "inline-flex shrink-0 items-center focus-visible:outline-offset-4",
         className,
       )}
-      aria-label={`${siteConfig.name} home`}
+      aria-label={`${siteConfig.legalName} home`}
     >
       <Image
         src={asset.src}
