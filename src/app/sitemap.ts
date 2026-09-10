@@ -1,59 +1,109 @@
 import type { MetadataRoute } from "next";
-import { industrySlugs, serviceSlugs } from "@/content/catalog";
+import {
+  industryMeta,
+  industrySlugs,
+  serviceMeta,
+  serviceSlugs,
+} from "@/content/catalog";
 import { getInsightSummaries } from "@/content/insights/load";
-import { locales, localePath } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import { absoluteUrl } from "@/lib/site";
+
+type SitemapEntry = MetadataRoute.Sitemap[number];
+
+function languageAlternates(path: string): NonNullable<SitemapEntry["alternates"]> {
+  return {
+    languages: {
+      en: absoluteUrl(localePath("en", path)),
+      "zh-Hans": absoluteUrl(localePath("zh", path)),
+      "x-default": absoluteUrl(localePath("en", path)),
+    },
+  };
+}
+
+function entryForLocales(
+  path: string,
+  options: {
+    lastModified?: Date;
+    changeFrequency: SitemapEntry["changeFrequency"];
+    priority: number;
+    images?: string[];
+  },
+): SitemapEntry[] {
+  const locales: Locale[] = ["en", "zh"];
+  return locales.map((locale) => ({
+    url: absoluteUrl(localePath(locale, path)),
+    lastModified: options.lastModified,
+    changeFrequency: options.changeFrequency,
+    priority: options.priority,
+    alternates: languageAlternates(path),
+    ...(options.images?.length ? { images: options.images } : {}),
+  }));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const insights = getInsightSummaries("en");
 
-  const staticPaths = [
-    "/",
-    "/services",
-    "/industries",
-    "/insights",
-    "/about",
-    "/contact",
-    "/legal",
-    "/privacy",
-  ];
+  const home = entryForLocales("/", {
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 1,
+    images: [absoluteUrl("/images/hero/hero-industrial-port.jpg")],
+  });
 
-  const staticRoutes = locales.flatMap((locale) =>
-    staticPaths.map((path) => ({
-      url: absoluteUrl(localePath(locale, path)),
+  const corePages = (
+    [
+      ["services", 0.95, "weekly"],
+      ["industries", 0.9, "weekly"],
+      ["insights", 0.85, "weekly"],
+      ["about", 0.7, "monthly"],
+      ["contact", 0.75, "monthly"],
+      ["legal", 0.2, "yearly"],
+      ["privacy", 0.2, "yearly"],
+    ] as const
+  ).flatMap(([segment, priority, changeFrequency]) =>
+    entryForLocales(`/${segment}`, {
       lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: path === "/" ? 1 : 0.8,
-    })),
+      changeFrequency,
+      priority,
+    }),
   );
 
-  const serviceRoutes = locales.flatMap((locale) =>
-    serviceSlugs.map((slug) => ({
-      url: absoluteUrl(localePath(locale, `/services/${slug}`)),
+  const serviceRoutes = serviceSlugs.flatMap((slug) => {
+    const image = serviceMeta[slug].image.src;
+    return entryForLocales(`/services/${slug}`, {
       lastModified: now,
-      changeFrequency: "monthly" as const,
+      changeFrequency: "monthly",
       priority: 0.9,
-    })),
-  );
+      images: [absoluteUrl(image)],
+    });
+  });
 
-  const industryRoutes = locales.flatMap((locale) =>
-    industrySlugs.map((slug) => ({
-      url: absoluteUrl(localePath(locale, `/industries/${slug}`)),
+  const industryRoutes = industrySlugs.flatMap((slug) => {
+    const image = industryMeta[slug].image.src;
+    return entryForLocales(`/industries/${slug}`, {
       lastModified: now,
-      changeFrequency: "monthly" as const,
+      changeFrequency: "monthly",
       priority: 0.85,
-    })),
-  );
+      images: [absoluteUrl(image)],
+    });
+  });
 
-  const insightRoutes = locales.flatMap((locale) =>
-    insights.map((insight) => ({
-      url: absoluteUrl(localePath(locale, `/insights/${insight.slug}`)),
+  const insightRoutes = insights.flatMap((insight) =>
+    entryForLocales(`/insights/${insight.slug}`, {
       lastModified: new Date(insight.updatedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
+      changeFrequency: "monthly",
+      priority: 0.8,
+      images: [absoluteUrl(insight.image.src)],
+    }),
   );
 
-  return [...staticRoutes, ...serviceRoutes, ...industryRoutes, ...insightRoutes];
+  return [
+    ...home,
+    ...corePages,
+    ...serviceRoutes,
+    ...industryRoutes,
+    ...insightRoutes,
+  ];
 }
