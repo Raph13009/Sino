@@ -225,10 +225,11 @@ export const zh = {
     featured: "精选",
     relatedArticles: "相关阅读",
     empty: "新的洞察将在发布后显示在此页面。",
-    continueReading: "相关服务",
+    articleCtaEyebrow: "开始沟通",
+    articleCtaTitle: "正在规划下一步欧洲行动？",
     articleCtaDescription:
-      "如果这正是你正在面对的商业问题，我们可以讨论进入欧洲市场的务实路径。",
-    articleCtaLabel: "与 OPOPA 讨论",
+      "无论你是在探索市场，还是已经在建立欧洲业务，我们都很乐意与你讨论。",
+    articleCtaLabel: "联系 OPOPA",
   },
 
   about: {

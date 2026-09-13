@@ -225,10 +225,11 @@ export const en = {
     featured: "Featured",
     relatedArticles: "Related reading",
     empty: "New insights will appear here as they are published.",
-    continueReading: "Related service",
+    articleCtaEyebrow: "Let’s talk",
+    articleCtaTitle: "Planning your next move in Europe?",
     articleCtaDescription:
-      "If this is the commercial problem you are working through, we can discuss the practical route into the European market.",
-    articleCtaLabel: "Discuss this with OPOPA",
+      "Whether you are exploring the market or already building your European presence, we would be happy to discuss it with you.",
+    articleCtaLabel: "Contact OPOPA",
   },
 
   about: {

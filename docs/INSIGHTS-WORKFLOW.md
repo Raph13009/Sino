@@ -55,15 +55,15 @@ hreflang is reciprocal and only includes Published translations.
 
 `target_keyword` is editorial only. It is never output as meta keywords or schema spam.
 
-`cta_service` maps to existing routes:
+`cta_service` still maps to existing service routes for reverse links on service pages. It does not control the article footer CTA, which always goes to Contact.
 
-| CMS value | Page |
+| CMS value | Related-service lookup |
 | --- | --- |
-| Market Entry | `/services` |
+| Market Entry | none (overview only) |
 | Sales Outsourcing | `/services/outsourced-sales` |
 | Sales Coaching | `/services/sales-enablement` |
 | AI Sales Automation | `/services/sales-ai-automation` |
-| None | no article CTA |
+| None | none |
 
 ## Environment setup
 

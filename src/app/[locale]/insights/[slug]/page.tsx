@@ -16,11 +16,9 @@ import {
   ArticleCta,
   CoverFallback,
 } from "@/components/insights/ArticleContent";
-import { getService } from "@/content/localized";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import {
-  articleCtaPath,
   getInsightBySlug,
   getInsightSlugs,
   getRelatedInsights,
@@ -90,15 +88,6 @@ export default async function InsightArticlePage({ params }: Props) {
   if (!insight) notFound();
 
   const related = await getRelatedInsights(locale, insight);
-  const ctaPath = articleCtaPath(insight);
-  const ctaService = ctaPath
-    ? ctaPath === "/services"
-      ? {
-          name: dict.nav.primary.services,
-          href: localePath(locale, "/services"),
-        }
-      : getService(locale, dict, ctaPath.replace("/services/", ""))
-    : null;
 
   return (
     <>
@@ -198,20 +187,18 @@ export default async function InsightArticlePage({ params }: Props) {
               className="prose-editorial mx-auto max-w-3xl"
             />
 
-            {ctaService ? (
-              <div className="mx-auto max-w-3xl">
-                <ArticleCta
-                  eyebrow={dict.insightsPage.continueReading}
-                  title={ctaService.name}
-                  description={dict.insightsPage.articleCtaDescription}
-                  action={
-                    <Button href={ctaService.href} variant="tertiary">
-                      {dict.insightsPage.articleCtaLabel}
-                    </Button>
-                  }
-                />
-              </div>
-            ) : null}
+            <div className="mx-auto max-w-3xl">
+              <ArticleCta
+                eyebrow={dict.insightsPage.articleCtaEyebrow}
+                title={dict.insightsPage.articleCtaTitle}
+                description={dict.insightsPage.articleCtaDescription}
+                action={
+                  <Button href={localePath(locale, "/contact")} variant="tertiary">
+                    {dict.insightsPage.articleCtaLabel}
+                  </Button>
+                }
+              />
+            </div>
 
             {related.length > 0 ? (
               <nav

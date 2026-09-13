@@ -15,7 +15,7 @@ import { parseGoogleDocId, parseGoogleDriveFileId } from "@/lib/cms/ids";
 import { cmsError, cmsWarn } from "@/lib/cms/log";
 import { fetchBlogIndexRows } from "@/lib/cms/sheets";
 import { siteConfig } from "@/lib/site";
-import { pathForCtaService, serviceSlugForCta } from "./cta";
+import { serviceSlugForCta } from "./cta";
 import {
   isFeaturedValue,
   normalizeCtaService,
@@ -382,10 +382,6 @@ export async function getInsightLanguageAlternates(): Promise<
     cmsError("Failed to build insight language alternates.", error);
     return {};
   }
-}
-
-export function articleCtaPath(article: Pick<InsightSummary, "ctaService">) {
-  return pathForCtaService(article.ctaService);
 }
 
 export async function assertInsightLocalesAligned() {
