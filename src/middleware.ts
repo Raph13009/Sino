@@ -25,6 +25,11 @@ export function middleware(request: NextRequest) {
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
     pathname === "/favicon.ico" ||
+    pathname === "/icon.png" ||
+    pathname === "/favicon-48.png" ||
+    pathname === "/favicon-192.png" ||
+    pathname === "/apple-touch-icon.png" ||
+    pathname === "/apple-touch-icon-precomposed.png" ||
     PUBLIC_FILE.test(pathname)
   ) {
     return applyIndexHeaders(NextResponse.next());

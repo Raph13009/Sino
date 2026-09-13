@@ -59,7 +59,8 @@ export const media = {
       page: "global",
       section: "brand",
       status: "final" as const,
-      replacementNote: "Favicon set: 16/32/ICO/apple-touch derived from mark",
+      replacementNote:
+        "Source mark. Served at /favicon.ico, /icon.png, /favicon-192.png and /apple-touch-icon.png",
     },
     plaquette: {
       id: "brand-plaquette",

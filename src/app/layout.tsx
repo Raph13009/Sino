@@ -54,13 +54,29 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/brand/favicon.ico", sizes: "any" },
-      { url: "/brand/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/brand/favicon.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/favicon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+      {
+        url: "/icon.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
     ],
-    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: ["/brand/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: "/favicon.ico",
   },
   other: {
     "msapplication-TileColor": "#0c233c",
