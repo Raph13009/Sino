@@ -24,6 +24,11 @@ type PageMetadataInput = {
   publishedTime?: string;
   modifiedTime?: string;
   authors?: string[];
+  /**
+   * Locale-neutral paths for hreflang. When omitted, both locales share `path`.
+   * Pass only published alternates — do not point at missing translations.
+   */
+  languagePaths?: Partial<Record<Locale, string>>;
 };
 
 export function createMetadata({
@@ -38,11 +43,22 @@ export function createMetadata({
   publishedTime,
   modifiedTime,
   authors,
+  languagePaths,
 }: PageMetadataInput): Metadata {
   const localizedPath = localePath(locale, path);
   const url = absoluteUrl(localizedPath);
-  const enUrl = absoluteUrl(localePath("en", path));
-  const zhUrl = absoluteUrl(localePath("zh", path));
+  const enPath = languagePaths?.en ?? path;
+  const zhPath = languagePaths?.zh ?? path;
+  const languages: Record<string, string> = {};
+  if (!languagePaths || languagePaths.en) {
+    languages.en = absoluteUrl(localePath("en", enPath));
+  }
+  if (!languagePaths || languagePaths.zh) {
+    languages["zh-Hans"] = absoluteUrl(localePath("zh", zhPath));
+  }
+  const xDefault =
+    languages.en ?? languages["zh-Hans"] ?? absoluteUrl(localePath("en", path));
+  languages["x-default"] = xDefault;
   const fullTitle = title.includes(siteConfig.name)
     ? title
     : `${title} | ${siteConfig.name}`;
@@ -56,11 +72,7 @@ export function createMetadata({
     description,
     alternates: {
       canonical: url,
-      languages: {
-        en: enUrl,
-        "zh-Hans": zhUrl,
-        "x-default": enUrl,
-      },
+      languages,
     },
     openGraph: {
       title: fullTitle,

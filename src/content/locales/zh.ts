@@ -222,6 +222,13 @@ export const zh = {
     title: "中国–欧洲工业拓展观察。",
     description:
       "围绕市场进入、欧洲销售以及工业增长商业现实的务实写作。",
+    featured: "精选",
+    relatedArticles: "相关阅读",
+    empty: "新的洞察将在发布后显示在此页面。",
+    continueReading: "相关服务",
+    articleCtaDescription:
+      "如果这正是你正在面对的商业问题，我们可以讨论进入欧洲市场的务实路径。",
+    articleCtaLabel: "与 OPOPA 讨论",
   },
 
   about: {

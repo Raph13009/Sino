@@ -27,6 +27,8 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+export const revalidate = 600;
+
 export function generateStaticParams() {
   return serviceSlugs.map((slug) => ({ slug }));
 }
@@ -59,7 +61,7 @@ export default async function ServicePage({ params }: Props) {
   const related = getServices(locale, dict).filter(
     (item) => item.slug !== service.slug,
   );
-  const relatedInsights = getInsightsForService(
+  const relatedInsights = await getInsightsForService(
     locale,
     service.slug as ServiceSlug,
   );

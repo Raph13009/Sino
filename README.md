@@ -49,12 +49,23 @@ See `.env.example`. Required for contact form delivery:
 RESEND_API_KEY=
 ```
 
+Insights CMS (Google service account, server-side only):
+
+```bash
+GOOGLE_CLIENT_EMAIL=
+GOOGLE_PRIVATE_KEY=
+GOOGLE_BLOG_SHEET_ID=1zTBna6kFxYhJ3TUwLmfNcMjoZ6vzg4oL-QA4w2ZsxX4
+```
+
+Share the Blog Index spreadsheet and CMS Drive folder with the service account as Viewer. Editor workflow: `docs/INSIGHTS-WORKFLOW.md`.
+
 Optional:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://www.opopa-partners.com
 RESEND_FROM_EMAIL=
-CONTACT_NOTIFICATION_EMAIL=raphaellevy027@gmail.com
+CONTACT_NOTIFICATION_EMAIL=
+INSIGHTS_REVALIDATE_SECRET=
 ```
 
 Setup details: `docs/CONTACT-FORM.md`.

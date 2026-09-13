@@ -20,6 +20,7 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/brand") ||
     pathname.startsWith("/images") ||
+    pathname.startsWith("/media") ||
     pathname.startsWith("/video") ||
     pathname === "/llms.txt" ||
     pathname === "/robots.txt" ||

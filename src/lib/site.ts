@@ -51,6 +51,7 @@ export function isProductionDeployment() {
 export function absoluteUrl(path = "/") {
   const base = siteConfig.url.replace(/\/$/, "");
   if (!path || path === "/") return base;
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${base}${normalized}`;
 }

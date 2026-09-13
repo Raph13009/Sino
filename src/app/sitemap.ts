@@ -5,9 +5,11 @@ import {
   serviceMeta,
   serviceSlugs,
 } from "@/content/catalog";
-import { getInsightSummaries } from "@/content/insights/load";
 import { localePath, type Locale } from "@/i18n/config";
+import { getAllPublishedInsights } from "@/lib/insights/service";
 import { absoluteUrl } from "@/lib/site";
+
+export const revalidate = 600;
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -39,7 +41,7 @@ function entryForLocales(
   }));
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const home = entryForLocales("/", {
     images: [absoluteUrl("/images/hero/hero-industrial-port.jpg")],
   });
@@ -68,14 +70,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  const insightRoutes = (["en", "zh"] as const).flatMap((locale) =>
-    getInsightSummaries(locale).map((insight) => ({
-      url: absoluteUrl(localePath(locale, `/insights/${insight.slug}`)),
+  const insights = await getAllPublishedInsights();
+  const insightRoutes: SitemapEntry[] = insights.map((insight) => {
+    const pair = insights.filter(
+      (item) => item.translationGroup === insight.translationGroup,
+    );
+    const en = pair.find((item) => item.locale === "en");
+    const zh = pair.find((item) => item.locale === "zh");
+    const languages: Record<string, string> = {};
+    if (en) languages.en = absoluteUrl(en.href);
+    if (zh) languages["zh-Hans"] = absoluteUrl(zh.href);
+    languages["x-default"] = languages.en ?? languages["zh-Hans"];
+
+    return {
+      url: absoluteUrl(insight.href),
       lastModified: new Date(insight.updatedAt),
-      alternates: languageAlternates(`/insights/${insight.slug}`),
+      alternates: { languages },
       images: [absoluteUrl(insight.image.src)],
-    })),
-  );
+    };
+  });
 
   return [
     ...home,

@@ -9,16 +9,18 @@ import {
   Section,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { CoverFallback } from "@/components/insights/ArticleContent";
 import { getInsightSummaries } from "@/content/insights/load";
 import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/site";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export const dynamic = "force-static";
+export const revalidate = 600;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam } = await params;
@@ -36,18 +38,39 @@ export default async function InsightsPage({ params }: Props) {
   const { locale: localeParam } = await params;
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
-  const insights = getInsightSummaries(locale);
+  const insights = await getInsightSummaries(locale);
+  const featured = insights.find((insight) => insight.featured) ?? insights[0];
+  const rest = insights.filter((insight) => insight.slug !== featured?.slug);
 
   return (
     <>
       <JsonLd
-        data={breadcrumbJsonLd(
-          [
-            { name: dict.common.home, path: "/" },
-            { name: dict.insightsPage.eyebrow, path: "/insights" },
-          ],
-          locale,
-        )}
+        data={[
+          breadcrumbJsonLd(
+            [
+              { name: dict.common.home, path: "/" },
+              { name: dict.insightsPage.eyebrow, path: "/insights" },
+            ],
+            locale,
+          ),
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: dict.insightsPage.meta.title,
+            description: dict.insightsPage.meta.description,
+            url: absoluteUrl(localePath(locale, "/insights")),
+            inLanguage: locale === "zh" ? "zh-Hans" : "en",
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: insights.map((insight, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: absoluteUrl(insight.href),
+                name: insight.title,
+              })),
+            },
+          },
+        ]}
       />
       <Section className="border-b border-border py-14 md:py-20">
         <Container>
@@ -72,41 +95,101 @@ export default async function InsightsPage({ params }: Props) {
 
       <Section className="py-16 md:py-24">
         <Container>
-          <div className="border-t border-border">
-            {insights.map((insight) => (
-              <article
-                key={insight.slug}
-                className="grid gap-8 border-b border-border py-10 md:grid-cols-12 md:py-12"
-              >
-                <div className="md:col-span-4">
-                  <MediaImage
-                    src={insight.image.src}
-                    alt={insight.image.alt}
-                    width={insight.image.width}
-                    height={insight.image.height}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    frameClassName="aspect-[4/3]"
-                  />
-                </div>
-                <div className="md:col-span-7 md:col-start-6">
-                  <p className="eyebrow">
-                    {insight.category} · {insight.readingTime}
-                  </p>
-                  <h2 className="mt-3 text-[1.75rem] leading-tight md:text-[2rem]">
-                    <Link
-                      href={insight.href}
-                      className="transition-colors hover:text-accent"
-                    >
-                      {insight.title}
-                    </Link>
-                  </h2>
-                  <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-charcoal">
-                    {insight.excerpt}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+          {insights.length === 0 ? (
+            <p className="max-w-xl text-lg leading-relaxed text-charcoal">
+              {dict.insightsPage.empty}
+            </p>
+          ) : (
+            <div className="border-t border-border">
+              {featured ? (
+                <article className="grid gap-8 border-b border-border py-10 md:grid-cols-12 md:py-14">
+                  <div className="md:col-span-5">
+                    {featured.image.fileId ? (
+                      <MediaImage
+                        src={featured.image.src}
+                        alt={featured.image.alt}
+                        width={featured.image.width}
+                        height={featured.image.height}
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                        frameClassName="aspect-[4/3]"
+                        priority
+                      />
+                    ) : (
+                      <CoverFallback alt={featured.title} />
+                    )}
+                  </div>
+                  <div className="md:col-span-6 md:col-start-7">
+                    <p className="eyebrow">
+                      {featured.featured
+                        ? `${dict.insightsPage.featured} · ${featured.category}`
+                        : featured.category}{" "}
+                      · {featured.date}
+                    </p>
+                    <h2 className="mt-3 text-[1.875rem] leading-tight md:text-[2.25rem]">
+                      <Link
+                        href={featured.href}
+                        className="transition-colors hover:text-accent"
+                      >
+                        {featured.title}
+                      </Link>
+                    </h2>
+                    <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-charcoal">
+                      {featured.excerpt}
+                    </p>
+                    {featured.author ? (
+                      <p className="mt-5 text-[0.8125rem] uppercase tracking-[0.08em] text-charcoal">
+                        {featured.author}
+                      </p>
+                    ) : null}
+                  </div>
+                </article>
+              ) : null}
+
+              {rest.map((insight) => (
+                <article
+                  key={insight.slug}
+                  className="grid gap-8 border-b border-border py-10 md:grid-cols-12 md:py-12"
+                >
+                  <div className="md:col-span-4">
+                    {insight.image.fileId ? (
+                      <MediaImage
+                        src={insight.image.src}
+                        alt={insight.image.alt}
+                        width={insight.image.width}
+                        height={insight.image.height}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        frameClassName="aspect-[4/3]"
+                      />
+                    ) : (
+                      <CoverFallback alt={insight.title} />
+                    )}
+                  </div>
+                  <div className="md:col-span-7 md:col-start-6">
+                    <p className="eyebrow">
+                      {insight.category} ·{" "}
+                      <time dateTime={insight.date}>{insight.date}</time>
+                    </p>
+                    <h2 className="mt-3 text-[1.75rem] leading-tight md:text-[2rem]">
+                      <Link
+                        href={insight.href}
+                        className="transition-colors hover:text-accent"
+                      >
+                        {insight.title}
+                      </Link>
+                    </h2>
+                    <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-charcoal">
+                      {insight.excerpt}
+                    </p>
+                    {insight.author ? (
+                      <p className="mt-4 text-[0.8125rem] uppercase tracking-[0.08em] text-charcoal">
+                        {insight.author}
+                      </p>
+                    ) : null}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </Container>
       </Section>
 

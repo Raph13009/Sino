@@ -22,6 +22,8 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+export const revalidate = 600;
+
 export function generateStaticParams() {
   return industrySlugs.map((slug) => ({ slug }));
 }
@@ -52,7 +54,7 @@ export default async function IndustryPage({ params }: Props) {
   if (!industry) notFound();
 
   const services = getServices(locale, dict);
-  const relatedInsights = getInsightsForIndustry(
+  const relatedInsights = await getInsightsForIndustry(
     locale,
     industry.slug as IndustrySlug,
   );

@@ -1,79 +1,116 @@
-# Insights authoring workflow
+# Insights CMS workflow
 
-Publish a new Insight by adding content files and an image — no React page edits required for a normal article.
+Insights are published from Google Drive. Editors do **not** need Git, Cursor, or a deploy to publish an article.
 
-## 1. Add the image to the media registry
+Public URLs stay on the existing Insights IA:
 
-1. Place the asset under `public/images/insights/`.
-2. Register it in `src/content/media.ts` under `media.insights` with a stable key (for example `marketEntry`).
-3. Add that key to `insightImageKeys` in `src/content/insights/schema.ts` so frontmatter validation accepts it.
+- English (canonical, unprefixed): `/insights`, `/insights/[slug]`
+- Simplified Chinese: `/zh/insights`, `/zh/insights/[slug]`
+- `/blog` redirects to `/insights`
 
-## 2. Create EN and ZH MDX files
+`translation_group` is never part of the URL. It only links translations.
 
-Create matching files (same slug / filename):
+## How editors publish
 
-- `content/insights/en/<slug>.mdx`
-- `content/insights/zh/<slug>.mdx`
+1. Create a Google Doc in the Blog CMS **Articles** folder.
+2. Format with native Google Docs styles:
+   - **Title** (the webpage uses the spreadsheet `title` as the single `<h1>`; the Doc title is not rendered again)
+   - **Heading 2** / **Heading 3**
+   - Normal paragraphs, bold, italic, links, bullets, numbered lists
+3. Upload the cover image into the Drive **Images** folder (JPG, PNG or WebP).
+4. Copy the Drive sharing URL (`https://drive.google.com/file/d/FILE_ID/view?...`) into `cover_image_url`.
+5. Add a row on the **Blog Index** tab of **OPOPA Blog Index**.
+6. Fill SEO fields (`seo_title`, `seo_description`, `slug`, `category`, `author`, dates).
+7. Set `language` to `en` or `zh-CN`.
+8. For a translation pair, reuse the same `translation_group` on both rows.
+9. Set `status` to **Published**.
 
-Filename must equal the `slug` frontmatter value (kebab-case).
+Within about **10 minutes** (or immediately after calling the optional revalidate endpoint) the article appears on OPOPA.
 
-### Required frontmatter
+Only `Published` rows are public, indexable, or listed in the sitemap. Draft / Review / Archived never get article URLs.
 
-```yaml
----
-title: "Article headline (H1 on the page)"
-seoTitle: "Unique browser / SERP title"
-description: "Unique meta description"
-excerpt: "Optional card teaser; defaults to description"
-slug: "kebab-case-slug"
-date: "YYYY-MM-DD"
-updatedAt: "YYYY-MM-DD"
-author: "OPOPA"
-category: "Category label"
-image: "mediaRegistryKey"
-relatedServices:
-  - "sales-enablement"
-relatedIndustries:
-  - "industrial-equipment"
----
-```
+## Chinese translations
 
-`relatedServices` and `relatedIndustries` must use slugs from `src/content/catalog.ts`.
+One Google Doc and one CMS row per language.
 
-### Body
+English:
 
-Write rich MDX (not paragraph arrays):
+- `language = en`
+- `translation_group = example-001`
+- `slug = chinese-industrial-companies-enter-europe`
 
-- Headings: `##` / `###` only in the body (the page owns the single H1)
-- Paragraphs, bullet / numbered lists, blockquotes, GFM tables, links
-- Custom blocks: `<InsightCta />`, `<InsightFaq>` / `<InsightFaqItem>`, `<InsightMedia id="..." />`
+Chinese:
 
-English links use unprefixed paths (`/services/...`). Chinese articles should use `/zh/...` paths.
+- `language = zh-CN`
+- `translation_group = example-001`
+- `slug` may match the English slug or differ
 
-Do not machine-translate at runtime — ship a deliberate ZH article.
+The site locale remains `zh` with HTML `lang="zh-Hans"` and URLs under `/zh/...`. The language switcher on an article jumps to the published counterpart in the same `translation_group`. If none exists, it falls back to the Insights homepage.
 
-## 3. Build and deploy
+hreflang is reciprocal and only includes Published translations.
+
+## Spreadsheet columns
+
+`status`, `language`, `translation_group`, `title`, `slug`, `seo_title`, `seo_description`, `category`, `author`, `published_at`, `updated_at`, `target_keyword`, `doc_url`, `cover_image_url`, `cta_service`, `featured`
+
+`target_keyword` is editorial only. It is never output as meta keywords or schema spam.
+
+`cta_service` maps to existing routes:
+
+| CMS value | Page |
+| --- | --- |
+| Market Entry | `/services` |
+| Sales Outsourcing | `/services/outsourced-sales` |
+| Sales Coaching | `/services/sales-enablement` |
+| AI Sales Automation | `/services/sales-ai-automation` |
+| None | no article CTA |
+
+## Environment setup
+
+Required on Vercel (Production, and Preview if you want Insights there):
 
 ```bash
-npm run build
+GOOGLE_CLIENT_EMAIL=
+GOOGLE_PRIVATE_KEY=
+GOOGLE_BLOG_SHEET_ID=1zTBna6kFxYhJ3TUwLmfNcMjoZ6vzg4oL-QA4w2ZsxX4
 ```
 
-The production build uses webpack (`next build --webpack`) so MDX compilation stays reliable. It fails clearly if:
+Optional:
 
-- required frontmatter is missing or invalid (Zod)
-- filename and `slug` disagree
-- EN and ZH slug sets do not match
+```bash
+GOOGLE_PROJECT_ID=
+INSIGHTS_REVALIDATE_SECRET=
+```
 
-Then deploy as usual. Discovery is automatic for:
+`GOOGLE_PRIVATE_KEY` is the service-account private key, including `-----BEGIN PRIVATE KEY-----` / `-----END PRIVATE KEY-----`. In Vercel, keep the `\n` escape sequences.
 
-- `/insights` and `/zh/insights`
-- article routes
-- homepage teaser (latest by `date`)
-- related services / industries modules
-- sitemap `lastModified` from `updatedAt`
+Do not prefix these with `NEXT_PUBLIC_`. Google APIs run server-side only.
 
-## What you should not edit for a normal article
+## Google Drive permission (required)
 
-- Insight React pages under `src/app/[locale]/insights/`
-- Locale dictionaries (`en.ts` / `zh.ts`) for article bodies
-- `catalog.ts` (services / industries only — not insight lists)
+1. Create a Google Cloud project (free) and enable:
+   - Google Sheets API
+   - Google Docs API
+   - Google Drive API
+2. Create a **service account** (no Google Workspace needed).
+3. Download the JSON key. Use `client_email` and `private_key` as env vars.
+4. Share these Drive items with the service account email (`...@....iam.gserviceaccount.com`) as **Viewer**:
+   - the **OPOPA Blog Index** spreadsheet
+   - the CMS folder that contains **Articles** and **Images** (sharing the parent folder is enough)
+
+Editors can keep using a normal Gmail account. They never use the service account.
+
+## Optional instant publish
+
+```bash
+curl -X POST https://www.opopa-partners.com/api/insights/revalidate \
+  -H "Authorization: Bearer $INSIGHTS_REVALIDATE_SECRET"
+```
+
+Otherwise wait for the 10-minute cache window.
+
+## Caching
+
+- CMS index and article bodies: ~10 minutes
+- Cover images: 24 hours at the image route, with CDN `stale-while-revalidate`
+- If Google is temporarily unavailable, previously cached pages keep serving

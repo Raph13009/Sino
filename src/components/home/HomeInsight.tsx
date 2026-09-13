@@ -10,14 +10,15 @@ import {
 } from "@/components/ui/Section";
 import type { Locale } from "@/i18n/config";
 
-export function HomeInsight({
+export async function HomeInsight({
   locale,
   dict,
 }: {
   locale: Locale;
   dict: Dictionary;
 }) {
-  const featured = getInsightSummaries(locale)[0];
+  const insights = await getInsightSummaries(locale);
+  const featured = insights.find((insight) => insight.featured) ?? insights[0];
   const copy = dict.home.insight;
 
   if (!featured) return null;

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 import {
   getAlternatePath,
   getLocaleFromPathname,
@@ -21,6 +22,8 @@ export function LanguageSwitcher({
 }: LanguageSwitcherProps) {
   const pathname = usePathname() || "/";
   const activeLocale = getLocaleFromPathname(pathname);
+  const { insightAlternates } = useLocale();
+  const mappedAlternate = insightAlternates[pathname];
 
   return (
     <div
@@ -34,7 +37,11 @@ export function LanguageSwitcher({
       <LocaleControl
         locale="en"
         label={localeLabels.en}
-        href={getAlternatePath(pathname, "en")}
+        href={
+          activeLocale === "zh" && mappedAlternate
+            ? mappedAlternate
+            : getAlternatePath(pathname, "en")
+        }
         active={activeLocale === "en"}
         onNavigate={onNavigate}
       />
@@ -44,7 +51,11 @@ export function LanguageSwitcher({
       <LocaleControl
         locale="zh"
         label={localeLabels.zh}
-        href={getAlternatePath(pathname, "zh")}
+        href={
+          activeLocale === "en" && mappedAlternate
+            ? mappedAlternate
+            : getAlternatePath(pathname, "zh")
+        }
         active={activeLocale === "zh"}
         onNavigate={onNavigate}
       />

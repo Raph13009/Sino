@@ -13,6 +13,7 @@ type LocaleContextValue = {
   locale: Locale;
   dict: Dictionary;
   path: (href: string) => string;
+  insightAlternates: Record<string, string>;
 };
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
@@ -20,19 +21,22 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 export function LocaleProvider({
   locale,
   dict,
+  insightAlternates = {},
   children,
 }: {
   locale: Locale;
   dict: Dictionary;
+  insightAlternates?: Record<string, string>;
   children: ReactNode;
 }) {
   const value = useMemo<LocaleContextValue>(
     () => ({
       locale,
       dict,
+      insightAlternates,
       path: (href: string) => localePath(locale, href),
     }),
-    [locale, dict],
+    [locale, dict, insightAlternates],
   );
 
   return (

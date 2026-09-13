@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/lib/cms/docs-parser.test.ts src/lib/insights/schema.test.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
+    "google-auth-library": "^10.9.1",
     "gray-matter": "^4.0.3",
     "motion": "^13.2.0",
     "next": "16.3.4",
@@ -33,6 +36,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
     "tailwindcss": "^4",
+    "tsx": "^4.23.13",
     "typescript": "^5"
   }
 }

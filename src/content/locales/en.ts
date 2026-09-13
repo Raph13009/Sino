@@ -222,6 +222,13 @@ export const en = {
     title: "Perspective on China–Europe industrial expansion.",
     description:
       "Practical writing on market entry, European sales and the commercial realities of industrial growth.",
+    featured: "Featured",
+    relatedArticles: "Related reading",
+    empty: "New insights will appear here as they are published.",
+    continueReading: "Related service",
+    articleCtaDescription:
+      "If this is the commercial problem you are working through, we can discuss the practical route into the European market.",
+    articleCtaLabel: "Discuss this with OPOPA",
   },
 
   about: {

@@ -31,6 +31,14 @@ const nextConfig: NextConfig = {
     const redirects = [
       { source: "/expertise", destination: "/services", permanent: true },
       { source: "/zh/expertise", destination: "/zh/services", permanent: true },
+      { source: "/blog", destination: "/insights", permanent: true },
+      { source: "/zh/blog", destination: "/zh/insights", permanent: true },
+      { source: "/blog/:slug", destination: "/insights/:slug", permanent: true },
+      {
+        source: "/zh/blog/:slug",
+        destination: "/zh/insights/:slug",
+        permanent: true,
+      },
       // Retired CIVEP / first-OPOPA brand files Google may still have cached.
       {
         source: "/brand/civep-favicon.png",

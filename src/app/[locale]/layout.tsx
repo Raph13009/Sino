@@ -8,11 +8,14 @@ import {
   locales,
   type Locale,
 } from "@/i18n/config";
+import { getInsightLanguageAlternates } from "@/lib/insights/service";
 import { organizationJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const revalidate = 600;
 
 export default async function LocaleLayout({
   children,
@@ -24,9 +27,14 @@ export default async function LocaleLayout({
   const { locale: localeParam } = await params;
   const locale = getLocaleFromParams(localeParam);
   const dict = getDictionary(locale);
+  const insightAlternates = await getInsightLanguageAlternates();
 
   return (
-    <LocaleProvider locale={locale} dict={dict}>
+    <LocaleProvider
+      locale={locale}
+      dict={dict}
+      insightAlternates={insightAlternates}
+    >
       <JsonLd data={organizationJsonLd()} />
       <SiteHeader />
       <main className="flex-1">{children}</main>

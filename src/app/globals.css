@@ -170,4 +170,52 @@
     line-height: 1.65;
     color: var(--color-charcoal);
   }
+
+  .prose-editorial h2 {
+    margin-top: 3rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .prose-editorial h2:first-child {
+    margin-top: 0;
+  }
+
+  .prose-editorial h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .prose-editorial ul,
+  .prose-editorial ol {
+    margin-top: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .prose-editorial ul {
+    list-style: disc;
+  }
+
+  .prose-editorial ol {
+    list-style: decimal;
+  }
+
+  .prose-editorial li {
+    margin-top: 0.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .prose-editorial a {
+    text-underline-offset: 4px;
+  }
+
+  .prose-editorial strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
 }
