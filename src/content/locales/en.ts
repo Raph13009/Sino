@@ -77,9 +77,9 @@ export const en = {
 
   home: {
     meta: {
-      title: "OPOPA — European Market Entry & Commercial Partner",
+      title: "OPOPA - European Market Entry & Commercial Partner",
       description:
-        "OPOPA helps Chinese industrial and green-tech companies enter, sell and grow in Europe — through strategy, local expertise and commercial execution.",
+        "OPOPA helps industrial and green-tech companies enter, sell and grow in Europe.",
     },
     hero: {
       eyebrow: "01 / China → Europe",
