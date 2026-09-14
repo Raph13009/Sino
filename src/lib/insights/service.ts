@@ -78,6 +78,7 @@ async function loadValidatedPublishedRecords(): Promise<ValidatedRecord[]> {
 
   rows.forEach((row, index) => {
     const rowNumber = index + 2;
+    try {
     const parsedRow = parseCmsRow(row, rowNumber);
     if (!parsedRow.ok) {
       cmsWarn(parsedRow.error);
@@ -162,6 +163,9 @@ async function loadValidatedPublishedRecords(): Promise<ValidatedRecord[]> {
     seenSlugLocale.set(slugKey, record);
     seenGroupLocale.set(groupKey, record);
     parsed.push(record);
+    } catch (error) {
+      cmsWarn(`Row ${rowNumber}: skipped because it could not be parsed.`, error);
+    }
   });
 
   parsed.sort(
@@ -316,13 +320,18 @@ export async function getTranslation(
   article: Pick<InsightSummary, "translationGroup" | "locale">,
   targetLocale: Locale,
 ) {
-  const records = await getValidatedPublishedRecords();
-  const match = records.find(
-    (item) =>
-      item.translationGroup === article.translationGroup &&
-      item.language === targetLocale,
-  );
-  return match ? toSummary(match) : undefined;
+  try {
+    const records = await getValidatedPublishedRecords();
+    const match = records.find(
+      (item) =>
+        item.translationGroup === article.translationGroup &&
+        item.language === targetLocale,
+    );
+    return match ? toSummary(match) : undefined;
+  } catch (error) {
+    cmsError("Failed to resolve insight translation.", error);
+    return undefined;
+  }
 }
 
 export async function getInsightLanguageAlternates(): Promise<

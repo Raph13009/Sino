@@ -9,16 +9,23 @@ import {
 import { googleFetch } from "./google-auth";
 import { cmsError } from "./log";
 
-export type DriveImageOriginal = {
+type CachedOriginal = {
   fileId: string;
   mimeType: string;
   width: number;
   height: number;
-  bytes: Uint8Array;
+  base64: string;
+};
+
+type CachedVariant = {
+  base64: string;
+  mimeType: "image/webp" | "image/jpeg";
+  width: number;
+  height: number;
 };
 
 export type OptimizedCover = {
-  bytes: Uint8Array;
+  bytes: Buffer;
   mimeType: "image/webp" | "image/jpeg";
   width: number;
   height: number;
@@ -32,7 +39,7 @@ const ALLOWED_MIME = new Set([
   "image/gif",
 ]);
 
-async function downloadDriveOriginal(fileId: string): Promise<DriveImageOriginal | null> {
+async function downloadDriveOriginal(fileId: string): Promise<CachedOriginal | null> {
   const url = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&supportsAllDrives=true`;
   const response = await googleFetch(url, {
     timeoutMs: 20_000,
@@ -71,7 +78,7 @@ async function downloadDriveOriginal(fileId: string): Promise<DriveImageOriginal
       mimeType,
       width: meta.width || 1600,
       height: meta.height || 900,
-      bytes: new Uint8Array(buffer),
+      base64: buffer.toString("base64"),
     };
   } catch (error) {
     cmsError(`Could not parse Drive image ${fileId}`, error);
@@ -79,10 +86,10 @@ async function downloadDriveOriginal(fileId: string): Promise<DriveImageOriginal
   }
 }
 
-export const getCachedDriveOriginal = (fileId: string) =>
+const getCachedDriveOriginal = (fileId: string) =>
   unstable_cache(
     async () => downloadDriveOriginal(fileId),
-    ["insights-drive-original", fileId],
+    ["insights-drive-original-v2", fileId],
     {
       revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
       tags: [CMS_IMAGE_CACHE_TAG],
@@ -90,11 +97,11 @@ export const getCachedDriveOriginal = (fileId: string) =>
   )();
 
 async function renderCoverVariant(
-  original: DriveImageOriginal,
+  original: CachedOriginal,
   maxWidth: number,
   format: "webp" | "jpeg",
-): Promise<OptimizedCover> {
-  const image = sharp(original.bytes, { failOn: "none" }).rotate();
+): Promise<CachedVariant> {
+  const image = sharp(Buffer.from(original.base64, "base64"), { failOn: "none" }).rotate();
   const resized = image.resize({
     width: maxWidth,
     withoutEnlargement: true,
@@ -103,32 +110,44 @@ async function renderCoverVariant(
   const output =
     format === "webp"
       ? await resized.webp({ quality: 80, effort: 4 }).toBuffer({ resolveWithObject: true })
-      : await resized
-          .jpeg({ quality: 82, mozjpeg: true })
-          .toBuffer({ resolveWithObject: true });
+      : await resized.jpeg({ quality: 82, mozjpeg: true }).toBuffer({ resolveWithObject: true });
 
   return {
-    bytes: new Uint8Array(output.data),
+    base64: output.data.toString("base64"),
     mimeType: format === "webp" ? "image/webp" : "image/jpeg",
     width: output.info.width,
     height: output.info.height,
   };
 }
 
-export const getOptimizedCover = (
+export async function getOptimizedCover(
   fileId: string,
   maxWidth: InsightCoverWidth | 1200,
   format: "webp" | "jpeg",
-) =>
-  unstable_cache(
-    async () => {
-      const original = await getCachedDriveOriginal(fileId);
-      if (!original) return null;
-      return renderCoverVariant(original, maxWidth, format);
-    },
-    ["insights-cover-variant", fileId, String(maxWidth), format],
-    {
-      revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
-      tags: [CMS_IMAGE_CACHE_TAG],
-    },
-  )();
+): Promise<OptimizedCover | null> {
+  try {
+    const cached = await unstable_cache(
+      async () => {
+        const original = await getCachedDriveOriginal(fileId);
+        if (!original) return null;
+        return renderCoverVariant(original, maxWidth, format);
+      },
+      ["insights-cover-variant-v2", fileId, String(maxWidth), format],
+      {
+        revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
+        tags: [CMS_IMAGE_CACHE_TAG],
+      },
+    )();
+
+    if (!cached) return null;
+    return {
+      bytes: Buffer.from(cached.base64, "base64"),
+      mimeType: cached.mimeType,
+      width: cached.width,
+      height: cached.height,
+    };
+  } catch (error) {
+    cmsError(`Cover optimization failed for ${fileId}`, error);
+    return null;
+  }
+}

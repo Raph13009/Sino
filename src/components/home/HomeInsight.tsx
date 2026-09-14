@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/content/locales/types";
 import { getInsightSummaries } from "@/content/insights/load";
+import { CoverFallback } from "@/components/insights/ArticleContent";
 import { MediaImage } from "@/components/ui/MediaImage";
 import { Button } from "@/components/ui/Button";
 import {
@@ -34,14 +35,18 @@ export async function HomeInsight({
 
         <article className="mt-12 grid gap-10 border-t border-border pt-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <MediaImage
-              src={featured.image.src}
-              alt={featured.image.alt}
-              width={featured.image.width}
-              height={featured.image.height}
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              frameClassName="aspect-[4/3]"
-            />
+            {featured.image.fileId ? (
+              <MediaImage
+                src={featured.image.src}
+                alt={featured.image.alt}
+                width={featured.image.width}
+                height={featured.image.height}
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                frameClassName="aspect-[4/3]"
+              />
+            ) : (
+              <CoverFallback alt={featured.title} />
+            )}
           </div>
           <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">
             <p className="eyebrow">

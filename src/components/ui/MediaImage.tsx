@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { insightCoverLoader, isInsightCoverSrc } from "@/lib/insights/cover-loader";
+import { InsightCoverImage } from "@/components/insights/InsightCoverImage";
+import { isInsightCoverSrc } from "@/lib/cms/image-variants";
 import { cn } from "@/lib/utils";
 
 type MediaImageProps = {
@@ -29,23 +30,32 @@ export function MediaImage({
   caption,
   quality = 80,
 }: MediaImageProps) {
-  const isCover = isInsightCoverSrc(src);
-
   return (
     <figure className={cn(className)}>
       <div className={cn("overflow-hidden", frameClassName)}>
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          priority={priority}
-          sizes={sizes}
-          quality={quality}
-          loading={priority ? "eager" : "lazy"}
-          loader={isCover ? insightCoverLoader : undefined}
-          className={cn("h-full w-full object-cover", imageClassName)}
-        />
+        {isInsightCoverSrc(src) ? (
+          <InsightCoverImage
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            priority={priority}
+            sizes={sizes}
+            className={imageClassName}
+          />
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            priority={priority}
+            sizes={sizes}
+            quality={quality}
+            loading={priority ? "eager" : "lazy"}
+            className={cn("h-full w-full object-cover", imageClassName)}
+          />
+        )}
       </div>
       {caption ? (
         <figcaption className="eyebrow mt-3 text-charcoal">{caption}</figcaption>

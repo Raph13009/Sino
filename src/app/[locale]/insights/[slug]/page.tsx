@@ -20,7 +20,6 @@ import { getDictionary } from "@/content/locales";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import {
   getInsightBySlug,
-  getInsightSlugs,
   getRelatedInsights,
   getTranslation,
 } from "@/lib/insights/service";
@@ -36,13 +35,6 @@ type Props = {
 
 export const revalidate = 180;
 export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  const slugs = await getInsightSlugs("en");
-  const zhSlugs = await getInsightSlugs("zh");
-  const unique = [...new Set([...slugs, ...zhSlugs])];
-  return unique.map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam, slug } = await params;

@@ -1,3 +1,5 @@
+import "server-only";
+
 export const CMS_REVALIDATE_SECONDS = 180;
 export const CMS_IMAGE_REVALIDATE_SECONDS = 2_592_000;
 export const CMS_CACHE_TAG = "insights-cms";

@@ -185,7 +185,7 @@ export function SiteHeader() {
       )}
     >
       <div className="container-editorial flex h-16 items-center justify-between gap-3 pr-[max(0px,env(safe-area-inset-right))] md:h-20 md:gap-6">
-        <Logo priority href={path("/")} />
+        <Logo href={path("/")} />
 
         <nav
           aria-label={dict.nav.aria.primary}
