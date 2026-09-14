@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { insightCoverLoader, isInsightCoverSrc } from "@/lib/insights/cover-loader";
 import { cn } from "@/lib/utils";
 
 type MediaImageProps = {
@@ -6,14 +7,13 @@ type MediaImageProps = {
   alt: string;
   width: number;
   height: number;
-  /** Applied to the outer <figure> (layout wrappers, max-width, etc.) */
   className?: string;
-  /** Applied to the image frame (aspect ratio, max-height, overflow) */
   frameClassName?: string;
   imageClassName?: string;
   priority?: boolean;
   sizes?: string;
   caption?: string;
+  quality?: number;
 };
 
 export function MediaImage({
@@ -27,7 +27,10 @@ export function MediaImage({
   priority = false,
   sizes = "(max-width: 768px) 100vw, 50vw",
   caption,
+  quality = 80,
 }: MediaImageProps) {
+  const isCover = isInsightCoverSrc(src);
+
   return (
     <figure className={cn(className)}>
       <div className={cn("overflow-hidden", frameClassName)}>
@@ -38,6 +41,9 @@ export function MediaImage({
           height={height}
           priority={priority}
           sizes={sizes}
+          quality={quality}
+          loading={priority ? "eager" : "lazy"}
+          loader={isCover ? insightCoverLoader : undefined}
           className={cn("h-full w-full object-cover", imageClassName)}
         />
       </div>

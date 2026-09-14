@@ -5,19 +5,34 @@ const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
   images: {
     formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    deviceSizes: [640, 750, 828, 960, 1080, 1280, 1600, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 2678400,
+    qualities: [75, 80, 82],
   },
   poweredByHeader: false,
   async headers() {
-    if (!shouldNoIndexDeployment()) return [];
+    const cacheHeaders = [
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
+    ];
+
+    if (!shouldNoIndexDeployment()) return cacheHeaders;
+
     return [
       {
         source: "/:path*",
-        headers: [
-          { key: "X-Robots-Tag", value: "noindex, nofollow" },
-        ],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      ...cacheHeaders,
     ];
   },
   async redirects() {
@@ -37,6 +52,11 @@ const nextConfig: NextConfig = {
       {
         source: "/zh/blog/:slug",
         destination: "/zh/insights/:slug",
+        permanent: true,
+      },
+      {
+        source: "/images/hero/hero-industrial-port.jpg",
+        destination: "/images/hero/hero-industrial-port.webp",
         permanent: true,
       },
       // Retired CIVEP / first-OPOPA brand files Google may still have cached.

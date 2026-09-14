@@ -107,10 +107,11 @@ curl -X POST https://www.opopa-partners.com/api/insights/revalidate \
   -H "Authorization: Bearer $INSIGHTS_REVALIDATE_SECRET"
 ```
 
-Otherwise wait for the 10-minute cache window.
+Otherwise wait for the ~3-minute cache window.
 
 ## Caching
 
-- CMS index and article bodies: ~10 minutes
-- Cover images: 24 hours at the image route, with CDN `stale-while-revalidate`
-- If Google is temporarily unavailable, previously cached pages keep serving
+- CMS index and article bodies: ~3 minutes
+- Cover images: keyed by Drive file ID, optimized variants cached ~30 days at the CDN (`stale-while-revalidate` up to a year)
+- Changing `cover_image_url` to a new Drive file creates a new cache key and appears with the CMS window
+- If Google is temporarily unavailable, previously cached pages and images keep serving

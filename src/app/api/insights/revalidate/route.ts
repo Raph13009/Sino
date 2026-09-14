@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import {
   CMS_CACHE_TAG,
   CMS_DOC_CACHE_TAG,
-  CMS_IMAGE_CACHE_TAG,
 } from "@/lib/cms/config";
 
 export async function POST(request: Request) {
@@ -20,7 +19,6 @@ export async function POST(request: Request) {
 
   revalidateTag(CMS_CACHE_TAG, "max");
   revalidateTag(CMS_DOC_CACHE_TAG, "max");
-  revalidateTag(CMS_IMAGE_CACHE_TAG, "max");
   revalidatePath("/insights");
   revalidatePath("/zh/insights");
   revalidatePath("/", "layout");

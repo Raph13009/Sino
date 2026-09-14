@@ -15,7 +15,7 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export const revalidate = 600;
+export const revalidate = 180;
 
 export default async function LocaleLayout({
   children,

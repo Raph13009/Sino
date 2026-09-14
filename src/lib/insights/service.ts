@@ -6,11 +6,9 @@ import { localePath, type Locale } from "@/i18n/config";
 import {
   CMS_CACHE_TAG,
   CMS_DOC_CACHE_TAG,
-  CMS_IMAGE_CACHE_TAG,
   CMS_REVALIDATE_SECONDS,
 } from "@/lib/cms/config";
 import { fetchGoogleDoc } from "@/lib/cms/docs";
-import { fetchDriveImage, fetchDriveImageMeta } from "@/lib/cms/drive";
 import { parseGoogleDocId, parseGoogleDriveFileId } from "@/lib/cms/ids";
 import { cmsError, cmsWarn } from "@/lib/cms/log";
 import { fetchBlogIndexRows } from "@/lib/cms/sheets";
@@ -186,37 +184,7 @@ const getCachedDoc = (documentId: string) =>
     { revalidate: CMS_REVALIDATE_SECONDS, tags: [CMS_CACHE_TAG, CMS_DOC_CACHE_TAG] },
   )();
 
-const getCachedImageMeta = (fileId: string) =>
-  unstable_cache(
-    async () => fetchDriveImageMeta(fileId),
-    ["insights-image-meta", fileId],
-    {
-      revalidate: 86_400,
-      tags: [CMS_CACHE_TAG, CMS_IMAGE_CACHE_TAG],
-    },
-  )();
-
-export const getCachedDriveImage = (fileId: string) =>
-  unstable_cache(
-    async () => fetchDriveImage(fileId),
-    ["insights-image", fileId],
-    {
-      revalidate: 86_400,
-      tags: [CMS_CACHE_TAG, CMS_IMAGE_CACHE_TAG],
-    },
-  )();
-
-async function toSummary(record: ValidatedRecord): Promise<InsightSummary> {
-  let width = FALLBACK_IMAGE.width;
-  let height = FALLBACK_IMAGE.height;
-  if (record.coverFileId) {
-    const meta = await getCachedImageMeta(record.coverFileId);
-    if (meta) {
-      width = meta.width;
-      height = meta.height;
-    }
-  }
-
+function toSummary(record: ValidatedRecord): InsightSummary {
   const relatedService = serviceSlugForCta(record.ctaService);
 
   return {
@@ -233,8 +201,8 @@ async function toSummary(record: ValidatedRecord): Promise<InsightSummary> {
     image: {
       src: coverSrc(record.coverFileId),
       alt: record.title,
-      width,
-      height,
+      width: FALLBACK_IMAGE.width,
+      height: FALLBACK_IMAGE.height,
       fileId: record.coverFileId,
     },
     readingTime: formatReadingTime(4, record.language),
@@ -252,7 +220,7 @@ export async function getInsightSummaries(locale: Locale): Promise<InsightSummar
   try {
     const records = await getValidatedPublishedRecords();
     const localized = records.filter((record) => record.language === locale);
-    return Promise.all(localized.map(toSummary));
+    return localized.map(toSummary);
   } catch (error) {
     cmsError("Failed to load insight summaries.", error);
     return [];
@@ -262,7 +230,7 @@ export async function getInsightSummaries(locale: Locale): Promise<InsightSummar
 export async function getAllPublishedInsights(): Promise<InsightSummary[]> {
   try {
     const records = await getValidatedPublishedRecords();
-    return Promise.all(records.map(toSummary));
+    return records.map(toSummary);
   } catch (error) {
     cmsError("Failed to load published insights.", error);
     return [];
@@ -280,7 +248,7 @@ export async function getInsightBySlug(
     );
     if (!record) return undefined;
 
-    const summary = await toSummary(record);
+    const summary = toSummary(record);
     const parsed = await getCachedDoc(record.docId);
     const body = parsed ?? {
       title: record.title,

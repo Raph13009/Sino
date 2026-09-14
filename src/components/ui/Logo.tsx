@@ -32,7 +32,7 @@ export function Logo({
         width={asset.width}
         height={asset.height}
         priority={priority}
-        sizes="(max-width: 768px) 140px, 180px"
+        sizes="180px"
         className="h-9 w-auto md:h-11"
       />
     </Link>

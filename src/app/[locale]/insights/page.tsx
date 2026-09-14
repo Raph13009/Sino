@@ -20,7 +20,7 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export const revalidate = 600;
+export const revalidate = 180;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale: localeParam } = await params;

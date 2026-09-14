@@ -1,7 +1,12 @@
 import "server-only";
 import { JWT } from "google-auth-library";
 import { cmsError, cmsWarn } from "./log";
-import { CMS_CACHE_TAG, getGoogleCredentials, GOOGLE_SCOPES } from "./config";
+import {
+  CMS_CACHE_TAG,
+  CMS_REVALIDATE_SECONDS,
+  getGoogleCredentials,
+  GOOGLE_SCOPES,
+} from "./config";
 
 let jwtClient: JWT | null = null;
 let missingCredsWarned = false;
@@ -50,12 +55,22 @@ export async function getGoogleAccessToken(): Promise<string | null> {
 
 export async function googleFetch(
   url: string,
-  init: RequestInit & { timeoutMs?: number } = {},
+  init: RequestInit & {
+    timeoutMs?: number;
+    revalidate?: number;
+    tags?: string[];
+  } = {},
 ): Promise<Response | null> {
   const token = await getGoogleAccessToken();
   if (!token) return null;
 
-  const { timeoutMs = 10_000, headers, ...rest } = init;
+  const {
+    timeoutMs = 10_000,
+    revalidate = CMS_REVALIDATE_SECONDS,
+    tags = [CMS_CACHE_TAG],
+    headers,
+    ...rest
+  } = init;
   try {
     const response = await fetch(url, {
       ...rest,
@@ -64,7 +79,7 @@ export async function googleFetch(
         ...headers,
       },
       signal: AbortSignal.timeout(timeoutMs),
-      next: { revalidate: 600, tags: [CMS_CACHE_TAG] },
+      next: { revalidate, tags },
     } as RequestInit);
     return response;
   } catch (error) {

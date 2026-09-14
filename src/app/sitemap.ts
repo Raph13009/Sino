@@ -9,7 +9,7 @@ import { localePath, type Locale } from "@/i18n/config";
 import { getAllPublishedInsights } from "@/lib/insights/service";
 import { absoluteUrl } from "@/lib/site";
 
-export const revalidate = 600;
+export const revalidate = 180;
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -43,7 +43,7 @@ function entryForLocales(
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const home = entryForLocales("/", {
-    images: [absoluteUrl("/images/hero/hero-industrial-port.jpg")],
+    images: [absoluteUrl("/images/hero/hero-industrial-port.webp")],
   });
 
   const corePages = [

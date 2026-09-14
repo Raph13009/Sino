@@ -28,7 +28,7 @@ export const siteConfig = {
     label: "Discuss your European expansion",
     href: "/contact",
   },
-  ogImage: "/images/hero/hero-industrial-port.jpg",
+  ogImage: "/images/hero/hero-industrial-port.webp",
 } as const;
 
 export type Locale = (typeof siteConfig.locales)[number];

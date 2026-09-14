@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test src/lib/cms/docs-parser.test.ts src/lib/insights/schema.test.ts"
+    "test": "tsx --test src/lib/cms/docs-parser.test.ts src/lib/cms/image-variants.test.ts src/lib/insights/schema.test.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -24,6 +24,7 @@
     "remark-gfm": "^4.0.1",
     "resend": "^6.26.0",
     "server-only": "^0.0.1",
+    "sharp": "^0.35.4",
     "tailwind-merge": "^3.6.0",
     "zod": "^4.5.4"
   },
