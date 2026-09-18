@@ -280,6 +280,14 @@ export const zh = {
       title: "创始人。",
       description:
         "OPOPA 由横跨中国—欧洲走廊的联合创始人共同创建——一只脚在欧洲商业现实中，另一只脚在中国工业拓展的实际需求中。",
+      video: {
+        label: "创始人介绍",
+        playWithSound: "开声音播放",
+        play: "播放",
+        pause: "暂停",
+        mute: "静音",
+        unmute: "取消静音",
+      },
       items: [
         {
           id: "max-marchesseau-laskar",

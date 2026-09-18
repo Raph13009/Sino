@@ -280,6 +280,14 @@ export const en = {
       title: "The founders.",
       description:
         "OPOPA is built by co-founders working across the China–Europe corridor — with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
+      video: {
+        label: "Founder introduction",
+        playWithSound: "Play with sound",
+        play: "Play",
+        pause: "Pause",
+        mute: "Mute",
+        unmute: "Unmute",
+      },
       items: [
         {
           id: "max-marchesseau-laskar",

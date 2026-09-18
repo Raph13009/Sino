@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FounderIntroVideo } from "@/components/about/FounderIntroVideo";
 import { FounderProfile } from "@/components/about/FounderProfile";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -103,7 +104,9 @@ export default async function AboutPage({ params }: Props) {
             description={copy.founders.description}
           />
 
-          <div className="mt-4 md:mt-6">
+          <FounderIntroVideo copy={copy.founders.video} />
+
+          <div className="mt-12 md:mt-16">
             {copy.founders.items.map((founder, index) => (
               <FounderProfile
                 key={founder.id}

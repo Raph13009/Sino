@@ -217,6 +217,19 @@ export const media = {
       replacementNote:
         "Replace with China–Europe industrial / commercial context photography — avoid flags and clichés",
     },
+    founderIntroduction: {
+      id: "about-founder-introduction",
+      src: "/video/founder-introduction.mp4",
+      alt: "OPOPA founder introduction",
+      width: 1920,
+      height: 1080,
+      aspectRatio: "16:9",
+      page: "about",
+      section: "founders",
+      status: "final" as const,
+      replacementNote:
+        "Web delivery: /video/founder-introduction.mp4 (H.264 CRF 18, 1080p). 4K source kept in /video-source/",
+    },
   },
   team: {
     maxMarchesseauLaskar: {

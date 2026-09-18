@@ -53,30 +53,12 @@ export const metadata: Metadata = {
     google: "rHUUJuvSKCCa1p4kSs-iUNEvARFWVFWBPalDjZgo-4M",
   },
   icons: {
-    icon: [
-      {
-        url: "/favicon-192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        url: "/favicon-48.png",
-        sizes: "48x48",
-        type: "image/png",
-      },
-      {
-        url: "/icon.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
-      },
-    ],
+    icon: {
+      url: "/favicon-192.png",
+      sizes: "192x192",
+      type: "image/png",
+    },
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-    shortcut: "/favicon.ico",
   },
   other: {
     "msapplication-TileColor": "#0c233c",
