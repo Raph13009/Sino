@@ -11,17 +11,19 @@ export const siteConfig = {
   locale: "en",
   locales: ["en", "zh"] as const,
   defaultLocale: "en" as const,
-  /** Temporary public contact destination until a production inbox is set. */
-  email: "raphaellevy027@gmail.com",
+  /** Public contact used in the footer, contact page, schema and legal pages. */
+  email: "contact@opopa-partners.com",
   /** French micro-entrepreneur SIRET — confirmed. */
   siret: "92011864300021",
   linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
   founders: {
     maxMarchesseauLaskar: {
       linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",
+      email: "max@opopa-partners.com",
     },
     raphaelLevy: {
       linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+      email: "raphael@opopa-partners.com",
     },
   },
   primaryCta: {

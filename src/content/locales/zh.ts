@@ -442,7 +442,7 @@ export const zh = {
             value: "待办 — 填写专业经营地址",
             todo: true,
           },
-          { label: "邮箱", value: "raphaellevy027@gmail.com" },
+          { label: "邮箱", value: "contact@opopa-partners.com" },
           {
             label: "出版负责人",
             value: "待办 — 填写完整法定姓名",
@@ -521,7 +521,7 @@ export const zh = {
             todo: true,
           },
           { label: "SIRET", value: "92011864300021" },
-          { label: "联系方式", value: "raphaellevy027@gmail.com" },
+          { label: "联系方式", value: "contact@opopa-partners.com" },
           {
             label: "地址",
             value: "待办 — 填写专业经营地址",
@@ -635,7 +635,7 @@ export const zh = {
         id: "requests",
         title: "如何联系我们",
         paragraphs: [
-          "与您的个人数据相关的请求可发送至 raphaellevy027@gmail.com。",
+          "与您的个人数据相关的请求可发送至 contact@opopa-partners.com。",
           "您也可以向主管数据保护机关投诉。在法国，该机关为 CNIL（国家信息与自由委员会）。",
         ],
       },

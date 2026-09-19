@@ -444,7 +444,7 @@ export const en = {
             value: "TODO — insert professional address",
             todo: true,
           },
-          { label: "Email", value: "raphaellevy027@gmail.com" },
+          { label: "Email", value: "contact@opopa-partners.com" },
           {
             label: "Publication director",
             value: "TODO — insert full legal name",
@@ -525,7 +525,7 @@ export const en = {
             todo: true,
           },
           { label: "SIRET", value: "92011864300021" },
-          { label: "Contact", value: "raphaellevy027@gmail.com" },
+          { label: "Contact", value: "contact@opopa-partners.com" },
           {
             label: "Address",
             value: "TODO — insert professional address",
@@ -645,7 +645,7 @@ export const en = {
         id: "requests",
         title: "How to contact us",
         paragraphs: [
-          "Requests relating to your personal data can be sent to raphaellevy027@gmail.com.",
+          "Requests relating to your personal data can be sent to contact@opopa-partners.com.",
           "You may also lodge a complaint with the competent data protection authority. In France, this is the CNIL (Commission Nationale de l’Informatique et des Libertés).",
         ],
       },

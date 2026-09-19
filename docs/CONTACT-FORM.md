@@ -8,7 +8,7 @@ The contact form on `/contact` (and `/zh/contact`) submits on the OPOPA site thr
 | --- | --- | --- | --- |
 | `RESEND_API_KEY` | **Yes** | Server Action only (`src/lib/contact/email.ts`) | Never prefix with `NEXT_PUBLIC_`. Never expose it to the browser. |
 | `RESEND_FROM_EMAIL` | No | Sender address | Leave unset until `opopa-partners.com` is verified. Defaults to Resend’s onboarding sender `OPOPA <beth.t@example.com>`. |
-| `CONTACT_NOTIFICATION_EMAIL` | No | Internal notification recipient | Defaults to `raphaellevy027@gmail.com` (also `siteConfig.email`). |
+| `CONTACT_NOTIFICATION_EMAIL` | No | Internal notification recipient | Defaults to `contact@opopa-partners.com` (`siteConfig.email`). |
 | `NEXT_PUBLIC_SITE_URL` | No | Site metadata | Not used for mail delivery. |
 
 Copy `.env.example` to `.env.local` for local development. `.env.local` is gitignored.
@@ -72,7 +72,7 @@ Do not set `RESEND_FROM_EMAIL` to `contact@opopa-partners.com` before the domain
 
 Internal notifications currently go to:
 
-`raphaellevy027@gmail.com`
+`contact@opopa-partners.com`
 
 Configured in this order:
 

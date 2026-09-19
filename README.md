@@ -72,7 +72,7 @@ Setup details: `docs/CONTACT-FORM.md`.
 
 ## Notes
 
-- Temporary contact: `raphaellevy027@gmail.com`
+- Public contact: `contact@opopa-partners.com`
 - Temporary LinkedIn: `https://www.linkedin.com/in/raphael-levy-london/`
 - No public pricing.
 - Do not invent proof, logos, testimonials or metrics.

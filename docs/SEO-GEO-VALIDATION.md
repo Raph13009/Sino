@@ -109,7 +109,7 @@ Also confirmed:
 
 ## Items requiring human / business input
 
-- Production inbox replacing `raphaellevy027@gmail.com`
+- Production inbox: `contact@opopa-partners.com`
 - Company LinkedIn Page URL (then add to `Organization.sameAs`)
 - Legal operator full name, professional address, publication director, hosting legal entity (`docs/LEGAL-LAUNCH-TODOS.md`)
 - Whether to publish the acronym expansion “Optimizers of Operations and Partnerships” on-page (not currently in the live dictionary — not added)
