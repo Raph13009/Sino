@@ -93,7 +93,7 @@ export const zh = {
       caption: "中国 / 欧洲 / 工业拓展",
     },
     context: {
-      number: "02",
+      number: "03",
       eyebrow: "背景",
       title: "进入欧洲，远不止找到分销商那么简单。",
       description:
@@ -107,11 +107,9 @@ export const zh = {
       caption: "工业生产 / 欧洲",
     },
     services: {
-      number: "03",
-      eyebrow: "服务",
-      title: "面向欧洲市场进入的商业能力。",
-      description:
-        "贯穿欧洲拓展全程的四项联动服务——从销售就绪，到在地代表与 AI 赋能运营。",
+      number: "02",
+      eyebrow: "我们做什么",
+      title: "我们的服务",
     },
     why: {
       number: "04",
@@ -672,7 +670,8 @@ export const zh = {
       name: "销售赋能",
       shortName: "销售赋能",
       positioning: "让销售团队做好服务欧洲买家的准备。",
-      megaDescription: "帮助您的商务团队在欧洲市场有效开展销售。",
+      megaDescription:
+        "帮助团队调整销售方法、开拓、谈判与商务实践，以适配欧洲买家。",
       summary:
         "帮助中国商务团队调整销售方法、信息传达、开拓、资格评估、跟进与谈判实践，以适配欧洲 B2B 市场。",
       purpose:
@@ -697,7 +696,8 @@ export const zh = {
       name: "专家与伙伴寻源",
       shortName: "专家与伙伴寻源",
       positioning: "找到欧洲拓展所需的本地专业能力。",
-      megaDescription: "找到欧洲拓展所需的专业人士与伙伴。",
+      megaDescription:
+        "识别支持欧洲拓展所需的本地专家、伙伴与商业资源。",
       summary:
         "识别、甄选并连接中国企业与特定拓展需求所需的欧洲专家或商业伙伴。",
       purpose:
@@ -721,7 +721,8 @@ export const zh = {
       name: "外包销售",
       shortName: "外包销售",
       positioning: "您的欧洲销售能力，落地在地。",
-      megaDescription: "以贵公司身份部署经验丰富的欧洲销售专业人士。",
+      megaDescription:
+        "经验丰富的欧洲销售专业人士，可以贵公司身份直接代表您。",
       summary:
         "提供经验丰富的欧洲销售专业人士，以客户公司身份直接代表客户——覆盖从开拓、漫长谈判周期到成交的全程。",
       purpose: "提供以客户公司身份直接代表客户的欧洲销售专业人士。",
@@ -745,7 +746,8 @@ export const zh = {
       name: "销售 AI 与自动化",
       shortName: "销售 AI 与自动化",
       positioning: "以 AI 强化您的商业运营。",
-      megaDescription: "构建面向研究、销售运营与客户互动的 AI 赋能工作流。",
+      megaDescription:
+        "构建实用的 AI 与自动化工作流，提升开拓、销售运营与商业效率。",
       summary:
         "设计并实施 AI 赋能的商业工作流与智能体，提升欧洲拓展中的销售运营效率。",
       purpose: "设计并实施 AI 赋能的商业工作流与智能体，提升销售运营效率。",

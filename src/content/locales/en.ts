@@ -92,7 +92,7 @@ export const en = {
       caption: "China / Europe / Industrial Expansion",
     },
     context: {
-      number: "02",
+      number: "03",
       eyebrow: "Context",
       title: "Entering Europe requires more than finding distributors.",
       description:
@@ -106,11 +106,9 @@ export const en = {
       caption: "Industrial production / Europe",
     },
     services: {
-      number: "03",
-      eyebrow: "Services",
-      title: "Commercial capabilities for European market entry.",
-      description:
-        "Four connected services across the European expansion journey — from sales readiness to on-the-ground representation and AI-enabled operations.",
+      number: "02",
+      eyebrow: "What We Do",
+      title: "Our services",
     },
     why: {
       number: "04",
@@ -683,7 +681,7 @@ export const en = {
       shortName: "Sales Enablement",
       positioning: "Prepare your sales team for European buyers.",
       megaDescription:
-        "Prepare your commercial teams to sell effectively in European markets.",
+        "Help teams adapt sales methods, outreach, negotiation and commercial practices to European buyers.",
       summary:
         "Help Chinese commercial teams adapt their sales methods, messaging, prospecting, qualification, follow-up and negotiation practices to European B2B markets.",
       purpose:
@@ -710,7 +708,7 @@ export const en = {
       shortName: "Expert & Partner Sourcing",
       positioning: "Find the local expertise your European expansion requires.",
       megaDescription:
-        "Find the European specialists and partners your expansion requires.",
+        "Identify the local experts, partners and commercial resources needed to support European expansion.",
       summary:
         "Identify, qualify and connect Chinese companies with the European specialists or business partners required for a specific expansion need.",
       purpose:
@@ -736,7 +734,7 @@ export const en = {
       shortName: "Outsourced Sales",
       positioning: "Your European sales capability, on the ground.",
       megaDescription:
-        "Deploy experienced European sales professionals under your company identity.",
+        "Experienced European sales professionals who can represent you directly under your company identity.",
       summary:
         "Provide experienced European sales professionals who represent the client directly under the client’s company identity — from prospecting through long negotiation cycles and closing.",
       purpose:
@@ -762,7 +760,7 @@ export const en = {
       shortName: "Sales AI & Automation",
       positioning: "Use AI to strengthen your commercial operations.",
       megaDescription:
-        "Build AI-enabled workflows for research, sales operations and customer interactions.",
+        "Practical AI and automation workflows that improve prospecting, sales operations and commercial efficiency.",
       summary:
         "Design and implement AI-enabled commercial workflows and agents that improve sales operations for European expansion.",
       purpose:

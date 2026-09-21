@@ -39,8 +39,8 @@ export default async function HomePage({ params }: Props) {
     <>
       <JsonLd data={websiteJsonLd(locale)} />
       <HomeHero locale={locale} dict={dict} />
-      <HomeContext dict={dict} />
       <HomeServices locale={locale} dict={dict} />
+      <HomeContext dict={dict} />
       <HomeWhyOpopa dict={dict} />
       <HomeIndustries locale={locale} dict={dict} />
       <HomeMethod dict={dict} />
