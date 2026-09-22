@@ -102,7 +102,7 @@ export function OpopaBrandField({
       className={cn(
         "absolute aspect-square rounded-full bg-accent p-[5px] transition-colors duration-300 group-hover:bg-white-warm group-active:bg-white-warm",
         size === "compact"
-          ? "-right-[48%] -bottom-[58%] w-[108%] p-[4px]"
+          ? "-right-[18%] -bottom-[22%] w-[42%] p-[3px]"
           : "-right-[100%] -bottom-[122%] w-[185%] p-[6px]",
       )}
     >

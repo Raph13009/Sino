@@ -48,24 +48,24 @@ function ServiceCard({ service }: { service: HomeServiceItem }) {
   return (
     <Link
       href={service.href}
-      className="group relative flex min-h-[18.5rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent active:border-accent active:bg-accent"
+      className="group relative flex min-h-[17.5rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent active:border-accent active:bg-accent"
     >
       <OpopaBrandField size="compact" />
 
-      <h3 className="relative z-10 min-h-[2.6em] max-w-[16ch] text-[1.25rem] leading-tight tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+      <h3 className="relative z-10 min-h-[2.6em] max-w-[18ch] text-[1.25rem] leading-tight tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
         {service.name}
       </h3>
-      <p className="relative z-10 mt-3 mb-14 max-w-[26ch] line-clamp-3 text-[0.9375rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+      <p className="relative z-10 mt-3 mb-16 max-w-[28ch] line-clamp-3 text-[0.9375rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
         {service.megaDescription}
       </p>
 
-      <span className="absolute bottom-[28%] left-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white-warm transition-colors duration-300 group-hover:bg-white-warm group-hover:text-accent group-active:bg-white-warm group-active:text-accent">
+      <span className="absolute bottom-6 left-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white-warm transition-colors duration-300 group-hover:bg-white-warm group-hover:text-accent group-active:bg-white-warm group-active:text-accent">
         <CardArrowIcon />
       </span>
 
       <ServiceIcon
         slug={service.slug}
-        className="absolute right-5 bottom-5 z-10 h-9 w-9 text-white-warm"
+        className="absolute right-4 bottom-4 z-10 h-8 w-8 text-white-warm"
       />
     </Link>
   );
