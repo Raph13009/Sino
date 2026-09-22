@@ -91,11 +91,20 @@ export function ServiceIcon({
   return <Icon className={className} />;
 }
 
-export function OpopaBrandField() {
+export function OpopaBrandField({
+  size = "default",
+}: {
+  size?: "default" | "compact";
+}) {
   return (
     <div
       aria-hidden
-      className="absolute -right-[100%] -bottom-[122%] aspect-square w-[185%] rounded-full bg-accent p-[6px] transition-colors duration-300 group-hover:bg-white-warm group-active:bg-white-warm"
+      className={cn(
+        "absolute aspect-square rounded-full bg-accent p-[5px] transition-colors duration-300 group-hover:bg-white-warm group-active:bg-white-warm",
+        size === "compact"
+          ? "-right-[48%] -bottom-[58%] w-[108%] p-[4px]"
+          : "-right-[100%] -bottom-[122%] w-[185%] p-[6px]",
+      )}
     >
       <div className="h-full w-full rounded-full bg-ink" />
     </div>
