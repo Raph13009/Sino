@@ -2,9 +2,9 @@ import type { ServiceSlug } from "@/content/catalog";
 import type { CmsCtaService } from "./schema";
 
 export const ctaServicePath: Record<Exclude<CmsCtaService, "None">, string> = {
-  "Market Entry": "/services",
-  "Sales Outsourcing": "/services/outsourced-sales",
-  "Sales Coaching": "/services/sales-enablement",
+  "Market Entry": "/services/european-market-entry",
+  "Sales Outsourcing": "/services/european-sales-representation",
+  "Sales Coaching": "/services/european-sales-representation",
   "AI Sales Automation": "/services/sales-ai-automation",
 };
 

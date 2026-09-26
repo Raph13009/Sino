@@ -1,6 +1,8 @@
 # OPOPA Partners — SEO + GEO validation
 
-**Date:** 10 September 2026  
+**Date:** 10 September 2026
+
+Historical record. Service URLs below describe the catalogue at that date, not the current six-service architecture.  
 **Method:** `npx tsc --noEmit`, `npm run lint`, `npm run build`, then `next start` and HTML inspection of representative URLs. No browser automation tools were available in this session.
 
 ---

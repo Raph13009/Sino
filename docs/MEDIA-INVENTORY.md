@@ -13,10 +13,10 @@ Source of truth for paths and alt text: `/src/content/media.ts`
 | brand-plaquette | global | brand | `/brand/plaquette.webp` (+ `.png`) | Image | 1122:1402 | Final | Brand direction reference board |
 | home-hero-01 | Home | Hero | `/images/hero/hero-industrial-port.jpg` | Image | 3:2 | Placeholder | Replace with final China–Europe industrial hero |
 | home-context-01 | Home | Context | `/images/hero/hero-manufacturing-floor.jpg` | Image | 16:10 | Placeholder | Replace with documentary manufacturing photography |
-| service-sales-enablement | Services | Sales Enablement | `/images/services/service-sales-enablement.jpg` | Image | 3:2 | Placeholder | Replace with commercial training context photography |
-| service-expert-partner-sourcing | Services | Expert & Partner Sourcing | `/images/services/service-expert-partner-sourcing.jpg` | Image | 3:2 | Placeholder | Replace with specialist / partner qualification photography |
-| service-outsourced-sales | Services | Outsourced Sales | `/images/services/service-outsourced-sales.jpg` | Image | 3:2 | Placeholder | Replace with European sales representation photography |
-| service-sales-ai-automation | Services | Sales AI & Automation | `/images/services/service-sales-ai-automation.jpg` | Image | 3:2 | Placeholder | Replace with restrained commercial-operations photography — avoid generic AI imagery |
+| service-sales-enablement | Services | Legal and Regulatory Support (reused photograph) | `/images/services/service-sales-enablement.webp` | Image | 3:2 | Placeholder | Filename kept. Do not treat the old service name as current. |
+| service-expert-partner-sourcing | Services | European Experts and Partners | `/images/services/service-expert-partner-sourcing.webp` | Image | 3:2 | Placeholder | Replace with specialist / partner qualification photography |
+| service-outsourced-sales | Services | European Sales Representation | `/images/services/service-outsourced-sales.webp` | Image | 3:2 | Placeholder | Replace with European sales representation photography |
+| service-sales-ai-automation | Services | Sales AI and Automation | `/images/services/service-sales-ai-automation.webp` | Image | 3:2 | Placeholder | Replace with restrained commercial-operations photography — avoid generic AI imagery |
 | industry-industrial-equipment | Industries | Industrial Equipment | `/images/industries/industry-industrial-equipment.jpg` | Image | 3:2 | Placeholder | Replace with heavy machinery photography |
 | industry-advanced-manufacturing | Industries | Advanced Manufacturing | `/images/industries/industry-advanced-manufacturing.jpg` | Image | 4:3 | Placeholder | Replace with advanced manufacturing photography |
 | industry-green-technology | Industries | Green Technology | `/images/industries/industry-green-technology.jpg` | Image | 3:2 | Placeholder | Replace with green-tech / energy equipment photography |

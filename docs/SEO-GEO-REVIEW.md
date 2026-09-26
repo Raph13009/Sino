@@ -1,5 +1,7 @@
 # Executive verdict
 
+Historical review. Where this file names four services, that was the catalogue at the time of the review.
+
 **PASS WITH FIXES**
 
 The first implementation had a real SEO foundation (unique titles, self-canonicals, hreflang, sitemap, Organization/Service/Article JSON-LD). It also had high-risk holes: canonicals could follow a non-www or arbitrary `NEXT_PUBLIC_SITE_URL`, `/en` used a temporary redirect, and unused GA4 event wrappers turned several links into client islands before any Measurement ID existed.

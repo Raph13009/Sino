@@ -1,4 +1,4 @@
-import type { ServiceSlug } from "@/content/catalog";
+import type { HomeServiceCardSlug } from "@/content/catalog";
 import { cn } from "@/lib/utils";
 
 function IconFrame({
@@ -27,18 +27,17 @@ const stroke = {
   strokeLinejoin: "round" as const,
 };
 
-function EnablementIcon({ className }: { className?: string }) {
+function MarketEntryIcon({ className }: { className?: string }) {
   return (
     <IconFrame className={className}>
       <circle cx="5" cy="17" r="1.7" {...stroke} />
-      <circle cx="10" cy="10.5" r="1.7" {...stroke} />
-      <circle cx="19" cy="6.5" r="1.7" {...stroke} />
-      <path d="M6.4 15.7 8.6 12.2M11.7 9.6 17.4 7.2" {...stroke} />
+      <circle cx="18" cy="7" r="1.7" {...stroke} />
+      <path d="M6.6 16.1C9 13.5 11 13.2 12.2 11.4 13.6 9.3 14.4 8.6 16.2 7.6" {...stroke} />
     </IconFrame>
   );
 }
 
-function SourcingIcon({ className }: { className?: string }) {
+function ExpertsIcon({ className }: { className?: string }) {
   return (
     <IconFrame className={className}>
       <circle cx="12" cy="6.5" r="2.1" {...stroke} />
@@ -59,32 +58,33 @@ function RepresentationIcon({ className }: { className?: string }) {
   );
 }
 
-function AutomationIcon({ className }: { className?: string }) {
+function AfterSalesIcon({ className }: { className?: string }) {
   return (
     <IconFrame className={className}>
-      <rect x="3.5" y="4.5" width="6.5" height="6.5" rx="1" {...stroke} />
-      <rect x="14" y="13" width="6.5" height="6.5" rx="1" {...stroke} />
-      <path d="M10 7.75h4.2A2.3 2.3 0 0 1 16.5 10v3" {...stroke} />
-      <path d="M15 12.2 16.5 13.8 18 12.2" {...stroke} />
+      <path
+        d="M14.8 6.2a3.1 3.1 0 0 0-4.1 3.6L6.2 14.3a1.5 1.5 0 0 0 2.1 2.1l4.5-4.5a3.1 3.1 0 0 0 3.6-4.1L14.6 9.6 13 8l1.8-1.8Z"
+        {...stroke}
+      />
+      <path d="M7.2 15.4 9.2 17.4" {...stroke} />
     </IconFrame>
   );
 }
 
 const serviceIcons: Record<
-  ServiceSlug,
+  HomeServiceCardSlug,
   (props: { className?: string }) => React.ReactNode
 > = {
-  "sales-enablement": EnablementIcon,
-  "expert-partner-sourcing": SourcingIcon,
-  "outsourced-sales": RepresentationIcon,
-  "sales-ai-automation": AutomationIcon,
+  "european-market-entry": MarketEntryIcon,
+  "european-experts-and-partners": ExpertsIcon,
+  "european-sales-representation": RepresentationIcon,
+  "after-sales-maintenance": AfterSalesIcon,
 };
 
 export function ServiceIcon({
   slug,
   className,
 }: {
-  slug: ServiceSlug;
+  slug: HomeServiceCardSlug;
   className?: string;
 }) {
   const Icon = serviceIcons[slug];
@@ -103,8 +103,17 @@ export function OpopaBrandField({
         "absolute aspect-square rounded-full bg-accent p-[5px] transition-colors duration-300 group-hover:bg-white-warm group-active:bg-white-warm",
         size === "compact"
           ? "-right-[18%] -bottom-[22%] w-[42%] p-[3px]"
-          : "-right-[100%] -bottom-[122%] w-[185%] p-[6px]",
+          : "p-[6px]",
       )}
+      style={
+        size === "compact"
+          ? undefined
+          : {
+              width: "185cqw",
+              right: "-100cqw",
+              bottom: "calc(-185cqw + 6.25rem)",
+            }
+      }
     >
       <div className="h-full w-full rounded-full bg-ink" />
     </div>

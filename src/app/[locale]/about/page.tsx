@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/Button";
 import {
   Container,
   Eyebrow,
-  Rule,
   Section,
   SectionHeading,
 } from "@/components/ui/Section";
@@ -212,34 +211,6 @@ export default async function AboutPage({ params }: Props) {
                 </p>
               </article>
             ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* Future-ready proof area */}
-      <Section id="proof" className="py-16 md:py-24">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <SectionHeading
-                number={copy.proof.number}
-                eyebrow={copy.proof.eyebrow}
-                title={copy.proof.title}
-              />
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7">
-              <p className="text-lg leading-relaxed text-charcoal md:text-xl">
-                {copy.proof.body}
-              </p>
-              <Rule className="my-8" />
-              <div
-                className="mt-10 grid gap-4 border border-dashed border-border p-6 md:grid-cols-2 md:p-8"
-                aria-hidden
-              >
-                <div className="aspect-video bg-concrete/60" />
-                <div className="aspect-video bg-concrete/60" />
-              </div>
-            </div>
           </div>
         </Container>
       </Section>

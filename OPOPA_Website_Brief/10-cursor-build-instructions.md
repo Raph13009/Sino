@@ -42,7 +42,7 @@ Build in this order:
 3. Homepage
    - complete and visually refine before expanding the system
 
-4. Expertise index + service pages
+4. Services hub + service pages
 
 5. Industries index + industry pages
 

@@ -101,6 +101,19 @@ export const media = {
       status: "placeholder" as const,
       replacementNote: "Replace with documentary manufacturing or factory photography",
     },
+    essec: {
+      id: "home-credibility-essec",
+      src: "/images/about/essec.jpeg",
+      alt: "ESSEC Business School",
+      width: 2700,
+      height: 1672,
+      aspectRatio: "2700:1672",
+      page: "home",
+      section: "credibility",
+      status: "final" as const,
+      replacementNote:
+        "ESSEC Business School wordmark. Shown with Starter programme status only.",
+    },
   },
   services: {
     salesEnablement: {

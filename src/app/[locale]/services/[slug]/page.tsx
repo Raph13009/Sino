@@ -15,7 +15,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { serviceSlugs, type ServiceSlug } from "@/content/catalog";
 import { getInsightsForService } from "@/content/insights/load";
 import { getDictionary } from "@/content/locales";
-import { getService, getServices } from "@/content/localized";
+import { getComplementaryServices, getService } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import {
   breadcrumbJsonLd,
@@ -58,13 +58,16 @@ export default async function ServicePage({ params }: Props) {
   const service = getService(locale, dict, slug);
   if (!service) notFound();
 
-  const related = getServices(locale, dict).filter(
-    (item) => item.slug !== service.slug,
+  const related = getComplementaryServices(
+    locale,
+    dict,
+    service.slug as ServiceSlug,
   );
   const relatedInsights = await getInsightsForService(
     locale,
     service.slug as ServiceSlug,
   );
+  const contactHref = localePath(locale, "/contact");
 
   return (
     <>
@@ -105,7 +108,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <Eyebrow accent>
-                {service.number} / {dict.servicesPage.detailEyebrowSuffix}
+                {service.number} / {dict.nav.megaMenu.groups[service.group].label}
               </Eyebrow>
               <h1 className="mt-4 text-[2.5rem] leading-[1.04] md:text-[3.75rem]">
                 {service.name}
@@ -117,9 +120,7 @@ export default async function ServicePage({ params }: Props) {
                 {service.summary}
               </p>
               <div className="mt-8">
-                <Button href={localePath(locale, "/contact")}>
-                  {dict.common.primaryCta}
-                </Button>
+                <Button href={contactHref}>{service.cta}</Button>
               </div>
             </div>
             <div className="lg:col-span-5">
@@ -141,25 +142,49 @@ export default async function ServicePage({ params }: Props) {
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <Eyebrow>{dict.common.purpose}</Eyebrow>
-              <h2 className="mt-4 text-[1.75rem] md:text-[2.25rem]">
-                {service.purpose}
+              <Eyebrow>{dict.servicesPage.situationLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {service.situationTitle}
               </h2>
-              <Rule tone="accent" className="mt-8" />
-              <p className="mt-6 text-lg leading-relaxed text-charcoal">
-                <span className="font-medium text-ink">
-                  {dict.common.clientProblem}{" "}
-                </span>
-                {service.clientProblem}
-              </p>
             </div>
-            <div className="lg:col-span-6 lg:col-start-7">
-              <Eyebrow>{dict.common.typicalScope}</Eyebrow>
-              <ul className="mt-6 border-t border-border">
+            <div className="space-y-5 lg:col-span-6 lg:col-start-7">
+              {service.situation.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-lg leading-relaxed text-charcoal"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="concrete" className="py-16 md:py-24">
+        <Container>
+          <Eyebrow>{dict.servicesPage.coordinatesLabel}</Eyebrow>
+          <h2 className="mt-4 max-w-3xl text-[1.75rem] leading-tight md:text-[2.15rem]">
+            {service.coordinatesTitle}
+          </h2>
+          <div className="mt-8 grid gap-10 lg:grid-cols-12">
+            <div className="space-y-5 lg:col-span-6">
+              {service.coordinates.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-[1.0625rem] leading-relaxed text-charcoal"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8">
+              <p className="eyebrow">{dict.common.typicalScope}</p>
+              <ul className="mt-4 border-t border-border">
                 {service.scope.map((item) => (
                   <li
                     key={item}
-                    className="flex gap-3 border-b border-border py-4 text-[1.0625rem] text-charcoal"
+                    className="flex gap-3 border-b border-border py-3.5 text-[1rem] text-charcoal"
                   >
                     <span className="mt-2 h-px w-3 shrink-0 bg-accent" aria-hidden />
                     {item}
@@ -171,14 +196,50 @@ export default async function ServicePage({ params }: Props) {
         </Container>
       </Section>
 
+      <Section className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <Eyebrow>{dict.servicesPage.receivesLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {service.receivesTitle}
+              </h2>
+              <ul className="mt-8 border-t border-border">
+                {service.receives.map((item) => (
+                  <li
+                    key={item}
+                    className="border-b border-border py-4 text-[1.0625rem] leading-relaxed text-charcoal"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7">
+              <Eyebrow>{dict.servicesPage.startsLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {service.startsTitle}
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-charcoal">
+                {service.starts}
+              </p>
+              <Rule tone="accent" className="mt-8" />
+              <div className="mt-8">
+                <Button href={contactHref}>{service.cta}</Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
       <Section tone="concrete" className="py-16 md:py-20">
         <Container>
-          <Eyebrow>{dict.common.relatedExpertise}</Eyebrow>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <Eyebrow>{dict.common.complementaryServices}</Eyebrow>
+          <div className="mt-8 grid gap-8 md:grid-cols-3">
             {related.map((item) => (
               <article key={item.slug} className="border-t border-border pt-5">
                 <p className="eyebrow">{item.number}</p>
-                <h3 className="mt-3 text-xl">
+                <h3 className="mt-3 text-xl leading-snug">
                   <Link href={item.href} className="hover:text-accent">
                     {item.name}
                   </Link>

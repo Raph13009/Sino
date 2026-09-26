@@ -28,21 +28,21 @@ The following requirements are mandatory:
 
 ## Search intent territories
 
-Priority themes:
+These are hypotheses about buyer language. They are not verified search-volume data and must not be repeated on every page.
 
-- China Europe market entry
-- Chinese companies expanding into Europe
-- European market entry for Chinese companies
-- European sales strategy for Chinese companies
-- China Europe business consulting
-- industrial market entry Europe
-- Chinese industrial companies Europe
-- Europe sales outsourcing
-- outsourced sales Europe
-- European sales representation
-- distributor search Europe
-- industrial sales Europe
-- green technology Europe market entry
+| Intent hypothesis | Page |
+| --- | --- |
+| European market entry for Chinese manufacturers | `/services/european-market-entry` |
+| Find European distributors; coordinate local specialists | `/services/european-experts-and-partners` |
+| European sales representation | `/services/european-sales-representation` |
+| EU product compliance support | `/services/legal-and-regulatory-support` |
+| Industrial after-sales service in Europe | `/services/after-sales-maintenance` |
+| Sales automation for industrial companies | `/services/sales-ai-automation` |
+| How the offers fit together | `/services` |
+
+Related themes that should inform copy, not become a repeated phrase: China–Europe industrial expansion, green technology market entry, long industrial sales cycles.
+
+Service schema describes the offer. It does not create a special Google result by itself. Do not add FAQ schema only because a page contains questions.
 
 ## SEO architecture principle
 
@@ -107,7 +107,7 @@ Insights should serve both thought leadership and organic acquisition.
 
 Each article should:
 - target a clear search intent
-- link to relevant expertise pages
+- link to relevant service pages
 - link to relevant industry pages
 - contain useful original information
 - avoid keyword stuffing

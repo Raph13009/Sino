@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useId, useRef } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 import { cn } from "@/lib/utils";
 
 export type SecondaryNavItem = {
@@ -16,8 +22,10 @@ type SecondaryNavController = {
   open: boolean;
   menuId: string;
   openMenu: () => void;
+  openFromKeyboard: () => void;
   closeMenu: () => void;
   scheduleClose: () => void;
+  focusTrigger: () => void;
   setTriggerRef: (node: HTMLElement | null) => void;
   setPanelRef: (node: HTMLElement | null) => void;
 };
@@ -33,6 +41,7 @@ export function useSecondaryNav(
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const panelRef = useRef<HTMLElement | null>(null);
+  const focusOnOpen = useRef(false);
   const onOpen = options?.onOpen;
 
   const clearCloseTimer = () => {
@@ -50,8 +59,23 @@ export function useSecondaryNav(
 
   const closeMenu = useCallback(() => {
     clearCloseTimer();
+    focusOnOpen.current = false;
     onOpenChange(false);
   }, [onOpenChange]);
+
+  const focusTrigger = useCallback(() => {
+    triggerRef.current?.focus();
+  }, []);
+
+  const openFromKeyboard = useCallback(() => {
+    if (open) {
+      focusOnOpen.current = false;
+      panelRef.current?.querySelector<HTMLElement>("a[href]")?.focus();
+      return;
+    }
+    focusOnOpen.current = true;
+    openMenu();
+  }, [open, openMenu]);
 
   const scheduleClose = useCallback(() => {
     clearCloseTimer();
@@ -70,7 +94,11 @@ export function useSecondaryNav(
     if (!open) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key !== "Escape") return;
+      const inPanel = panelRef.current?.contains(document.activeElement);
+      event.preventDefault();
+      closeMenu();
+      if (inPanel) triggerRef.current?.focus();
     };
 
     const onPointerDown = (event: MouseEvent) => {
@@ -90,15 +118,75 @@ export function useSecondaryNav(
 
   useEffect(() => () => clearCloseTimer(), []);
 
+  useEffect(() => {
+    if (!open || !focusOnOpen.current) return;
+    focusOnOpen.current = false;
+    panelRef.current?.querySelector<HTMLElement>("a[href]")?.focus();
+  }, [open]);
+
   return {
     open,
     menuId,
     openMenu,
+    openFromKeyboard,
     closeMenu,
     scheduleClose,
+    focusTrigger,
     setTriggerRef,
     setPanelRef,
   };
+}
+
+export function handleMegaMenuKeyDown(
+  event: ReactKeyboardEvent<HTMLElement>,
+  actions: {
+    closeMenu: () => void;
+    focusTrigger: () => void;
+    onExitForward: () => void;
+  },
+) {
+  const links = Array.from(
+    event.currentTarget.querySelectorAll<HTMLAnchorElement>("a[href]"),
+  );
+  const index = links.findIndex((link) => link === document.activeElement);
+
+  if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+    event.preventDefault();
+    links[(index + 1) % links.length]?.focus();
+    return;
+  }
+
+  if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+    event.preventDefault();
+    links[(index - 1 + links.length) % links.length]?.focus();
+    return;
+  }
+
+  if (event.key === "Home") {
+    event.preventDefault();
+    links[0]?.focus();
+    return;
+  }
+
+  if (event.key === "End") {
+    event.preventDefault();
+    links[links.length - 1]?.focus();
+    return;
+  }
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    actions.closeMenu();
+    actions.focusTrigger();
+    return;
+  }
+
+  if (event.key === "Tab") {
+    event.preventDefault();
+    actions.closeMenu();
+    if (event.shiftKey) actions.focusTrigger();
+    else actions.onExitForward();
+  }
 }
 
 export function SecondaryNavTrigger({
@@ -107,12 +195,18 @@ export function SecondaryNavTrigger({
   open,
   menuId,
   openMenu,
+  openFromKeyboard,
   scheduleClose,
   setTriggerRef,
   onNavigate,
 }: Pick<
   SecondaryNavController,
-  "open" | "menuId" | "openMenu" | "scheduleClose" | "setTriggerRef"
+  | "open"
+  | "menuId"
+  | "openMenu"
+  | "openFromKeyboard"
+  | "scheduleClose"
+  | "setTriggerRef"
 > & {
   href: string;
   label: string;
@@ -136,7 +230,7 @@ export function SecondaryNavTrigger({
       onKeyDown={(event) => {
         if (event.key === "ArrowDown") {
           event.preventDefault();
-          openMenu();
+          openFromKeyboard();
         }
       }}
     >
@@ -156,7 +250,9 @@ export function SecondaryNavPanel({
   openMenu,
   scheduleClose,
   closeMenu,
+  focusTrigger,
   setPanelRef,
+  onExitForward,
   onNavigate,
 }: Pick<
   SecondaryNavController,
@@ -165,8 +261,10 @@ export function SecondaryNavPanel({
   | "openMenu"
   | "scheduleClose"
   | "closeMenu"
+  | "focusTrigger"
   | "setPanelRef"
 > & {
+  onExitForward: () => void;
   ariaLabel: string;
   items: SecondaryNavItem[];
   viewAllHref: string;
@@ -191,6 +289,9 @@ export function SecondaryNavPanel({
       )}
       onMouseEnter={openMenu}
       onMouseLeave={scheduleClose}
+      onKeyDown={(event) =>
+        handleMegaMenuKeyDown(event, { closeMenu, focusTrigger, onExitForward })
+      }
     >
       <div className="container-editorial py-4 xl:py-5">
         <ul className="grid grid-cols-4">

@@ -17,14 +17,15 @@ import {
   SecondaryNavTrigger,
   useSecondaryNav,
 } from "@/components/layout/SecondaryNav";
+import { ServicesMegaMenu } from "@/components/layout/ServicesMegaMenu";
 import { Logo } from "@/components/ui/Logo";
-import { getIndustries, getServices } from "@/content/localized";
+import { getIndustries, getServiceGroups } from "@/content/localized";
 import { lockBodyScroll, unlockBodyScroll } from "@/lib/body-scroll-lock";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const { dict, locale, path } = useLocale();
-  const services = getServices(locale, dict);
+  const serviceGroups = getServiceGroups(locale, dict);
   const industries = getIndustries(locale, dict);
 
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -36,6 +37,7 @@ export function SiteHeader() {
 
   const scrollYRef = useRef(0);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const insightsLinkRef = useRef<HTMLAnchorElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const drawerTitleId = useId();
@@ -78,12 +80,16 @@ export function SiteHeader() {
     { label: dict.nav.primary.contact, href: path("/contact") },
   ];
 
-  const serviceItems = services.map((service) => ({
-    key: service.slug,
-    number: service.number,
-    title: service.name,
-    description: service.megaDescription,
-    href: service.href,
+  const serviceMenuGroups = serviceGroups.map((group) => ({
+    id: group.id,
+    label: group.label,
+    note: group.note,
+    items: group.services.map((service) => ({
+      key: service.slug,
+      title: service.name,
+      description: service.megaDescription,
+      href: service.href,
+    })),
   }));
 
   const industryItems = industries.map((industry) => ({
@@ -197,6 +203,7 @@ export function SiteHeader() {
             open={servicesMenu.open}
             menuId={servicesMenu.menuId}
             openMenu={servicesMenu.openMenu}
+            openFromKeyboard={servicesMenu.openFromKeyboard}
             scheduleClose={servicesMenu.scheduleClose}
             setTriggerRef={servicesMenu.setTriggerRef}
             onNavigate={closeDesktopPanels}
@@ -207,15 +214,18 @@ export function SiteHeader() {
             open={industriesMenu.open}
             menuId={industriesMenu.menuId}
             openMenu={industriesMenu.openMenu}
+            openFromKeyboard={industriesMenu.openFromKeyboard}
             scheduleClose={industriesMenu.scheduleClose}
             setTriggerRef={industriesMenu.setTriggerRef}
             onNavigate={closeDesktopPanels}
           />
           {primaryLinks.map((item) => {
             const isContact = item.href.endsWith("/contact");
+            const isInsights = item.href.endsWith("/insights");
             return (
               <Link
                 key={item.href}
+                ref={isInsights ? insightsLinkRef : undefined}
                 href={item.href}
                 className={cn(
                   "text-[0.9375rem] font-medium tracking-[-0.01em] transition-colors",
@@ -262,17 +272,18 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <SecondaryNavPanel
+      <ServicesMegaMenu
         open={servicesMenu.open}
         menuId={servicesMenu.menuId}
         ariaLabel={dict.nav.aria.servicesMenu}
-        items={serviceItems}
+        groups={serviceMenuGroups}
         viewAllHref={path("/services")}
         viewAllLabel={dict.nav.megaMenu.viewAll}
-        learnMoreLabel={dict.common.learnMore}
         openMenu={servicesMenu.openMenu}
         scheduleClose={servicesMenu.scheduleClose}
         closeMenu={servicesMenu.closeMenu}
+        focusTrigger={servicesMenu.focusTrigger}
+        onExitForward={() => industriesMenu.focusTrigger()}
         setPanelRef={servicesMenu.setPanelRef}
       />
 
@@ -287,6 +298,8 @@ export function SiteHeader() {
         openMenu={industriesMenu.openMenu}
         scheduleClose={industriesMenu.scheduleClose}
         closeMenu={industriesMenu.closeMenu}
+        focusTrigger={industriesMenu.focusTrigger}
+        onExitForward={() => insightsLinkRef.current?.focus()}
         setPanelRef={industriesMenu.setPanelRef}
       />
 
@@ -322,20 +335,34 @@ export function SiteHeader() {
               collapseLabel={dict.nav.aria.collapseServices}
               onNavigate={closeDrawer}
             >
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link
-                    href={service.href}
-                    className="flex items-start gap-3 py-3 pl-1 text-[1rem]"
-                    onClick={closeDrawer}
-                  >
-                    <span className="eyebrow mt-0.5 shrink-0 text-accent">
-                      {service.number}
-                    </span>
-                    <span className="font-medium text-ink">{service.name}</span>
-                  </Link>
+              {serviceGroups.map((group) => (
+                <li key={group.id} className="pt-3">
+                  <p className="eyebrow text-accent">{group.label}</p>
+                  <ul className="mt-1">
+                    {group.services.map((service) => (
+                      <li key={service.slug}>
+                        <Link
+                          href={service.href}
+                          className="block py-2.5 text-[1rem] font-medium leading-snug text-ink"
+                          onClick={closeDrawer}
+                        >
+                          {service.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
+              <li className="border-t border-border">
+                <Link
+                  href={path("/services")}
+                  className="flex items-center justify-between py-3 text-[1rem] font-medium text-accent"
+                  onClick={closeDrawer}
+                >
+                  <span>{dict.nav.megaMenu.viewAll}</span>
+                  <span aria-hidden>→</span>
+                </Link>
+              </li>
             </MobileExpandableSection>
 
             <MobileExpandableSection

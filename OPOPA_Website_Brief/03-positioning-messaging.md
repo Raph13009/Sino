@@ -36,7 +36,7 @@ We provide the strategy, local network and sales capabilities Chinese industrial
 **Discuss your European expansion**
 
 Secondary CTA examples:
-- Explore our expertise
+- Explore our services
 - See how we help
 - Meet our team
 

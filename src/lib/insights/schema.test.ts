@@ -76,12 +76,27 @@ describe("normalizers", () => {
   });
 
   it("maps CTAs to real service routes", () => {
-    assert.equal(pathForCtaService("Market Entry"), "/services");
-    assert.equal(pathForCtaService("Sales Outsourcing"), "/services/outsourced-sales");
-    assert.equal(pathForCtaService("Sales Coaching"), "/services/sales-enablement");
-    assert.equal(pathForCtaService("AI Sales Automation"), "/services/sales-ai-automation");
+    assert.equal(
+      pathForCtaService("Market Entry"),
+      "/services/european-market-entry",
+    );
+    assert.equal(
+      pathForCtaService("Sales Outsourcing"),
+      "/services/european-sales-representation",
+    );
+    assert.equal(
+      pathForCtaService("Sales Coaching"),
+      "/services/european-sales-representation",
+    );
+    assert.equal(
+      pathForCtaService("AI Sales Automation"),
+      "/services/sales-ai-automation",
+    );
     assert.equal(pathForCtaService("None"), null);
-    assert.equal(serviceSlugForCta("Sales Coaching"), "sales-enablement");
-    assert.equal(serviceSlugForCta("Market Entry"), null);
+    assert.equal(
+      serviceSlugForCta("Sales Coaching"),
+      "european-sales-representation",
+    );
+    assert.equal(serviceSlugForCta("Market Entry"), "european-market-entry");
   });
 });

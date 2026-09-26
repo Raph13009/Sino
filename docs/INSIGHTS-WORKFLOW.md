@@ -59,11 +59,13 @@ hreflang is reciprocal and only includes Published translations.
 
 | CMS value | Related-service lookup |
 | --- | --- |
-| Market Entry | none (overview only) |
-| Sales Outsourcing | `/services/outsourced-sales` |
-| Sales Coaching | `/services/sales-enablement` |
+| Market Entry | `/services/european-market-entry` |
+| Sales Outsourcing | `/services/european-sales-representation` |
+| Sales Coaching | `/services/european-sales-representation` |
 | AI Sales Automation | `/services/sales-ai-automation` |
 | None | none |
+
+Sales coaching is not a separate public service. The CMS value remains so existing rows keep a destination; it resolves to European Sales Representation, where coaching is a supporting module.
 
 ## Environment setup
 
@@ -72,7 +74,7 @@ Required on Vercel (Production, and Preview if you want Insights there):
 ```bash
 GOOGLE_CLIENT_EMAIL=
 GOOGLE_PRIVATE_KEY=
-GOOGLE_BLOG_SHEET_ID=1zTBna6kFxYhJ3TUwLmfNcMjoZ6vzg4oL-QA4w2ZsxX4
+GOOGLE_BLOG_SHEET_ID=1w2TMVQK-SzSqGgo7VinOrZ89vDQb-25GWOPmEeyRj54
 ```
 
 Optional:

@@ -2,25 +2,31 @@
 
 ## Primary navigation
 
-- Expertise
+- Services
 - Industries
 - Insights
 - About
 - Contact
 
-## Recommended V1 sitemap
+Services uses a grouped menu. European Market Entry is the lead item. The full list and redirect map are in `04-services.md`.
+
+## Sitemap
 
 ### Home
 `/`
 
-### Expertise
-`/expertise`
+### Services
+`/services`
 
 Individual service pages:
-- `/expertise/market-entry-advisory`
-- `/expertise/european-partner-network`
-- `/expertise/sales-enablement`
-- `/expertise/outsourced-sales`
+- `/services/european-market-entry`
+- `/services/european-experts-and-partners`
+- `/services/legal-and-regulatory-support`
+- `/services/after-sales-maintenance`
+- `/services/european-sales-representation`
+- `/services/sales-ai-automation`
+
+Legacy `/expertise/...` URLs and the retired service slugs redirect permanently to the closest current page. Do not link to them.
 
 ### Industries
 `/industries`
@@ -49,7 +55,7 @@ English is the default language.
 Chinese version:
 - `/zh/...`
 
-Do not build a full Chinese information architecture until translation/localization content is ready, but the technical architecture must support it from V1.
+Simplified Chinese is published at `/zh`. Keep it aligned with the English information architecture. Service wording still needs review by a native Chinese speaker.
 
 ## Homepage structure
 
@@ -58,7 +64,7 @@ Recommended hierarchy:
 1. Navigation
 2. Hero
 3. Core proposition / what OPOPA helps clients achieve
-4. Expertise
+4. Services
 5. Why Europe / market-entry challenge
 6. Industries
 7. Why OPOPA
@@ -83,7 +89,7 @@ Detailed SEO content should live on dedicated service, industry and insight page
 ## Footer
 
 Include:
-- Expertise
+- Services
 - Industries
 - Insights
 - About

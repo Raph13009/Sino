@@ -46,11 +46,17 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    const legacyServiceMap: Record<string, string> = {
-      "market-entry-advisory": "/services",
-      "european-partner-network": "/services/expert-partner-sourcing",
-      "sales-enablement": "/services/sales-enablement",
-      "outsourced-sales": "/services/outsourced-sales",
+    const legacyExpertiseMap: Record<string, string> = {
+      "market-entry-advisory": "/services/european-market-entry",
+      "european-partner-network": "/services/european-experts-and-partners",
+      "sales-enablement": "/services/european-sales-representation",
+      "outsourced-sales": "/services/european-sales-representation",
+    };
+
+    const retiredServiceMap: Record<string, string> = {
+      "sales-enablement": "/services/european-sales-representation",
+      "expert-partner-sourcing": "/services/european-experts-and-partners",
+      "outsourced-sales": "/services/european-sales-representation",
     };
 
     const redirects = [
@@ -122,11 +128,22 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    for (const [from, to] of Object.entries(legacyServiceMap)) {
+    for (const [from, to] of Object.entries(legacyExpertiseMap)) {
       redirects.push(
         { source: `/expertise/${from}`, destination: to, permanent: true },
         {
           source: `/zh/expertise/${from}`,
+          destination: `/zh${to}`,
+          permanent: true,
+        },
+      );
+    }
+
+    for (const [from, to] of Object.entries(retiredServiceMap)) {
+      redirects.push(
+        { source: `/services/${from}`, destination: to, permanent: true },
+        {
+          source: `/zh/services/${from}`,
           destination: `/zh${to}`,
           permanent: true,
         },

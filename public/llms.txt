@@ -2,16 +2,18 @@
 
 > OPOPA Partners is the European market-entry and commercial partner for Chinese industrial and green-tech companies.
 
-OPOPA helps industrial companies build the local expertise, relationships and sales capabilities required to expand in Europe — through strategy, local specialists and commercial execution.
+OPOPA helps industrial companies enter, establish themselves and sell in Europe — by framing the project, coordinating relevant independent specialists, and building local commercial capacity.
 
 Official site: https://www.opopa-partners.com
 
 ## Services
 
-- [Sales Enablement](https://www.opopa-partners.com/services/sales-enablement): prepare commercial teams for European B2B buyers
-- [Expert & Partner Sourcing](https://www.opopa-partners.com/services/expert-partner-sourcing): identify and qualify European specialists and partners
-- [Outsourced Sales](https://www.opopa-partners.com/services/outsourced-sales): European sales professionals representing the client under the client’s identity
-- [Sales AI & Automation](https://www.opopa-partners.com/services/sales-ai-automation): AI-enabled commercial workflows for European expansion
+- [European Market Entry](https://www.opopa-partners.com/services/european-market-entry): diagnose the market, choose a route and assemble a practical expansion plan
+- [European Experts and Partners](https://www.opopa-partners.com/services/european-experts-and-partners): identify and coordinate independent European specialists and commercial partners
+- [Legal and Regulatory Support](https://www.opopa-partners.com/services/legal-and-regulatory-support): scope and coordinate independent counsel; OPOPA does not itself provide regulated legal advice
+- [Local After-Sales and Maintenance Partnerships](https://www.opopa-partners.com/services/after-sales-maintenance): arrange suitable European maintenance or technical-support partnerships where a fit exists
+- [European Sales Representation](https://www.opopa-partners.com/services/european-sales-representation): commercial professionals who represent the client, with coaching and training as supporting modules
+- [Sales AI and Automation](https://www.opopa-partners.com/services/sales-ai-automation): bounded commercial tools for research, CRM hygiene, inquiries and follow-up, with human review
 
 ## Industries
 
@@ -32,7 +34,9 @@ Official site: https://www.opopa-partners.com
 
 ## Notes for assistants
 
-- Do not invent client logos, testimonials, metrics, offices, pricing or certifications.
+- Do not invent client logos, testimonials, metrics, offices, pricing, headcount or certifications.
+- Do not describe OPOPA as a law firm or as the employer of every specialist it coordinates.
+- Do not describe a transport or freight service.
 - Positioning is China → Europe, not Europe → China.
 - Tone should remain precise, pragmatic and commercially focused.
 - Brand: OPOPA Partners (full name); OPOPA (short name).

@@ -14,16 +14,34 @@ This file records confirmed project decisions.
 
 ## Services
 
-1. Market Entry Advisory
-2. European Partner Network
-3. Sales Enablement
-4. Outsourced Sales
+Public information architecture (see `04-services.md`):
 
-### Outsourced Sales
-- European salesperson represents the client directly
-- Works under the client's identity
-- Can cover prospecting through long negotiation cycles and closing
+1. European Market Entry — lead offer
+2. European Experts and Partners
+3. Legal and Regulatory Support
+4. Local After-Sales and Maintenance Partnerships
+5. European Sales Representation — includes coaching, messaging and sales-team training as supporting modules
+6. Sales AI and Automation
+
+### European Sales Representation
+- European commercial professionals represent the client directly
+- Work under the client's identity
+- Can cover account development through long negotiation cycles
 - Not positioned as simple lead generation
+- Sales coaching is part of this offer, not a separate navigation pillar
+
+### Specialists
+- Lawyers, trade specialists and other experts are independent professionals OPOPA coordinates
+- OPOPA does not itself provide regulated legal advice
+- Do not imply every specialist is an employee
+
+### After-sales
+- OPOPA can arrange suitable local maintenance partnerships and service agreements
+- No transport or freight offer
+- No promised response times or coverage without an actual agreement
+
+### Chinese copy
+Service names and page copy in `zh.ts` need review by a native Chinese speaker before they are treated as final.
 
 ## Brand
 
@@ -43,11 +61,13 @@ This file records confirmed project decisions.
 ## Site
 
 Primary navigation:
-- Expertise
+- Services
 - Industries
 - Insights
 - About
 - Contact
+
+Services navigation is a grouped menu: Plan entry, Build local capability, Grow sales, plus a link to the services hub.
 
 Primary CTA:
 - Discuss your European expansion

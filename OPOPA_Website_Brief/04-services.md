@@ -2,104 +2,100 @@
 
 ## Service architecture
 
-OPOPA combines advisory, access to local expertise, capability building and outsourced commercial execution.
+OPOPA is an integrated European expansion partner for Chinese industrial and green-tech companies. The public site has one services hub and six service pages. They are not six equal offers.
 
-The services should be presented as parts of one European expansion journey rather than four unrelated offerings.
+European Market Entry is the lead service. Sales coaching and sales-team training sit inside European Sales Representation. They are not a primary navigation item.
 
----
+Specialists are independent experts and partners that OPOPA identifies and coordinates. Do not imply that every specialist is an OPOPA employee, or that OPOPA itself provides regulated legal advice.
 
-## 1. Market Entry Advisory
+Maintenance and after-sales support is a real offer: arranging suitable local maintenance partnerships and service agreements. Do not create a transport or freight service. Do not promise response times, geographic coverage or service levels without a signed arrangement.
 
-### Purpose
-Help Chinese industrial companies prepare and structure their entry into European markets.
+Do not publish internal costs, personal contacts, unsupported results, office locations, headcounts, client logos, testimonials or guarantees. Do not display pricing.
 
-### Typical scope
-- European market readiness
-- Go-to-market planning
-- Market prioritization
-- Commercial positioning
-- Route-to-market thinking
-- Sales approach
-- Local market expectations
-- Initial expansion roadmap
+## Hub
 
-### Client problem
-The client understands its product and home market but needs a practical European entry plan.
+`/services` and `/zh/services`
 
-### Positioning language
-**Build a practical route into European markets.**
+The hub explains how an engagement is assembled, features European Market Entry, then groups the other services.
 
----
+## 1. European Market Entry
 
-## 2. European Partner Network
+Slug: `european-market-entry`
 
-### Purpose
-Find and connect clients with the right local European specialists required for their expansion.
+Lead offer. Diagnose the product and target market, identify priority customer segments, choose a route to market, and assemble a practical European expansion plan.
 
-### Typical needs
-- Lawyers
-- Regulatory and compliance experts
-- Recruiters
-- Distributors
-- Technical specialists
-- Local consultants
-- Industry partners
-- Other specialized professionals
+Positioning: **Frame the market, the route and the work required to enter Europe.**
 
-### Important positioning rule
+## 2. European Experts and Partners
 
-Do not present this as a simple contact database or generic “intermediary” service.
+Slug: `european-experts-and-partners`
 
-OPOPA should be positioned as identifying, qualifying and connecting the client with relevant European specialists based on the specific business need.
+Identify and coordinate the right local specialists for a defined need: legal and international trade, regulatory and product compliance, company setup, tax and accounting, recruitment, technical specialists, distributors and other commercial partners.
 
-### Positioning language
-**Access the local expertise your European expansion requires.**
+This is qualification and coordination, not an anonymous contact database.
 
----
+Positioning: **Coordinate the independent specialists a defined need actually requires.**
 
-## 3. Sales Enablement
+## 3. Legal and Regulatory Support
 
-### Purpose
-Help Chinese commercial teams sell more effectively to European customers.
+Slug: `legal-and-regulatory-support`
 
-### Typical scope
-- Sales coaching
-- European B2B sales practices
-- Prospecting approach
-- Messaging and pitch adaptation
-- Buyer expectations
-- Qualification
-- Follow-up
-- Negotiation practices
-- Commercial processes
+A focused route for incorporation, contracts, international trade, product compliance and market access. Appropriately qualified independent professionals provide specialist advice. OPOPA scopes and coordinates the engagement.
 
-### Positioning language
-**Prepare your sales team for European buyers.**
+Do not claim certification, approval or compliance.
 
----
+Positioning: **Independent counsel, scoped and coordinated for market access.**
 
-## 4. Outsourced Sales
+## 4. Local After-Sales and Maintenance Partnerships
 
-### Purpose
-Provide European sales professionals who represent the client directly in the market.
+Slug: `after-sales-maintenance`
 
-### Operating model
-- The salesperson represents the Chinese client under the client's identity
-- Engagements may cover prospecting only or much broader commercial responsibility
-- OPOPA may support long sales cycles lasting several months
-- Scope can include prospecting, qualification, meetings, relationship development, negotiation and closing
-- Sales professionals should be selected for relevant European and industry expertise
+Help industrial manufacturers define service requirements and arrange suitable European maintenance, spare-parts or technical-support partnerships and service agreements where feasible.
 
-### Important distinction
-This is not simply lead generation.
+Positioning: **Arrange local maintenance and service partnerships where the product requires them.**
 
-The offer should communicate genuine outsourced sales capability and long-term representation.
+## 5. European Sales Representation
 
-### Positioning language
-**Your European sales capability, on the ground.**
+Slug: `european-sales-representation`
 
-## Pricing
+Source and manage suitable European commercial professionals who represent the Chinese client, develop accounts and support long industrial sales cycles. Explain mandate, territory, product onboarding, reporting, and the difference between representation and selling leads.
 
-Do not display pricing on the public website.
+Supporting modules, not a separate page: sales coaching, buyer-facing messaging, sales-team training.
 
-Commercial models may vary by service and engagement.
+Positioning: **Commercial professionals who represent you in Europe — not a list of leads.**
+
+## 6. Sales AI and Automation
+
+Slug: `sales-ai-automation`
+
+Audit commercial workflows and implement bounded tools for prospect research, CRM hygiene, inquiry handling, knowledge access and follow-up. Human review. Realistic integration scope. AI stays subordinate to the sales problem.
+
+Positioning: **Bounded commercial tools, reviewed by people, tied to a real sales problem.**
+
+## Navigation groups
+
+- Plan entry: European Market Entry
+- Build local capability: European Experts and Partners; Legal and Regulatory Support; Local After-Sales and Maintenance Partnerships
+- Grow sales: European Sales Representation; Sales AI and Automation
+
+## Retired URLs
+
+Permanent redirects (Next.js `permanent: true`, HTTP 308). No redirect chains.
+
+| From | To |
+| --- | --- |
+| `/services/sales-enablement` | `/services/european-sales-representation` |
+| `/services/expert-partner-sourcing` | `/services/european-experts-and-partners` |
+| `/services/outsourced-sales` | `/services/european-sales-representation` |
+| `/expertise/market-entry-advisory` | `/services/european-market-entry` |
+| `/expertise/european-partner-network` | `/services/european-experts-and-partners` |
+| `/expertise/sales-enablement` | `/services/european-sales-representation` |
+| `/expertise/outsourced-sales` | `/services/european-sales-representation` |
+
+The same map applies under `/zh`.
+
+`/services/sales-ai-automation` stays.
+
+## Chinese
+
+Simplified Chinese lives in `src/content/locales/zh.ts` under the same slugs. Wording still needs review by a native Chinese speaker before it is treated as final, especially 欧洲销售代表, 法律与合规支持, and 本地售后与维保合作.

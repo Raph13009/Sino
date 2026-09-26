@@ -5,7 +5,7 @@
 **Stack:** Next.js 16.3.4 App Router, React 19, TypeScript, Tailwind CSS 4  
 **Locales:** English (unprefixed) and Simplified Chinese (`/zh/…`)
 
-This audit is based on the repository as it exists today. No company facts were invented.
+This audit is a historical record from 10 September 2026. Service URLs in this file describe the catalogue at that date. The current service architecture is in `OPOPA_Website_Brief/04-services.md`.
 
 ---
 

@@ -32,10 +32,14 @@ Examples:
 hero-industrial-port.jpg
 hero-manufacturing-china.jpg
 
-service-market-entry.jpg
-service-partner-network.jpg
-service-sales-enablement.jpg
-service-outsourced-sales.jpg
+Existing service photographs stay at their current filenames and are reused across the six service pages. Do not rename them without redirects.
+
+service-sales-enablement.webp — used on Legal and Regulatory Support
+service-expert-partner-sourcing.webp — used on European Experts and Partners
+service-outsourced-sales.webp — used on European Sales Representation
+service-sales-ai-automation.webp — used on Sales AI and Automation
+
+European Market Entry uses the manufacturing-floor photograph. After-sales uses the industrial-equipment photograph.
 
 industry-industrial-equipment.jpg
 industry-green-tech.jpg

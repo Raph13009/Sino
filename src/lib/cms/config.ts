@@ -12,7 +12,7 @@ export const DEFAULT_COVER_WIDTH = 1600;
 export const OG_COVER_WIDTH = 1200;
 
 export const DEFAULT_BLOG_SHEET_ID =
-  "1zTBna6kFxYhJ3TUwLmfNcMjoZ6vzg4oL-QA4w2ZsxX4";
+  "1w2TMVQK-SzSqGgo7VinOrZ89vDQb-25GWOPmEeyRj54";
 export const DEFAULT_BLOG_SHEET_TAB = "Blog Index";
 
 export const GOOGLE_SCOPES = [

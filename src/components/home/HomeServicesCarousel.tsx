@@ -5,15 +5,15 @@ import {
   OpopaBrandField,
   ServiceIcon,
 } from "@/components/home/serviceMarks";
-import type { ServiceSlug } from "@/content/catalog";
+import type { HomeServiceCardSlug } from "@/content/catalog";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 export type HomeServiceItem = {
-  slug: ServiceSlug;
+  slug: HomeServiceCardSlug;
   href: string;
   name: string;
-  megaDescription: string;
+  description: string;
 };
 
 function ChevronLeftIcon() {
@@ -48,20 +48,22 @@ function ServiceCard({ service }: { service: HomeServiceItem }) {
   return (
     <Link
       href={service.href}
-      className="group relative flex min-h-[17.5rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent active:border-accent active:bg-accent"
+      className="group relative flex min-h-[20rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent focus-visible:outline-offset-2 active:border-accent active:bg-accent"
     >
       <OpopaBrandField size="compact" />
 
-      <h3 className="relative z-10 min-h-[2.6em] max-w-[18ch] text-[1.25rem] leading-tight tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+      <h3 className="relative z-10 text-[1.25rem] leading-snug tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
         {service.name}
       </h3>
-      <p className="relative z-10 mt-3 mb-16 max-w-[28ch] line-clamp-3 text-[0.9375rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
-        {service.megaDescription}
+      <p className="relative z-10 mt-3 text-[0.9375rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+        {service.description}
       </p>
 
-      <span className="absolute bottom-6 left-6 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white-warm transition-colors duration-300 group-hover:bg-white-warm group-hover:text-accent group-active:bg-white-warm group-active:text-accent">
-        <CardArrowIcon />
-      </span>
+      <div className="relative z-20 mt-auto pt-8">
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white-warm transition-colors duration-300 group-hover:bg-white-warm group-hover:text-accent group-active:bg-white-warm group-active:text-accent">
+          <CardArrowIcon />
+        </span>
+      </div>
 
       <ServiceIcon
         slug={service.slug}
@@ -82,6 +84,7 @@ export function HomeServicesCarousel({
 }) {
   const count = services.length;
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const go = useCallback(
     (direction: 1 | -1) => {
@@ -91,7 +94,7 @@ export function HomeServicesCarousel({
   );
 
   useEffect(() => {
-    if (count <= 1) return;
+    if (count <= 1 || paused) return;
 
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
@@ -101,19 +104,29 @@ export function HomeServicesCarousel({
     }, 3000);
 
     return () => window.clearInterval(timer);
-  }, [count, index]);
+  }, [count, index, paused]);
 
   if (count === 0) return null;
 
   return (
-    <div className="mt-8 md:hidden">
+    <div
+      className="mt-8 md:hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setPaused(false);
+        }
+      }}
+    >
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {services.map((service) => (
-            <div key={service.slug} className="w-full shrink-0 px-0.5">
+            <div key={service.slug} className="w-full shrink-0 px-1">
               <ServiceCard service={service} />
             </div>
           ))}

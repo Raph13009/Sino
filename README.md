@@ -54,7 +54,7 @@ Insights CMS (Google service account, server-side only):
 ```bash
 GOOGLE_CLIENT_EMAIL=
 GOOGLE_PRIVATE_KEY=
-GOOGLE_BLOG_SHEET_ID=1zTBna6kFxYhJ3TUwLmfNcMjoZ6vzg4oL-QA4w2ZsxX4
+GOOGLE_BLOG_SHEET_ID=1w2TMVQK-SzSqGgo7VinOrZ89vDQb-25GWOPmEeyRj54
 ```
 
 Share the Blog Index spreadsheet and CMS Drive folder with the service account as Viewer. Editor workflow: `docs/INSIGHTS-WORKFLOW.md`.

@@ -79,10 +79,10 @@ The brand should communicate:
 OPOPA should not look like a traditional consultancy that only delivers slides.
 
 The intended differentiation is the ability to combine:
-1. Market-entry advisory
-2. Access to European local specialists
-3. Sales capability building
-4. Outsourced European sales execution
+1. Market-entry framing
+2. Access to independent European specialists
+3. European sales representation, including coaching where the client’s own team sells
+4. Practical operating support, including after-sales partnerships and bounded commercial tools
 
 ## Brand personality
 
