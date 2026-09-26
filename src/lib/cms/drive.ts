@@ -39,29 +39,30 @@ const ALLOWED_MIME = new Set([
   "image/gif",
 ]);
 
-async function downloadDriveOriginal(fileId: string): Promise<CachedOriginal | null> {
+async function downloadDriveOriginal(fileId: string): Promise<CachedOriginal> {
   const url = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&supportsAllDrives=true`;
   const response = await googleFetch(url, {
     timeoutMs: 20_000,
     revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
     tags: [CMS_IMAGE_CACHE_TAG],
   });
-  if (!response) return null;
+  // Throw on failure so unstable_cache does not store a 30-day null miss
+  // (e.g. before the service account could read a newly shared file).
+  if (!response) {
+    throw new Error(`Drive media fetch unavailable for ${fileId}`);
+  }
   if (!response.ok) {
-    cmsError(`Drive media returned ${response.status} for ${fileId}`);
-    return null;
+    throw new Error(`Drive media returned ${response.status} for ${fileId}`);
   }
 
   const contentType = (response.headers.get("content-type") ?? "").split(";")[0].toLowerCase();
   if (contentType && !ALLOWED_MIME.has(contentType) && !contentType.startsWith("image/")) {
-    cmsError(`Drive file ${fileId} is not a supported image (${contentType}).`);
-    return null;
+    throw new Error(`Drive file ${fileId} is not a supported image (${contentType}).`);
   }
 
   const buffer = Buffer.from(await response.arrayBuffer());
   if (buffer.byteLength === 0) {
-    cmsError(`Drive media was empty for ${fileId}`);
-    return null;
+    throw new Error(`Drive media was empty for ${fileId}`);
   }
 
   try {
@@ -82,20 +83,19 @@ async function downloadDriveOriginal(fileId: string): Promise<CachedOriginal | n
     };
   } catch (error) {
     cmsError(`Could not parse Drive image ${fileId}`, error);
-    return null;
+    throw error instanceof Error ? error : new Error(`Could not parse Drive image ${fileId}`);
   }
 }
 
 const getCachedDriveOriginal = (fileId: string) =>
   unstable_cache(
     async () => downloadDriveOriginal(fileId),
-    ["insights-drive-original-v2", fileId],
+    ["insights-drive-original-v3", fileId],
     {
       revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
       tags: [CMS_IMAGE_CACHE_TAG],
     },
   )();
-
 async function renderCoverVariant(
   original: CachedOriginal,
   maxWidth: number,
@@ -129,17 +129,15 @@ export async function getOptimizedCover(
     const cached = await unstable_cache(
       async () => {
         const original = await getCachedDriveOriginal(fileId);
-        if (!original) return null;
         return renderCoverVariant(original, maxWidth, format);
       },
-      ["insights-cover-variant-v2", fileId, String(maxWidth), format],
+      ["insights-cover-variant-v3", fileId, String(maxWidth), format],
       {
         revalidate: CMS_IMAGE_REVALIDATE_SECONDS,
         tags: [CMS_IMAGE_CACHE_TAG],
       },
     )();
 
-    if (!cached) return null;
     return {
       bytes: Buffer.from(cached.base64, "base64"),
       mimeType: cached.mimeType,
