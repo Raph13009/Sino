@@ -157,8 +157,9 @@ export const en = {
       specialistsFigure: "20+",
       specialists:
         "European specialists in our collaborating expert network",
-      essecAlt: "ESSEC Business School",
-      essec: "Part of the ESSEC Ventures incubator",
+      localSupportLabel: "Local support",
+      localSupport:
+        "We identify maintenance, warehousing and after-sales partners to help you serve customers in Europe.",
     },
     why: {
       number: "04",
@@ -318,6 +319,7 @@ export const en = {
       paragraphs: [
         "Chinese industrial companies expanding into Europe often discover that strategy decks are not enough. Buyers move differently. Sales cycles run longer. Local specialists matter. Commercial presence has to be credible on the ground.",
         "OPOPA exists for that gap: the space between market ambition and practical European execution. We help companies frame the route, coordinate the right independent specialists, and build a commercial presence that can actually sell.",
+        "OPOPA Partners is part of the ESSEC Ventures incubator.",
       ],
     },
     bridge: {

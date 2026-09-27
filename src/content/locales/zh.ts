@@ -152,8 +152,9 @@ export const zh = {
       clients: "创始人在法国和英国发展销售时支持过的客户",
       specialistsFigure: "20+",
       specialists: "与我们协作的专家网络中的欧洲专业人士",
-      essecAlt: "ESSEC 商学院",
-      essec: "参与 ESSEC Ventures Starter 计划",
+      localSupportLabel: "本地支持",
+      localSupport:
+        "我们帮助识别维保、仓储与售后合作伙伴，以便您服务欧洲客户。",
     },
     why: {
       number: "04",
@@ -311,6 +312,7 @@ export const zh = {
       paragraphs: [
         "中国工业企业进入欧洲时，常会发现战略报告远远不够。买家决策方式不同，销售周期更长，本地专家至关重要，商业存在也必须在当地站得住脚。",
         "OPOPA 正是为填补这一空缺而建：介于市场雄心与务实欧洲执行之间。我们帮助企业框定路径、协调合适的独立专家，并建立能够真正完成销售的商业存在。",
+        "OPOPA Partners 参与 ESSEC Ventures 孵化器。",
       ],
     },
     bridge: {
