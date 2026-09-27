@@ -154,7 +154,7 @@ export const en = {
       clientsFigure: "10+",
       clients:
         "Clients supported in developing sales in France and the UK",
-      specialistsFigure: "20+",
+      specialistsFigure: "50+",
       specialists:
         "European specialists in our collaborating expert network",
       localSupportLabel: "Local support",
@@ -780,7 +780,137 @@ export const en = {
       cta: "Discuss your market entry",
       seoTitle: "European Market Entry for Chinese Manufacturers | OPOPA",
       seoDescription:
-        "Diagnose the product and target market, choose a route to market and assemble a practical European expansion plan for Chinese industrial companies.",
+        "Plan your European expansion around target customers, routes to market and local capabilities. OPOPA helps Chinese industrial companies define their first moves.",
+      detail: {
+        eyebrow: "01 / Plan entry",
+        headline: "European Market Entry for Chinese Manufacturers",
+        lead: "Turn your European expansion plans into a clear commercial route to market.",
+        intro:
+          "OPOPA works with Chinese industrial and green-tech companies to identify where to start, who to sell to, and what it will take to serve customers locally. We assess the opportunity, compare routes to market, and build a practical entry plan your team can execute.",
+        plan: {
+          title: "Enter Europe with a plan built around your product",
+          paragraphs: [
+            "A distributor’s interest is not proof of demand. A promising country is not yet a sales strategy. And securing a first order means little if customers cannot get the technical support or maintenance they expect.",
+            "European market entry requires the right combination of target customers, commercial coverage and local capabilities. OPOPA brings those decisions together before your company commits to a partner, hires a team or invests in a permanent presence.",
+          ],
+        },
+        work: {
+          title: "What we work on",
+          columns: [
+            "Entry decision",
+            "What OPOPA examines",
+            "What it gives you",
+          ],
+          rows: [
+            {
+              decision: "Where to start",
+              examines:
+                "Relevant countries, applications and customer segments",
+              gives: "A focused starting point, with reasons for the choice",
+            },
+            {
+              decision: "Who to reach",
+              examines:
+                "Buyers, technical decision-makers and routes into target accounts",
+              gives: "A clearer picture of the customers to approach first",
+            },
+            {
+              decision: "How to sell",
+              examines:
+                "Direct sales, distributors, local representation and staged combinations",
+              gives: "A recommended commercial route and its trade-offs",
+            },
+            {
+              decision: "How to support the product",
+              examines:
+                "After-sales, maintenance, warehousing and other local requirements",
+              gives: "A view of the capabilities needed to serve customers",
+            },
+            {
+              decision: "What to do next",
+              examines:
+                "Dependencies, open questions and investment decisions",
+              gives: "A sequenced plan for the first stage of expansion",
+            },
+          ],
+          note: "The depth of each workstream is agreed at the start of the assignment. Where specialist legal, regulatory or technical advice is needed, we identify the question and scope the appropriate support.",
+        },
+        route: {
+          title: "A route to market that fits the way your customers buy",
+          paragraphs: [
+            "Industrial sales rarely depend on price alone. Buyers may need technical discussions, site visits, installation support, spare parts or confidence that someone can respond locally after delivery.",
+            "That changes the choice of commercial model. A distributor may offer coverage and customer access. Direct sales may give you more control over strategic accounts. Local representation can help develop relationships before a permanent team makes sense.",
+            "We compare these routes against your product and target customers, then identify what each would require from your company and from partners in Europe.",
+            "A European subsidiary or joint venture may become relevant as the business develops. We treat these as investment decisions to examine when there is a commercial reason to do so, with the appropriate professional advisers.",
+          ],
+        },
+        steps: {
+          title: "From assessment to first moves",
+          items: [
+            {
+              title: "Define the assignment",
+              body: "We start with your product, existing sales, European ambitions and the decisions you need to make. We agree which markets and commercial questions the work will cover.",
+            },
+            {
+              title: "Assess the opportunity",
+              body: "We examine target customers, buying processes, competing offers and the practical requirements of selling and supporting your product.",
+            },
+            {
+              title: "Select a commercial route",
+              body: "We compare viable options and recommend where to focus first, how to reach customers and which capabilities need to be in place.",
+            },
+            {
+              title: "Plan the next stage",
+              body: "You receive a written plan setting out priorities, dependencies and the next decisions. Further work, such as partner sourcing or sales representation, can then be scoped around a defined need.",
+            },
+          ],
+        },
+        deliverable: {
+          title: "What you receive",
+          intro:
+            "A written European market-entry plan designed to support action, including:",
+          items: [
+            "Priority markets and customer segments, with the reasoning behind the selection.",
+            "A recommended route to market and the principal alternatives considered.",
+            "The buyer roles and commercial approach to address first.",
+            "The local sales, service and after-sales capabilities the route requires.",
+            "Issues that need review by independent specialists.",
+            "A sequence of first actions and decisions for your team.",
+          ],
+          closing:
+            "The aim is to give your leadership team a basis for deciding where to commit resources now, what to validate next, and what can wait.",
+        },
+        followOn: {
+          title: "Build the local capabilities your plan requires",
+          paragraphs: [
+            "The entry plan may reveal needs beyond the initial strategy: a commercial representative, an independent regulatory specialist, a maintenance provider or a warehousing partner.",
+            "OPOPA can help define and coordinate those follow-on needs through separately scoped services:",
+          ],
+          links: [
+            {
+              label: "European Experts and Partners",
+              href: "/services/european-experts-and-partners",
+            },
+            {
+              label: "Legal and Regulatory Support",
+              href: "/services/legal-and-regulatory-support",
+            },
+            {
+              label: "Local After-Sales and Maintenance Partnerships",
+              href: "/services/after-sales-maintenance",
+            },
+            {
+              label: "European Sales Representation",
+              href: "/services/european-sales-representation",
+            },
+          ],
+        },
+        closing: {
+          title: "Planning your entry into Europe?",
+          body: "Tell us what you manufacture, which markets you are considering and what you need your European business to achieve. We will discuss the decisions ahead and propose a focused entry assignment.",
+          cta: "Discuss your market entry",
+        },
+      },
     },
     "european-experts-and-partners": {
       name: "European Experts and Partners",

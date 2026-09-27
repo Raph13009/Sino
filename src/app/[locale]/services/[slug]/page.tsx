@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/layout/FinalCta";
+import { MarketEntryPage } from "@/components/services/MarketEntryPage";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
@@ -68,6 +69,18 @@ export default async function ServicePage({ params }: Props) {
     service.slug as ServiceSlug,
   );
   const contactHref = localePath(locale, "/contact");
+
+  if (service.slug === "european-market-entry") {
+    return (
+      <MarketEntryPage
+        locale={locale}
+        dict={dict}
+        image={service.image}
+        breadcrumbName={service.name}
+        relatedInsights={relatedInsights}
+      />
+    );
+  }
 
   return (
     <>
