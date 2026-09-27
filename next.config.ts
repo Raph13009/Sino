@@ -82,7 +82,13 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/images/raph_industrial_visite/home-context-factory.webp",
-        destination: "/images/raph_industrial_visite/raph_industrial_visite_7.webp",
+        destination: "/images/raph_industrial_visite/home-context.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/services/service-market-entry.webp",
+        destination:
+          "/images/raph_industrial_visite/service-market-entry.webp",
         permanent: true,
       },
       {
