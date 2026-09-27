@@ -29,7 +29,7 @@ Historical record. Service URLs below describe the catalogue at that date, not t
 - Optional GA4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID` (inactive when unset). Events: contact CTA, service CTA, form submit, LinkedIn, email. No form field values.
 - Vercel Analytics only mounts when `isProductionDeployment()` is true.
 - `public/llms.txt` updated to current services, industries and canonical URLs.
-- Footer copyright uses **OPOPA Partners**. `.env.example` CIVEP comments removed.
+- Footer copyright uses **OPOPA Partners**. No CIVEP in runtime copy or env examples.
 
 ---
 

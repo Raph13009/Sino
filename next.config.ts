@@ -75,7 +75,7 @@ const nextConfig: NextConfig = {
         destination: "/images/hero/hero-industrial-port.webp",
         permanent: true,
       },
-      // Retired CIVEP / first-OPOPA brand files Google may still have cached.
+      // Legacy brand asset paths (pre-OPOPA filenames) that may still be cached externally.
       {
         source: "/brand/civep-favicon.png",
         destination: "/favicon-192.png",

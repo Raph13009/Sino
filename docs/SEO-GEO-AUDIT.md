@@ -124,7 +124,7 @@ Descriptions are unique per template. Service/industry/article descriptions are 
 4. **Listing titles are generic** (`Services`, `About`, `Contact`) and rely on a `| OPOPA` suffix. Unique enough to avoid duplicates, but weak in SERPs.
 5. **Insight visible breadcrumb last item is the category**, not the article title. JSON-LD uses the title. They should match.
 6. **`public/llms.txt` is stale:** `/expertise` (redirected), old service labels (“European Partner Network”, “Market Entry Advisory”), audience size “60–500 employees” that is not a confirmed on-page claim in current copy.
-7. **`.env.example` and Resend comments still say CIVEP / civep.com.**
+7. ~~**`.env.example` / Resend still said CIVEP.**~~ Resolved — runtime copy, env examples, and UI use OPOPA only. Legacy `/brand/civep-*` paths remain as permanent redirects in `next.config.ts`.
 8. **`src/lib/analytics.ts` and `README` say Search Console / analytics are not configured.** Search Console verification *is* in root metadata; Vercel Analytics *is* mounted.
 9. **Privacy policy says no third-party analytics requiring consent**, while `@vercel/analytics` loads on every request. Vercel Web Analytics is cookieless, but the legal docs are out of date (`docs/LEGAL-LAUNCH-TODOS.md` still says analytics is not active).
 10. **About page renders an internal `TODO —` developer note** (`dict.about.proof.todoNote`) in public HTML.
@@ -161,7 +161,7 @@ Descriptions are unique per template. Service/industry/article descriptions are 
 | P1.11 | Stop rendering About `TODO —` developer note. Keep the honest “will be published when approved” body. | Do not index internal scaffolding. |
 | P1.12 | Legal/privacy BreadcrumbList JSON-LD. JSON-LD script escaping. | Completeness + safety. |
 | P1.13 | Refresh `llms.txt` with current canonical paths and on-page facts only. | P3 in the brief; implemented after P0/P1 because the file is already live and currently wrong. |
-| P1.14 | Footer copyright uses **OPOPA Partners**. Fix CIVEP leftovers in `.env.example` / README analytics claims. | Brand + docs accuracy. |
+| P1.14 | Footer / brand copy use **OPOPA Partners**. Legacy CIVEP paths exist only as redirects. | Brand accuracy. |
 
 ### P2 — Useful
 
@@ -277,10 +277,9 @@ No hidden SEO text. No keyword stuffing in metadata.
 
 | Name | Where | Action |
 |---|---|---|
-| **CIVEP** | `CIVEP_Website_Brief/` (entire historical brief) | Keep. Historical source folder, not rendered. |
-| **CIVEP** | `.env.example` Resend comments (`civep.com`, `CIVEP <…>`) | Fix comments. |
+| **CIVEP** | Only as legacy redirect *sources* in `next.config.ts` (`/brand/civep-*` → current OPOPA assets) | Keep redirects. Do not reintroduce the name in UI or copy. |
 | **SIECOQ / SIECOY / SIECOOP** | Not found in the repository | None |
-| **OPOPA / OPOPA Partners** | Live UI, metadata, legal | Correct. Footer copyright used short name only — use legal name. |
+| **OPOPA / OPOPA Partners** | Live UI, metadata, legal | Correct. |
 | `/expertise` | Redirects + stale `llms.txt` | Redirects stay; llms.txt updated. |
 
 ---

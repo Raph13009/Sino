@@ -24,7 +24,7 @@ Those issues are fixed. Production remains `index, follow`. Preview/development 
 - Related insights are reverse-lookups from existing frontmatter, hidden when empty — not dumped on every page.
 - About service links reuse existing tertiary buttons after the execution section.
 - 404 is `noindex` with a dedicated title.
-- CIVEP remains only in the historical `CIVEP_Website_Brief/` folder, not in runtime UI, metadata, sitemap, robots, or `llms.txt`.
+- CIVEP is absent from runtime UI, metadata, sitemap, robots, and `llms.txt`. Only legacy `/brand/civep-*` redirect sources remain in `next.config.ts`.
 - Search Console HTML token was left untouched.
 
 ---
