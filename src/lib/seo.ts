@@ -123,9 +123,9 @@ export function organizationJsonLd() {
     slogan: siteConfig.tagline,
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/brand/logo-light.png"),
+      url: absoluteUrl("/brand/logo-light.webp"),
     },
-    image: absoluteUrl("/brand/logo-light.png"),
+    image: absoluteUrl("/brand/logo-light.webp"),
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",

@@ -12,6 +12,20 @@ import {
 } from "@/content/catalog";
 import { localePath, type Locale } from "@/i18n/config";
 
+type LocalizableMedia = {
+  id: string;
+  alt: string;
+};
+
+export function localizeMediaAsset<T extends LocalizableMedia>(
+  dict: Dictionary,
+  asset: T,
+): T {
+  const alt =
+    dict.mediaAlts[asset.id as keyof typeof dict.mediaAlts] ?? asset.alt;
+  return { ...asset, alt };
+}
+
 export function getServices(locale: Locale, dict: Dictionary) {
   return serviceSlugs.map((slug) => {
     const copy = dict.services[slug];
@@ -20,7 +34,7 @@ export function getServices(locale: Locale, dict: Dictionary) {
       slug,
       number: meta.number,
       group: meta.group,
-      image: meta.image,
+      image: localizeMediaAsset(dict, meta.image),
       href: localePath(locale, `/services/${slug}`),
       complementary: meta.complementary,
       ...copy,
@@ -83,7 +97,7 @@ export function getIndustries(locale: Locale, dict: Dictionary) {
     return {
       slug,
       number: meta.number,
-      image: meta.image,
+      image: localizeMediaAsset(dict, meta.image),
       href: localePath(locale, `/industries/${slug}`),
       ...copy,
     };

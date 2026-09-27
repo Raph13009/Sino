@@ -34,11 +34,12 @@ export function HomeContext({ dict }: { dict: Dictionary }) {
           <div className="lg:col-span-6 lg:col-start-7">
             <MediaImage
               src={image.src}
-              alt={image.alt}
+              alt={copy.imageAlt}
               width={image.width}
               height={image.height}
               sizes="(max-width: 1024px) 100vw, 48vw"
-              frameClassName="aspect-[4/5] md:aspect-[5/6]"
+              frameClassName="aspect-[3/2]"
+              imageClassName="scale-[1.08] object-[center_42%]"
               caption={copy.caption}
             />
           </div>

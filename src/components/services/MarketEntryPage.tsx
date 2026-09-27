@@ -91,6 +91,7 @@ export function MarketEntryPage({
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 frameClassName="aspect-[4/3]"
+                imageClassName="scale-[1.06] object-[center_40%]"
               />
             </div>
           </div>

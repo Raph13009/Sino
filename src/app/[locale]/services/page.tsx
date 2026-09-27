@@ -134,6 +134,7 @@ export default async function ServicesPage({ params }: Props) {
                   height={lead.image.height}
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   frameClassName="aspect-[4/3]"
+                  imageClassName="scale-[1.06] object-[center_40%]"
                 />
               </div>
             </article>

@@ -43,3 +43,7 @@ next-env.d.ts
 
 # 4K source kept locally; production uses compressed derivatives
 /video-source/
+
+# Full-resolution photo sources; production uses optimized derivatives
+/image-sources/
+.tmp-qa/

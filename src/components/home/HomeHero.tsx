@@ -41,7 +41,7 @@ export function HomeHero({
           <div className="lg:col-span-6 lg:col-start-7">
             <MediaImage
               src={hero.src}
-              alt={hero.alt}
+              alt={copy.imageAlt}
               width={hero.width}
               height={hero.height}
               priority

@@ -107,6 +107,7 @@ export default async function AboutPage({ params }: Props) {
               <FounderProfile
                 key={founder.id}
                 founder={founder}
+                dict={dict}
                 reverse={index % 2 === 1}
               />
             ))}

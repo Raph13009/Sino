@@ -47,7 +47,7 @@ export const serviceMeta: Record<
   "european-market-entry": {
     number: "01",
     group: "plan",
-    image: media.home.context,
+    image: media.services.marketEntry,
     complementary: [
       "european-experts-and-partners",
       "legal-and-regulatory-support",

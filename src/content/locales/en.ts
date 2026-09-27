@@ -105,6 +105,7 @@ export const en = {
       primaryCta: "Discuss your European expansion",
       secondaryCta: "Explore our services",
       caption: "China / Europe / Industrial Expansion",
+      imageAlt: "Container port and industrial logistics infrastructure",
     },
     context: {
       number: "03",
@@ -119,6 +120,8 @@ export const en = {
         "Sustained commercial presence on the ground",
       ],
       caption: "Industrial production / Europe",
+      imageAlt:
+        "Three colleagues in high-visibility vests reviewing drawings on a factory floor",
     },
     services: {
       number: "02",
@@ -376,7 +379,7 @@ export const en = {
         {
           id: "raphael-levy",
           mediaKey: "raphaelLevy",
-          name: "Raphael Sacha Antoine Levy",
+          name: "Raphael Levy",
           role: "Co-founder",
           focus: "Europe",
           bio: [
@@ -1191,6 +1194,41 @@ export const en = {
       seoDescription:
         "European expansion support for Chinese mobility and infrastructure industrial companies.",
     },
+  },
+
+  mediaAlts: {
+    "brand-logo-light": "OPOPA Partners",
+    "brand-logo-dark": "OPOPA Partners",
+    "brand-mark": "OPOPA mark",
+    "home-hero-01": "Container port and industrial logistics infrastructure",
+    "home-context-01":
+      "Three colleagues in high-visibility vests reviewing drawings on a factory floor",
+    "service-sales-enablement":
+      "Technical discussion on an industrial production floor",
+    "service-expert-partner-sourcing":
+      "Engineer reviewing technical documentation in an industrial setting",
+    "service-outsourced-sales":
+      "Industrial machinery and manufacturing equipment detail",
+    "service-market-entry":
+      "A team walking a machining hall during a factory visit",
+    "service-sales-ai-automation":
+      "Industrial operations workstation supporting commercial workflows",
+    "industry-industrial-equipment":
+      "Heavy industrial equipment on a construction site",
+    "industry-advanced-manufacturing": "Advanced manufacturing production line",
+    "industry-green-technology":
+      "Solar energy infrastructure in an industrial landscape",
+    "industry-mobility-infrastructure":
+      "Rail and mobility infrastructure across an open landscape",
+    "about-main-01": "Contemporary commercial architecture against a clear sky",
+    "team-max-marchesseau-laskar":
+      "Portrait of Max Marchesseau Laskar, co-founder of OPOPA",
+    "team-raphael-levy":
+      "Portrait of Raphael Sacha Antoine Levy, co-founder of OPOPA",
+    "insight-market-entry": "Business planning documents on a desk",
+    "insight-european-sales": "Engineer working with industrial equipment",
+    "insight-distributor-strategy":
+      "Warehouse logistics and palletized industrial goods",
   },
 } as const;
 

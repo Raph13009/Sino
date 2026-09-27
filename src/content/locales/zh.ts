@@ -106,6 +106,7 @@ export const zh = {
       primaryCta: "洽谈欧洲拓展",
       secondaryCta: "了解我们的服务",
       caption: "中国 / 欧洲 / 工业拓展",
+      imageAlt: "集装箱港口与工业物流基础设施",
     },
     context: {
       number: "03",
@@ -120,6 +121,7 @@ export const zh = {
         "持续在地的商业存在",
       ],
       caption: "工业生产 / 欧洲",
+      imageAlt: "三位穿高可视背心的同事在工厂车间审阅图纸",
     },
     services: {
       number: "02",
@@ -369,7 +371,7 @@ export const zh = {
         {
           id: "raphael-levy",
           mediaKey: "raphaelLevy",
-          name: "Raphael Sacha Antoine Levy",
+          name: "Raphael Levy",
           role: "联合创始人",
           focus: "欧洲",
           bio: [
@@ -1159,5 +1161,29 @@ export const zh = {
       seoDescription:
         "为中国出行与基础设施工业企业提供欧洲拓展支持。",
     },
+  },
+
+  mediaAlts: {
+    "brand-logo-light": "OPOPA Partners",
+    "brand-logo-dark": "OPOPA Partners",
+    "brand-mark": "OPOPA 标识",
+    "home-hero-01": "集装箱港口与工业物流基础设施",
+    "home-context-01": "三位穿高可视背心的同事在工厂车间审阅图纸",
+    "service-sales-enablement": "工业生产现场的技术讨论",
+    "service-expert-partner-sourcing": "工程师在工业环境中审阅技术文件",
+    "service-outsourced-sales": "工业机械与制造设备细节",
+    "service-market-entry": "团队在机加工车间进行工厂参观",
+    "service-sales-ai-automation": "支持商务流程的工业运营工作站",
+    "industry-industrial-equipment": "施工现场的重型工业设备",
+    "industry-advanced-manufacturing": "先进制造生产线",
+    "industry-green-technology": "工业景观中的太阳能基础设施",
+    "industry-mobility-infrastructure": "开阔地貌上的轨道与出行基础设施",
+    "about-main-01": "晴空下的当代商业建筑",
+    "team-max-marchesseau-laskar": "OPOPA 联合创始人 Max Marchesseau Laskar 肖像",
+    "team-raphael-levy":
+      "OPOPA 联合创始人 Raphael Sacha Antoine Levy 肖像",
+    "insight-market-entry": "桌上的商业规划文件",
+    "insight-european-sales": "工程师操作工业设备",
+    "insight-distributor-strategy": "仓储物流与托盘化工业货物",
   },
 } satisfies Dictionary;

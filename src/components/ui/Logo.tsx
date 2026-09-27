@@ -28,7 +28,7 @@ export function Logo({
     >
       <Image
         src={asset.src}
-        alt={asset.alt}
+        alt=""
         width={asset.width}
         height={asset.height}
         priority={priority}

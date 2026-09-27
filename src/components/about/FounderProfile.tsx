@@ -1,6 +1,8 @@
 import { MediaImage } from "@/components/ui/MediaImage";
 import { LinkedInLink } from "@/components/ui/LinkedInLink";
 import { Eyebrow } from "@/components/ui/Section";
+import type { Dictionary } from "@/content/locales/types";
+import { localizeMediaAsset } from "@/content/localized";
 import { media } from "@/content/media";
 import { cn } from "@/lib/utils";
 
@@ -26,12 +28,14 @@ function resolveTeamMedia(key: string) {
 
 export function FounderProfile({
   founder,
+  dict,
   reverse = false,
 }: {
   founder: FounderProfileData;
+  dict: Dictionary;
   reverse?: boolean;
 }) {
-  const image = resolveTeamMedia(founder.mediaKey);
+  const image = localizeMediaAsset(dict, resolveTeamMedia(founder.mediaKey));
 
   return (
     <article

@@ -75,6 +75,26 @@ const nextConfig: NextConfig = {
         destination: "/images/hero/hero-industrial-port.webp",
         permanent: true,
       },
+      {
+        source: "/images/raph_industrial_visite/raph_industrial_visite_:n.png",
+        destination: "/images/raph_industrial_visite/raph_industrial_visite_:n.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/raph_industrial_visite/home-context-factory.webp",
+        destination: "/images/raph_industrial_visite/raph_industrial_visite_7.webp",
+        permanent: true,
+      },
+      {
+        source: "/video/founder-introduction.jpg",
+        destination: "/video/founder-introduction.webp",
+        permanent: true,
+      },
+      {
+        source: "/brand/plaquette.png",
+        destination: "/brand/plaquette.webp",
+        permanent: true,
+      },
       // Legacy brand asset paths (pre-OPOPA filenames) that may still be cached externally.
       {
         source: "/brand/civep-favicon.png",
