@@ -148,9 +148,9 @@ export const en = {
             "Build a local commercial presence with professionals who represent your company in European markets.",
         },
         "after-sales-maintenance": {
-          title: "After-Sales & Maintenance",
+          title: "European After-Sales & Maintenance",
           description:
-            "Develop local service partnerships that give European customers confidence beyond the initial sale.",
+            "Build local spare-parts warehousing, urgent logistics and maintenance capabilities for European customers.",
         },
       },
     },
@@ -855,7 +855,7 @@ export const en = {
               href: "/services/legal-and-regulatory-support",
             },
             {
-              label: "Local After-Sales and Maintenance Partnerships",
+              label: "European After-Sales & Maintenance",
               href: "/services/after-sales-maintenance",
             },
             {
@@ -955,45 +955,328 @@ export const en = {
         "Scope and coordinate independent counsel on incorporation, contracts, international trade and product compliance for Chinese companies entering Europe.",
     },
     "after-sales-maintenance": {
-      name: "Local After-Sales and Maintenance Partnerships",
-      shortName: "After-Sales and Maintenance",
-      positioning: "Arrange local maintenance and service partnerships where the product requires them.",
+      name: "European After-Sales & Maintenance",
+      shortName: "After-Sales & Maintenance",
+      positioning:
+        "Design, structure and coordinate the European after-sales infrastructure your customers expect.",
       megaDescription:
-        "Define service requirements and arrange European maintenance, spare-parts or technical-support partnerships and agreements where a fit exists.",
+        "Spare-parts warehousing, forward stock, urgent logistics, local maintenance partners and field service — coordinated for Chinese manufacturers.",
       summary:
-        "OPOPA helps industrial manufacturers define service requirements and arrange suitable European maintenance, spare-parts or technical-support partnerships and service agreements where a fit exists. Coverage depends on the partner, the territory and the agreement that is signed.",
+        "OPOPA helps Chinese industrial manufacturers establish European spare-parts storage, urgent logistics and local maintenance capabilities without building their own service organisation from day one. The setup is designed around your product and quoted to scope.",
       situationTitle: "When buyers ask who will service the machine",
       situation: [
         "European industrial buyers often treat maintenance, spare parts and a local response path as part of the purchase, not as an afterthought once the machine is installed.",
-        "A manufacturer cannot honestly promise a service level it has not arranged. The useful work is to define what the product requires in the field, then see which local partners can carry that work.",
+        "A manufacturer cannot honestly promise a service level it has not arranged. The useful work is to define what the product requires in the field, then structure the local warehousing, logistics and technical partners that can carry that work.",
       ],
-      coordinatesTitle: "How partnerships are arranged",
+      coordinatesTitle: "How the after-sales setup is built",
       coordinates: [
-        "OPOPA works with the client to define service requirements: what must be maintained, which spare parts matter, what technical skill is required, and which territories are in scope for the first stage.",
-        "Where a suitable partner exists, OPOPA helps arrange the introduction and the outline of a service agreement. Response times, geographic coverage and service levels depend on the partner, the territory and the agreement that is signed.",
+        "OPOPA works with the client to define service requirements: what must be stocked, which spare parts are critical, what technical skill is required, and which territories matter first.",
+        "We then design the support model, identify and qualify partners, and help coordinate the network — from warehouse and forward stock to field service and reverse logistics — under a clear framework the manufacturer controls.",
       ],
       scope: [
-        "Service-requirement definition",
-        "Maintenance, spare-parts and technical-support needs",
-        "Identification of suitable local partners where feasible",
-        "Outline of a service agreement",
-        "Dependencies: territory, product and partner capacity",
-        "Alignment so sales claims match the service that can actually be offered",
+        "Spare-parts warehousing and inventory setup",
+        "Forward stock locations for critical parts",
+        "Urgent spare-parts logistics",
+        "Local maintenance and field-service partners",
+        "Reverse logistics and returns",
+        "European after-sales coordination",
       ],
-      receivesTitle: "A service brief, and partners only where they fit",
+      receivesTitle: "A support model you can execute",
       receives: [
-        "A practical statement of service requirements for the product and the first territories",
-        "A view of which local partnership models are realistic",
-        "Introductions to suitable maintenance or technical partners where a fit is found",
-        "An outline of the service agreement to be negotiated, not a guaranteed service level",
+        "A clear after-sales model matched to product complexity and downtime risk",
+        "Qualified logistics and technical partners for the first territories",
+        "Roles, service scope and responsibilities across the network",
+        "A tailored quotation based on the actual scope — never a public price list",
       ],
-      startsTitle: "The service brief comes before introductions",
+      startsTitle: "Start with the service requirement",
       starts:
-        "OPOPA reviews the product, the installed-base ambition and the territories under discussion. If the requirement is still undefined, the first step is the service brief. Partner introductions follow only where the brief and the territory make a search worthwhile.",
-      cta: "Discuss after-sales partnerships",
-      seoTitle: "Industrial After-Sales Service Partnerships in Europe | OPOPA",
+        "OPOPA reviews the product, installed-base ambition and territories under discussion. The first step is to define the support model. Partner selection and implementation follow once the scope is clear.",
+      cta: "Discuss your after-sales needs",
+      seoTitle:
+        "European After-Sales & Maintenance Services for Chinese Manufacturers | OPOPA",
       seoDescription:
-        "Define service requirements and arrange suitable European maintenance, spare-parts or technical-support partnerships and service agreements for industrial manufacturers.",
+        "Build reliable after-sales operations in Europe with local spare-parts warehousing, urgent delivery, maintenance partners and field service. OPOPA helps Chinese manufacturers establish and coordinate the right European support network.",
+      detail: {
+        eyebrow: "04 / Local support",
+        headline: "European After-Sales & Maintenance for Chinese Manufacturers",
+        lead: "Build the local support infrastructure your European customers expect.",
+        intro:
+          "OPOPA helps Chinese industrial and technology manufacturers establish European spare-parts storage, urgent logistics and local maintenance capabilities — without building their own service organisation from day one. We design the model, qualify the partners and coordinate the setup around your product.",
+        firstStep: {
+          title: "Selling the product is only the first step",
+          intro:
+            "European buyers do not stop at price and performance. Before they commit, they want to know how the equipment will be supported once it is installed.",
+          points: [
+            "Where spare parts are stored",
+            "How quickly parts can be delivered",
+            "Who handles breakdowns",
+            "Who manages returns and warranty cases",
+            "Whether technical support is available locally",
+          ],
+          closing:
+            "OPOPA helps you build the right support model through local warehousing, logistics and maintenance partners — structured around how your product actually behaves in the field.",
+        },
+        model: {
+          title: "A support model built around your product",
+          intro:
+            "Not every product requires the same infrastructure. The after-sales setup should match downtime risk, technical complexity and customer expectations.",
+          examples: [
+            "Simple components may only need local stock.",
+            "Modular equipment may need critical parts close to customers.",
+            "Complex machinery may require both spare parts and technicians.",
+          ],
+          buildsAroundLabel: "OPOPA builds the model around",
+          buildsAround: [
+            "Product complexity",
+            "Installed base",
+            "Customer expectations",
+            "Downtime risk",
+          ],
+        },
+        warehousing: {
+          title: "European Spare-Parts Warehousing",
+          intro:
+            "For components and relatively simple industrial products, a central European warehouse can provide an efficient first level of local after-sales support.",
+          setupLabel: "OPOPA can help set up",
+          setup: [
+            "Spare-parts warehousing",
+            "Inventory and SKU management",
+            "Order preparation and fulfilment",
+            "Parcel and pallet distribution",
+            "Returns and reverse logistics",
+            "Replenishment processes",
+            "Delivery across multiple European countries",
+          ],
+          bestFit:
+            "Best for standard components, consumables, springs, replacement parts and products that do not require specialist intervention.",
+        },
+        logistics: {
+          title: "Time-Critical Spare-Parts Logistics",
+          intro:
+            "For equipment where downtime is costly, one central warehouse may not be enough. Critical spare parts can be positioned closer to customers through Forward Stock Locations.",
+          setupLabel: "OPOPA can coordinate",
+          setup: [
+            "Central European spare-parts hubs",
+            "Forward stock locations",
+            "Critical-parts positioning",
+            "Urgent delivery",
+            "Same-day / next-business-day logistics",
+            "Reverse logistics",
+            "Multi-country logistics networks",
+            "Service-level agreements",
+          ],
+          bestFit: "Best for equipment where fast parts availability matters.",
+        },
+        fieldService: {
+          title: "Local Maintenance & Field Service",
+          intro:
+            "For more complex equipment, spare parts alone are not enough. European customers expect someone local who can install, diagnose and maintain the product.",
+          setupLabel: "OPOPA can help identify local partners for",
+          setup: [
+            "Installation",
+            "Commissioning",
+            "Preventive maintenance",
+            "Troubleshooting",
+            "Diagnosis",
+            "Component replacement",
+            "Corrective maintenance",
+            "Equipment repair",
+            "Inspection",
+            "Technical reporting",
+          ],
+          closing:
+            "Different products require different specialists. Heavy or specialised equipment may also require certifications, training and product-specific technical capabilities — which we factor into partner selection.",
+        },
+        network: {
+          title: "Integrated European After-Sales Network",
+          intro:
+            "OPOPA helps structure a complete support model that connects logistics and technical partners into one workable European setup.",
+          items: [
+            "Spare-parts warehouse",
+            "Critical local stock",
+            "Breakdown reporting",
+            "Remote support",
+            "Urgent parts dispatch",
+            "Local technician intervention",
+            "Reverse logistics",
+            "Service reporting",
+          ],
+          closing:
+            "OPOPA is the coordination layer that helps the Chinese manufacturer design, structure and align the right European after-sales network — while the manufacturer keeps control of products, customers and standards.",
+        },
+        establish: {
+          title: "What we can help you establish",
+          cards: [
+            {
+              title: "Spare-Parts Warehousing",
+              body: "Local European inventory for replacement parts and critical components.",
+            },
+            {
+              title: "Forward Stock Locations",
+              body: "Strategically positioned spare parts closer to installed equipment.",
+            },
+            {
+              title: "Urgent Parts Delivery",
+              body: "Time-critical logistics for breakdowns and high-priority service requirements.",
+            },
+            {
+              title: "Field Service & Maintenance",
+              body: "Qualified local technicians for installation, inspection, maintenance and repair.",
+            },
+            {
+              title: "Reverse Logistics & Returns",
+              body: "Structured collection and return of defective parts, replacements and warranty items.",
+            },
+            {
+              title: "European Service Coordination",
+              body: "One framework connecting the manufacturer with logistics and technical partners across target markets.",
+            },
+          ],
+        },
+        process: {
+          title: "How OPOPA works",
+          steps: [
+            {
+              title: "Define the requirement",
+              body: "Assess the product, markets, likely support needs and expected service level.",
+            },
+            {
+              title: "Design the support model",
+              body: "Determine whether the right model is warehousing only, urgent spare-parts logistics, field service, or a combination.",
+            },
+            {
+              title: "Identify and qualify partners",
+              body: "Assess providers based on coverage, technical capabilities, logistics capacity, SLAs and fit.",
+            },
+            {
+              title: "Structure the network",
+              body: "Define the roles, service scope, responsibilities and after-sales setup.",
+            },
+            {
+              title: "Support implementation",
+              body: "Help coordinate onboarding, documentation, stock setup and partner alignment.",
+            },
+            {
+              title: "Scale as the business grows",
+              body: "Expand the support model as the manufacturer grows its European footprint.",
+            },
+          ],
+        },
+        why: {
+          title: "Why local after-sales matters in European industrial sales",
+          intro:
+            "European buyers do not only assess the product itself. They also evaluate whether they can keep it running.",
+          points: [
+            "Spare-parts availability",
+            "Response time",
+            "Maintenance capability",
+            "Warranty handling",
+            "Local technical support",
+            "Continuity of service",
+          ],
+          closing:
+            "A manufacturer may have a strong product and still face resistance if servicing the equipment appears difficult, slow or entirely dependent on shipments from Asia.",
+        },
+        forManufacturers: {
+          title: "Built for Chinese manufacturers entering Europe",
+          intro:
+            "This service is built for manufacturers entering Europe without a ready-made local support organisation.",
+          withoutLabel: "Especially when you do not yet have",
+          without: [
+            "Your own European warehouse",
+            "A local service department",
+            "Maintenance partners",
+            "Technicians in target countries",
+            "An established after-sales network",
+          ],
+          closing:
+            "You keep control of your products, customers and standards. OPOPA helps structure the local execution — warehousing, logistics and technical partners — so European buyers can be supported with confidence.",
+        },
+        industries: {
+          title: "Industries we support",
+          items: [
+            "Industrial Equipment",
+            "Advanced Manufacturing",
+            "Automation & Robotics",
+            "Material Handling",
+            "Energy & Green Technology",
+            "Mobility & Infrastructure",
+            "Industrial Components",
+            "Technical Hardware",
+          ],
+        },
+        faq: {
+          title: "Frequently asked questions",
+          items: [
+            {
+              question:
+                "Can a Chinese manufacturer store spare parts in Europe without opening its own warehouse?",
+              answer:
+                "Yes. OPOPA can help set up spare-parts warehousing through suitable European logistics partners, so inventory can be held and fulfilled locally without the manufacturer opening its own facility from day one.",
+            },
+            {
+              question: "Can spare parts be delivered across Europe?",
+              answer:
+                "Yes. A well-structured warehouse and logistics setup can support parcel and pallet distribution across multiple European countries, with replenishment and returns processes defined around your SKUs.",
+            },
+            {
+              question: "What is a Forward Stock Location?",
+              answer:
+                "A Forward Stock Location is a strategically positioned stock of critical spare parts closer to customers or installed equipment. It complements a central European hub when downtime is costly and faster parts availability is required.",
+            },
+            {
+              question:
+                "Can you find technicians to maintain our equipment in Europe?",
+              answer:
+                "Yes. OPOPA helps identify and qualify local maintenance and field-service partners for installation, inspection, preventive maintenance, troubleshooting and repair — matched to the technical profile of your product.",
+            },
+            {
+              question:
+                "Do we need the same maintenance partner across all European countries?",
+              answer:
+                "Not necessarily. Some products can be covered by a regional partner; others need country-level or application-specific specialists. OPOPA designs the coverage model around your product, markets and service requirements.",
+            },
+            {
+              question:
+                "Can the same partner store parts and perform repairs?",
+              answer:
+                "Sometimes. In other cases, logistics and technical work are better split between specialised partners. OPOPA assesses which combination is realistic for your product and territories.",
+            },
+            {
+              question:
+                "How much does a European after-sales setup cost?",
+              answer:
+                "There is no public price list. Cost depends on scope — warehouse footprint, number of SKUs, forward stock locations, countries covered, service levels and technical requirements. OPOPA provides a tailored quotation once the support model is defined.",
+            },
+          ],
+        },
+        related: {
+          title: "Related services",
+          links: [
+            {
+              label: "European Market Entry",
+              href: "/services/european-market-entry",
+            },
+            {
+              label: "European Experts and Partners",
+              href: "/services/european-experts-and-partners",
+            },
+            {
+              label: "European Sales Representation",
+              href: "/services/european-sales-representation",
+            },
+            {
+              label: "Legal and Regulatory Support",
+              href: "/services/legal-and-regulatory-support",
+            },
+          ],
+        },
+        closing: {
+          title: "Build your European after-sales capability",
+          body: "Whether you need a single spare-parts warehouse or a complete European maintenance network, OPOPA can help identify and coordinate the local capabilities required to support your customers.",
+          cta: "Discuss your European after-sales requirements",
+        },
+      },
     },
     "european-sales-representation": {
       name: "European Sales Representation",
@@ -1170,6 +1453,12 @@ export const en = {
       "A team walking a machining hall during a factory visit",
     "service-market-entry-map":
       "Map showing commercial connections from China to markets across Europe",
+    "service-after-sales-warehouse":
+      "European warehouse aisle with pallet racking for industrial spare parts",
+    "service-after-sales-chart":
+      "Diagram of central warehouse, forward stock locations and urgent spare-parts logistics across Europe",
+    "service-after-sales-field-service":
+      "Technician in a high-visibility vest inspecting industrial equipment",
     "service-sales-ai-automation":
       "Industrial operations workstation supporting commercial workflows",
     "industry-industrial-equipment":

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/layout/FinalCta";
+import { AfterSalesPage } from "@/components/services/AfterSalesPage";
 import { MarketEntryPage } from "@/components/services/MarketEntryPage";
+import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
@@ -82,6 +83,17 @@ export default async function ServicePage({ params }: Props) {
     );
   }
 
+  if (service.slug === "after-sales-maintenance") {
+    return (
+      <AfterSalesPage
+        locale={locale}
+        dict={dict}
+        breadcrumbName={service.name}
+        relatedInsights={relatedInsights}
+      />
+    );
+  }
+
   return (
     <>
       <JsonLd
@@ -120,10 +132,7 @@ export default async function ServicePage({ params }: Props) {
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <Eyebrow accent>
-                {service.number} / {dict.nav.megaMenu.groups[service.group].label}
-              </Eyebrow>
-              <h1 className="mt-4 text-[2.5rem] leading-[1.04] md:text-[3.75rem]">
+              <h1 className="text-[2.5rem] leading-[1.04] md:text-[3.75rem]">
                 {service.name}
               </h1>
               <p className="mt-5 text-xl text-accent md:text-2xl">
@@ -247,39 +256,17 @@ export default async function ServicePage({ params }: Props) {
 
       <Section tone="concrete" className="py-16 md:py-20">
         <Container>
-          <Eyebrow>{dict.common.complementaryServices}</Eyebrow>
-          <div className="mt-8 grid gap-8 md:grid-cols-3">
-            {related.map((item) => (
-              <article key={item.slug} className="border-t border-border pt-5">
-                <p className="eyebrow">{item.number}</p>
-                <h3 className="mt-3 text-xl leading-snug">
-                  <Link href={item.href} className="hover:text-accent">
-                    {item.name}
-                  </Link>
-                </h3>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-charcoal">
-                  {item.positioning}
-                </p>
-              </article>
-            ))}
-          </div>
-          {relatedInsights.length > 0 ? (
-            <div className="mt-14 border-t border-border pt-10">
-              <Eyebrow>{dict.common.relatedInsights}</Eyebrow>
-              <ul className="mt-6 space-y-3">
-                {relatedInsights.map((insight) => (
-                  <li key={insight.slug}>
-                    <Link
-                      href={insight.href}
-                      className="text-[1.0625rem] font-medium transition-colors hover:text-accent"
-                    >
-                      {insight.title} →
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          <RelatedServiceCards
+            title={dict.common.complementaryServices}
+            services={related.map((item) => ({
+              slug: item.slug as ServiceSlug,
+              href: item.href,
+              name: item.name,
+              description: item.megaDescription,
+            }))}
+            relatedInsights={relatedInsights}
+            relatedInsightsLabel={dict.common.relatedInsights}
+          />
         </Container>
       </Section>
 

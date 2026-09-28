@@ -22,6 +22,9 @@ Next.js Image already serves AVIF/WebP variants from WebP sources via `images.fo
 | service-outsourced-sales | Services | European Sales Representation | `/images/services/service-outsourced-sales.webp` | Image | 3:2 | Placeholder | Replace with European sales representation photography |
 | service-market-entry | Services | European Market Entry | `/images/raph_industrial_visite/service-market-entry.webp` | Image | 1920:987 | Final | Factory visit photograph |
 | service-market-entry-map | Services | European Market Entry | `/images/services/map-china-to-eu.webp` | Image | 1672:941 | Final | China–Europe route map banner |
+| service-after-sales-warehouse | Services | After-Sales | `/images/services/after-sales-warehouse.webp` | Image | 1456:816 | Final | Spare-parts warehousing |
+| service-after-sales-chart | Services | After-Sales | `/images/services/after-sales-chart.webp` | Image | 1665:658 | Final | Time-critical logistics diagram |
+| service-after-sales-field-service | Services | After-Sales | `/images/services/after-sales-field-service.webp` | Image | 1600:2133 | Final | Technician photograph |
 | service-sales-ai-automation | Services | Sales AI and Automation | `/images/services/service-sales-ai-automation.webp` | Image | 3:2 | Placeholder | Replace with restrained commercial-operations photography — avoid generic AI imagery |
 | industry-industrial-equipment | Industries | Industrial Equipment | `/images/industries/industry-industrial-equipment.webp` | Image | 3:2 | Placeholder | Replace with heavy machinery photography |
 | industry-advanced-manufacturing | Industries | Advanced Manufacturing | `/images/industries/industry-advanced-manufacturing.webp` | Image | 4:3 | Placeholder | Replace with advanced manufacturing photography |

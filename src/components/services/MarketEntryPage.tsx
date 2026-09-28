@@ -2,10 +2,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { Container, Eyebrow, Section } from "@/components/ui/Section";
+import { Container, Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
+import type { ServiceSlug } from "@/content/catalog";
 import type { Dictionary } from "@/content/locales/types";
-import { media, type MediaAsset } from "@/content/media";
+import { getService } from "@/content/localized";
+import type { MediaAsset } from "@/content/media";
+import { media } from "@/content/media";
 import { localePath, type Locale } from "@/i18n/config";
 import type { InsightSummary } from "@/lib/insights/types";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
@@ -26,6 +30,19 @@ export function MarketEntryPage({
   const copy = dict.services["european-market-entry"].detail;
   const contactHref = localePath(locale, "/contact");
   const [decisionLabel, examinesLabel, givesLabel] = copy.work.columns;
+  const relatedServices = copy.followOn.links.flatMap((link) => {
+    const slug = link.href.replace(/^\/services\//, "") as ServiceSlug;
+    const service = getService(locale, dict, slug);
+    if (!service) return [];
+    return [
+      {
+        slug: service.slug as ServiceSlug,
+        href: service.href,
+        name: link.label,
+        description: service.megaDescription,
+      },
+    ];
+  });
 
   return (
     <>
@@ -68,8 +85,7 @@ export function MarketEntryPage({
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <Eyebrow accent>{copy.eyebrow}</Eyebrow>
-              <h1 className="mt-4 max-w-3xl text-[2.35rem] leading-[1.08] md:text-[3.35rem]">
+              <h1 className="max-w-3xl text-[2.35rem] leading-[1.08] md:text-[3.35rem]">
                 {copy.headline}
               </h1>
               <p className="mt-5 max-w-xl text-xl text-accent md:text-2xl">
@@ -310,43 +326,16 @@ export function MarketEntryPage({
                   </p>
                 ))}
               </div>
-              <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-                {copy.followOn.links.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={localePath(locale, item.href)}
-                      className="group flex h-full items-center justify-between gap-4 border border-border bg-white-warm px-5 py-4 transition-colors hover:border-accent"
-                    >
-                      <span className="text-[1.02rem] font-medium leading-snug group-hover:text-accent">
-                        {item.label}
-                      </span>
-                      <span aria-hidden className="text-accent">
-                        →
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
-          {relatedInsights.length > 0 ? (
-            <div className="mt-14 border-t border-border pt-10">
-              <Eyebrow>{dict.common.relatedInsights}</Eyebrow>
-              <ul className="mt-6 space-y-3">
-                {relatedInsights.map((insight) => (
-                  <li key={insight.slug}>
-                    <Link
-                      href={insight.href}
-                      className="text-[1.0625rem] font-medium transition-colors hover:text-accent"
-                    >
-                      {insight.title} →
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          <div className="mt-12">
+            <RelatedServiceCards
+              services={relatedServices}
+              relatedInsights={relatedInsights}
+              relatedInsightsLabel={dict.common.relatedInsights}
+            />
+          </div>
         </Container>
       </Section>
 

@@ -1,4 +1,4 @@
-import type { HomeServiceCardSlug } from "@/content/catalog";
+import type { ServiceSlug } from "@/content/catalog";
 import { cn } from "@/lib/utils";
 
 function IconFrame({
@@ -70,21 +70,42 @@ function AfterSalesIcon({ className }: { className?: string }) {
   );
 }
 
+function LegalIcon({ className }: { className?: string }) {
+  return (
+    <IconFrame className={className}>
+      <path d="M6 19.2V6.5h12v12.7" {...stroke} />
+      <path d="M9 10.2h6M9 13.2h6M9 16.2h3.5" {...stroke} />
+    </IconFrame>
+  );
+}
+
+function SalesAiIcon({ className }: { className?: string }) {
+  return (
+    <IconFrame className={className}>
+      <rect x="5.5" y="6" width="13" height="10" rx="1.5" {...stroke} />
+      <path d="M9 19.2h6M12 16v3.2" {...stroke} />
+      <path d="M9 10.2h6M9 12.8h4" {...stroke} />
+    </IconFrame>
+  );
+}
+
 const serviceIcons: Record<
-  HomeServiceCardSlug,
+  ServiceSlug,
   (props: { className?: string }) => React.ReactNode
 > = {
   "european-market-entry": MarketEntryIcon,
   "european-experts-and-partners": ExpertsIcon,
-  "european-sales-representation": RepresentationIcon,
+  "legal-and-regulatory-support": LegalIcon,
   "after-sales-maintenance": AfterSalesIcon,
+  "european-sales-representation": RepresentationIcon,
+  "sales-ai-automation": SalesAiIcon,
 };
 
 export function ServiceIcon({
   slug,
   className,
 }: {
-  slug: HomeServiceCardSlug;
+  slug: ServiceSlug;
   className?: string;
 }) {
   const Icon = serviceIcons[slug];
