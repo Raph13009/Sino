@@ -45,6 +45,7 @@ export function HomeHero({
               width={hero.width}
               height={hero.height}
               priority
+              quality={90}
               sizes="(max-width: 1024px) 100vw, 50vw"
               frameClassName="aspect-[4/3] max-h-[min(48svh,28rem)] w-full lg:max-h-[min(56svh,32rem)]"
               caption={copy.caption}

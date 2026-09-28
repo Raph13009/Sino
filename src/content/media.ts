@@ -79,16 +79,15 @@ export const media = {
   home: {
     hero: {
       id: "home-hero-01",
-      src: "/images/hero/hero-industrial-port.webp",
-      alt: "Container port and industrial logistics infrastructure",
-      width: 1600,
-      height: 1067,
-      aspectRatio: "3:2",
+      src: "/images/hero/hero-factory-visit.webp",
+      alt: "Three specialists in high-visibility vests inspecting automated machinery on a factory floor",
+      width: 2400,
+      height: 1382,
+      aspectRatio: "2400:1382",
       page: "home",
       section: "hero",
-      status: "placeholder" as const,
-      replacementNote:
-        "Replace with final China–Europe industrial hero photograph (port, manufacturing, or machinery)",
+      status: "final" as const,
+      replacementNote: "Factory visit photograph — Max & Raphael industrial visit",
     },
     context: {
       id: "home-context-01",
@@ -151,6 +150,18 @@ export const media = {
       section: "european-market-entry",
       status: "final" as const,
       replacementNote: "Factory visit photograph for European market entry",
+    },
+    marketEntryMap: {
+      id: "service-market-entry-map",
+      src: "/images/services/map-china-to-eu.webp",
+      alt: "Map showing commercial connections from China to markets across Europe",
+      width: 1672,
+      height: 941,
+      aspectRatio: "1672:941",
+      page: "services",
+      section: "european-market-entry",
+      status: "final" as const,
+      replacementNote: "China–Europe route map banner for European market entry",
     },
     salesAiAutomation: {
       id: "service-sales-ai-automation",

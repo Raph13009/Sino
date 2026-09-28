@@ -43,7 +43,7 @@ function entryForLocales(
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const home = entryForLocales("/", {
-    images: [absoluteUrl("/images/hero/hero-industrial-port.webp")],
+    images: [absoluteUrl("/images/hero/hero-factory-visit.webp")],
   });
 
   const corePages = [

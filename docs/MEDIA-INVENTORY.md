@@ -15,12 +15,13 @@ Next.js Image already serves AVIF/WebP variants from WebP sources via `images.fo
 | brand-mark | global | brand | `/brand/mark.webp` (+ `.png` source) | Image | 1:1 | Final | Architectural monogram |
 | brand-favicon | global | brand | `/brand/favicon.png` | Image | 1:1 | Final | Source mark. Public crawl URLs: `/favicon.ico`, `/icon.png`, `/favicon-192.png`, `/apple-touch-icon.png` |
 | brand-plaquette | global | brand | `/brand/plaquette.webp` | Image | 1122:1402 | Final | Brand direction reference board |
-| home-hero-01 | Home | Hero | `/images/hero/hero-industrial-port.webp` | Image | 3:2 | Placeholder | Replace with final China–Europe industrial hero |
+| home-hero-01 | Home | Hero | `/images/hero/hero-factory-visit.webp` | Image | 2400:1382 | Final | Factory visit photograph — Max & Raphael |
 | home-context-01 | Home | Context | `/images/raph_industrial_visite/home-context.webp` | Image | 1920:888 | Final | Factory visit photograph |
 | service-sales-enablement | Services | Legal and Regulatory Support (reused photograph) | `/images/services/service-sales-enablement.webp` | Image | 3:2 | Placeholder | Filename kept. Do not treat the old service name as current. |
 | service-expert-partner-sourcing | Services | European Experts and Partners | `/images/services/service-expert-partner-sourcing.webp` | Image | 3:2 | Placeholder | Replace with specialist / partner qualification photography |
 | service-outsourced-sales | Services | European Sales Representation | `/images/services/service-outsourced-sales.webp` | Image | 3:2 | Placeholder | Replace with European sales representation photography |
 | service-market-entry | Services | European Market Entry | `/images/raph_industrial_visite/service-market-entry.webp` | Image | 1920:987 | Final | Factory visit photograph |
+| service-market-entry-map | Services | European Market Entry | `/images/services/map-china-to-eu.webp` | Image | 1672:941 | Final | China–Europe route map banner |
 | service-sales-ai-automation | Services | Sales AI and Automation | `/images/services/service-sales-ai-automation.webp` | Image | 3:2 | Placeholder | Replace with restrained commercial-operations photography — avoid generic AI imagery |
 | industry-industrial-equipment | Industries | Industrial Equipment | `/images/industries/industry-industrial-equipment.webp` | Image | 3:2 | Placeholder | Replace with heavy machinery photography |
 | industry-advanced-manufacturing | Industries | Advanced Manufacturing | `/images/industries/industry-advanced-manufacturing.webp` | Image | 4:3 | Placeholder | Replace with advanced manufacturing photography |

@@ -5,7 +5,7 @@ import { MediaImage } from "@/components/ui/MediaImage";
 import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import type { Dictionary } from "@/content/locales/types";
-import type { MediaAsset } from "@/content/media";
+import { media, type MediaAsset } from "@/content/media";
 import { localePath, type Locale } from "@/i18n/config";
 import type { InsightSummary } from "@/lib/insights/types";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
@@ -118,6 +118,22 @@ export function MarketEntryPage({
             </div>
           </div>
         </Container>
+      </Section>
+
+      <Section tone="white" className="border-y border-border py-0">
+        <MediaImage
+          src={media.services.marketEntryMap.src}
+          alt={
+            dict.mediaAlts["service-market-entry-map"] ??
+            media.services.marketEntryMap.alt
+          }
+          width={media.services.marketEntryMap.width}
+          height={media.services.marketEntryMap.height}
+          quality={90}
+          sizes="100vw"
+          frameClassName="aspect-[7/2] w-full bg-white-warm md:aspect-[4/1]"
+          imageClassName="object-cover object-center scale-[1.12]"
+        />
       </Section>
 
       <Section tone="concrete" className="py-16 md:py-24">

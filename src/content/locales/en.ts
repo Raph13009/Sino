@@ -105,7 +105,8 @@ export const en = {
       primaryCta: "Discuss your European expansion",
       secondaryCta: "Explore our services",
       caption: "China / Europe / Industrial Expansion",
-      imageAlt: "Container port and industrial logistics infrastructure",
+      imageAlt:
+        "Three specialists in high-visibility vests inspecting automated machinery on a factory floor",
     },
     context: {
       number: "03",
@@ -1155,7 +1156,8 @@ export const en = {
     "brand-logo-light": "OPOPA Partners",
     "brand-logo-dark": "OPOPA Partners",
     "brand-mark": "OPOPA mark",
-    "home-hero-01": "Container port and industrial logistics infrastructure",
+    "home-hero-01":
+      "Three specialists in high-visibility vests inspecting automated machinery on a factory floor",
     "home-context-01":
       "Three colleagues in high-visibility vests reviewing drawings on a factory floor",
     "service-sales-enablement":
@@ -1166,6 +1168,8 @@ export const en = {
       "Industrial machinery and manufacturing equipment detail",
     "service-market-entry":
       "A team walking a machining hall during a factory visit",
+    "service-market-entry-map":
+      "Map showing commercial connections from China to markets across Europe",
     "service-sales-ai-automation":
       "Industrial operations workstation supporting commercial workflows",
     "industry-industrial-equipment":

@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 960, 1080, 1280, 1600, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 2678400,
-    qualities: [75, 80, 82],
+    qualities: [75, 80, 82, 90],
   },
   poweredByHeader: false,
   async headers() {
@@ -72,7 +72,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/images/hero/hero-industrial-port.jpg",
-        destination: "/images/hero/hero-industrial-port.webp",
+        destination: "/images/hero/hero-factory-visit.webp",
+        permanent: true,
+      },
+      {
+        source: "/images/hero/hero-industrial-port.webp",
+        destination: "/images/hero/hero-factory-visit.webp",
         permanent: true,
       },
       {
