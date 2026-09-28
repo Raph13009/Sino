@@ -237,25 +237,93 @@ export const zh = {
         "OPOPA 为中国工业企业协调欧洲市场进入、本地专家、销售代表、法律与合规支持、售后合作以及销售自动化。",
     },
     eyebrow: "服务",
-    title: "欧洲市场进入服务。",
+    title: "面向欧洲市场进入与增长的服务。",
     description:
-      "OPOPA 帮助中国企业进入欧洲市场并开展销售，协调本地专业人士、商业执行与切实支持。",
-    engagementTitle: "一项合作通常如何组成",
-    engagementNote: "灵活组合，并非每项合作都使用全部服务。",
-    engagement: [
-      {
-        title: "评估市场机会",
-        body: "先明确产品、买家与路径。这份评估决定真正需要哪些能力。",
+      "OPOPA 帮助中国工业与科技企业建立进入并深耕欧洲所需的能力——从市场判断与本地专家，到销售代表与售后支持。",
+    primaryCta: "查看我们的服务",
+    secondaryCta: "讨论您的项目",
+    chooser: {
+      title: "您需要哪一类支持？",
+      items: [
+        {
+          label: "进入新的欧洲市场",
+          href: "#european-market-entry",
+        },
+        {
+          label: "寻找本地专家与合作伙伴",
+          href: "#european-experts-and-partners",
+        },
+        {
+          label: "建设售后与维保能力",
+          href: "#after-sales-maintenance",
+        },
+        {
+          label: "建立销售覆盖",
+          href: "#european-sales-representation",
+        },
+        {
+          label: "用 AI 工具支持商务工作",
+          href: "#sales-ai-automation",
+        },
+      ],
+    },
+    groups: {
+      plan: {
+        title: "规划市场进入",
+        note: "判断目标市场、选择进入路径，并明确拓展依赖哪些能力。",
       },
-      {
-        title: "引入本地能力",
-        body: "按计划协调专家、法律与合规路径，以及产品在现场需要的支持。",
+      build: {
+        title: "建设本地能力",
+        note: "专家、法律协调，以及欧洲买家期待的售后覆盖。",
       },
-      {
-        title: "按需支持销售",
-        body: "销售代表、辅导或有限的自动化，只在商业工作确实需要时再加入。",
+      grow: {
+        title: "拓展销售",
+        note: "落地的商业存在，以及支撑销售的工具。",
       },
-    ],
+    },
+    cards: {
+      "european-market-entry": {
+        tag: "战略",
+        subline: "明确市场、路径，以及进入欧洲所需的工作。",
+        description:
+          "界定从何处起步、优先触达谁，以及拓展依赖哪些本地能力。",
+      },
+      "european-experts-and-partners": {
+        tag: "本地支持",
+        subline: "围绕明确需求，协调真正需要的独立专业人士。",
+        description:
+          "识别并协调与项目相关的贸易、法律、技术与商务专家。",
+      },
+      "legal-and-regulatory-support": {
+        tag: "合规",
+        subline: "面向市场准入，界定范围并协调独立法律专业人士。",
+        description:
+          "通过具备资质的专业人士，支持公司设立、合同、合规及其他受监管事项。",
+      },
+      "after-sales-maintenance": {
+        tag: "本地支持",
+        subline: "设计、搭建并协调客户期待的欧洲售后体系。",
+        description:
+          "备件仓储、前置库存、紧急物流、现场支持与维保协调。",
+      },
+      "european-sales-representation": {
+        tag: "商务执行",
+        subline: "在欧洲代表您的商务专业人士——而非一份线索清单。",
+        description: "通过本地商务代表，支持客户开发与市场覆盖。",
+      },
+      "sales-ai-automation": {
+        tag: "自动化",
+        subline: "与真实商务流程绑定的实用工具。",
+        description:
+          "用 AI 与自动化改进研究、线索处理、CRM 维护、跟进与内部效率。",
+      },
+    },
+    closing: {
+      title: "需要帮助选择合适的服务？",
+      body: "我们可以一起明确欧洲拓展所需的进入、支持与增长优先级。",
+      primaryCta: "讨论您的项目",
+      secondaryCta: "联系我们",
+    },
     situationLabel: "所处情境",
     coordinatesLabel: "OPOPA 协调什么",
     receivesLabel: "您将获得",

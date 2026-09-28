@@ -76,7 +76,7 @@ export const serviceMeta: Record<
   "after-sales-maintenance": {
     number: "04",
     group: "build",
-    image: media.services.afterSalesChart,
+    image: media.services.afterSalesWarehouse,
     complementary: [
       "european-market-entry",
       "european-experts-and-partners",

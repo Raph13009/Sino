@@ -244,26 +244,99 @@ export const en = {
         "OPOPA coordinates European market entry, local experts, sales representation, regulatory support, after-sales partnerships and sales automation for Chinese industrial companies.",
     },
     eyebrow: "Services",
-    title: "Services for European market entry.",
+    title: "Services for European market entry and growth.",
     description:
-      "OPOPA helps Chinese companies enter and develop sales in European markets by coordinating local specialists, commercial execution and practical support.",
-    engagementTitle: "How an engagement is assembled",
-    engagementNote:
-      "A flexible approach. Not every engagement uses every service.",
-    engagement: [
-      {
-        title: "Assess the opportunity",
-        body: "Clarify the product, the buyers and the route. That assessment decides which capabilities are actually required.",
+      "OPOPA helps Chinese industrial and technology companies build the capabilities needed to enter and grow in Europe — from market framing and local specialists to sales representation and after-sales support.",
+    primaryCta: "Explore our services",
+    secondaryCta: "Discuss your project",
+    chooser: {
+      title: "Which support do you need?",
+      items: [
+        {
+          label: "Enter a new European market",
+          href: "#european-market-entry",
+        },
+        {
+          label: "Find local experts and partners",
+          href: "#european-experts-and-partners",
+        },
+        {
+          label: "Set up after-sales and maintenance",
+          href: "#after-sales-maintenance",
+        },
+        {
+          label: "Build sales coverage",
+          href: "#european-sales-representation",
+        },
+        {
+          label: "Add AI tools to support commercial work",
+          href: "#sales-ai-automation",
+        },
+      ],
+    },
+    groups: {
+      plan: {
+        title: "Plan your entry",
+        note: "Frame the market, choose a route and decide what the expansion depends on.",
       },
-      {
-        title: "Bring in local capability",
-        body: "Coordinate the specialists, regulatory route and field support the plan depends on.",
+      build: {
+        title: "Build local capability",
+        note: "Specialists, counsel and the service coverage European buyers expect.",
       },
-      {
-        title: "Support sales as needed",
-        body: "Representation, coaching or bounded automation can follow when the commercial work calls for them.",
+      grow: {
+        title: "Grow sales",
+        note: "Commercial presence on the ground and the tools that support it.",
       },
-    ],
+    },
+    cards: {
+      "european-market-entry": {
+        tag: "Strategy",
+        subline:
+          "Frame the market, the route and the work required to enter Europe.",
+        description:
+          "Define where to start, who to target and what local capabilities your expansion depends on.",
+      },
+      "european-experts-and-partners": {
+        tag: "Local support",
+        subline:
+          "Coordinate the independent specialists a defined need actually requires.",
+        description:
+          "Identify and coordinate trade, legal, technical and commercial specialists relevant to the project.",
+      },
+      "legal-and-regulatory-support": {
+        tag: "Compliance",
+        subline:
+          "Independent counsel, scoped and coordinated for market access.",
+        description:
+          "Support on company setup, contracts, compliance and other regulated issues through qualified professionals.",
+      },
+      "after-sales-maintenance": {
+        tag: "Local support",
+        subline:
+          "Design, structure and coordinate the European after-sales infrastructure your customers expect.",
+        description:
+          "Spare-parts warehousing, forward stock, urgent logistics, field support and maintenance coordination.",
+      },
+      "european-sales-representation": {
+        tag: "Commercial execution",
+        subline:
+          "Commercial professionals who represent you in Europe — not a list of leads.",
+        description:
+          "Support account development and market coverage through local commercial representation.",
+      },
+      "sales-ai-automation": {
+        tag: "Automation",
+        subline: "Practical tools tied to real commercial workflows.",
+        description:
+          "Use AI and automation to improve research, lead handling, CRM hygiene, follow-up and internal efficiency.",
+      },
+    },
+    closing: {
+      title: "Need help choosing the right service?",
+      body: "We can help define the right entry, support and growth priorities for your European expansion.",
+      primaryCta: "Discuss your project",
+      secondaryCta: "Contact us",
+    },
     situationLabel: "The situation",
     coordinatesLabel: "What OPOPA coordinates",
     receivesLabel: "What you receive",
