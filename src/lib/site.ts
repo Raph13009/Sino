@@ -15,7 +15,8 @@ export const siteConfig = {
   email: "contact@opopa-partners.com",
   /** French micro-entrepreneur SIRET — confirmed. */
   siret: "92011864300021",
-  linkedIn: "https://www.linkedin.com/in/raphael-levy-london/",
+  /** Company LinkedIn — footer, contact page. Founders keep personal URLs below. */
+  companyLinkedIn: "https://www.linkedin.com/company/opopa-partners",
   founders: {
     maxMarchesseauLaskar: {
       linkedIn: "https://www.linkedin.com/in/max-marchesseau-laskar/",

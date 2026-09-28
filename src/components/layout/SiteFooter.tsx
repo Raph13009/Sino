@@ -65,7 +65,7 @@ export function SiteFooter() {
                 <ul className="mt-4 space-y-3 text-[0.9375rem]">
                   <li>
                     <a
-                      href={siteConfig.linkedIn}
+                      href={siteConfig.companyLinkedIn}
                       className="text-white-warm transition-colors hover:text-accent"
                       rel="noopener noreferrer"
                       target="_blank"

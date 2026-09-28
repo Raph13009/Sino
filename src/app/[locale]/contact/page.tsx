@@ -71,7 +71,7 @@ export default async function ContactPage({ params }: Props) {
                   {siteConfig.email}
                 </a>
                 <a
-                  href={siteConfig.linkedIn}
+                  href={siteConfig.companyLinkedIn}
                   className="mt-3 block text-lg hover:text-accent"
                   rel="noopener noreferrer"
                   target="_blank"
