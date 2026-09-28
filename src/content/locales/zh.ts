@@ -473,58 +473,29 @@ export const zh = {
     eyebrow: "法律信息",
     title: "法律声明",
     lastUpdated: "最后更新：2026 年 9 月",
-    noticeEyebrow: "待办 — 上线前须完成",
-    noticeBody:
-      "已确认信息见下文。缺失项以「待办」标明，须在视为最终法律文本前完成填写。",
     sections: [
       {
         id: "publisher",
         title: "网站发布者",
         paragraphs: [
-          "OPOPA 由一名在法国注册的个体经营者 / 微型企业主运营。本网站介绍面向中国工业与绿色技术企业的欧洲市场进入、专家协调与商业代表服务。",
+          "本网站介绍面向中国工业与绿色技术企业的欧洲市场进入、专家协调与商业代表服务。",
         ],
         fields: [
           { label: "商号", value: "OPOPA Partners" },
-          {
-            label: "法律经营者",
-            value: "待办 — 填写完整法定姓名",
-            todo: true,
-          },
-          {
-            label: "法律地位",
-            value: "在法国注册的个体经营者 / 微型企业主",
-          },
           { label: "SIRET", value: "92011864300021" },
-          {
-            label: "注册经营地址",
-            value: "待办 — 填写专业经营地址",
-            todo: true,
-          },
           { label: "邮箱", value: "contact@opopa-partners.com" },
-          {
-            label: "出版负责人",
-            value: "待办 — 填写完整法定姓名",
-            todo: true,
-          },
         ],
       },
       {
         id: "hosting",
         title: "托管",
-        paragraphs: [
-          "本网站通过云托管服务商提供。最终法律托管信息将在确认后补全。",
-        ],
+        paragraphs: ["本网站由 Vercel Inc. 托管。"],
         fields: [
-          {
-            label: "托管服务商",
-            value:
-              "待办 — 确认最终托管服务商（若为 Vercel：核实并填写其公开法律实体名称与地址）",
-            todo: true,
-          },
+          { label: "托管服务商", value: "Vercel Inc." },
           {
             label: "托管地址",
-            value: "待办 — 填写已核实的托管服务商注册地址",
-            todo: true,
+            value:
+              "440 N Barranca Avenue #4133, Covina, CA 91723, United States",
           },
         ],
       },
@@ -565,26 +536,14 @@ export const zh = {
     eyebrow: "法律信息",
     title: "隐私政策",
     lastUpdated: "最后更新：2026 年 9 月",
-    noticeEyebrow: "待办 — 上线前须完成",
-    noticeBody:
-      "本政策反映当前网站设置。缺失的控制者身份信息以「待办」标明。若引入分析、广告或其他追踪技术，将更新本页。",
     sections: [
       {
         id: "controller",
         title: "数据控制者",
         fields: [
-          {
-            label: "数据控制者",
-            value: "待办 — 填写完整法定姓名（以 OPOPA 品牌运营）",
-            todo: true,
-          },
+          { label: "数据控制者", value: "OPOPA Partners" },
           { label: "SIRET", value: "92011864300021" },
           { label: "联系方式", value: "contact@opopa-partners.com" },
-          {
-            label: "地址",
-            value: "待办 — 填写专业经营地址",
-            todo: true,
-          },
         ],
       },
       {
@@ -663,8 +622,7 @@ export const zh = {
         id: "transfers",
         title: "托管与国际传输",
         paragraphs: [
-          "部分技术服务商可能在欧洲经济区以外处理数据。发生此类情况时，应采用适当的 GDPR 保障措施。",
-          "具体传输机制将在最终确认托管与通讯服务商后予以说明。",
+          "本网站由 Vercel Inc. 托管。技术服务商（包括托管方）可能在欧洲经济区以外处理数据，包括在美国。发生此类情况时，采用 GDPR 下的适当保障措施。",
         ],
       },
       {

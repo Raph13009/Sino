@@ -54,8 +54,6 @@ export default async function PrivacyPage({ params }: Props) {
               eyebrow={dict.privacy.eyebrow}
               title={dict.privacy.title}
               lastUpdated={dict.privacy.lastUpdated}
-              noticeEyebrow={dict.privacy.noticeEyebrow}
-              noticeBody={dict.privacy.noticeBody}
               sections={dict.privacy.sections}
               email={siteConfig.email}
             />

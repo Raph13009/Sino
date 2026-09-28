@@ -54,8 +54,6 @@ export default async function LegalPage({ params }: Props) {
               eyebrow={dict.legal.eyebrow}
               title={dict.legal.title}
               lastUpdated={dict.legal.lastUpdated}
-              noticeEyebrow={dict.legal.noticeEyebrow}
-              noticeBody={dict.legal.noticeBody}
               sections={dict.legal.sections}
               email={siteConfig.email}
             />

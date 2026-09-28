@@ -482,60 +482,29 @@ export const en = {
     eyebrow: "Legal",
     title: "Legal Notice",
     lastUpdated: "Last updated: September 2026",
-    noticeEyebrow: "TODO — Complete before launch",
-    noticeBody:
-      "Confirmed details are published below. Missing items are marked TODO and must be completed before treating this page as final legal copy.",
     sections: [
       {
         id: "publisher",
         title: "Website publisher",
         paragraphs: [
-          "OPOPA is operated by a French individual entrepreneur / micro-entrepreneur. The website presents European market-entry, specialist coordination and commercial representation services for Chinese industrial and green-tech companies.",
+          "This website presents European market-entry, specialist coordination and commercial representation services for Chinese industrial and green-tech companies.",
         ],
         fields: [
           { label: "Business name", value: "OPOPA Partners" },
-          {
-            label: "Legal operator",
-            value: "TODO — insert full legal name",
-            todo: true,
-          },
-          {
-            label: "Legal status",
-            value:
-              "Individual entrepreneur / micro-entrepreneur registered in France",
-          },
           { label: "SIRET", value: "92011864300021" },
-          {
-            label: "Registered address",
-            value: "TODO — insert professional address",
-            todo: true,
-          },
           { label: "Email", value: "contact@opopa-partners.com" },
-          {
-            label: "Publication director",
-            value: "TODO — insert full legal name",
-            todo: true,
-          },
         ],
       },
       {
         id: "hosting",
         title: "Hosting",
-        paragraphs: [
-          "This website is delivered through a cloud hosting provider. Final legal hosting details will be completed once confirmed.",
-        ],
+        paragraphs: ["This website is hosted by Vercel Inc."],
         fields: [
-          {
-            label: "Hosting provider",
-            value:
-              "TODO — confirm final hosting provider (if Vercel: complete with Vercel’s published legal entity name and address once verified)",
-            todo: true,
-          },
+          { label: "Hosting provider", value: "Vercel Inc." },
           {
             label: "Hosting address",
             value:
-              "TODO — insert verified registered address of the hosting provider",
-            todo: true,
+              "440 N Barranca Avenue #4133, Covina, CA 91723, United States",
           },
         ],
       },
@@ -576,27 +545,14 @@ export const en = {
     eyebrow: "Legal",
     title: "Privacy Policy",
     lastUpdated: "Last updated: September 2026",
-    noticeEyebrow: "TODO — Complete before launch",
-    noticeBody:
-      "This policy reflects the current website setup. Missing controller identity details are marked TODO. Update this page if analytics, advertising or additional tracking are introduced.",
     sections: [
       {
         id: "controller",
         title: "Who controls your data",
         fields: [
-          {
-            label: "Data controller",
-            value:
-              "TODO — insert full legal name, operating under the OPOPA brand",
-            todo: true,
-          },
+          { label: "Data controller", value: "OPOPA Partners" },
           { label: "SIRET", value: "92011864300021" },
           { label: "Contact", value: "contact@opopa-partners.com" },
-          {
-            label: "Address",
-            value: "TODO — insert professional address",
-            todo: true,
-          },
         ],
       },
       {
@@ -679,8 +635,7 @@ export const en = {
         id: "transfers",
         title: "Hosting and international transfers",
         paragraphs: [
-          "Some technical service providers may process data outside the European Economic Area. Where this happens, appropriate GDPR safeguards should be used.",
-          "Specific transfer mechanisms will be documented once hosting and communication providers are finally confirmed.",
+          "This website is hosted by Vercel Inc. Technical service providers, including the host, may process data outside the European Economic Area, including in the United States. Where this happens, appropriate safeguards under the GDPR are applied.",
         ],
       },
       {

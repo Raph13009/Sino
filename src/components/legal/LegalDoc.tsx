@@ -1,10 +1,8 @@
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
 
 export type LegalField = {
   label: string;
   value: string;
-  todo?: boolean;
 };
 
 export type LegalSection = {
@@ -19,16 +17,12 @@ export function LegalDoc({
   eyebrow,
   title,
   lastUpdated,
-  noticeEyebrow,
-  noticeBody,
   sections,
   email,
 }: {
   eyebrow: string;
   title: string;
   lastUpdated?: string;
-  noticeEyebrow: string;
-  noticeBody: string;
   sections: readonly LegalSection[];
   email: string;
 }) {
@@ -41,13 +35,6 @@ export function LegalDoc({
       {lastUpdated ? (
         <p className="mt-4 text-[0.9375rem] text-charcoal">{lastUpdated}</p>
       ) : null}
-
-      <aside className="mt-8 max-w-3xl border border-border bg-white-warm px-5 py-4 md:px-6 md:py-5">
-        <p className="eyebrow text-accent">{noticeEyebrow}</p>
-        <p className="mt-3 text-[0.9375rem] leading-relaxed text-charcoal">
-          {noticeBody}
-        </p>
-      </aside>
 
       <div className="mt-14 space-y-14 md:mt-16 md:space-y-16">
         {sections.map((section) => (
@@ -78,13 +65,8 @@ export function LegalDoc({
                     <dt className="text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-charcoal">
                       {field.label}
                     </dt>
-                    <dd
-                      className={cn(
-                        "text-[1.0625rem] leading-relaxed",
-                        field.todo ? "text-accent" : "text-ink",
-                      )}
-                    >
-                      {field.todo ? field.value : linkifyEmail(field.value, email)}
+                    <dd className="text-[1.0625rem] leading-relaxed text-ink">
+                      {linkifyEmail(field.value, email)}
                     </dd>
                   </div>
                 ))}
