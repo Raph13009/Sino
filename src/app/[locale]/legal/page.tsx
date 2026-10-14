@@ -40,7 +40,7 @@ export default async function LegalPage({ params }: Props) {
           locale,
         )}
       />
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}

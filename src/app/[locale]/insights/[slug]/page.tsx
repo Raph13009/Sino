@@ -109,7 +109,7 @@ export default async function InsightArticlePage({ params }: Props) {
       />
 
       <article>
-        <Section className="border-b border-border py-14 md:py-20">
+        <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
           <Container>
             <header>
               <Breadcrumbs
@@ -127,9 +127,7 @@ export default async function InsightArticlePage({ params }: Props) {
                 <Eyebrow accent>
                   {insight.category} · {insight.readingTime}
                 </Eyebrow>
-                <h1 className="mt-4 text-[2.25rem] leading-[1.08] md:text-[3.25rem]">
-                  {insight.title}
-                </h1>
+                <h1 className="display-section mt-4">{insight.title}</h1>
                 <p className="mt-6 text-lg leading-relaxed text-charcoal">
                   {insight.excerpt}
                 </p>

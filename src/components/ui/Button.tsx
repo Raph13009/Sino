@@ -1,17 +1,23 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary" | "primaryOnDark";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "primaryOnDark"
+  | "ghostOnDark";
 
 const variants: Record<ButtonVariant, string> = {
-  primary:
-    "bg-ink text-white-warm hover:bg-charcoal border border-ink",
+  primary: "bg-ink text-white-warm hover:bg-charcoal border border-ink",
   secondary:
-    "bg-transparent text-ink border border-ink hover:bg-concrete",
+    "bg-transparent text-ink border border-ink hover:bg-ink hover:text-white-warm",
   tertiary:
     "bg-transparent text-ink border-0 px-0 h-auto min-h-0 hover:text-accent",
   primaryOnDark:
     "bg-white-warm text-ink border border-white-warm hover:bg-concrete",
+  ghostOnDark:
+    "bg-transparent text-white-warm border border-white-warm/70 hover:border-white-warm hover:bg-white-warm/10",
 };
 
 type CommonProps = {
@@ -42,8 +48,10 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2 rounded-[var(--radius-sm)] px-5 text-[0.9375rem] font-medium tracking-[-0.01em] transition-colors duration-200",
-    variant === "tertiary" ? "py-1" : "h-12 min-h-12",
+    "group inline-flex items-center justify-center gap-2.5 rounded-[var(--radius-sm)] px-6 text-[0.875rem] font-medium tracking-[0.02em] uppercase transition-colors duration-300",
+    variant === "tertiary"
+      ? "py-1 normal-case tracking-[-0.01em] text-[0.9375rem]"
+      : "h-12 min-h-12",
     variants[variant],
     className,
   );
@@ -54,7 +62,7 @@ export function Button({
       {showArrow ? (
         <span
           aria-hidden
-          className="translate-x-0 transition-transform duration-200 group-hover:translate-x-1"
+          className="translate-x-0 transition-transform duration-300 group-hover:translate-x-1"
         >
           →
         </span>

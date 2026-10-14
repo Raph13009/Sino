@@ -72,7 +72,7 @@ export default async function IndustryPage({ params }: Props) {
         )}
       />
 
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -90,9 +90,7 @@ export default async function IndustryPage({ params }: Props) {
               <Eyebrow accent>
                 {industry.number} / {dict.industriesPage.detailEyebrowSuffix}
               </Eyebrow>
-              <h1 className="mt-4 text-[2.5rem] leading-[1.04] md:text-[3.75rem]">
-                {industry.name}
-              </h1>
+              <h1 className="display-section mt-4">{industry.name}</h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal">
                 {industry.description}
               </p>

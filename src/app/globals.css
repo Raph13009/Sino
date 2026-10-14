@@ -1,32 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --container-max: 1360px;
+  --radius-xs: 0px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --container-max: 1380px;
   --font-display: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   --font-body: var(--font-inter), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-cjk: var(--font-noto-sans-sc), "Noto Sans SC", "PingFang SC",
     "Microsoft YaHei", sans-serif;
+  --header-h: 4.5rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-ink: #0c233c;
-  --color-charcoal: #30353b;
-  --color-ivory: #f4f1ea;
-  --color-white-warm: #fbfaf7;
-  --color-concrete: #e8e4dc;
-  --color-sand: #d7cfc1;
-  --color-border: #c9c5bd;
-  --color-border-dark: #454a50;
-  --color-accent: #a71f2a;
-  --color-accent-dark: #7f1820;
+  --color-ink: #121417;
+  --color-charcoal: #5c6168;
+  --color-ivory: #f3f0e8;
+  --color-white-warm: #fafaf8;
+  --color-concrete: #ebe7df;
+  --color-sand: #d9d2c5;
+  --color-border: #d4cfc5;
+  --color-border-dark: #3a3e44;
+  --color-accent: #b01e28;
+  --color-accent-dark: #8a171f;
 
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
+  --radius-xs: 0px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
 
   --font-sans: var(--font-body);
   --font-display: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial,
@@ -34,7 +36,7 @@
   --font-cjk: var(--font-noto-sans-sc), "Noto Sans SC", "PingFang SC",
     "Microsoft YaHei", sans-serif;
 
-  --max-width-container: 1360px;
+  --max-width-container: 1380px;
 }
 
 @layer base {
@@ -61,13 +63,13 @@
     color: var(--color-ink);
     font-family: var(--font-body);
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
     color: var(--color-ink);
   }
 
@@ -77,8 +79,8 @@
   h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.08;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
     color: var(--color-ink);
     text-wrap: balance;
   }
@@ -107,18 +109,18 @@
 
   .eyebrow {
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-charcoal);
   }
 
   .eyebrow-accent {
     font-family: var(--font-body);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
   }
@@ -132,13 +134,13 @@
 
   @media (min-width: 768px) {
     .container-editorial {
-      padding-inline: 2rem;
+      padding-inline: 2.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container-editorial {
-      padding-inline: 3rem;
+      padding-inline: 3.5rem;
     }
   }
 
@@ -155,9 +157,29 @@
 
   .rule-accent {
     height: 1px;
-    width: 2.5rem;
+    width: 3rem;
     background: var(--color-accent);
     border: 0;
+  }
+
+  .display-hero {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    font-size: clamp(2.5rem, 1.2rem + 5vw, 5.25rem);
+  }
+
+  .display-section {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+    font-size: clamp(2rem, 1rem + 3.2vw, 3.75rem);
+  }
+
+  .text-steel {
+    color: var(--color-charcoal);
   }
 
   .prose-editorial p + p {
@@ -217,5 +239,26 @@
   .prose-editorial strong {
     color: var(--color-ink);
     font-weight: 600;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 0.7s var(--ease-out),
+      transform 0.7s var(--ease-out);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }

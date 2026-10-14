@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: Props) {
         ]}
       />
 
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -132,9 +132,7 @@ export default async function ServicePage({ params }: Props) {
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <h1 className="text-[2.5rem] leading-[1.04] md:text-[3.75rem]">
-                {service.name}
-              </h1>
+              <h1 className="display-section">{service.name}</h1>
               <p className="mt-5 text-xl text-accent md:text-2xl">
                 {service.positioning}
               </p>

@@ -14,11 +14,13 @@ import { cn } from "@/lib/utils";
 type LanguageSwitcherProps = {
   className?: string;
   onNavigate?: () => void;
+  inverted?: boolean;
 };
 
 export function LanguageSwitcher({
   className,
   onNavigate,
+  inverted = false,
 }: LanguageSwitcherProps) {
   const pathname = usePathname() || "/";
   const activeLocale = getLocaleFromPathname(pathname);
@@ -44,8 +46,15 @@ export function LanguageSwitcher({
         }
         active={activeLocale === "en"}
         onNavigate={onNavigate}
+        inverted={inverted}
       />
-      <span className="text-border-dark select-none" aria-hidden>
+      <span
+        className={cn(
+          "select-none",
+          inverted ? "text-white-warm/35" : "text-border-dark",
+        )}
+        aria-hidden
+      >
         /
       </span>
       <LocaleControl
@@ -58,6 +67,7 @@ export function LanguageSwitcher({
         }
         active={activeLocale === "zh"}
         onNavigate={onNavigate}
+        inverted={inverted}
       />
     </div>
   );
@@ -69,16 +79,24 @@ function LocaleControl({
   href,
   active,
   onNavigate,
+  inverted = false,
 }: {
   locale: Locale;
   label: string;
   href: string;
   active: boolean;
   onNavigate?: () => void;
+  inverted?: boolean;
 }) {
   const classes = cn(
     "transition-colors duration-200",
-    active ? "text-ink" : "text-charcoal hover:text-accent",
+    inverted
+      ? active
+        ? "text-white-warm"
+        : "text-white-warm/55 hover:text-white-warm"
+      : active
+        ? "text-ink"
+        : "text-charcoal hover:text-accent",
   );
 
   if (active) {

@@ -5,7 +5,7 @@ export const siteConfig = {
   legalName: "OPOPA Partners",
   tagline: "Markets in Sync",
   description:
-    "European market-entry and commercial partner for Chinese industrial and green-tech companies.",
+    "OPOPA connects Chinese industrial and green-tech companies to Europe — EU–China market entry, local support and European sales representation.",
   /** Canonical origin. Not taken from env — preview/localhost must never leak. */
   url: PRODUCTION_SITE_URL,
   locale: "en",
@@ -28,7 +28,7 @@ export const siteConfig = {
     },
   },
   primaryCta: {
-    label: "Discuss your European expansion",
+    label: "Discuss with us",
     href: "/contact",
   },
   ogImage: "/images/hero/hero-factory-visit.webp",

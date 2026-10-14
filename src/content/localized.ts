@@ -1,12 +1,13 @@
 import type { Dictionary } from "@/content/locales/types";
 import {
-  homeServiceCardSlugs,
+  homePillarIds,
   industryMeta,
   industrySlugs,
   serviceGroupIds,
   serviceGroups,
   serviceMeta,
   serviceSlugs,
+  type HomePillarId,
   type IndustrySlug,
   type ServiceSlug,
 } from "@/content/catalog";
@@ -51,18 +52,15 @@ export function getService(
   return getServices(locale, dict).find((item) => item.slug === slug);
 }
 
-export function getHomeServiceCards(locale: Locale, dict: Dictionary) {
-  return homeServiceCardSlugs.map((slug) => {
-    const service = getService(locale, dict, slug);
-    const card = dict.home.services.cards[slug];
-    if (!service) {
-      throw new Error(`Missing homepage service: ${slug}`);
-    }
+export function getHomePillars(locale: Locale, dict: Dictionary) {
+  return homePillarIds.map((id: HomePillarId) => {
+    const pillar = dict.home.services.pillars[id];
     return {
-      slug,
-      href: service.href,
-      name: card.title,
-      description: card.description,
+      id,
+      href: localePath(locale, `/services#group-${id}`),
+      title: pillar.title,
+      description: pillar.description,
+      cta: pillar.cta,
     };
   });
 }

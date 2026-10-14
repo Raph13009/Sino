@@ -11,28 +11,26 @@ export const serviceSlugs = [
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
 
-/** Homepage features four entry points. The hub lists the full catalogue. */
-export const homeServiceCardSlugs = [
-  "european-market-entry",
-  "european-experts-and-partners",
-  "european-sales-representation",
-  "after-sales-maintenance",
-] as const satisfies readonly ServiceSlug[];
+/** Homepage features the two entry pillars. The hub lists the full catalogue. */
+export const homePillarIds = ["access", "support"] as const;
 
-export type HomeServiceCardSlug = (typeof homeServiceCardSlugs)[number];
+export type HomePillarId = (typeof homePillarIds)[number];
 
-export const serviceGroupIds = ["plan", "build", "grow"] as const;
+export const serviceGroupIds = ["access", "support"] as const;
 
 export type ServiceGroupId = (typeof serviceGroupIds)[number];
 
 export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
-  plan: ["european-market-entry"],
-  build: [
+  access: [
+    "european-market-entry",
+    "european-sales-representation",
+    "sales-ai-automation",
+  ],
+  support: [
     "european-experts-and-partners",
     "legal-and-regulatory-support",
     "after-sales-maintenance",
   ],
-  grow: ["european-sales-representation", "sales-ai-automation"],
 };
 
 export const serviceMeta: Record<
@@ -40,13 +38,16 @@ export const serviceMeta: Record<
   {
     number: string;
     group: ServiceGroupId;
-    image: (typeof media.services)[keyof typeof media.services] | (typeof media.home)["context"] | (typeof media.industries)["industrialEquipment"];
+    image:
+      | (typeof media.services)[keyof typeof media.services]
+      | (typeof media.home)["context"]
+      | (typeof media.industries)["industrialEquipment"];
     complementary: readonly ServiceSlug[];
   }
 > = {
   "european-market-entry": {
     number: "01",
-    group: "plan",
+    group: "access",
     image: media.services.marketEntry,
     complementary: [
       "european-experts-and-partners",
@@ -56,7 +57,7 @@ export const serviceMeta: Record<
   },
   "european-experts-and-partners": {
     number: "02",
-    group: "build",
+    group: "support",
     image: media.services.expertPartnerSourcing,
     complementary: [
       "european-market-entry",
@@ -66,7 +67,7 @@ export const serviceMeta: Record<
   },
   "legal-and-regulatory-support": {
     number: "03",
-    group: "build",
+    group: "support",
     image: media.services.salesEnablement,
     complementary: [
       "european-experts-and-partners",
@@ -75,7 +76,7 @@ export const serviceMeta: Record<
   },
   "after-sales-maintenance": {
     number: "04",
-    group: "build",
+    group: "support",
     image: media.services.afterSalesWarehouse,
     complementary: [
       "european-market-entry",
@@ -85,7 +86,7 @@ export const serviceMeta: Record<
   },
   "european-sales-representation": {
     number: "05",
-    group: "grow",
+    group: "access",
     image: media.services.outsourcedSales,
     complementary: [
       "european-market-entry",
@@ -95,7 +96,7 @@ export const serviceMeta: Record<
   },
   "sales-ai-automation": {
     number: "06",
-    group: "grow",
+    group: "access",
     image: media.services.salesAiAutomation,
     complementary: [
       "european-sales-representation",

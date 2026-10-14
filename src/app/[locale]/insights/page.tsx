@@ -72,7 +72,7 @@ export default async function InsightsPage({ params }: Props) {
           },
         ]}
       />
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -81,10 +81,10 @@ export default async function InsightsPage({ params }: Props) {
               { label: dict.insightsPage.eyebrow },
             ]}
           />
-          <Eyebrow className="mt-8" accent>
+          <Eyebrow className="mt-10" accent>
             {dict.insightsPage.eyebrow}
           </Eyebrow>
-          <h1 className="mt-4 max-w-4xl text-[2.75rem] leading-[1.04] md:text-[4rem]">
+          <h1 className="display-section mt-4 max-w-4xl">
             {dict.insightsPage.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal md:text-xl">
@@ -100,32 +100,37 @@ export default async function InsightsPage({ params }: Props) {
               {dict.insightsPage.empty}
             </p>
           ) : (
-            <div className="border-t border-border">
+            <div>
               {featured ? (
-                <article className="grid gap-8 border-b border-border py-10 md:grid-cols-12 md:py-14">
-                  <div className="md:col-span-5">
+                <article className="group mb-10 grid overflow-hidden border border-border bg-white-warm md:mb-14 md:grid-cols-12">
+                  <Link
+                    href={featured.href}
+                    className="relative block min-h-[16rem] overflow-hidden bg-ink md:col-span-6 md:min-h-[22rem]"
+                  >
                     {featured.image.fileId ? (
                       <MediaImage
                         src={featured.image.src}
                         alt={featured.image.alt}
                         width={featured.image.width}
                         height={featured.image.height}
-                        sizes="(max-width: 768px) 100vw, 40vw"
-                        frameClassName="aspect-[4/3]"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        frameClassName="absolute inset-0 h-full w-full"
+                        imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        className="absolute inset-0 h-full"
                         priority
                       />
                     ) : (
                       <CoverFallback alt={featured.title} />
                     )}
-                  </div>
-                  <div className="md:col-span-6 md:col-start-7">
+                  </Link>
+                  <div className="flex flex-col justify-center p-7 md:col-span-6 md:p-10 lg:p-12">
                     <p className="eyebrow">
                       {featured.featured
                         ? `${dict.insightsPage.featured} · ${featured.category}`
                         : featured.category}{" "}
                       · {featured.date}
                     </p>
-                    <h2 className="mt-3 text-[1.875rem] leading-tight md:text-[2.25rem]">
+                    <h2 className="mt-4 text-[1.875rem] leading-tight tracking-[-0.03em] md:text-[2.35rem]">
                       <Link
                         href={featured.href}
                         className="transition-colors hover:text-accent"
@@ -137,7 +142,7 @@ export default async function InsightsPage({ params }: Props) {
                       {featured.excerpt}
                     </p>
                     {featured.author ? (
-                      <p className="mt-5 text-[0.8125rem] uppercase tracking-[0.08em] text-charcoal">
+                      <p className="mt-6 text-[0.8125rem] uppercase tracking-[0.08em] text-charcoal">
                         {featured.author}
                       </p>
                     ) : null}

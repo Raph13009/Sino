@@ -44,7 +44,7 @@ export default async function ContactPage({ params }: Props) {
           locale,
         )}
       />
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -56,9 +56,7 @@ export default async function ContactPage({ params }: Props) {
           <div className="mt-10 grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
               <Eyebrow accent>{dict.contact.eyebrow}</Eyebrow>
-              <h1 className="mt-4 text-[2.5rem] leading-[1.04] md:text-[3.5rem]">
-                {dict.contact.title}
-              </h1>
+              <h1 className="display-section mt-4">{dict.contact.title}</h1>
               <p className="mt-6 text-lg leading-relaxed text-charcoal">
                 {dict.contact.description}
               </p>

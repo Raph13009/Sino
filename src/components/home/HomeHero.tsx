@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { media } from "@/content/media";
 import type { Dictionary } from "@/content/locales/types";
 import { Button } from "@/components/ui/Button";
-import { MediaImage } from "@/components/ui/MediaImage";
-import { Container, Eyebrow, Rule } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Section";
 import { localePath, type Locale } from "@/i18n/config";
 
 export function HomeHero({
@@ -16,42 +16,52 @@ export function HomeHero({
   const copy = dict.home.hero;
 
   return (
-    <section className="border-b border-border bg-ivory">
-      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-8 md:min-h-[calc(100svh-5rem)] md:py-10 lg:py-12">
-        <div className="grid items-center gap-8 lg:grid-cols-12 lg:items-end lg:gap-x-0 lg:gap-y-0">
-          <div className="lg:col-span-5">
-            <Eyebrow accent>{copy.eyebrow}</Eyebrow>
-            <h1 className="mt-3 max-w-[18ch] text-[clamp(2.25rem,1rem+3.2vw,4.125rem)] leading-[1.05] tracking-[-0.025em] md:mt-4 md:max-w-none">
-              {copy.title}
-            </h1>
-            <Rule tone="accent" className="mt-5 md:mt-6" />
-            <p className="mt-5 max-w-md text-[1.0625rem] leading-relaxed text-charcoal md:mt-6 md:text-lg">
-              {copy.description}
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-7 md:gap-4">
-              <Button href={localePath(locale, "/contact")}>
-                {copy.primaryCta}
-              </Button>
-              <Button href={localePath(locale, "/services")} variant="tertiary">
-                {copy.secondaryCta}
-              </Button>
-            </div>
-          </div>
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-ink text-white-warm">
+      <Image
+        src={hero.src}
+        alt={copy.imageAlt}
+        fill
+        priority
+        quality={90}
+        sizes="100vw"
+        className="object-cover object-[center_40%]"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/55 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-ink/40"
+        aria-hidden
+      />
 
-          <div className="lg:col-span-6 lg:col-start-7">
-            <MediaImage
-              src={hero.src}
-              alt={copy.imageAlt}
-              width={hero.width}
-              height={hero.height}
-              priority
-              quality={90}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              frameClassName="aspect-[4/3] max-h-[min(48svh,28rem)] w-full lg:max-h-[min(56svh,32rem)]"
-              caption={copy.caption}
-            />
+      <Container className="relative flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24 md:pt-32 lg:justify-end lg:pb-28 lg:pt-36">
+        <div className="max-w-[38rem] lg:max-w-[42rem]">
+          <p className="eyebrow text-accent">{copy.eyebrow}</p>
+          <h1 className="display-hero mt-5 text-white-warm">{copy.title}</h1>
+          <div className="rule-accent mt-7" />
+          <p className="mt-7 max-w-xl text-[1.125rem] leading-relaxed text-white-warm/90 md:text-[1.35rem]">
+            {copy.rhythm}
+          </p>
+          <p className="mt-4 max-w-lg text-[1.0125rem] leading-relaxed text-white-warm/70 md:text-[1.0625rem]">
+            {copy.description}
+          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Button href={localePath(locale, "/contact")} variant="primaryOnDark">
+              {copy.primaryCta}
+            </Button>
+            <Button
+              href={localePath(locale, "/services")}
+              variant="ghostOnDark"
+            >
+              {copy.secondaryCta}
+            </Button>
           </div>
         </div>
+
+        <p className="eyebrow mt-16 text-white-warm/45 md:mt-20">
+          {copy.caption}
+        </p>
       </Container>
     </section>
   );

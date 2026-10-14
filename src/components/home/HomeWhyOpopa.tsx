@@ -1,43 +1,51 @@
 import type { Dictionary } from "@/content/locales/types";
-import {
-  Container,
-  Rule,
-  Section,
-  SectionHeading,
-} from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
+import { Container, Section } from "@/components/ui/Section";
+import { cn } from "@/lib/utils";
 
 export function HomeWhyOpopa({ dict }: { dict: Dictionary }) {
   const copy = dict.home.why;
 
   return (
-    <Section className="py-20 md:py-28">
+    <Section tone="concrete" className="border-b border-border py-24 md:py-32">
       <Container>
-        <SectionHeading
-          number={copy.number}
-          eyebrow={copy.eyebrow}
-          title={copy.title}
-          description={copy.description}
-        />
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow-accent mb-5">
+              {copy.number} / {copy.eyebrow}
+            </p>
+            <h2 className="display-section">{copy.title}</h2>
+            <p className="mt-6 text-lg leading-relaxed text-charcoal">
+              {copy.description}
+            </p>
+            <p className="mt-10 max-w-md text-lg leading-relaxed text-ink md:text-xl">
+              {copy.closing}
+            </p>
+          </Reveal>
 
-        <div className="mt-14 grid gap-0 border-t border-border md:grid-cols-2">
-          {copy.reasons.map((reason, index) => (
-            <article
-              key={reason.number}
-              className={`border-b border-border py-8 md:px-8 md:py-10 ${
-                index % 2 === 0 ? "md:border-r" : ""
-              }`}
-            >
-              <p className="eyebrow">{reason.number}</p>
-              <h3 className="mt-4 text-2xl">{reason.title}</h3>
-              <p className="mt-4 max-w-md text-[1.0625rem] leading-relaxed text-charcoal">
-                {reason.body}
-              </p>
-            </article>
-          ))}
+          <ol className="grid gap-4 sm:grid-cols-2 lg:col-span-7 lg:gap-5">
+            {copy.reasons.map((reason, index) => (
+              <li key={reason.number}>
+                <Reveal delayMs={index * 70}>
+                  <article
+                    className={cn(
+                      "flex h-full flex-col border border-border/80 bg-white-warm p-7 md:p-8",
+                      index === 0 && "sm:col-span-1",
+                    )}
+                  >
+                    <p className="eyebrow text-accent">{reason.number}</p>
+                    <h3 className="mt-5 text-[1.45rem] tracking-[-0.02em] md:text-[1.6rem]">
+                      {reason.title}
+                    </h3>
+                    <p className="mt-4 flex-1 text-[1.0125rem] leading-relaxed text-charcoal">
+                      {reason.body}
+                    </p>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
         </div>
-
-        <Rule tone="accent" className="mt-12" />
-        <p className="mt-6 max-w-2xl text-lg text-charcoal">{copy.closing}</p>
       </Container>
     </Section>
   );

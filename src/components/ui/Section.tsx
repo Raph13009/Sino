@@ -80,26 +80,38 @@ export function SectionHeading({
   title,
   description,
   className,
+  light = false,
 }: {
   number?: string;
   eyebrow?: string;
   title: string;
   description?: string;
   className?: string;
+  light?: boolean;
 }) {
   return (
     <div className={cn("max-w-3xl", className)}>
       {(number || eyebrow) && (
-        <Eyebrow className="mb-4">
+        <Eyebrow className={cn("mb-5", light && "text-white-warm/55")} accent={!light}>
           {number ? `${number} / ` : ""}
           {eyebrow}
         </Eyebrow>
       )}
-      <h2 className="text-[2rem] leading-[1.1] md:text-[2.75rem] lg:text-[3.25rem]">
+      <h2
+        className={cn(
+          "display-section",
+          light ? "text-white-warm" : "text-ink",
+        )}
+      >
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-charcoal md:text-xl">
+        <p
+          className={cn(
+            "mt-6 max-w-2xl text-[1.0625rem] leading-relaxed md:text-lg",
+            light ? "text-white-warm/70" : "text-charcoal",
+          )}
+        >
           {description}
         </p>
       ) : null}

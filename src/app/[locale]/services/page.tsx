@@ -63,11 +63,9 @@ export default async function ServicesPage({ params }: Props) {
             ]}
           />
           <div className="mt-12 grid items-end gap-12 lg:mt-14 lg:grid-cols-12 lg:gap-x-14">
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               <Eyebrow accent>{copy.eyebrow}</Eyebrow>
-              <h1 className="mt-4 max-w-2xl text-[2.35rem] leading-[1.06] tracking-[-0.03em] md:text-[3.5rem]">
-                {copy.title}
-              </h1>
+              <h1 className="display-section mt-4 max-w-2xl">{copy.title}</h1>
               <p className="mt-5 max-w-xl text-lg leading-relaxed text-charcoal">
                 {copy.description}
               </p>
@@ -75,7 +73,7 @@ export default async function ServicesPage({ params }: Props) {
                 <Button href={contactHref}>{copy.secondaryCta}</Button>
               </div>
             </div>
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-6">
               <MediaImage
                 src={heroImage.src}
                 alt={heroImage.alt}
@@ -83,8 +81,8 @@ export default async function ServicesPage({ params }: Props) {
                 height={heroImage.height}
                 priority
                 quality={90}
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                frameClassName="aspect-[4/3] rounded-xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                frameClassName="aspect-[16/11]"
                 imageClassName="object-[center_35%]"
               />
             </div>
@@ -92,19 +90,33 @@ export default async function ServicesPage({ params }: Props) {
         </Container>
       </Section>
 
-      <Section tone="concrete" className="border-b border-border py-12 md:py-14">
+      <Section tone="ink" className="border-b border-border py-16 md:py-20">
         <Container>
-          <h2 className="text-[1.35rem] leading-tight tracking-[-0.02em] md:text-[1.6rem]">
-            {copy.chooser.title}
+          <h2 className="text-[1.45rem] leading-tight tracking-[-0.02em] text-white-warm md:text-[1.75rem]">
+            {copy.pillarsIntro}
           </h2>
-          <ul className="mt-6 flex flex-wrap gap-2.5 md:gap-3">
-            {copy.chooser.items.map((item) => (
-              <li key={item.href}>
+          <ul className="mt-10 grid gap-5 md:grid-cols-2 md:gap-6">
+            {copy.pillars.map((pillar) => (
+              <li key={pillar.id}>
                 <a
-                  href={item.href}
-                  className="inline-flex items-center rounded-full border border-border bg-white-warm px-4 py-2.5 text-[0.875rem] leading-snug text-ink transition-colors hover:border-accent hover:text-accent"
+                  href={`#group-${pillar.id}`}
+                  className="group flex h-full flex-col border border-white/15 bg-white/[0.03] p-7 transition-colors hover:border-accent/60 hover:bg-white/[0.06] md:p-8"
                 >
-                  {item.label}
+                  <h3 className="text-[1.55rem] leading-tight tracking-[-0.02em] text-white-warm md:text-[1.85rem]">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-4 flex-1 text-[1.0125rem] leading-relaxed text-white-warm/65">
+                    {pillar.description}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-[0.875rem] font-medium tracking-[0.04em] text-white-warm uppercase transition-colors group-hover:text-accent">
+                    <span>{pillar.cta}</span>
+                    <span
+                      aria-hidden
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </span>
                 </a>
               </li>
             ))}
@@ -121,14 +133,14 @@ export default async function ServicesPage({ params }: Props) {
             <Section
               key={group.id}
               id={`group-${group.id}`}
-              className={`scroll-mt-24 border-b border-border py-16 md:py-24 ${
+              className={`scroll-mt-32 border-b border-border py-16 md:py-24 ${
                 groupIndex % 2 === 1 ? "bg-white-warm" : ""
               }`}
               tone={groupIndex % 2 === 1 ? "white" : "ivory"}
             >
               <Container>
                 <div className="max-w-2xl">
-                  <h2 className="text-[1.85rem] leading-tight tracking-[-0.02em] md:text-[2.35rem]">
+                  <h2 className="display-section text-[1.85rem] md:text-[2.5rem]">
                     {groupCopy.title}
                   </h2>
                   <p className="mt-3 max-w-xl text-[1.0125rem] leading-relaxed text-charcoal md:text-[1.0625rem]">
@@ -137,11 +149,11 @@ export default async function ServicesPage({ params }: Props) {
                 </div>
 
                 <ul
-                  className={`mt-10 gap-5 md:gap-6 ${
+                  className={`mt-10 gap-4 md:gap-5 ${
                     cardCount === 1
-                      ? "mx-auto grid max-w-md md:grid-cols-1"
+                      ? "grid max-w-xl"
                       : cardCount === 2
-                        ? "mx-auto flex max-w-md flex-col sm:max-w-none sm:flex-row sm:justify-center"
+                        ? "grid md:grid-cols-2"
                         : "grid md:grid-cols-2 xl:grid-cols-3"
                   }`}
                 >
@@ -151,9 +163,8 @@ export default async function ServicesPage({ params }: Props) {
                     return (
                       <li
                         key={service.slug}
-                        className={`min-h-0 ${
-                          cardCount === 2 ? "w-full max-w-md" : ""
-                        }`}
+                        id={service.slug}
+                        className="min-h-0 scroll-mt-32"
                       >
                         <ServiceHubCard
                           service={{

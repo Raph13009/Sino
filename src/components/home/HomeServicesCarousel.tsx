@@ -5,12 +5,12 @@ import {
   OpopaBrandField,
   ServiceIcon,
 } from "@/components/home/serviceMarks";
-import type { HomeServiceCardSlug } from "@/content/catalog";
+import type { ServiceSlug } from "@/content/catalog";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 export type HomeServiceItem = {
-  slug: HomeServiceCardSlug;
+  slug: ServiceSlug;
   href: string;
   name: string;
   description: string;

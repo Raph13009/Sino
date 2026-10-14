@@ -44,29 +44,29 @@ export function SiteFooter() {
   ];
 
   return (
-    <footer className="border-t border-border-dark bg-ink text-white-warm">
-      <div className="container-editorial py-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-4">
+    <footer className="bg-ink text-white-warm">
+      <div className="container-editorial py-20 md:py-28">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-5">
             <Logo variant="dark" href={path("/")} />
-            <p className="mt-6 max-w-sm text-[0.9375rem] leading-relaxed text-white-warm/70">
+            <p className="mt-8 max-w-md text-[1.0625rem] leading-relaxed text-white-warm/60">
               {dict.footer.description}
             </p>
-            <p className="eyebrow eyebrow-accent mt-8">{dict.footer.tagline}</p>
+            <p className="eyebrow mt-10 text-accent">{dict.footer.tagline}</p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3">
+          <div className="grid gap-12 sm:grid-cols-3 lg:col-span-7">
             <FooterColumn title={dict.nav.footer.services} links={serviceLinks} />
             <FooterColumn title={dict.nav.footer.industries} links={industries} />
             <div>
               <FooterColumn title={dict.nav.footer.company} links={company} />
-              <div className="mt-8">
-                <p className="eyebrow eyebrow-accent">{dict.nav.footer.connect}</p>
-                <ul className="mt-4 space-y-3 text-[0.9375rem]">
+              <div className="mt-10">
+                <p className="eyebrow text-accent">{dict.nav.footer.connect}</p>
+                <ul className="mt-5 space-y-3 text-[0.9375rem]">
                   <li>
                     <a
                       href={siteConfig.companyLinkedIn}
-                      className="text-white-warm transition-colors hover:text-accent"
+                      className="text-white-warm/75 transition-colors hover:text-white-warm"
                       rel="noopener noreferrer"
                       target="_blank"
                     >
@@ -76,7 +76,7 @@ export function SiteFooter() {
                   <li>
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="text-white-warm transition-colors hover:text-accent"
+                      className="text-white-warm/75 transition-colors hover:text-white-warm"
                     >
                       {siteConfig.email}
                     </a>
@@ -87,12 +87,12 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-border-dark pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-white-warm/55">
+        <div className="mt-20 flex flex-col gap-5 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-sm text-white-warm/40">
             © {new Date().getFullYear()} {siteConfig.legalName}.{" "}
             {dict.common.allRightsReserved}
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white-warm/55">
+          <ul className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white-warm/40">
             {legal.map((item) => (
               <li key={item.href}>
                 <Link
@@ -119,13 +119,13 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="eyebrow eyebrow-accent">{title}</p>
-      <ul className="mt-4 space-y-3 text-[0.9375rem]">
+      <p className="eyebrow text-accent">{title}</p>
+      <ul className="mt-5 space-y-3.5 text-[0.9375rem]">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-white-warm transition-colors hover:text-accent"
+              className="text-white-warm/75 transition-colors hover:text-white-warm"
             >
               {link.label}
             </Link>

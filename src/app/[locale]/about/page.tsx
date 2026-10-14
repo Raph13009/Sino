@@ -70,8 +70,7 @@ export default async function AboutPage({ params }: Props) {
         ]}
       />
 
-      {/* Hero — text only */}
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -82,9 +81,7 @@ export default async function AboutPage({ params }: Props) {
           />
           <div className="mt-10 max-w-3xl">
             <Eyebrow accent>{copy.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-[2.5rem] leading-[1.04] tracking-[-0.03em] md:text-[3.75rem]">
-              {copy.title}
-            </h1>
+            <h1 className="display-section mt-4">{copy.title}</h1>
             <p className="mt-6 text-lg leading-relaxed text-charcoal md:text-xl">
               {copy.lead}
             </p>

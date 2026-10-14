@@ -1,9 +1,4 @@
 import Link from "next/link";
-import {
-  CardArrowIcon,
-  OpopaBrandField,
-  ServiceIcon,
-} from "@/components/home/serviceMarks";
 import type { ServiceSlug } from "@/content/catalog";
 import { cn } from "@/lib/utils";
 
@@ -25,30 +20,24 @@ export function ServiceCard({
     <Link
       href={service.href}
       className={cn(
-        "group relative flex h-full min-h-[20rem] cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent focus-visible:outline-offset-2 active:border-accent active:bg-accent",
+        "group flex h-full min-h-[16rem] flex-col border border-border bg-white-warm p-7 no-underline transition-colors duration-300",
+        "hover:border-ink hover:bg-ink hover:text-white-warm",
+        "outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent",
         className,
       )}
-      style={{ containerType: "inline-size" }}
     >
-      <OpopaBrandField />
-
-      <h3 className="relative z-10 text-[1.3125rem] leading-snug tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+      <h3 className="text-[1.35rem] leading-snug tracking-[-0.02em] text-ink transition-colors duration-300 group-hover:text-white-warm">
         {service.name}
       </h3>
-      <p className="relative z-10 mt-3 text-[0.9375rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm group-active:text-white-warm">
+      <p className="mt-3 flex-1 text-[0.975rem] leading-relaxed text-charcoal transition-colors duration-300 group-hover:text-white-warm/70">
         {service.description}
       </p>
-
-      <div className="relative z-20 mt-auto pt-8">
-        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white-warm transition-colors duration-300 group-hover:bg-white-warm group-hover:text-accent group-active:bg-white-warm group-active:text-accent">
-          <CardArrowIcon />
-        </span>
-      </div>
-
-      <ServiceIcon
-        slug={service.slug}
-        className="absolute right-7 bottom-7 z-10 text-white-warm"
-      />
+      <span
+        aria-hidden
+        className="mt-8 inline-flex text-ink transition-transform duration-300 group-hover:translate-x-1.5 group-hover:text-accent"
+      >
+        →
+      </span>
     </Link>
   );
 }

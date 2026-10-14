@@ -82,7 +82,7 @@ export function AfterSalesPage({
         ]}
       />
 
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -97,9 +97,7 @@ export function AfterSalesPage({
           />
           <div className="mt-10 grid items-center gap-10 lg:grid-cols-12 lg:gap-x-10">
             <div className="lg:col-span-5">
-              <h1 className="max-w-3xl text-[2.35rem] leading-[1.08] md:text-[3.35rem]">
-                {copy.headline}
-              </h1>
+              <h1 className="display-section max-w-3xl">{copy.headline}</h1>
               <p className="mt-5 max-w-xl text-xl text-accent md:text-2xl">
                 {copy.lead}
               </p>

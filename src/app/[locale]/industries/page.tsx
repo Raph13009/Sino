@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { MediaImage } from "@/components/ui/MediaImage";
 import {
   Container,
   Eyebrow,
@@ -13,6 +13,7 @@ import { getDictionary } from "@/content/locales";
 import { getIndustries } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -47,7 +48,7 @@ export default async function IndustriesPage({ params }: Props) {
           locale,
         )}
       />
-      <Section className="border-b border-border py-14 md:py-20">
+      <Section className="border-b border-border pt-16 pb-14 md:pt-24 md:pb-20">
         <Container>
           <Breadcrumbs
             label={dict.common.breadcrumb}
@@ -56,10 +57,10 @@ export default async function IndustriesPage({ params }: Props) {
               { label: dict.industriesPage.eyebrow },
             ]}
           />
-          <Eyebrow className="mt-8" accent>
+          <Eyebrow className="mt-10" accent>
             {dict.industriesPage.eyebrow}
           </Eyebrow>
-          <h1 className="mt-4 max-w-4xl text-[2.75rem] leading-[1.04] md:text-[4rem]">
+          <h1 className="display-section mt-4 max-w-4xl">
             {dict.industriesPage.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal md:text-xl">
@@ -68,35 +69,47 @@ export default async function IndustriesPage({ params }: Props) {
         </Container>
       </Section>
 
-      <Section className="py-16 md:py-24">
-        <Container>
-          <div className="grid gap-10 md:grid-cols-2">
-            {industries.map((industry) => (
+      <Section className="pb-0">
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-4">
+          {industries.map((industry, index) => (
+            <li key={industry.slug}>
               <Link
-                key={industry.slug}
                 href={industry.href}
-                className="group block border-t border-border pt-6"
+                className={cn(
+                  "group relative block min-h-[28rem] overflow-hidden bg-ink outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent md:min-h-[32rem]",
+                )}
               >
-                <MediaImage
+                <Image
                   src={industry.image.src}
                   alt={industry.image.alt}
-                  width={industry.image.width}
-                  height={industry.image.height}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  frameClassName="aspect-[16/10]"
-                  imageClassName="transition-transform duration-500 group-hover:scale-[1.02]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  priority={index < 2}
                 />
-                <p className="eyebrow mt-5">{industry.number}</p>
-                <h2 className="mt-2 text-[1.75rem] transition-colors group-hover:text-accent">
-                  {industry.name}
-                </h2>
-                <p className="mt-3 max-w-md text-[1.0625rem] leading-relaxed text-charcoal">
-                  {industry.summary}
-                </p>
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent"
+                  aria-hidden
+                />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <p className="eyebrow text-white-warm/50">{industry.number}</p>
+                  <h2 className="mt-3 text-[1.55rem] leading-tight tracking-[-0.02em] !text-white-warm transition-colors group-hover:!text-accent md:text-[1.75rem]">
+                    {industry.name}
+                  </h2>
+                  <p className="mt-3 max-w-sm text-[0.975rem] leading-relaxed text-white-warm/70">
+                    {industry.summary}
+                  </p>
+                  <span
+                    aria-hidden
+                    className="mt-5 inline-block text-white-warm/80 transition-transform duration-300 group-hover:translate-x-1.5"
+                  >
+                    →
+                  </span>
+                </div>
               </Link>
-            ))}
-          </div>
-        </Container>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <FinalCta locale={locale} dict={dict} />

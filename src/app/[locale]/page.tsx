@@ -4,8 +4,10 @@ import { HomeCredibility } from "@/components/home/HomeCredibility";
 import { HomeServices } from "@/components/home/HomeServices";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeIndustries } from "@/components/home/HomeIndustries";
+import { HomeIndustriesFit } from "@/components/home/HomeIndustriesFit";
 import { HomeInsight } from "@/components/home/HomeInsight";
 import { HomeMethod } from "@/components/home/HomeMethod";
+import { HomeUseCase } from "@/components/home/HomeUseCase";
 import { HomeWhyOpopa } from "@/components/home/HomeWhyOpopa";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { getDictionary } from "@/content/locales";
@@ -42,6 +44,8 @@ export default async function HomePage({ params }: Props) {
       <HomeHero locale={locale} dict={dict} />
       <HomeServices locale={locale} dict={dict} />
       <HomeCredibility dict={dict} />
+      <HomeUseCase dict={dict} />
+      <HomeIndustriesFit dict={dict} />
       <HomeContext dict={dict} />
       <HomeWhyOpopa dict={dict} />
       <HomeIndustries locale={locale} dict={dict} />
