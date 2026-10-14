@@ -24,7 +24,7 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div
-        className="border border-border bg-white-warm p-8 md:p-10"
+        className="rounded-card border border-border bg-white-warm p-8 md:p-10"
         role="status"
         aria-live="polite"
       >
@@ -249,7 +249,7 @@ function Field({
 
 function fieldClass(hasError: boolean) {
   return cn(
-    "mt-2 w-full border bg-white-warm px-4 py-3 text-[1rem] text-ink outline-none transition-colors",
+    "mt-2 w-full rounded-control border bg-white-warm px-4 py-3 text-[1rem] text-ink outline-none transition-colors",
     hasError ? "border-accent" : "border-border focus:border-ink",
   );
 }

@@ -42,12 +42,12 @@ export function HomeIndustries({
         </Reveal>
       </Container>
 
-      <div className="mt-14 grid sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+      <div className="mt-14 grid gap-3 px-3 sm:grid-cols-2 sm:px-4 lg:mt-20 lg:grid-cols-4 lg:gap-4 lg:px-6">
         {industries.map((industry, index) => (
           <Reveal key={industry.slug} delayMs={index * 80}>
             <Link
               href={industry.href}
-              className="group relative block aspect-[4/5] overflow-hidden"
+              className="group relative block aspect-[4/5] overflow-hidden rounded-card"
             >
               <Image
                 src={industry.image.src}

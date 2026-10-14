@@ -311,7 +311,7 @@ export function SecondaryNavPanel({
                   <Link
                     href={item.href}
                     tabIndex={open ? undefined : -1}
-                    className="group flex h-full flex-col rounded-xl px-3 py-3 transition-colors duration-200 hover:bg-ink/[0.04] focus-visible:bg-ink/[0.04]"
+                    className="group flex h-full flex-col rounded-control px-3 py-3 transition-colors duration-200 hover:bg-ink/[0.04] focus-visible:bg-ink/[0.04]"
                     onClick={() => {
                       closeMenu();
                       onNavigate?.();

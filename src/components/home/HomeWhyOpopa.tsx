@@ -29,7 +29,7 @@ export function HomeWhyOpopa({ dict }: { dict: Dictionary }) {
                 <Reveal delayMs={index * 70}>
                   <article
                     className={cn(
-                      "flex h-full flex-col border border-border/80 bg-white-warm p-7 md:p-8",
+                      "flex h-full flex-col rounded-card border border-border/80 bg-white-warm p-7 md:p-8",
                       index === 0 && "sm:col-span-1",
                     )}
                   >

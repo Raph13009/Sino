@@ -32,7 +32,7 @@ export async function HomeInsight({
         </Reveal>
 
         <Reveal delayMs={100}>
-          <article className="group mt-14 grid items-stretch gap-0 overflow-hidden lg:mt-16 lg:grid-cols-12">
+          <article className="group mt-14 grid items-stretch gap-0 overflow-hidden rounded-card border border-border lg:mt-16 lg:grid-cols-12">
             <Link
               href={featured.href}
               className="relative block min-h-[18rem] overflow-hidden bg-ink lg:col-span-7 lg:min-h-[26rem]"
@@ -52,7 +52,7 @@ export async function HomeInsight({
                 <CoverFallback alt={featured.title} />
               )}
             </Link>
-            <div className="flex flex-col justify-center border border-t-0 border-border bg-white-warm p-8 md:p-10 lg:col-span-5 lg:border-t lg:border-l-0">
+            <div className="flex flex-col justify-center border-t border-border bg-white-warm p-8 md:p-10 lg:col-span-5 lg:border-t-0 lg:border-l">
               <p className="eyebrow">
                 {featured.category} · {featured.readingTime}
               </p>

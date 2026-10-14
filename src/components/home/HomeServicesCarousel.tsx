@@ -48,7 +48,7 @@ function ServiceCard({ service }: { service: HomeServiceItem }) {
   return (
     <Link
       href={service.href}
-      className="group relative flex min-h-[20rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent focus-visible:outline-offset-2 active:border-accent active:bg-accent"
+      className="group relative flex min-h-[20rem] w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded-card border border-border bg-white-warm p-6 pt-7 no-underline transition-colors duration-300 hover:border-accent hover:bg-accent focus-visible:outline-offset-2 active:border-accent active:bg-accent"
     >
       <OpopaBrandField size="compact" />
 

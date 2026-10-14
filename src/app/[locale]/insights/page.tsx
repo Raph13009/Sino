@@ -102,7 +102,7 @@ export default async function InsightsPage({ params }: Props) {
           ) : (
             <div>
               {featured ? (
-                <article className="group mb-10 grid overflow-hidden border border-border bg-white-warm md:mb-14 md:grid-cols-12">
+                <article className="group mb-10 grid overflow-hidden rounded-card border border-border bg-white-warm md:mb-14 md:grid-cols-12">
                   <Link
                     href={featured.href}
                     className="relative block min-h-[16rem] overflow-hidden bg-ink md:col-span-6 md:min-h-[22rem]"

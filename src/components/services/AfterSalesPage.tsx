@@ -109,7 +109,7 @@ export function AfterSalesPage({
               </div>
             </div>
             <div className="lg:col-span-7">
-              <figure className="rounded-lg border border-border bg-white-warm p-4 md:p-5 lg:p-6">
+              <figure className="rounded-card border border-border bg-white-warm p-4 md:p-5 lg:p-6">
                 <MediaImage
                   src={chart.src}
                   alt={

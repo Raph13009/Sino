@@ -26,7 +26,7 @@ export function HomeUseCase({ dict }: { dict: Dictionary }) {
           </Reveal>
 
           <Reveal className="relative lg:col-span-7" delayMs={100}>
-            <div className="relative aspect-[16/10] overflow-hidden bg-concrete">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-card bg-concrete">
               <Image
                 src={image.src}
                 alt={image.alt}

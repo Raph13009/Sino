@@ -45,7 +45,7 @@ export function HomeServices({
                   <Link
                     href={pillar.href}
                     className={cn(
-                      "group relative flex min-h-[28rem] flex-col overflow-hidden bg-ink text-white-warm",
+                      "group relative flex min-h-[28rem] flex-col overflow-hidden rounded-card bg-ink text-white-warm",
                       "outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent",
                       "md:min-h-[32rem]",
                     )}

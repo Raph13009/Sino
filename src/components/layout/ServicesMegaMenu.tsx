@@ -138,7 +138,7 @@ function ServiceLink({
       href={item.href}
       tabIndex={open ? undefined : -1}
       className={cn(
-        "group block min-w-0 rounded-xl px-3 py-3 transition-colors duration-200",
+        "group block min-w-0 rounded-control px-3 py-3 transition-colors duration-200",
         "hover:bg-ink/[0.04] focus-visible:bg-ink/[0.04]",
       )}
       onClick={onNavigate}

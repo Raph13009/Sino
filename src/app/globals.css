@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --radius-xs: 0px;
-  --radius-sm: 2px;
-  --radius-md: 2px;
+  /* Radius hierarchy — soft floating chrome vs architectural editorial */
+  --radius-none: 0px;
+  --radius-control: 8px; /* buttons, inputs, compact interactive chrome */
+  --radius-card: 14px; /* service cards, visual tiles, contained panels */
+  --radius-float: 22px; /* floating glass navigation (desktop) */
+  --radius-float-compact: 18px; /* floating glass navigation (mobile) */
+
+  /* Legacy aliases kept for older utilities */
+  --radius-xs: var(--radius-none);
+  --radius-sm: var(--radius-control);
+  --radius-md: var(--radius-card);
+
   --container-max: 1380px;
   --font-display: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial,
     sans-serif;
@@ -26,9 +35,14 @@
   --color-accent: #b01e28;
   --color-accent-dark: #8a171f;
 
+  --radius-none: 0px;
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --radius-float: 22px;
+  --radius-float-compact: 18px;
   --radius-xs: 0px;
-  --radius-sm: 2px;
-  --radius-md: 2px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
 
   --font-sans: var(--font-body);
   --font-display: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial,

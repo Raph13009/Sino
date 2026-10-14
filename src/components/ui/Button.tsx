@@ -48,7 +48,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2.5 rounded-[var(--radius-sm)] px-6 text-[0.875rem] font-medium tracking-[0.02em] uppercase transition-colors duration-300",
+    "group inline-flex items-center justify-center gap-2.5 rounded-control px-6 text-[0.875rem] font-medium tracking-[0.02em] uppercase transition-colors duration-300",
     variant === "tertiary"
       ? "py-1 normal-case tracking-[-0.01em] text-[0.9375rem]"
       : "h-12 min-h-12",

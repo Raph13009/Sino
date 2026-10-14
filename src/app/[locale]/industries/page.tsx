@@ -69,14 +69,14 @@ export default async function IndustriesPage({ params }: Props) {
         </Container>
       </Section>
 
-      <Section className="pb-0">
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-4">
+      <Section className="pb-6 md:pb-8">
+        <ul className="grid gap-3 px-3 sm:grid-cols-2 sm:px-4 lg:grid-cols-4 lg:gap-4 lg:px-6">
           {industries.map((industry, index) => (
             <li key={industry.slug}>
               <Link
                 href={industry.href}
                 className={cn(
-                  "group relative block min-h-[28rem] overflow-hidden bg-ink outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent md:min-h-[32rem]",
+                  "group relative block min-h-[28rem] overflow-hidden rounded-card bg-ink outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent md:min-h-[32rem]",
                 )}
               >
                 <Image

@@ -46,9 +46,13 @@ Not a polish of the current token set. Rebuild the visual interface so OPOPA rea
 
 - Max content width ~1320–1400px; **full-bleed media escapes the container**
 - Section rhythm: immersive band → editorial band → metric/proof → immersive → method → CTA
-- Radius: **0–2px** (essentially square)
-- Borders: hairline only when structuring lists; no card chrome
-- Buttons: solid ink or ghost-on-dark; tertiary text+arrow
+- **Radius hierarchy** (tokens in `globals.css`):
+  - `--radius-float` 22px / compact 18px — floating glass navigation only
+  - `--radius-card` 14px — interactive cards & visual tiles
+  - `--radius-control` 8px — buttons, inputs, compact chrome
+  - `--radius-none` 0 — full-bleed editorial / immersive bands
+- Borders: hairline only when structuring lists; no generic SaaS card chrome
+- Buttons: solid ink or ghost-on-dark; tertiary text+arrow; `rounded-control`
 
 ### Motion
 

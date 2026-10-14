@@ -40,6 +40,9 @@ import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const MORPH_RANGE = 140;
+/** Keep in sync with --radius-float / --radius-float-compact in globals.css */
+const RADIUS_FLOAT = 22;
+const RADIUS_FLOAT_COMPACT = 18;
 
 export function SiteHeader() {
   const { dict, locale, path } = useLocale();
@@ -137,7 +140,10 @@ export function SiteHeader() {
     return p * max;
   });
   const topInset = useTransform(progress, (p) => p * (isDesktop ? 10 : 8));
-  const borderRadius = useTransform(progress, (p) => p * (isDesktop ? 22 : 18));
+  const borderRadius = useTransform(
+    progress,
+    (p) => p * (isDesktop ? RADIUS_FLOAT : RADIUS_FLOAT_COMPACT),
+  );
   const bgAlpha = useTransform(progress, (p) =>
     isHome ? p * 0.82 : 0.88 + p * 0.02,
   );
@@ -393,7 +399,7 @@ export function SiteHeader() {
                   "inline-flex h-11 w-11 shrink-0 items-center justify-center border transition-[border-color,color,border-radius] duration-200",
                   immersive
                     ? "border-white-warm/35 text-white-warm"
-                    : "rounded-lg border-border text-ink",
+                    : "rounded-control border-border text-ink",
                 )}
                 aria-expanded={drawerOpen}
                 aria-controls="mobile-nav"

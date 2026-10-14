@@ -29,7 +29,7 @@ export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
         </Reveal>
       </Container>
 
-      <ul className="mt-14 grid sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+      <ul className="mt-14 grid gap-3 px-3 sm:grid-cols-2 sm:px-4 lg:mt-16 lg:grid-cols-4 lg:gap-4 lg:px-6">
         {copy.industries.map((industry, index) => {
           const image = fitVisuals[index] ?? fitVisuals[0];
           const tall = index % 2 === 0;
@@ -38,7 +38,7 @@ export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
             <li
               key={industry}
               className={cn(
-                "group relative isolate overflow-hidden bg-ink",
+                "group relative isolate overflow-hidden rounded-card bg-ink",
                 tall ? "aspect-[3/4] sm:aspect-[3/5] lg:aspect-auto lg:min-h-[28rem]" : "aspect-[3/4] sm:aspect-[4/5] lg:min-h-[28rem]",
               )}
             >

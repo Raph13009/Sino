@@ -100,7 +100,7 @@ export default async function ServicesPage({ params }: Props) {
               <li key={pillar.id}>
                 <a
                   href={`#group-${pillar.id}`}
-                  className="group flex h-full flex-col border border-white/15 bg-white/[0.03] p-7 transition-colors hover:border-accent/60 hover:bg-white/[0.06] md:p-8"
+                  className="group flex h-full flex-col rounded-card border border-white/15 bg-white/[0.03] p-7 transition-colors hover:border-accent/60 hover:bg-white/[0.06] md:p-8"
                 >
                   <h3 className="text-[1.55rem] leading-tight tracking-[-0.02em] text-white-warm md:text-[1.85rem]">
                     {pillar.title}
