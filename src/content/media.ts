@@ -117,7 +117,7 @@ export const media = {
   services: {
     legalRegulatory: {
       id: "service-legal-regulatory",
-      src: "/images/services/service-legal-regulatory.webp",
+      src: "/images/services/service-legal-regulatory-opopa.webp",
       alt: "Professionals reviewing contracts and product compliance documents in a European office",
       width: 2508,
       height: 1378,
@@ -125,7 +125,7 @@ export const media = {
       page: "services",
       section: "legal-and-regulatory-support",
       status: "final" as const,
-      replacementNote: "From legal_image.png",
+      replacementNote: "From legal_image.png (cache-busted filename)",
     },
     expertPartnerSourcing: {
       id: "service-expert-partner-sourcing",
