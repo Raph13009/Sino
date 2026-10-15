@@ -86,7 +86,7 @@ export const serviceMeta: Record<
   "legal-and-regulatory-support": {
     number: "03",
     group: "support",
-    image: media.services.salesEnablement,
+    image: media.services.legalRegulatory,
     complementary: [
       "european-experts-and-partners",
       "european-market-entry",

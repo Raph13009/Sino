@@ -1340,7 +1340,8 @@ export const zh = {
     "brand-mark": "OPOPA 标识",
     "home-hero-01": "三位穿高可视背心的专业人士在工厂车间检查自动化设备",
     "home-context-01": "三位穿高可视背心的同事在工厂车间审阅图纸",
-    "service-sales-enablement": "工业生产现场的技术讨论",
+    "service-legal-regulatory":
+      "专业人士在欧洲办公室审阅合同与产品合规文件",
     "service-expert-partner-sourcing": "工程师在工业环境中审阅技术文件",
     "service-outsourced-sales": "工业机械与制造设备细节",
     "service-market-entry": "团队在机加工车间进行工厂参观",

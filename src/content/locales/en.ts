@@ -1377,8 +1377,8 @@ export const en = {
       "Three specialists in high-visibility vests inspecting automated machinery on a factory floor",
     "home-context-01":
       "Three colleagues in high-visibility vests reviewing drawings on a factory floor",
-    "service-sales-enablement":
-      "Technical discussion on an industrial production floor",
+    "service-legal-regulatory":
+      "Professionals reviewing contracts and product compliance documents in a European office",
     "service-expert-partner-sourcing":
       "Engineer reviewing technical documentation in an industrial setting",
     "service-outsourced-sales":
