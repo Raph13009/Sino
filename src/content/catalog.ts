@@ -1,7 +1,6 @@
 import { media } from "./media";
 
 export const serviceSlugs = [
-  "european-market-entry",
   "european-experts-and-partners",
   "legal-and-regulatory-support",
   "after-sales-maintenance",
@@ -21,11 +20,7 @@ export const serviceGroupIds = ["access", "support"] as const;
 export type ServiceGroupId = (typeof serviceGroupIds)[number];
 
 export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
-  access: [
-    "european-market-entry",
-    "european-sales-representation",
-    "sales-ai-automation",
-  ],
+  access: ["european-sales-representation", "sales-ai-automation"],
   support: [
     "european-experts-and-partners",
     "legal-and-regulatory-support",
@@ -43,7 +38,7 @@ export const homeServiceOrder: Record<
 > = {
   access: {
     featured: "european-sales-representation",
-    secondary: ["european-market-entry", "sales-ai-automation"],
+    secondary: ["sales-ai-automation"],
   },
   support: {
     featured: "after-sales-maintenance",
@@ -84,63 +79,53 @@ export const serviceMeta: Record<
     complementary: readonly ServiceSlug[];
   }
 > = {
-  "european-market-entry": {
-    number: "01",
-    group: "access",
-    image: media.services.marketEntry,
-    complementary: [
-      "european-sales-representation",
-      "european-experts-and-partners",
-      "after-sales-maintenance",
-    ],
-  },
   "european-experts-and-partners": {
-    number: "02",
+    number: "01",
     group: "support",
     image: media.services.expertPartnerSourcing,
     complementary: [
       "legal-and-regulatory-support",
       "after-sales-maintenance",
-      "european-market-entry",
+      "european-sales-representation",
     ],
   },
   "legal-and-regulatory-support": {
-    number: "03",
+    number: "02",
     group: "support",
     image: media.services.legalRegulatory,
     complementary: [
       "european-experts-and-partners",
-      "european-market-entry",
       "after-sales-maintenance",
+      "european-sales-representation",
     ],
   },
   "after-sales-maintenance": {
-    number: "04",
+    number: "03",
     group: "support",
     image: media.services.afterSalesWarehouse,
     complementary: [
       "european-experts-and-partners",
-      "european-market-entry",
+      "legal-and-regulatory-support",
       "european-sales-representation",
     ],
   },
   "european-sales-representation": {
-    number: "05",
+    number: "04",
     group: "access",
     image: media.services.outsourcedSales,
     complementary: [
-      "european-market-entry",
       "sales-ai-automation",
       "european-experts-and-partners",
+      "after-sales-maintenance",
     ],
   },
   "sales-ai-automation": {
-    number: "06",
+    number: "05",
     group: "access",
     image: media.services.salesAiAutomation,
     complementary: [
       "european-sales-representation",
-      "european-market-entry",
+      "european-experts-and-partners",
     ],
   },
 };

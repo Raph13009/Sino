@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { AfterSalesPage } from "@/components/services/AfterSalesPage";
-import { MarketEntryPage } from "@/components/services/MarketEntryPage";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
@@ -70,18 +69,6 @@ export default async function ServicePage({ params }: Props) {
     service.slug as ServiceSlug,
   );
   const contactHref = localePath(locale, "/contact");
-
-  if (service.slug === "european-market-entry") {
-    return (
-      <MarketEntryPage
-        locale={locale}
-        dict={dict}
-        image={service.image}
-        breadcrumbName={service.name}
-        relatedInsights={relatedInsights}
-      />
-    );
-  }
 
   if (service.slug === "after-sales-maintenance") {
     return (

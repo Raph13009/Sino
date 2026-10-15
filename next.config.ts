@@ -47,13 +47,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     const legacyExpertiseMap: Record<string, string> = {
-      "market-entry-advisory": "/services/european-market-entry",
+      "market-entry-advisory": "/services/european-sales-representation",
       "european-partner-network": "/services/european-experts-and-partners",
       "sales-enablement": "/services/european-sales-representation",
       "outsourced-sales": "/services/european-sales-representation",
     };
 
     const retiredServiceMap: Record<string, string> = {
+      "european-market-entry": "/services/european-sales-representation",
       "sales-enablement": "/services/european-sales-representation",
       "expert-partner-sourcing": "/services/european-experts-and-partners",
       "outsourced-sales": "/services/european-sales-representation",

@@ -78,7 +78,7 @@ describe("normalizers", () => {
   it("maps CTAs to real service routes", () => {
     assert.equal(
       pathForCtaService("Market Entry"),
-      "/services/european-market-entry",
+      "/services/european-sales-representation",
     );
     assert.equal(
       pathForCtaService("Sales Outsourcing"),
@@ -97,6 +97,9 @@ describe("normalizers", () => {
       serviceSlugForCta("Sales Coaching"),
       "european-sales-representation",
     );
-    assert.equal(serviceSlugForCta("Market Entry"), "european-market-entry");
+    assert.equal(
+      serviceSlugForCta("Market Entry"),
+      "european-sales-representation",
+    );
   });
 });

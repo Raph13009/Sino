@@ -147,7 +147,13 @@ export function HomeServices({
 
                 <div className="grid gap-5 lg:grid-cols-12 lg:gap-6">
                   {featured ? (
-                    <div className="lg:col-span-7 lg:flex">
+                    <div
+                      className={
+                        secondary.length > 0
+                          ? "lg:col-span-7 lg:flex"
+                          : "lg:col-span-12 lg:flex"
+                      }
+                    >
                       <Reveal
                         className="w-full"
                         delayMs={groupIndex * 40 + 60}
@@ -161,23 +167,27 @@ export function HomeServices({
                     </div>
                   ) : null}
 
-                  <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-6">
-                    {secondary.map((service, index) => (
-                      <Reveal
-                        key={service.slug}
-                        className={
-                          secondary.length === 1 ? "flex h-full flex-1" : "flex flex-1"
-                        }
-                        delayMs={groupIndex * 40 + 100 + index * 50}
-                      >
-                        <ServiceTile
-                          service={service}
-                          learnMoreLabel={learnMoreLabel}
-                          variant="secondary"
-                        />
-                      </Reveal>
-                    ))}
-                  </div>
+                  {secondary.length > 0 ? (
+                    <div className="flex flex-col gap-5 lg:col-span-5 lg:gap-6">
+                      {secondary.map((service, index) => (
+                        <Reveal
+                          key={service.slug}
+                          className={
+                            secondary.length === 1
+                              ? "flex h-full flex-1"
+                              : "flex flex-1"
+                          }
+                          delayMs={groupIndex * 40 + 100 + index * 50}
+                        >
+                          <ServiceTile
+                            service={service}
+                            learnMoreLabel={learnMoreLabel}
+                            variant="secondary"
+                          />
+                        </Reveal>
+                      ))}
+                    </div>
+                  ) : null}
 
                   {supporting.map((service, index) => (
                     <div key={service.slug} className="lg:col-span-12">
