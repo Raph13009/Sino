@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/content/locales/types";
 import {
   homePillarIds,
+  homeServiceOrder,
   industryMeta,
   industrySlugs,
   isSupportingService,
@@ -54,18 +55,35 @@ export function getService(
   return getServices(locale, dict).find((item) => item.slug === slug);
 }
 
-export function getHomePillars(locale: Locale, dict: Dictionary) {
+/** Non-clickable group labels for the homepage Services section. */
+export function getHomeServiceGroups(locale: Locale, dict: Dictionary) {
+  const services = getServices(locale, dict);
+
   return homePillarIds.map((id: HomePillarId) => {
     const homePillar = dict.home.services.pillars[id];
-    // Single source of truth for category body copy (shared with Services hub)
     const hubPillar = dict.servicesPage.pillars.find((p) => p.id === id);
-    const anchor = serviceGroupAnchors[id].primary;
+    const order = homeServiceOrder[id];
+    const orderedSlugs = [order.featured, ...order.secondary];
+
     return {
       id,
-      href: localePath(locale, `/services#${anchor}`),
       title: hubPillar?.title ?? homePillar.title,
       description: hubPillar?.description ?? "",
-      cta: homePillar.cta,
+      note: dict.servicesPage.groups[id].note,
+      featuredSlug: order.featured,
+      services: orderedSlugs
+        .map((slug) => services.find((item) => item.slug === slug))
+        .filter((item): item is NonNullable<typeof item> => Boolean(item))
+        .map((service) => ({
+          slug: service.slug,
+          href: service.href,
+          number: service.number,
+          name: service.name,
+          description: dict.servicesPage.cards[service.slug].description,
+          image: service.image,
+          supporting: isSupportingService(service.slug),
+          featured: service.slug === order.featured,
+        })),
     };
   });
 }

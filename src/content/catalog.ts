@@ -11,7 +11,7 @@ export const serviceSlugs = [
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
 
-/** Homepage features the two entry pillars. The hub lists the full catalogue. */
+/** Homepage visual groups (labels only — not intermediate destinations). */
 export const homePillarIds = ["access", "support"] as const;
 
 export type HomePillarId = (typeof homePillarIds)[number];
@@ -31,6 +31,27 @@ export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
     "legal-and-regulatory-support",
     "after-sales-maintenance",
   ],
+};
+
+/**
+ * Homepage Services section order within each group.
+ * Featured slugs get the large image-led tiles.
+ */
+export const homeServiceOrder: Record<
+  ServiceGroupId,
+  { featured: ServiceSlug; secondary: readonly ServiceSlug[] }
+> = {
+  access: {
+    featured: "european-sales-representation",
+    secondary: ["european-market-entry", "sales-ai-automation"],
+  },
+  support: {
+    featured: "after-sales-maintenance",
+    secondary: [
+      "european-experts-and-partners",
+      "legal-and-regulatory-support",
+    ],
+  },
 };
 
 /** Supporting capabilities: kept as URLs, de-emphasized in nav/hub. */

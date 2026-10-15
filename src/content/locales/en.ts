@@ -130,11 +130,9 @@ export const en = {
       pillars: {
         access: {
           title: "Market access",
-          cta: "See market access",
         },
         support: {
           title: "Local support",
-          cta: "See local support",
         },
       },
     },
@@ -815,10 +813,49 @@ export const en = {
         eyebrow: "01 / Market access",
         intro:
           "We identify and qualify potential European customers, distributors, integrators and commercial partners. We coordinate outreach and introductions, and help develop commercial opportunities.",
-        closing: {
-          title: "Discuss with us",
-          body: "Share what you manufacture and which markets you are considering. We will map the next commercial moves.",
-          cta: "Discuss with us",
+        whatWeDo: {
+          title: "Focused commercial development, not a permanent sales desk",
+          paragraphs: [
+            "European Market Entry is for manufacturers who need concrete commercial progress in a defined market: who to approach, how to open the conversation, and which opportunities are worth pursuing.",
+            "It is a scoped assignment. OPOPA coordinates local commercial specialists to execute that brief. It is not ongoing sales representation, and it is not a substitute for building your own European sales organisation later if traction justifies it.",
+          ],
+        },
+        inPractice: {
+          title: "What an assignment can cover",
+          intro:
+            "Each engagement is framed around product, territory and commercial objective. Typical work includes:",
+          activities: [
+            "Mapping relevant customers, distributors, integrators and commercial partners for a defined country or segment",
+            "Qualifying who is worth approaching, and why, against your product and buyer profile",
+            "Coordinating outreach and first introductions under a clear mandate",
+            "Supporting early commercial conversations and follow-up with local specialists",
+            "Developing a short list of opportunities the manufacturer can evaluate and pursue",
+            "Reporting progress against the assignment brief, not against vague market commentary",
+          ],
+        },
+        howWeOperate: {
+          title: "How OPOPA runs the work",
+          paragraphs: [
+            "OPOPA frames the commercial brief with you: product, target markets, buyer types and what “progress” means for this assignment.",
+            "We then coordinate local commercial specialists to execute outreach and introductions. You keep ownership of the customer relationship and of commercial decisions. OPOPA manages coordination, reporting and the interface between your team and the people working locally.",
+          ],
+        },
+        youReceive: {
+          title: "What you take away from an assignment",
+          intro:
+            "Outputs are practical and scoped to the brief. We do not promise a closed deal or a filled pipeline.",
+          items: [
+            "A written assignment brief: market, targets and commercial objective",
+            "A qualified shortlist of customers and/or partners relevant to the product",
+            "Coordinated outreach and introductions where the brief justifies them",
+            "Clear notes on conversations and next commercial steps you can decide on",
+            "A defined end to the assignment, unless you choose a follow-on mandate",
+          ],
+        },
+        nextStep: {
+          title: "Start from the product and the market",
+          body: "Share what you manufacture, which European markets you are considering, and whether you need a focused market-entry assignment or ongoing local sales representation. We will propose a brief before any outreach begins.",
+          cta: "Discuss a market-entry assignment",
         },
       },
     },

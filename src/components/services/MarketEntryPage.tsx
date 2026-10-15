@@ -1,7 +1,7 @@
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { Container, Section } from "@/components/ui/Section";
+import { Container, Eyebrow, Section } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import type { ServiceSlug } from "@/content/catalog";
@@ -83,11 +83,14 @@ export function MarketEntryPage({
             <div className="lg:col-span-7">
               <p className="eyebrow-accent mb-4">{copy.eyebrow}</p>
               <h1 className="display-section max-w-3xl">{breadcrumbName}</h1>
+              <p className="mt-5 text-xl text-accent md:text-2xl">
+                {service.positioning}
+              </p>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal">
                 {copy.intro}
               </p>
               <div className="mt-8">
-                <Button href={contactHref}>{copy.closing.cta}</Button>
+                <Button href={contactHref}>{copy.nextStep.cta}</Button>
               </div>
             </div>
             <div className="lg:col-span-5">
@@ -124,6 +127,112 @@ export function MarketEntryPage({
 
       <Section className="py-16 md:py-24">
         <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <Eyebrow>{dict.servicesPage.situationLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {copy.whatWeDo.title}
+              </h2>
+            </div>
+            <div className="space-y-5 lg:col-span-6 lg:col-start-7">
+              {copy.whatWeDo.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-lg leading-relaxed text-charcoal"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="concrete" className="py-16 md:py-24">
+        <Container>
+          <Eyebrow>{dict.common.typicalScope}</Eyebrow>
+          <h2 className="mt-4 max-w-3xl text-[1.75rem] leading-tight md:text-[2.15rem]">
+            {copy.inPractice.title}
+          </h2>
+          <div className="mt-8 grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="text-[1.0625rem] leading-relaxed text-charcoal">
+                {copy.inPractice.intro}
+              </p>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7">
+              <ul className="border-t border-border">
+                {copy.inPractice.activities.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 border-b border-border py-3.5 text-[1rem] text-charcoal"
+                  >
+                    <span
+                      className="mt-2 h-px w-3 shrink-0 bg-accent"
+                      aria-hidden
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <Eyebrow>{dict.servicesPage.coordinatesLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {copy.howWeOperate.title}
+              </h2>
+            </div>
+            <div className="space-y-5 lg:col-span-6 lg:col-start-7">
+              {copy.howWeOperate.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-lg leading-relaxed text-charcoal"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="concrete" className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <Eyebrow>{dict.servicesPage.receivesLabel}</Eyebrow>
+              <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
+                {copy.youReceive.title}
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-charcoal">
+                {copy.youReceive.intro}
+              </p>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7">
+              <ul className="border-t border-border">
+                {copy.youReceive.items.map((item) => (
+                  <li
+                    key={item}
+                    className="border-b border-border py-4 text-[1.0625rem] leading-relaxed text-charcoal"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="py-16 md:py-20">
+        <Container>
           <RelatedServiceCards
             title={dict.common.complementaryServices}
             services={relatedServices}
@@ -138,15 +247,15 @@ export function MarketEntryPage({
           <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <h2 className="max-w-3xl text-[2.25rem] leading-[1.05] text-white-warm md:text-[3.25rem]">
-                {copy.closing.title}
+                {copy.nextStep.title}
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white-warm/70">
-                {copy.closing.body}
+                {copy.nextStep.body}
               </p>
             </div>
             <div className="lg:col-span-4 lg:flex lg:justify-end">
               <Button href={contactHref} variant="primaryOnDark">
-                {copy.closing.cta}
+                {copy.nextStep.cta}
               </Button>
             </div>
           </div>

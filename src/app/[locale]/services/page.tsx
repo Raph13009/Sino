@@ -177,7 +177,6 @@ export default async function ServicesPage({ params }: Props) {
                           service={{
                             id: `${service.slug}-card`,
                             href: service.href,
-                            number: service.number,
                             name: service.name,
                             tag: card.tag,
                             description: card.description,
@@ -205,7 +204,6 @@ export default async function ServicesPage({ params }: Props) {
                             service={{
                               id: `${service.slug}-card`,
                               href: service.href,
-                              number: service.number,
                               name: service.name,
                               tag: card.tag,
                               description: card.description,
