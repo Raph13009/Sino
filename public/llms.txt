@@ -8,8 +8,7 @@ Official site: https://www.opopa-partners.com
 
 ## Services
 
-- [European Experts and Partners](https://www.opopa-partners.com/services/european-experts-and-partners): identify and coordinate independent European specialists and commercial partners
-- [Legal and Regulatory Support](https://www.opopa-partners.com/services/legal-and-regulatory-support): scope and coordinate independent counsel; OPOPA does not itself provide regulated legal advice
+- [European Experts and Partners](https://www.opopa-partners.com/services/european-experts-and-partners): identify and coordinate independent European specialists and commercial partners, including legal and regulatory counsel; OPOPA does not itself provide regulated legal advice
 - [Local After-Sales and Maintenance Partnerships](https://www.opopa-partners.com/services/after-sales-maintenance): arrange suitable European maintenance or technical-support partnerships where a fit exists
 - [European Sales Representation](https://www.opopa-partners.com/services/european-sales-representation): commercial professionals who represent the client, with coaching and training as supporting modules
 - [Sales AI and Automation](https://www.opopa-partners.com/services/sales-ai-automation): bounded commercial tools for research, CRM hygiene, inquiries and follow-up, with human review

@@ -2,7 +2,6 @@ import { media } from "./media";
 
 export const serviceSlugs = [
   "european-experts-and-partners",
-  "legal-and-regulatory-support",
   "after-sales-maintenance",
   "european-sales-representation",
   "sales-ai-automation",
@@ -21,11 +20,7 @@ export type ServiceGroupId = (typeof serviceGroupIds)[number];
 
 export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
   access: ["european-sales-representation", "sales-ai-automation"],
-  support: [
-    "european-experts-and-partners",
-    "legal-and-regulatory-support",
-    "after-sales-maintenance",
-  ],
+  support: ["european-experts-and-partners", "after-sales-maintenance"],
 };
 
 /**
@@ -42,10 +37,7 @@ export const homeServiceOrder: Record<
   },
   support: {
     featured: "after-sales-maintenance",
-    secondary: [
-      "european-experts-and-partners",
-      "legal-and-regulatory-support",
-    ],
+    secondary: ["european-experts-and-partners"],
   },
 };
 
@@ -84,33 +76,22 @@ export const serviceMeta: Record<
     group: "support",
     image: media.services.expertPartnerSourcing,
     complementary: [
-      "legal-and-regulatory-support",
       "after-sales-maintenance",
       "european-sales-representation",
-    ],
-  },
-  "legal-and-regulatory-support": {
-    number: "02",
-    group: "support",
-    image: media.services.legalRegulatory,
-    complementary: [
-      "european-experts-and-partners",
-      "after-sales-maintenance",
-      "european-sales-representation",
+      "sales-ai-automation",
     ],
   },
   "after-sales-maintenance": {
-    number: "03",
+    number: "02",
     group: "support",
     image: media.services.afterSalesWarehouse,
     complementary: [
       "european-experts-and-partners",
-      "legal-and-regulatory-support",
       "european-sales-representation",
     ],
   },
   "european-sales-representation": {
-    number: "04",
+    number: "03",
     group: "access",
     image: media.services.outsourcedSales,
     complementary: [
@@ -120,7 +101,7 @@ export const serviceMeta: Record<
     ],
   },
   "sales-ai-automation": {
-    number: "05",
+    number: "04",
     group: "access",
     image: media.services.salesAiAutomation,
     complementary: [

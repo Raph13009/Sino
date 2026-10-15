@@ -123,9 +123,9 @@ export const media = {
       height: 1378,
       aspectRatio: "2508:1378",
       page: "services",
-      section: "legal-and-regulatory-support",
+      section: "european-experts-and-partners",
       status: "final" as const,
-      replacementNote: "From legal_image.png (cache-busted filename)",
+      replacementNote: "From legal_image.png; retained asset after Legal merge into Experts",
     },
     expertPartnerSourcing: {
       id: "service-expert-partner-sourcing",

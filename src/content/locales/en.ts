@@ -316,14 +316,7 @@ export const en = {
         subline:
           "Coordinate the independent specialists a defined need requires.",
         description:
-          "Identify and coordinate trade, legal, technical and commercial specialists relevant to the project.",
-      },
-      "legal-and-regulatory-support": {
-        tag: "Local support",
-        subline:
-          "Independent counsel, scoped and coordinated for market access.",
-        description:
-          "Company setup, contracts, compliance and regulated questions through qualified professionals.",
+          "Identify and coordinate legal, trade, compliance, technical and commercial specialists relevant to the project.",
       },
       "after-sales-maintenance": {
         tag: "Local support",
@@ -792,23 +785,24 @@ export const en = {
     "european-experts-and-partners": {
       name: "European Experts and Partners",
       shortName: "European Experts and Partners",
-      positioning: "Coordinate the independent specialists a defined need actually requires.",
+      positioning:
+        "Coordinate the independent specialists a defined need actually requires, including legal and regulatory counsel.",
       megaDescription:
         "Identify and coordinate lawyers, trade specialists, compliance, company setup, recruitment, technical experts and commercial partners.",
       summary:
-        "OPOPA identifies and coordinates relevant independent European experts and partners for a defined need. This is access and coordination, not an anonymous contact list, and not a claim that every specialist is an OPOPA employee.",
+        "OPOPA identifies and coordinates relevant independent European experts and partners for a defined need, including legal, regulatory and product-compliance questions. This is access and coordination, not an anonymous contact list, and not a claim that every specialist is an OPOPA employee. OPOPA does not itself provide regulated legal advice.",
       situationTitle: "When the next step depends on someone local",
       situation: [
-        "Plans stall when a company knows it needs a lawyer, a distributor, a recruiter or a technical specialist, but cannot tell who is relevant and credible for that product and country.",
-        "Introductions without a brief waste time on both sides. The useful question is which professional problem has to be solved, and what suitable means for that problem.",
+        "Plans stall when a company knows it needs a lawyer, a compliance specialist, a distributor, a recruiter or a technical expert, but cannot tell who is relevant and credible for that product and country.",
+        "Incorporation, a distribution contract, a trade question or a product-compliance issue can block a commercial plan even when the product is ready. Introductions without a brief waste time on both sides.",
       ],
       coordinatesTitle: "How expertise is qualified and coordinated",
       coordinates: [
-        "OPOPA starts from the commercial need: incorporation, a contract, a trade question, product compliance, a hire, a technical assessment, or a distributor search.",
-        "Relevant independent experts and partners are identified against that brief. OPOPA coordinates the introduction, the scope of the assignment and the interface with the client’s team. Specialist advice, including legal advice, is given by the qualified professional, not by OPOPA acting as a law firm.",
+        "OPOPA starts from the commercial need: incorporation, a contract, a trade question, product compliance, a hire, a technical assessment, or a distributor search. It defines the question, the countries and the commercial context, then identifies appropriately qualified independent professionals.",
+        "OPOPA coordinates the introduction, the scope of the assignment and the interface with the client’s team. Specialist advice, including legal advice, is given by the qualified professional, not by OPOPA acting as a law firm. OPOPA does not certify, approve or guarantee that a product is compliant; conclusions on the law and on conformity belong to the instructed professional and to the relevant authorities.",
       ],
       scope: [
-        "Legal and international trade specialists",
+        "Legal counsel: incorporation, contracts and international trade",
         "Regulatory and product-compliance specialists",
         "Company setup, tax and accounting professionals",
         "Recruitment",
@@ -818,59 +812,18 @@ export const en = {
       ],
       receivesTitle: "A brief, a shortlist and a managed introduction",
       receives: [
-        "A defined brief for the specialist or partner need",
+        "A defined brief for the specialist or partner need, specific enough to instruct a professional",
         "A shortlist of relevant independent experts or partners, with the basis for the recommendation",
-        "Coordination of introductions and the scope of work",
-        "A clearer interface between the client team and the people doing the specialist work",
+        "Coordination of introductions and the scope of work so commercial and specialist teams share one brief",
+        "A clear separation between OPOPA’s coordination and the advisor’s own advice",
       ],
       startsTitle: "Start from the decision, not the directory",
       starts:
-        "Share the decision you need to make and the countries involved. OPOPA confirms whether the need is a specialist assignment, a commercial partner search, or both, and proposes how that search will be run.",
+        "Share the decision you need to make, the countries involved and any deadline. OPOPA confirms whether the need is a legal or compliance instruction, another specialist assignment, a commercial partner search, or both, and proposes how that search will be run.",
       cta: "Brief us on the specialist you need",
-      seoTitle: "European Experts and Commercial Partners | OPOPA",
+      seoTitle: "European Experts, Legal and Commercial Partners | OPOPA",
       seoDescription:
-        "Identify and coordinate independent European specialists and partners, legal, trade, compliance, setup, recruitment, technical and distribution, for a defined expansion need.",
-    },
-    "legal-and-regulatory-support": {
-      name: "Legal and Regulatory Support",
-      shortName: "Legal and Regulatory Support",
-      positioning: "Independent counsel, scoped and coordinated for market access.",
-      megaDescription:
-        "Coordinate qualified professionals on incorporation, contracts, trade and product compliance. OPOPA does not itself give regulated legal advice.",
-      summary:
-        "A focused route for incorporation, contracts, international trade, product compliance and market access. Appropriately qualified independent professionals provide the specialist advice. OPOPA scopes and coordinates the engagement and does not itself provide regulated legal advice.",
-      situationTitle: "When market access turns on a legal or regulatory question",
-      situation: [
-        "Incorporation, a distribution contract, a trade question or a product-compliance issue can block a commercial plan even when the product is ready.",
-        "Companies need a practical way to reach the right professional in Europe. A website is not a substitute for advice, and one advisor does not cover every country or every regulation.",
-      ],
-      coordinatesTitle: "What OPOPA coordinates, and what it does not",
-      coordinates: [
-        "OPOPA defines the question, the countries and the commercial context, then identifies appropriately qualified independent lawyers or specialists and coordinates the engagement with the client.",
-        "OPOPA does not itself provide regulated legal advice, and does not certify, approve or guarantee that a product is compliant. Conclusions on the law, on conformity and on market access belong to the instructed professional and to the relevant authorities.",
-      ],
-      scope: [
-        "Company setup and incorporation questions",
-        "Commercial contracts",
-        "International trade questions",
-        "Product compliance and market-access specialists",
-        "Scoping the question before advice is instructed",
-        "Coordination between the client and the instructed professional",
-      ],
-      receivesTitle: "A question that can be instructed",
-      receives: [
-        "A scoped question, specific enough to instruct a professional",
-        "Introductions to appropriately qualified independent counsel or specialists",
-        "Coordination so the commercial team and the advisor work from the same brief",
-        "A clear separation between OPOPA’s coordination and the advisor’s own advice",
-      ],
-      startsTitle: "Describe the decision and the countries",
-      starts:
-        "Describe the decision, the countries and any deadline. OPOPA will say whether the next step is a legal instruction, a product-compliance specialist, or a broader market-entry question that should be framed first.",
-      cta: "Scope a legal or regulatory question",
-      seoTitle: "EU Legal and Product Compliance Support | OPOPA",
-      seoDescription:
-        "Scope and coordinate independent counsel on incorporation, contracts, international trade and product compliance for Chinese companies entering Europe.",
+        "Identify and coordinate independent European specialists and partners — legal, trade, compliance, setup, recruitment, technical and distribution — for a defined expansion need. OPOPA does not itself give regulated legal advice.",
     },
     "after-sales-maintenance": {
       name: "European After-Sales & Maintenance",

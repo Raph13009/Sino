@@ -55,6 +55,7 @@ const nextConfig: NextConfig = {
 
     const retiredServiceMap: Record<string, string> = {
       "european-market-entry": "/services/european-sales-representation",
+      "legal-and-regulatory-support": "/services/european-experts-and-partners",
       "sales-enablement": "/services/european-sales-representation",
       "expert-partner-sourcing": "/services/european-experts-and-partners",
       "outsourced-sales": "/services/european-sales-representation",
