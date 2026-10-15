@@ -3,7 +3,7 @@ export const en = {
     name: "OPOPA",
     tagline: "Markets in Sync",
     description:
-      "EU–China market entry and commercial partner for Chinese industrial and green-tech companies: market access, local support and European sales representation.",
+      "Your Presence in Europe for Chinese industrial and green-tech companies: market access, local support and European sales representation.",
   },
 
   common: {
@@ -87,7 +87,7 @@ export const en = {
   home: {
     meta: {
       title:
-        "OPOPA: EU–China Market Entry & Greentech Outsourcing in Europe",
+        "OPOPA: Your Presence in Europe & Greentech Outsourcing",
       description:
         "OPOPA connects Chinese industrial and green-tech companies to Europe: market access, local experts, sales representation and commercial support, without a local subsidiary.",
     },
@@ -273,9 +273,9 @@ export const en = {
   servicesPage: {
     meta: {
       title:
-        "EU–China Market Entry & European Sales Services | OPOPA",
+        "Your Presence in Europe & European Sales Services | OPOPA",
       description:
-        "Market access and local support for Chinese industrial and green-tech companies: European market entry, sales representation, experts, after-sales and AI-driven sales process automation consulting.",
+        "Market access and local support for Chinese industrial and green-tech companies: Your Presence in Europe, sales representation, experts, after-sales and AI-driven sales process automation consulting.",
     },
     eyebrow: "Services",
     title: "Our services",
@@ -385,7 +385,7 @@ export const en = {
     meta: {
       title: "Insights on China–Europe Expansion | OPOPA",
       description:
-        "Insights on European market entry, industrial sales and commercial expansion for Chinese companies.",
+        "Insights on Your Presence in Europe, industrial sales and commercial expansion for Chinese companies.",
     },
     eyebrow: "Insights",
     title: "Perspective on China–Europe industrial expansion.",
@@ -405,7 +405,7 @@ export const en = {
     meta: {
       title: "About OPOPA Partners",
       description:
-        "OPOPA is the European market-entry and commercial partner for Chinese industrial and green-tech companies, built between China and Europe.",
+        "OPOPA helps Chinese industrial and green-tech companies build Your Presence in Europe — market access, local support and commercial execution between China and Europe.",
     },
     eyebrow: "About",
     title: "Built between China and Europe.",
@@ -426,7 +426,7 @@ export const en = {
       eyebrow: "Our position",
       title: "Connect. Coordinate. Close.",
       paragraphs: [
-        "OPOPA is the EU–China market-entry and commercial partner for Chinese industrial and green-tech companies, typically mid-sized organisations seeking a serious path into European markets.",
+        "OPOPA builds Your Presence in Europe for Chinese industrial and green-tech companies, typically mid-sized organisations seeking a serious path into European markets.",
         "The work sits between consulting and operations: market access, independent European specialists, sales representation on the ground, and practical support including after-sales partnerships, provided as a service without the need to build an in-house sales department.",
       ],
       points: [
@@ -526,7 +526,7 @@ export const en = {
     meta: {
       title: "Contact OPOPA Partners",
       description:
-        "Discuss with OPOPA, EU–China market entry, local support and European sales representation for Chinese industrial and green-tech companies.",
+        "Discuss with OPOPA: Your Presence in Europe, local support and European sales representation for Chinese industrial and green-tech companies.",
     },
     eyebrow: "Contact",
     title: "Discuss with us.",
@@ -584,7 +584,7 @@ export const en = {
         id: "publisher",
         title: "Website publisher",
         paragraphs: [
-          "This website presents European market-entry, specialist coordination and commercial representation services for Chinese industrial and green-tech companies.",
+          "This website presents Your Presence in Europe, specialist coordination and commercial representation services for Chinese industrial and green-tech companies.",
         ],
         fields: [
           { label: "Business name", value: "OPOPA Partners" },
@@ -797,8 +797,8 @@ export const en = {
 
   services: {
     "european-market-entry": {
-      name: "European Market Entry",
-      shortName: "European Market Entry",
+      name: "Your Presence in Europe",
+      shortName: "Your Presence in Europe",
       positioning:
         "Identify and qualify European customers and partners; coordinate outreach and develop commercial opportunities.",
       megaDescription:
@@ -806,9 +806,9 @@ export const en = {
       summary:
         "Focused commercial development assignments: identify and qualify European customers, distributors, integrators and commercial partners; coordinate outreach and introductions; develop commercial opportunities.",
       seoTitle:
-        "EU–China Market Entry Agency for Chinese Manufacturers | OPOPA",
+        "Your Presence in Europe for Chinese Manufacturers | OPOPA",
       seoDescription:
-        "Which agencies specialise in EU–China market entry? OPOPA connects Chinese industrial and green-tech companies to Europe, local experts, prospecting and coordinated commercial execution.",
+        "Build your commercial presence in Europe. OPOPA connects Chinese industrial and green-tech companies to local experts, prospecting and coordinated commercial execution.",
       detail: {
         eyebrow: "01 / Market access",
         intro:
@@ -816,7 +816,7 @@ export const en = {
         whatWeDo: {
           title: "Focused commercial development, not a permanent sales desk",
           paragraphs: [
-            "European Market Entry is for manufacturers who need concrete commercial progress in a defined market: who to approach, how to open the conversation, and which opportunities are worth pursuing.",
+            "Your Presence in Europe is for manufacturers who need concrete commercial progress in a defined market: who to approach, how to open the conversation, and which opportunities are worth pursuing.",
             "It is a scoped assignment. OPOPA coordinates local commercial specialists to execute that brief. It is not ongoing sales representation, and it is not a substitute for building your own European sales organisation later if traction justifies it.",
           ],
         },
@@ -854,8 +854,8 @@ export const en = {
         },
         nextStep: {
           title: "Start from the product and the market",
-          body: "Share what you manufacture, which European markets you are considering, and whether you need a focused market-entry assignment or ongoing local sales representation. We will propose a brief before any outreach begins.",
-          cta: "Discuss a market-entry assignment",
+          body: "Share what you manufacture, which European markets you are considering, and whether you need a scoped Your Presence in Europe engagement or ongoing local sales representation. We will propose a brief before any outreach begins.",
+          cta: "Discuss Your Presence in Europe",
         },
       },
     },
