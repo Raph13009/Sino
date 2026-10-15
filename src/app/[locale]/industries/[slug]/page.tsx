@@ -141,7 +141,7 @@ export default async function IndustryPage({ params }: Props) {
                       href={service.href}
                       className="text-[1.0625rem] font-medium transition-colors hover:text-accent"
                     >
-                      {service.number} — {service.name} →
+                      {service.number} / {service.name} →
                     </Link>
                   </li>
                 ))}

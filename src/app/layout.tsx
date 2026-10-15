@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,
   title: {
-    default: `${siteConfig.legalName} — ${siteConfig.description}`,
+    default: `${siteConfig.legalName}: ${siteConfig.description}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

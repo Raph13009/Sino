@@ -5,17 +5,17 @@ export const siteConfig = {
   legalName: "OPOPA Partners",
   tagline: "Markets in Sync",
   description:
-    "OPOPA connects Chinese industrial and green-tech companies to Europe — EU–China market entry, local support and European sales representation.",
-  /** Canonical origin. Not taken from env — preview/localhost must never leak. */
+    "OPOPA connects Chinese industrial and green-tech companies to Europe: EU–China market entry, local support and European sales representation.",
+  /** Canonical origin. Not taken from env; preview/localhost must never leak. */
   url: PRODUCTION_SITE_URL,
   locale: "en",
   locales: ["en", "zh"] as const,
   defaultLocale: "en" as const,
   /** Public contact used in the footer, contact page, schema and legal pages. */
   email: "contact@opopa-partners.com",
-  /** French micro-entrepreneur SIRET — confirmed. */
+  /** French micro-entrepreneur SIRET, confirmed. */
   siret: "92011864300021",
-  /** Company LinkedIn — footer, contact page. Founders keep personal URLs below. */
+  /** Company LinkedIn, footer, contact page. Founders keep personal URLs below. */
   companyLinkedIn: "https://www.linkedin.com/company/opopa-partners",
   founders: {
     maxMarchesseauLaskar: {

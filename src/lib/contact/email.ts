@@ -143,7 +143,7 @@ export async function sendContactEmails(
     from,
     to: notifyTo,
     replyTo: payload.email,
-    subject: `New OPOPA enquiry — ${payload.company}`,
+    subject: `New OPOPA enquiry: ${payload.company}`,
     text: notification.text,
     html: notification.html,
   });

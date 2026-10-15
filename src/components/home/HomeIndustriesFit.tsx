@@ -6,14 +6,16 @@ import { Container, Section } from "@/components/ui/Section";
 import { cn } from "@/lib/utils";
 
 const fitVisuals = [
-  media.industries.industrialEquipment,
-  media.industries.advancedManufacturing,
+  media.home.manufacturingFloor,
+  media.industries.electricalComponents,
   media.services.afterSalesWarehouse,
   media.industries.greenTechnology,
 ] as const;
 
 export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
   const copy = dict.home.industriesFit;
+  const hasDescription = Boolean(copy.description?.trim());
+  const hasClosing = Boolean(copy.closing?.trim());
 
   return (
     <Section tone="white" className="border-b border-border py-24 md:py-32">
@@ -23,9 +25,11 @@ export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
             {copy.number} / {copy.eyebrow}
           </p>
           <h2 className="display-section max-w-4xl">{copy.title}</h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal">
-            {copy.description}
-          </p>
+          {hasDescription ? (
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal">
+              {copy.description}
+            </p>
+          ) : null}
         </Reveal>
       </Container>
 
@@ -39,7 +43,9 @@ export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
               key={industry}
               className={cn(
                 "group relative isolate overflow-hidden rounded-card bg-ink",
-                tall ? "aspect-[3/4] sm:aspect-[3/5] lg:aspect-auto lg:min-h-[28rem]" : "aspect-[3/4] sm:aspect-[4/5] lg:min-h-[28rem]",
+                tall
+                  ? "aspect-[3/4] sm:aspect-[3/5] lg:aspect-auto lg:min-h-[28rem]"
+                  : "aspect-[3/4] sm:aspect-[4/5] lg:min-h-[28rem]",
               )}
             >
               <Reveal delayMs={index * 70} className="absolute inset-0">
@@ -69,13 +75,15 @@ export function HomeIndustriesFit({ dict }: { dict: Dictionary }) {
         })}
       </ul>
 
-      <Container>
-        <Reveal>
-          <p className="mt-10 max-w-2xl text-[1.0125rem] leading-relaxed text-charcoal/80 md:mt-12">
-            {copy.closing}
-          </p>
-        </Reveal>
-      </Container>
+      {hasClosing ? (
+        <Container>
+          <Reveal>
+            <p className="mt-10 max-w-2xl text-[1.0125rem] leading-relaxed text-charcoal/80 md:mt-12">
+              {copy.closing}
+            </p>
+          </Reveal>
+        </Container>
+      ) : null}
     </Section>
   );
 }

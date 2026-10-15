@@ -26,7 +26,7 @@ type PageMetadataInput = {
   authors?: string[];
   /**
    * Locale-neutral paths for hreflang. When omitted, both locales share `path`.
-   * Pass only published alternates — do not point at missing translations.
+   * Pass only published alternates: do not point at missing translations.
    */
   languagePaths?: Partial<Record<Locale, string>>;
 };

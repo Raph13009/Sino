@@ -89,7 +89,7 @@ export function FounderProfile({
             <LinkedInLink
               href={founder.linkedIn}
               label={founder.linkedInLabel ?? "LinkedIn"}
-              ariaLabel={`${founder.linkedInLabel ?? "LinkedIn"} — ${founder.name}`}
+              ariaLabel={`${founder.linkedInLabel ?? "LinkedIn"}: ${founder.name}`}
             />
           </div>
         ) : null}

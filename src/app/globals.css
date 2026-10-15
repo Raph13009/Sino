@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Radius hierarchy — soft floating chrome vs architectural editorial */
+  /* Radius hierarchy: soft floating chrome vs architectural editorial */
   --radius-none: 0px;
   --radius-control: 8px; /* buttons, inputs, compact interactive chrome */
   --radius-card: 14px; /* service cards, visual tiles, contained panels */

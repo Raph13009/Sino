@@ -39,20 +39,40 @@ export function HomeUseCase({ dict }: { dict: Dictionary }) {
         </div>
 
         <Reveal delayMs={120}>
-          <ul className="mt-14 grid gap-0 border-t border-border md:mt-16 md:grid-cols-3">
-            {copy.metrics.map((metric, index) => (
+          <div className="mt-14 hidden border-t border-border pt-8 md:mt-16 md:grid md:grid-cols-12">
+            <div className="md:col-span-3" />
+            <p className="eyebrow text-charcoal/55 md:col-span-4 md:pr-8">
+              {copy.withoutLabel}
+            </p>
+            <p className="eyebrow text-accent md:col-span-5 md:border-l md:border-border md:pl-8 lg:pl-10">
+              {copy.withLabel}
+            </p>
+          </div>
+          <ul className="mt-2 grid gap-0 border-t border-border">
+            {copy.metrics.map((metric) => (
               <li
                 key={metric.label}
-                className={
-                  index > 0
-                    ? "border-t border-border py-8 md:border-t-0 md:border-l md:px-8 md:py-10 lg:px-10"
-                    : "py-8 md:py-10 md:pr-8 lg:pr-10"
-                }
+                className="grid gap-4 border-b border-border py-8 last:border-b-0 md:grid-cols-12 md:gap-0 md:py-9"
               >
-                <p className="eyebrow text-accent">{metric.label}</p>
-                <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink">
-                  {metric.value}
+                <p className="eyebrow text-accent md:col-span-3 md:pr-6">
+                  {metric.label}
                 </p>
+                <div className="md:col-span-4 md:pr-8">
+                  <p className="eyebrow mb-2 text-charcoal/55 md:hidden">
+                    {copy.withoutLabel}
+                  </p>
+                  <p className="text-[1.0125rem] leading-relaxed text-charcoal/80">
+                    {metric.without}
+                  </p>
+                </div>
+                <div className="md:col-span-5 md:border-l md:border-border md:pl-8 lg:pl-10">
+                  <p className="eyebrow mb-2 text-accent md:hidden">
+                    {copy.withLabel}
+                  </p>
+                  <p className="text-[1.0125rem] leading-relaxed text-ink">
+                    {metric.with}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
