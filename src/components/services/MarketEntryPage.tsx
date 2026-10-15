@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import type { ServiceSlug } from "@/content/catalog";
 import type { Dictionary } from "@/content/locales/types";
-import { getService } from "@/content/localized";
+import { getComplementaryServices } from "@/content/localized";
 import type { MediaAsset } from "@/content/media";
 import { media } from "@/content/media";
 import { localePath, type Locale } from "@/i18n/config";
@@ -26,22 +26,19 @@ export function MarketEntryPage({
   breadcrumbName: string;
   relatedInsights: InsightSummary[];
 }) {
-  const copy = dict.services["european-market-entry"].detail;
+  const service = dict.services["european-market-entry"];
+  const copy = service.detail;
   const contactHref = localePath(locale, "/contact");
-  const [serviceLabel, focusLabel] = copy.work.columns;
-  const relatedServices = copy.followOn.links.flatMap((link) => {
-    const slug = link.href.replace(/^\/services\//, "") as ServiceSlug;
-    const service = getService(locale, dict, slug);
-    if (!service) return [];
-    return [
-      {
-        slug: service.slug as ServiceSlug,
-        href: service.href,
-        name: link.label,
-        description: service.megaDescription,
-      },
-    ];
-  });
+  const relatedServices = getComplementaryServices(
+    locale,
+    dict,
+    "european-market-entry",
+  ).map((item) => ({
+    slug: item.slug as ServiceSlug,
+    href: item.href,
+    name: item.name,
+    description: item.megaDescription,
+  }));
 
   return (
     <>
@@ -60,8 +57,8 @@ export function MarketEntryPage({
           ),
           serviceJsonLd(
             {
-              name: copy.headline,
-              description: `${copy.lead} ${copy.intro}`,
+              name: breadcrumbName,
+              description: service.summary,
               path: "/services/european-market-entry",
             },
             locale,
@@ -84,10 +81,8 @@ export function MarketEntryPage({
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <h1 className="display-section max-w-3xl">{copy.headline}</h1>
-              <p className="mt-5 max-w-xl text-xl text-accent md:text-2xl">
-                {copy.lead}
-              </p>
+              <p className="eyebrow-accent mb-4">{copy.eyebrow}</p>
+              <h1 className="display-section max-w-3xl">{breadcrumbName}</h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal">
                 {copy.intro}
               </p>
@@ -127,84 +122,14 @@ export function MarketEntryPage({
         />
       </Section>
 
-      <Section tone="concrete" className="py-16 md:py-24">
-        <Container>
-          <h2 className="max-w-3xl text-[1.75rem] leading-tight md:text-[2.15rem]">
-            {copy.work.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-charcoal">
-            {copy.work.intro}
-          </p>
-
-          <ul className="mt-8 grid gap-4 lg:hidden">
-            {copy.work.rows.map((row) => (
-              <li
-                key={row.service}
-                className="border border-border bg-white-warm p-5"
-              >
-                <h3 className="text-lg leading-snug">{row.service}</h3>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-charcoal">
-                  {row.focus}
-                </p>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 hidden overflow-x-auto lg:block">
-            <table className="w-full border-collapse text-left">
-              <caption className="sr-only">{copy.work.title}</caption>
-              <thead>
-                <tr className="border-b border-border">
-                  <th
-                    scope="col"
-                    className="eyebrow w-[34%] pb-4 pr-6 font-medium"
-                  >
-                    {serviceLabel}
-                  </th>
-                  <th scope="col" className="eyebrow w-[66%] pb-4 font-medium">
-                    {focusLabel}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {copy.work.rows.map((row) => (
-                  <tr
-                    key={row.service}
-                    className="border-b border-border align-top"
-                  >
-                    <th
-                      scope="row"
-                      className="py-5 pr-6 text-base font-medium text-ink"
-                    >
-                      {row.service}
-                    </th>
-                    <td className="py-5 text-[0.9375rem] leading-relaxed text-charcoal">
-                      {row.focus}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Container>
-      </Section>
-
       <Section className="py-16 md:py-24">
         <Container>
-          <h2 className="max-w-3xl text-[1.75rem] leading-tight md:text-[2.15rem]">
-            {copy.followOn.title}
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-charcoal">
-            {copy.followOn.intro}
-          </p>
-
-          <div className="mt-12">
-            <RelatedServiceCards
-              services={relatedServices}
-              relatedInsights={relatedInsights}
-              relatedInsightsLabel={dict.common.relatedInsights}
-            />
-          </div>
+          <RelatedServiceCards
+            title={dict.common.complementaryServices}
+            services={relatedServices}
+            relatedInsights={relatedInsights}
+            relatedInsightsLabel={dict.common.relatedInsights}
+          />
         </Container>
       </Section>
 

@@ -33,6 +33,24 @@ export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
   ],
 };
 
+/** Supporting capabilities: kept as URLs, de-emphasized in nav/hub. */
+export const supportingServiceSlugs = ["sales-ai-automation"] as const;
+
+export type SupportingServiceSlug = (typeof supportingServiceSlugs)[number];
+
+export function isSupportingService(slug: string): boolean {
+  return (supportingServiceSlugs as readonly string[]).includes(slug);
+}
+
+/** Hub section anchors (aliases keep #group-* working for one release). */
+export const serviceGroupAnchors: Record<
+  ServiceGroupId,
+  { primary: string; alias: string }
+> = {
+  access: { primary: "market-access", alias: "group-access" },
+  support: { primary: "local-support", alias: "group-support" },
+};
+
 export const serviceMeta: Record<
   ServiceSlug,
   {
@@ -50,9 +68,9 @@ export const serviceMeta: Record<
     group: "access",
     image: media.services.marketEntry,
     complementary: [
-      "european-experts-and-partners",
-      "legal-and-regulatory-support",
       "european-sales-representation",
+      "european-experts-and-partners",
+      "after-sales-maintenance",
     ],
   },
   "european-experts-and-partners": {
@@ -60,9 +78,9 @@ export const serviceMeta: Record<
     group: "support",
     image: media.services.expertPartnerSourcing,
     complementary: [
-      "european-market-entry",
       "legal-and-regulatory-support",
       "after-sales-maintenance",
+      "european-market-entry",
     ],
   },
   "legal-and-regulatory-support": {
@@ -72,6 +90,7 @@ export const serviceMeta: Record<
     complementary: [
       "european-experts-and-partners",
       "european-market-entry",
+      "after-sales-maintenance",
     ],
   },
   "after-sales-maintenance": {
@@ -79,8 +98,8 @@ export const serviceMeta: Record<
     group: "support",
     image: media.services.afterSalesWarehouse,
     complementary: [
-      "european-market-entry",
       "european-experts-and-partners",
+      "european-market-entry",
       "european-sales-representation",
     ],
   },

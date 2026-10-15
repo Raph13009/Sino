@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import type { ServiceSlug } from "@/content/catalog";
 import type { Dictionary } from "@/content/locales/types";
-import { getService } from "@/content/localized";
+import { getComplementaryServices } from "@/content/localized";
 import { media } from "@/content/media";
 import { localePath, type Locale } from "@/i18n/config";
 import type { InsightSummary } from "@/lib/insights/types";
@@ -30,19 +30,16 @@ export function AfterSalesPage({
   const warehouse = media.services.afterSalesWarehouse;
   const chart = media.services.afterSalesChart;
   const fieldService = media.services.afterSalesFieldService;
-  const relatedServices = copy.related.links.flatMap((link) => {
-    const slug = link.href.replace(/^\/services\//, "") as ServiceSlug;
-    const service = getService(locale, dict, slug);
-    if (!service) return [];
-    return [
-      {
-        slug: service.slug as ServiceSlug,
-        href: service.href,
-        name: link.label,
-        description: service.megaDescription,
-      },
-    ];
-  });
+  const relatedServices = getComplementaryServices(
+    locale,
+    dict,
+    "after-sales-maintenance",
+  ).map((service) => ({
+    slug: service.slug as ServiceSlug,
+    href: service.href,
+    name: service.name,
+    description: service.megaDescription,
+  }));
 
   return (
     <>
@@ -502,7 +499,7 @@ export function AfterSalesPage({
       <Section className="py-16 md:py-24">
         <Container>
           <RelatedServiceCards
-            title={copy.related.title}
+            title={dict.common.complementaryServices}
             services={relatedServices}
             relatedInsights={relatedInsights}
             relatedInsightsLabel={dict.common.relatedInsights}

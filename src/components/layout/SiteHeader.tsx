@@ -201,11 +201,13 @@ export function SiteHeader() {
     id: group.id,
     label: group.label,
     note: group.note,
+    href: group.href,
     items: group.services.map((service) => ({
       key: service.slug,
       title: service.name,
       description: service.megaDescription,
       href: service.href,
+      supporting: service.supporting,
     })),
   }));
 
@@ -491,13 +493,23 @@ export function SiteHeader() {
                     >
                       {serviceGroups.map((group) => (
                         <li key={group.id} className="pt-3">
-                          <p className="eyebrow text-accent">{group.label}</p>
+                          <Link
+                            href={group.href}
+                            className="eyebrow text-accent"
+                            onClick={closeDrawer}
+                          >
+                            {group.label}
+                          </Link>
                           <ul className="mt-1">
                             {group.services.map((service) => (
                               <li key={service.slug}>
                                 <Link
                                   href={service.href}
-                                  className="block py-2.5 text-[1rem] font-medium leading-snug text-ink"
+                                  className={
+                                    service.supporting
+                                      ? "block py-2 text-[0.95rem] font-medium leading-snug text-ink/75"
+                                      : "block py-2.5 text-[1rem] font-medium leading-snug text-ink"
+                                  }
                                   onClick={closeDrawer}
                                 >
                                   {service.name}

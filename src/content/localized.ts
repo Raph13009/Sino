@@ -3,6 +3,8 @@ import {
   homePillarIds,
   industryMeta,
   industrySlugs,
+  isSupportingService,
+  serviceGroupAnchors,
   serviceGroupIds,
   serviceGroups,
   serviceMeta,
@@ -54,27 +56,41 @@ export function getService(
 
 export function getHomePillars(locale: Locale, dict: Dictionary) {
   return homePillarIds.map((id: HomePillarId) => {
-    const pillar = dict.home.services.pillars[id];
+    const homePillar = dict.home.services.pillars[id];
+    // Single source of truth for category body copy (shared with Services hub)
+    const hubPillar = dict.servicesPage.pillars.find((p) => p.id === id);
+    const anchor = serviceGroupAnchors[id].primary;
     return {
       id,
-      href: localePath(locale, `/services#group-${id}`),
-      title: pillar.title,
-      description: pillar.description,
-      cta: pillar.cta,
+      href: localePath(locale, `/services#${anchor}`),
+      title: hubPillar?.title ?? homePillar.title,
+      description: hubPillar?.description ?? "",
+      cta: homePillar.cta,
     };
   });
 }
 
 export function getServiceGroups(locale: Locale, dict: Dictionary) {
   const services = getServices(locale, dict);
-  return serviceGroupIds.map((id) => ({
-    id,
-    label: dict.nav.megaMenu.groups[id].label,
-    note: dict.nav.megaMenu.groups[id].note,
-    services: serviceGroups[id]
-      .map((slug) => services.find((item) => item.slug === slug))
-      .filter((item): item is NonNullable<typeof item> => Boolean(item)),
-  }));
+  return serviceGroupIds.map((id) => {
+    const anchor = serviceGroupAnchors[id];
+    return {
+      id,
+      label: dict.nav.megaMenu.groups[id].label,
+      // Single source with hub category notes (avoids dual mega/hub variants)
+      note: dict.servicesPage.groups[id].note,
+      href: localePath(locale, `/services#${anchor.primary}`),
+      anchorPrimary: anchor.primary,
+      anchorAlias: anchor.alias,
+      services: serviceGroups[id]
+        .map((slug) => services.find((item) => item.slug === slug))
+        .filter((item): item is NonNullable<typeof item> => Boolean(item))
+        .map((service) => ({
+          ...service,
+          supporting: isSupportingService(service.slug),
+        })),
+    };
+  });
 }
 
 export function getComplementaryServices(

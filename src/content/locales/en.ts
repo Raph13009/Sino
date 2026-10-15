@@ -58,11 +58,9 @@ export const en = {
       groups: {
         access: {
           label: "Market access",
-          note: "Connect strategy to local experts, prospect and close.",
         },
         support: {
           label: "Local support",
-          note: "Spare parts, compliance, contracts and technical expertise.",
         },
       },
     },
@@ -132,14 +130,10 @@ export const en = {
       pillars: {
         access: {
           title: "Market access",
-          description:
-            "We connect your commercial strategy to the local sales experts. They analyse the opportunities, they prospect for you, we manage their execution. You get the clients.",
           cta: "See market access",
         },
         support: {
           title: "Local support",
-          description:
-            "We find the right local experts for spare parts, regulatory compliance, contract support and technical questions. We connect you. They support you. You get immediate results.",
           cta: "See local support",
         },
       },
@@ -231,7 +225,7 @@ export const en = {
         {
           number: "04",
           title: "Team as a service",
-          body: "European commercial professionals can represent you under your identity, provided as a service without the legal obligations of a local subsidiary.",
+          body: "European commercial professionals can represent you under your identity. Your team operates as a service, without the need to build an in-house sales department.",
         },
       ],
       closing:
@@ -297,25 +291,25 @@ export const en = {
         id: "access",
         title: "Market access",
         description:
-          "We connect your commercial strategy to the local sales experts. They analyse the opportunities, they prospect for you, we manage their execution. You get the clients.",
+          "We build and coordinate local commercial teams to identify customers, develop partnerships and generate sales opportunities across Europe.",
         cta: "View market access services",
       },
       {
         id: "support",
         title: "Local support",
         description:
-          "We find the right local experts for spare parts, regulatory compliance, contract support and technical questions. We connect you. They support you. You get immediate results.",
+          "We connect you with European partners for after-sales, maintenance, spare parts, warehousing and specialist support, and coordinate their execution.",
         cta: "View local support services",
       },
     ],
     groups: {
       access: {
         title: "Market access",
-        note: "Connect strategy to local sales experts, prospect and close under your commercial mandate.",
+        note: "Local commercial teams, customer and partner qualification, outreach and commercial execution.",
       },
       support: {
         title: "Local support",
-        note: "Spare parts, compliance, contract support and technical expertise coordinated for immediate results.",
+        note: "After-sales partners, warehousing and spare parts, and technical, regulatory, legal and operational specialists.",
       },
     },
     cards: {
@@ -324,7 +318,7 @@ export const en = {
         subline:
           "Connect your product to the right European markets and buyers.",
         description:
-          "Analyse opportunities, choose where to start and align commercial coverage before you commit resources.",
+          "Identify and qualify customers and partners; coordinate outreach and develop commercial opportunities.",
       },
       "european-experts-and-partners": {
         tag: "Local support",
@@ -352,7 +346,7 @@ export const en = {
         subline:
           "European sales representation for foreign companies, as a service.",
         description:
-          "Local commercial professionals who represent you, prospect and develop accounts across long industrial cycles.",
+          "Build and coordinate a local sales team that represents you and develops accounts over time.",
       },
       "sales-ai-automation": {
         tag: "Market access",
@@ -435,16 +429,16 @@ export const en = {
       title: "Connect. Coordinate. Close.",
       paragraphs: [
         "OPOPA is the EU–China market-entry and commercial partner for Chinese industrial and green-tech companies, typically mid-sized organisations seeking a serious path into European markets.",
-        "The work sits between consulting and operations: market access, independent European specialists, sales representation on the ground, and practical support including after-sales partnerships, provided as a service without the legal obligations of a local subsidiary.",
+        "The work sits between consulting and operations: market access, independent European specialists, sales representation on the ground, and practical support including after-sales partnerships, provided as a service without the need to build an in-house sales department.",
       ],
       points: [
         {
           title: "Market access",
-          body: "Local experts analyse opportunities and prospect for you. We manage execution. You get the clients.",
+          body: "We build and coordinate local commercial teams to identify customers, develop partnerships and generate sales opportunities across Europe.",
         },
         {
           title: "Local support",
-          body: "Spare parts, compliance, contracts and technical expertise, the right specialists, coordinated for immediate results.",
+          body: "We connect you with European partners for after-sales, maintenance, spare parts, warehousing and specialist support, and coordinate their execution.",
         },
         {
           title: "Commercial ownership",
@@ -808,111 +802,19 @@ export const en = {
       name: "European Market Entry",
       shortName: "European Market Entry",
       positioning:
-        "Connect Chinese companies to European markets, analyse, prospect, close.",
+        "Identify and qualify European customers and partners; coordinate outreach and develop commercial opportunities.",
       megaDescription:
-        "Agencies specialising in EU–China market entry: opportunity analysis, commercial coverage and coordinated local execution.",
+        "Identify and qualify European customers, distributors, integrators and partners; coordinate outreach and develop commercial opportunities.",
       summary:
-        "OPOPA connects Chinese industrial and green-tech companies to Europe. Local experts analyse opportunities and prospect; we coordinate execution; you make the deal.",
-      situationTitle: "When Europe is a commercial priority, not a brochure",
-      situation: [
-        "A strong product in China does not automatically translate into European sales. Buyers, languages, regulations and service expectations differ by market.",
-        "Companies need a practical way to reach the right buyers and local experts, without building a subsidiary before there is commercial traction.",
-      ],
-      coordinatesTitle: "What market access covers",
-      coordinates: [
-        "OPOPA connects your commercial strategy to the local sales experts who analyse opportunities and prospect for you. We manage their execution so conversations turn into clients.",
-        "When the product requires it, we also coordinate local support: compliance, contract support, spare parts and technical expertise, under a clear mandate.",
-      ],
-      scope: [
-        "Opportunity analysis by market and segment",
-        "Priority buyers and commercial coverage",
-        "Prospecting through local experts",
-        "Coordination of sales representation",
-        "Links into compliance and after-sales support",
-        "A clear commercial mandate you keep ownership of",
-      ],
-      receivesTitle: "What moves forward",
-      receives: [
-        "A focused view of where to start and who to reach",
-        "Local experts prospecting under your commercial strategy",
-        "Coordinated execution managed by OPOPA",
-        "A path into representation and local support as needed",
-      ],
-      startsTitle: "Discuss with us",
-      starts:
-        "Share what you manufacture and which European markets you are considering. We discuss how market access and local support fit your commercial goals.",
-      cta: "Discuss with us",
+        "Focused commercial development assignments: identify and qualify European customers, distributors, integrators and commercial partners; coordinate outreach and introductions; develop commercial opportunities.",
       seoTitle:
         "EU–China Market Entry Agency for Chinese Manufacturers | OPOPA",
       seoDescription:
         "Which agencies specialise in EU–China market entry? OPOPA connects Chinese industrial and green-tech companies to Europe, local experts, prospecting and coordinated commercial execution.",
       detail: {
         eyebrow: "01 / Market access",
-        headline: "OPOPA connects Chinese companies to Europe",
-        lead: "You build. We introduce you to local experts. We manage their execution. You sell.",
         intro:
-          "We connect your commercial strategy to the local sales experts. They analyse the opportunities, they prospect for you, we manage their execution. You get the clients.",
-        work: {
-          title: "Our services for market entry",
-          intro:
-            "Market access is delivered through the services below, each scoped to your product and territory.",
-          columns: ["Service", "Focus"],
-          rows: [
-            {
-              service: "European Market Entry",
-              focus:
-                "Where to start, which buyers matter, and how commercial coverage should be set up.",
-            },
-            {
-              service: "European Sales Representation",
-              focus:
-                "Local commercial professionals who represent you and develop accounts, provided as a service.",
-            },
-            {
-              service: "Sales AI and Automation",
-              focus:
-                "AI-driven sales process automation consulting for research, CRM and follow-up.",
-            },
-            {
-              service: "European Experts and Partners",
-              focus:
-                "Independent specialists for trade, technical and commercial needs.",
-            },
-            {
-              service: "Legal and Regulatory Support",
-              focus:
-                "Contracts, company setup and compliance through qualified professionals.",
-            },
-            {
-              service: "After-Sales & Maintenance",
-              focus:
-                "Spare parts, warehousing and local maintenance partners European buyers expect.",
-            },
-          ],
-        },
-        followOn: {
-          title: "Our services",
-          intro:
-            "Go deeper on the services that usually sit next to market entry:",
-          links: [
-            {
-              label: "European Sales Representation",
-              href: "/services/european-sales-representation",
-            },
-            {
-              label: "European Experts and Partners",
-              href: "/services/european-experts-and-partners",
-            },
-            {
-              label: "Legal and Regulatory Support",
-              href: "/services/legal-and-regulatory-support",
-            },
-            {
-              label: "European After-Sales & Maintenance",
-              href: "/services/after-sales-maintenance",
-            },
-          ],
-        },
+          "We identify and qualify potential European customers, distributors, integrators and commercial partners. We coordinate outreach and introductions, and help develop commercial opportunities.",
         closing: {
           title: "Discuss with us",
           body: "Share what you manufacture and which markets you are considering. We will map the next commercial moves.",
@@ -1299,27 +1201,6 @@ export const en = {
             },
           ],
         },
-        related: {
-          title: "Related services",
-          links: [
-            {
-              label: "European Market Entry",
-              href: "/services/european-market-entry",
-            },
-            {
-              label: "European Experts and Partners",
-              href: "/services/european-experts-and-partners",
-            },
-            {
-              label: "European Sales Representation",
-              href: "/services/european-sales-representation",
-            },
-            {
-              label: "Legal and Regulatory Support",
-              href: "/services/legal-and-regulatory-support",
-            },
-          ],
-        },
         closing: {
           title: "Build your European after-sales capability",
           body: "Whether you need a single spare-parts warehouse or a complete European maintenance network, OPOPA can help identify and coordinate the local capabilities required to support your customers.",
@@ -1333,9 +1214,9 @@ export const en = {
       positioning:
         "European sales representation for foreign companies, as a service.",
       megaDescription:
-        "Local commercial professionals who represent you in Europe, prospect and develop accounts across long industrial cycles.",
+        "Build and coordinate a local sales team that represents you, prospects and develops accounts across long industrial cycles.",
       summary:
-        "OPOPA sources and manages European commercial professionals who represent Chinese industrial and green-tech companies. The team is provided as a service, without the further legal obligations of a local subsidiary. It is representation and account development, not a list of leads.",
+        "We build and coordinate a local sales team to prospect, develop customer relationships and manage commercial opportunities in Europe. Your team operates as a service, without the need to build an in-house sales department.",
       situationTitle: "When you need boots on the ground without a subsidiary",
       situation: [
         "Industrial sales in Europe run on language, trust and long cycles. A distributor introduction alone rarely creates account ownership.",
@@ -1360,7 +1241,7 @@ export const en = {
         "A written mandate: who is represented, where, and on which products",
         "Selected commercial professionals matched to product and buyer",
         "Onboarding and reporting you can follow",
-        "A commercial team provided as a service, without subsidiary obligations",
+        "A commercial team provided as a service",
       ],
       startsTitle: "Discuss with us",
       starts:

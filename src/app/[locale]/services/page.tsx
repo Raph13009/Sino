@@ -9,7 +9,11 @@ import {
   Section,
 } from "@/components/ui/Section";
 import { JsonLd } from "@/components/seo/JsonLd";
-import type { ServiceGroupId, ServiceSlug } from "@/content/catalog";
+import {
+  serviceGroupAnchors,
+  type ServiceGroupId,
+  type ServiceSlug,
+} from "@/content/catalog";
 import { media } from "@/content/media";
 import { getDictionary } from "@/content/locales";
 import { getServiceGroups, localizeMediaAsset } from "@/content/localized";
@@ -99,7 +103,7 @@ export default async function ServicesPage({ params }: Props) {
             {copy.pillars.map((pillar) => (
               <li key={pillar.id}>
                 <a
-                  href={`#group-${pillar.id}`}
+                  href={`#${serviceGroupAnchors[pillar.id as ServiceGroupId].primary}`}
                   className="group flex h-full flex-col rounded-card border border-white/15 bg-white/[0.03] p-7 transition-colors hover:border-accent/60 hover:bg-white/[0.06] md:p-8"
                 >
                   <h3 className="text-[1.55rem] leading-tight tracking-[-0.02em] text-white-warm md:text-[1.85rem]">
@@ -127,17 +131,21 @@ export default async function ServicesPage({ params }: Props) {
       <div id="services">
         {groups.map((group, groupIndex) => {
           const groupCopy = copy.groups[group.id as ServiceGroupId];
-          const cardCount = group.services.length;
+          const primary = group.services.filter((s) => !s.supporting);
+          const supporting = group.services.filter((s) => s.supporting);
+          const cardCount = primary.length;
 
           return (
             <Section
               key={group.id}
-              id={`group-${group.id}`}
+              id={group.anchorPrimary}
               className={`scroll-mt-32 border-b border-border py-16 md:py-24 ${
                 groupIndex % 2 === 1 ? "bg-white-warm" : ""
               }`}
               tone={groupIndex % 2 === 1 ? "white" : "ivory"}
             >
+              {/* Legacy hash alias for one release */}
+              <div id={group.anchorAlias} className="sr-only" aria-hidden />
               <Container>
                 <div className="max-w-2xl">
                   <h2 className="display-section text-[1.85rem] md:text-[2.5rem]">
@@ -157,9 +165,8 @@ export default async function ServicesPage({ params }: Props) {
                         : "grid md:grid-cols-2 xl:grid-cols-3"
                   }`}
                 >
-                  {group.services.map((service) => {
-                    const card =
-                      copy.cards[service.slug as ServiceSlug];
+                  {primary.map((service) => {
+                    const card = copy.cards[service.slug as ServiceSlug];
                     return (
                       <li
                         key={service.slug}
@@ -168,7 +175,7 @@ export default async function ServicesPage({ params }: Props) {
                       >
                         <ServiceHubCard
                           service={{
-                            id: service.slug,
+                            id: `${service.slug}-card`,
                             href: service.href,
                             number: service.number,
                             name: service.name,
@@ -182,6 +189,35 @@ export default async function ServicesPage({ params }: Props) {
                     );
                   })}
                 </ul>
+
+                {supporting.length > 0 ? (
+                  <ul className="mt-4 grid gap-4 md:mt-5 md:max-w-xl md:gap-5">
+                    {supporting.map((service) => {
+                      const card = copy.cards[service.slug as ServiceSlug];
+                      return (
+                        <li
+                          key={service.slug}
+                          id={service.slug}
+                          className="min-h-0 scroll-mt-32"
+                        >
+                          <ServiceHubCard
+                            supporting
+                            service={{
+                              id: `${service.slug}-card`,
+                              href: service.href,
+                              number: service.number,
+                              name: service.name,
+                              tag: card.tag,
+                              description: card.description,
+                              image: service.image,
+                              learnMoreLabel: dict.common.learnMore,
+                            }}
+                          />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : null}
               </Container>
             </Section>
           );

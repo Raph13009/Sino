@@ -94,6 +94,10 @@ export default async function ServicePage({ params }: Props) {
     );
   }
 
+  // Dedicated templates returned above; remaining leaves share the generic body shape.
+  const leaf = service as typeof dict.services["european-sales-representation"] &
+    Pick<NonNullable<typeof service>, "slug" | "image" | "href">;
+
   return (
     <>
       <JsonLd
@@ -102,14 +106,14 @@ export default async function ServicePage({ params }: Props) {
             [
               { name: dict.common.home, path: "/" },
               { name: dict.servicesPage.eyebrow, path: "/services" },
-              { name: service.name, path: `/services/${slug}` },
+              { name: leaf.name, path: `/services/${slug}` },
             ],
             locale,
           ),
           serviceJsonLd(
             {
-              name: service.name,
-              description: service.summary,
+              name: leaf.name,
+              description: leaf.summary,
               path: `/services/${slug}`,
             },
             locale,
@@ -127,28 +131,28 @@ export default async function ServicePage({ params }: Props) {
                 label: dict.servicesPage.eyebrow,
                 href: localePath(locale, "/services"),
               },
-              { label: service.name },
+              { label: leaf.name },
             ]}
           />
           <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <h1 className="display-section">{service.name}</h1>
+              <h1 className="display-section">{leaf.name}</h1>
               <p className="mt-5 text-xl text-accent md:text-2xl">
-                {service.positioning}
+                {leaf.positioning}
               </p>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal">
-                {service.summary}
+                {leaf.summary}
               </p>
               <div className="mt-8">
-                <Button href={contactHref}>{service.cta}</Button>
+                <Button href={contactHref}>{leaf.cta}</Button>
               </div>
             </div>
             <div className="lg:col-span-5">
               <MediaImage
-                src={service.image.src}
-                alt={service.image.alt}
-                width={service.image.width}
-                height={service.image.height}
+                src={leaf.image.src}
+                alt={leaf.image.alt}
+                width={leaf.image.width}
+                height={leaf.image.height}
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 frameClassName="aspect-[4/3]"
@@ -164,11 +168,11 @@ export default async function ServicePage({ params }: Props) {
             <div className="lg:col-span-5">
               <Eyebrow>{dict.servicesPage.situationLabel}</Eyebrow>
               <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
-                {service.situationTitle}
+                {leaf.situationTitle}
               </h2>
             </div>
             <div className="space-y-5 lg:col-span-6 lg:col-start-7">
-              {service.situation.map((paragraph) => (
+              {leaf.situation.map((paragraph) => (
                 <p
                   key={paragraph}
                   className="text-lg leading-relaxed text-charcoal"
@@ -185,11 +189,11 @@ export default async function ServicePage({ params }: Props) {
         <Container>
           <Eyebrow>{dict.servicesPage.coordinatesLabel}</Eyebrow>
           <h2 className="mt-4 max-w-3xl text-[1.75rem] leading-tight md:text-[2.15rem]">
-            {service.coordinatesTitle}
+            {leaf.coordinatesTitle}
           </h2>
           <div className="mt-8 grid gap-10 lg:grid-cols-12">
             <div className="space-y-5 lg:col-span-6">
-              {service.coordinates.map((paragraph) => (
+              {leaf.coordinates.map((paragraph) => (
                 <p
                   key={paragraph}
                   className="text-[1.0625rem] leading-relaxed text-charcoal"
@@ -201,7 +205,7 @@ export default async function ServicePage({ params }: Props) {
             <div className="lg:col-span-5 lg:col-start-8">
               <p className="eyebrow">{dict.common.typicalScope}</p>
               <ul className="mt-4 border-t border-border">
-                {service.scope.map((item) => (
+                {leaf.scope.map((item) => (
                   <li
                     key={item}
                     className="flex gap-3 border-b border-border py-3.5 text-[1rem] text-charcoal"
@@ -222,10 +226,10 @@ export default async function ServicePage({ params }: Props) {
             <div className="lg:col-span-5">
               <Eyebrow>{dict.servicesPage.receivesLabel}</Eyebrow>
               <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
-                {service.receivesTitle}
+                {leaf.receivesTitle}
               </h2>
               <ul className="mt-8 border-t border-border">
-                {service.receives.map((item) => (
+                {leaf.receives.map((item) => (
                   <li
                     key={item}
                     className="border-b border-border py-4 text-[1.0625rem] leading-relaxed text-charcoal"
@@ -238,15 +242,12 @@ export default async function ServicePage({ params }: Props) {
             <div className="lg:col-span-6 lg:col-start-7">
               <Eyebrow>{dict.servicesPage.startsLabel}</Eyebrow>
               <h2 className="mt-4 text-[1.75rem] leading-tight md:text-[2.15rem]">
-                {service.startsTitle}
+                {leaf.startsTitle}
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-charcoal">
-                {service.starts}
+                {leaf.starts}
               </p>
               <Rule tone="accent" className="mt-8" />
-              <div className="mt-8">
-                <Button href={contactHref}>{service.cta}</Button>
-              </div>
             </div>
           </div>
         </Container>

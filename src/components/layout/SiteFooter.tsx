@@ -3,15 +3,12 @@
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Logo } from "@/components/ui/Logo";
-import { getServices } from "@/content/localized";
+import { getServiceGroups } from "@/content/localized";
 import { siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
   const { dict, locale, path } = useLocale();
-  const serviceLinks = getServices(locale, dict).map((service) => ({
-    label: service.name,
-    href: service.href,
-  }));
+  const serviceGroups = getServiceGroups(locale, dict);
 
   const industries = [
     {
@@ -56,7 +53,37 @@ export function SiteFooter() {
           </div>
 
           <div className="grid gap-12 sm:grid-cols-3 lg:col-span-7">
-            <FooterColumn title={dict.nav.footer.services} links={serviceLinks} />
+            <div>
+              <p className="eyebrow text-accent">{dict.nav.footer.services}</p>
+              <div className="mt-5 space-y-6">
+                {serviceGroups.map((group) => (
+                  <div key={group.id}>
+                    <Link
+                      href={group.href}
+                      className="text-[0.8125rem] font-medium tracking-[0.06em] text-white-warm/55 uppercase transition-colors hover:text-white-warm"
+                    >
+                      {group.label}
+                    </Link>
+                    <ul className="mt-3 space-y-2.5 text-[0.9375rem]">
+                      {group.services.map((service) => (
+                        <li key={service.slug}>
+                          <Link
+                            href={service.href}
+                            className={
+                              service.supporting
+                                ? "text-white-warm/50 transition-colors hover:text-white-warm"
+                                : "text-white-warm/75 transition-colors hover:text-white-warm"
+                            }
+                          >
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
             <FooterColumn title={dict.nav.footer.industries} links={industries} />
             <div>
               <FooterColumn title={dict.nav.footer.company} links={company} />
@@ -120,14 +147,14 @@ function FooterColumn({
   return (
     <div>
       <p className="eyebrow text-accent">{title}</p>
-      <ul className="mt-5 space-y-3.5 text-[0.9375rem]">
-        {links.map((link) => (
-          <li key={link.href}>
+      <ul className="mt-5 space-y-3 text-[0.9375rem]">
+        {links.map((item) => (
+          <li key={item.href}>
             <Link
-              href={link.href}
+              href={item.href}
               className="text-white-warm/75 transition-colors hover:text-white-warm"
             >
-              {link.label}
+              {item.label}
             </Link>
           </li>
         ))}

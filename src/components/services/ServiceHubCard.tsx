@@ -16,9 +16,12 @@ export type ServiceHubCardData = {
 
 export function ServiceHubCard({
   service,
+  supporting = false,
   className,
 }: {
   service: ServiceHubCardData;
+  /** De-emphasized supporting capability (e.g. Sales AI). */
+  supporting?: boolean;
   className?: string;
 }) {
   return (
@@ -26,9 +29,11 @@ export function ServiceHubCard({
       id={service.id}
       href={service.href}
       className={cn(
-        "group relative flex min-h-[26rem] flex-col overflow-hidden rounded-card bg-ink text-white-warm no-underline",
+        "group relative flex flex-col overflow-hidden rounded-card bg-ink text-white-warm no-underline",
         "outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent",
-        "md:min-h-[28rem]",
+        supporting
+          ? "min-h-[20rem] md:min-h-[22rem] opacity-95"
+          : "min-h-[26rem] md:min-h-[28rem]",
         className,
       )}
     >
