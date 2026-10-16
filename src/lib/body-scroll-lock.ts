@@ -1,3 +1,5 @@
+import { getLenisInstance } from "@/lib/lenis-instance";
+
 /**
  * Locks document scroll while preserving position and avoiding layout shift
  * from scrollbar disappearance. Restores the exact scrollY on unlock.
@@ -6,6 +8,9 @@
 export function lockBodyScroll(
   scrollY: number = window.scrollY || document.documentElement.scrollTop || 0,
 ): number {
+  const lenis = getLenisInstance();
+  lenis?.stop();
+
   const scrollbarWidth =
     window.innerWidth - document.documentElement.clientWidth;
 
@@ -43,6 +48,13 @@ export function unlockBodyScroll(scrollY: number) {
   document.documentElement.style.removeProperty(
     "--body-scroll-lock-compensation",
   );
+
+  const lenis = getLenisInstance();
+  if (lenis) {
+    lenis.scrollTo(scrollY, { immediate: true });
+    lenis.start();
+    return;
+  }
 
   const root = document.documentElement;
   const previousBehavior = root.style.scrollBehavior;

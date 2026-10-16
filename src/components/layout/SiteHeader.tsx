@@ -477,6 +477,7 @@ export function SiteHeader() {
                 </p>
                 <nav
                   aria-label={dict.nav.aria.mobile}
+                  data-lenis-prevent
                   className="max-h-[min(70dvh,32rem)] overflow-y-auto overscroll-contain px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:px-6"
                 >
                   <ul className="flex flex-col">

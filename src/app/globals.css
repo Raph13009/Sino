@@ -54,9 +54,7 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  /* Smooth scrolling is handled by Lenis (respects prefers-reduced-motion). */
 
   @media (prefers-reduced-motion: reduce) {
     html {

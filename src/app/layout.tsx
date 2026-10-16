@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Inter, Inter_Tight, Noto_Sans_SC } from "next/font/google";
 import { headers } from "next/headers";
 import { localeHtmlLang, type Locale } from "@/i18n/config";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { isVercelAnalyticsEnabled } from "@/lib/analytics";
 import { shouldNoIndexDeployment, siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -84,8 +85,10 @@ export default async function RootLayout({
           locale === "zh" ? "font-cjk" : "font-sans"
         }`}
       >
-        {children}
-        {isVercelAnalyticsEnabled() ? <Analytics /> : null}
+        <SmoothScroll>
+          {children}
+          {isVercelAnalyticsEnabled() ? <Analytics /> : null}
+        </SmoothScroll>
       </body>
     </html>
   );
