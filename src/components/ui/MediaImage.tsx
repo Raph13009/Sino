@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { InsightCoverImage } from "@/components/insights/InsightCoverImage";
 import { isInsightCoverSrc } from "@/lib/cms/image-variants";
@@ -10,6 +11,7 @@ type MediaImageProps = {
   height: number;
   className?: string;
   frameClassName?: string;
+  frameStyle?: CSSProperties;
   imageClassName?: string;
   priority?: boolean;
   sizes?: string;
@@ -24,6 +26,7 @@ export function MediaImage({
   height,
   className,
   frameClassName,
+  frameStyle,
   imageClassName,
   priority = false,
   sizes = "(max-width: 768px) 100vw, 50vw",
@@ -32,7 +35,7 @@ export function MediaImage({
 }: MediaImageProps) {
   return (
     <figure className={cn(className)}>
-      <div className={cn("overflow-hidden", frameClassName)}>
+      <div className={cn("overflow-hidden", frameClassName)} style={frameStyle}>
         {isInsightCoverSrc(src) ? (
           <InsightCoverImage
             src={src}

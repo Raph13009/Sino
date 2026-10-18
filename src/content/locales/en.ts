@@ -1171,6 +1171,90 @@ export const en = {
         "European Sales Representation for Foreign Companies | OPOPA",
       seoDescription:
         "European sales representation for foreign companies: local commercial professionals who represent Chinese industrial clients, provided as a service without a local subsidiary.",
+      process: {
+        eyebrow: "How it works",
+        title: "How we build your European sales team",
+        subtitle:
+          "OPOPA runs the process. You stay in control of the key decisions.",
+        scrollHint: "Scroll",
+        illustrative: "Illustrative",
+        steps: [
+          {
+            number: "01",
+            title: "Define the mandate",
+            description:
+              "Product, buyers, priority markets and the salesperson profile — agreed before anyone is sourced.",
+          },
+          {
+            number: "02",
+            title: "Source & screen",
+            description:
+              "We search our network and source further when needed — industry fit, languages, relationships, availability.",
+          },
+          {
+            number: "03",
+            title: "You approve",
+            description:
+              "Shortlist, interviews, then your decision. Nothing starts without your approval.",
+          },
+          {
+            number: "04",
+            title: "Launch activity",
+            description:
+              "Onboarding, priorities and objectives. Your team prospects under your company identity.",
+          },
+          {
+            number: "05",
+            title: "Monitor & adapt",
+            description:
+              "Regular reporting on outreach and opportunities. We adjust the approach — or the profile — when needed.",
+          },
+        ],
+        visuals: {
+          mandate: {
+            chips: [
+              { label: "Product", value: "Industrial equipment" },
+              { label: "Market", value: "France" },
+              { label: "Buyers", value: "OEMs & distributors" },
+              { label: "Model", value: "Local representation" },
+            ],
+            status: "Mandate locked",
+          },
+          sourcing: {
+            poolLabel: "Network",
+            shortlistLabel: "Shortlist",
+            profiles: [
+              { name: "Industrial Sales", place: "France", tag: true },
+              { name: "OEM Accounts", place: "Benelux", tag: true },
+              { name: "Channel Sales", place: "Germany", tag: false },
+              { name: "Field Sales", place: "Italy", tag: false },
+            ],
+          },
+          approval: {
+            note: "OPOPA recommends. You decide.",
+            approve: "Approved",
+            pending: "Review",
+            profiles: [
+              { name: "Industrial Sales · France", approved: true },
+              { name: "OEM Accounts · Benelux", approved: false },
+            ],
+          },
+          launch: {
+            items: [
+              "Onboarding",
+              "Target accounts",
+              "Outreach",
+              "Meetings",
+              "Opportunities",
+            ],
+          },
+          monitor: {
+            metrics: ["Outreach", "Meetings", "Pipeline"],
+            reporting: "Reporting on schedule",
+            adjust: "Adjust approach or profile",
+          },
+        },
+      },
     },
     "sales-ai-automation": {
       name: "Sales AI and Automation",
@@ -1302,7 +1386,7 @@ export const en = {
     "service-expert-partner-sourcing":
       "Engineer reviewing technical documentation in an industrial setting",
     "service-outsourced-sales":
-      "Industrial machinery and manufacturing equipment detail",
+      "OPOPA sales team on a video call coordinating European representation",
     "service-market-entry":
       "A team walking a machining hall during a factory visit",
     "service-market-entry-map":

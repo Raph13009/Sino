@@ -47,6 +47,7 @@ next-env.d.ts
 # Full-resolution photo sources; production uses optimized derivatives
 /image-sources/
 .tmp-qa/
+/tmp/
 
 # Full-resolution photo dumps (not for deploy)
 /public/images/max_raph_industrial_visite copy/

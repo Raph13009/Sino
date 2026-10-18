@@ -1145,6 +1145,82 @@ export const zh = {
       seoTitle: "面向外资企业的欧洲销售代表 | OPOPA",
       seoDescription:
         "面向外资企业的欧洲销售代表：代表中国工业客户的本地商务专业人士，以服务形式提供，无需本地子公司。",
+      process: {
+        eyebrow: "运作方式",
+        title: "我们如何组建您的欧洲销售团队",
+        subtitle: "流程由 OPOPA 推进，关键决策始终由您掌控。",
+        scrollHint: "滚动浏览",
+        illustrative: "示意",
+        steps: [
+          {
+            number: "01",
+            title: "明确委托",
+            description:
+              "先约定产品、买家、优先市场与销售人选画像，再开始物色。",
+          },
+          {
+            number: "02",
+            title: "物色与筛选",
+            description:
+              "检索现有网络，必要时另行物色——行业匹配、语言、客户关系与可投入时间。",
+          },
+          {
+            number: "03",
+            title: "由您批准",
+            description: "入围、面谈，最终由您决定。未经批准，任务不启动。",
+          },
+          {
+            number: "04",
+            title: "启动开拓",
+            description:
+              "入职、重点与目标明确后，本地团队以贵司身份开展开拓。",
+          },
+          {
+            number: "05",
+            title: "监督与调整",
+            description:
+              "定期汇报开拓与商机。必要时调整方法，或提出更换人选。",
+          },
+        ],
+        visuals: {
+          mandate: {
+            chips: [
+              { label: "产品", value: "工业设备" },
+              { label: "市场", value: "法国" },
+              { label: "买家", value: "OEM 与分销商" },
+              { label: "模式", value: "本地代表" },
+            ],
+            status: "委托已确认",
+          },
+          sourcing: {
+            poolLabel: "网络",
+            shortlistLabel: "入围",
+            profiles: [
+              { name: "工业销售", place: "法国", tag: true },
+              { name: "OEM 客户", place: "比荷卢", tag: true },
+              { name: "渠道销售", place: "德国", tag: false },
+              { name: "一线销售", place: "意大利", tag: false },
+            ],
+          },
+          approval: {
+            note: "OPOPA 推荐，最终由您决定。",
+            approve: "已批准",
+            pending: "审阅中",
+            profiles: [
+              { name: "工业销售 · 法国", approved: true },
+              { name: "OEM 客户 · 比荷卢", approved: false },
+            ],
+          },
+          launch: {
+            items: ["入职", "目标客户", "触达", "会面", "商机"],
+          },
+          monitor: {
+            metrics: ["开拓", "会面", "管道"],
+            reporting: "汇报按计划进行",
+            adjust: "调整方法或人选",
+          },
+        },
+      },
     },
     "sales-ai-automation": {
       name: "销售 AI 与自动化",
@@ -1266,7 +1342,8 @@ export const zh = {
     "service-legal-regulatory":
       "专业人士在欧洲办公室审阅合同与产品合规文件",
     "service-expert-partner-sourcing": "工程师在工业环境中审阅技术文件",
-    "service-outsourced-sales": "工业机械与制造设备细节",
+    "service-outsourced-sales":
+      "OPOPA 销售团队通过视频会议协调欧洲销售代表工作",
     "service-market-entry": "团队在机加工车间进行工厂参观",
     "service-market-entry-map": "展示从中国通向欧洲市场商业联系的地图",
     "service-after-sales-warehouse": "存放工业备件的欧洲仓库货架通道",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { AfterSalesPage } from "@/components/services/AfterSalesPage";
+import { EuropeanSalesRepresentationPage } from "@/components/services/EuropeanSalesRepresentationPage";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
@@ -81,8 +82,18 @@ export default async function ServicePage({ params }: Props) {
     );
   }
 
+  if (service.slug === "european-sales-representation") {
+    return (
+      <EuropeanSalesRepresentationPage
+        locale={locale}
+        dict={dict}
+        relatedInsights={relatedInsights}
+      />
+    );
+  }
+
   // Dedicated templates returned above; remaining leaves share the generic body shape.
-  const leaf = service as typeof dict.services["european-sales-representation"] &
+  const leaf = service as typeof dict.services["sales-ai-automation"] &
     Pick<NonNullable<typeof service>, "slug" | "image" | "href">;
 
   return (
@@ -142,7 +153,10 @@ export default async function ServicePage({ params }: Props) {
                 height={leaf.image.height}
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                frameClassName="aspect-[4/3]"
+                frameClassName="w-full"
+                frameStyle={{
+                  aspectRatio: `${leaf.image.width} / ${leaf.image.height}`,
+                }}
               />
             </div>
           </div>

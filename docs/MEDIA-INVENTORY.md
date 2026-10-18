@@ -19,7 +19,7 @@ Next.js Image already serves AVIF/WebP variants from WebP sources via `images.fo
 | home-context-01 | Home | Context | `/images/raph_industrial_visite/home-context.webp` | Image | 1920:888 | Final | Factory visit photograph |
 | service-legal-regulatory | Services | Legal and Regulatory Support | `/images/services/service-legal-regulatory.webp` | Image | 4:3 | Final | Contracts / compliance review photography |
 | service-expert-partner-sourcing | Services | European Experts and Partners | `/images/services/service-expert-partner-sourcing.webp` | Image | 3:2 | Placeholder | Replace with specialist / partner qualification photography |
-| service-outsourced-sales | Services | European Sales Representation | `/images/services/service-outsourced-sales.webp` | Image | 3:2 | Placeholder | Replace with European sales representation photography |
+| service-outsourced-sales | Services | European Sales Representation | `/images/services/service-european-sales-representation.webp` | Image | 16:9 | Final | Google Meet sales team sync (WebP from PNG) |
 | service-market-entry | Services | European Market Entry | `/images/raph_industrial_visite/service-market-entry.webp` | Image | 1920:987 | Final | Factory visit photograph |
 | service-market-entry-map | Services | European Market Entry | `/images/services/map-china-to-eu.webp` | Image | 1672:941 | Final | China–Europe route map banner |
 | service-after-sales-warehouse | Services | After-Sales | `/images/services/after-sales-warehouse.webp` | Image | 16:9 | Final | Spare-parts warehouse aisle photograph |

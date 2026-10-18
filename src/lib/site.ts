@@ -31,7 +31,8 @@ export const siteConfig = {
     label: "Discuss with us",
     href: "/contact",
   },
-  ogImage: "/images/hero/hero-factory-visit.webp",
+  /** Dedicated 1200×630 brand card from `src/app/opengraph-image.tsx`. */
+  ogImage: "/opengraph-image",
 } as const;
 
 export type Locale = (typeof siteConfig.locales)[number];

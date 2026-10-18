@@ -126,6 +126,7 @@ export function organizationJsonLd() {
       url: absoluteUrl("/brand/logo-light.webp"),
     },
     image: absoluteUrl("/brand/logo-light.webp"),
+    sameAs: [siteConfig.companyLinkedIn],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
