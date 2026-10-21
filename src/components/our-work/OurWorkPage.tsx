@@ -68,9 +68,6 @@ export function OurWorkPage({
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal">
               {copy.subtitle}
             </p>
-            <p className="mt-6 max-w-2xl border-l-2 border-accent/40 pl-5 text-[0.9375rem] leading-relaxed text-charcoal/80">
-              {copy.disclaimer}
-            </p>
           </Reveal>
         </Container>
       </Section>

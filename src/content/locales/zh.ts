@@ -536,8 +536,6 @@ export const zh = {
     headline: "精选项目。真实经验。",
     subtitle:
       "团队成员在欧洲市场交付的市场拓展与咨询项目示例。",
-    disclaimer:
-      "以下案例描述的是 OPOPA 团队成员积累的专业经验，包括在 OPOPA 成立之前完成的工作。它们并非通过 OPOPA 签约承接的项目。",
     relatedExperience: {
       label: "相关经验",
       body: "工业市场拓展：从客户识别到欧洲市场的现场技术评估。",

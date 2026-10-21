@@ -547,8 +547,6 @@ export const en = {
     headline: "Selected Projects. Real Experience.",
     subtitle:
       "Examples of market development and consulting projects delivered by members of our team in European markets.",
-    disclaimer:
-      "These case studies describe professional experience gained by members of the OPOPA team, including work carried out before OPOPA was founded. They are not projects contracted through OPOPA.",
     relatedExperience: {
       label: "Related experience",
       body: "Industrial market development: from customer identification to on-site technical assessments in European markets.",
