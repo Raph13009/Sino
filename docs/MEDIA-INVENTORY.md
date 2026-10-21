@@ -17,6 +17,12 @@ Next.js Image already serves AVIF/WebP variants from WebP sources via `images.fo
 | brand-plaquette | global | brand | `/brand/plaquette.webp` | Image | 1122:1402 | Final | Brand direction reference board |
 | home-hero-01 | Home | Hero | `/images/hero/hero-factory-visit.webp` | Image | 2400:1382 | Final | Factory visit photograph — Max & Raphael |
 | home-context-01 | Home | Context | `/images/raph_industrial_visite/home-context.webp` | Image | 1920:888 | Final | Factory visit photograph |
+| client-bo-sco | Home | Client logos | `/images/clients/client-bo-sco-mono.webp` | Image | 694:201 | Final | Ink monochrome — Bo-sco |
+| client-codig | Home | Client logos | `/images/clients/client-codig-mono.webp` | Image | 296:348 | Final | Ink monochrome — CODiG SAS |
+| client-kivaia-care | Home | Client logos | `/images/clients/client-kivaia-care-mono.webp` | Image | 254:341 | Final | Ink monochrome — kivaia care |
+| client-koacher | Home | Client logos | `/images/clients/client-koacher-mono.webp` | Image | 897:129 | Final | Ink monochrome — KOACHER |
+| client-lola | Home | Client logos | `/images/clients/client-lola-mono.webp` | Image | 335:240 | Final | Ink monochrome — LOLA |
+| client-tm | Home | Client logos | `/images/clients/client-tm-mono.webp` | Image | 339:345 | Final | Ink monochrome — TM monogram |
 | service-legal-regulatory | Services | Legal and Regulatory Support | `/images/services/service-legal-regulatory.webp` | Image | 4:3 | Final | Contracts / compliance review photography |
 | service-expert-partner-sourcing | Services | European Experts and Partners | `/images/services/service-expert-partner-sourcing.webp` | Image | 3:2 | Placeholder | Replace with specialist / partner qualification photography |
 | service-outsourced-sales | Services | European Sales Representation | `/images/services/service-european-sales-representation.webp` | Image | 16:9 | Final | Google Meet sales team sync (WebP from PNG) |
@@ -30,6 +36,10 @@ Next.js Image already serves AVIF/WebP variants from WebP sources via `images.fo
 | industry-advanced-manufacturing | Industries | Advanced Manufacturing | `/images/industries/industry-advanced-manufacturing.webp` | Image | 4:3 | Placeholder | Replace with advanced manufacturing photography |
 | industry-green-technology | Industries | Green Technology | `/images/industries/industry-green-technology.webp` | Image | 3:2 | Placeholder | Replace with green-tech / energy equipment photography |
 | industry-mobility-infrastructure | Industries | Mobility & Infrastructure | `/images/industries/industry-mobility-infrastructure.webp` | Image | 16:9 | Placeholder | Replace with mobility / infrastructure photography |
+| our-work-industrial-market-map | Our Work | Industrial evidence | `/images/our-work/industrial-market-map.webp` | Image | 1586:992 | Final | Anonymised Belgium/Spain lifting market map |
+| our-work-industrial-site-assessment | Our Work | Industrial evidence | `/images/our-work/industrial-site-assessment.webp` | Image | 1672:941 | Final | On-site workshop + blueprint review diptych |
+| our-work-digital-workspace | Our Work | Digital | `/images/our-work/digital-workspace.webp` | Image | 2000:1331 | Placeholder | Atmosphere only — product screenshots omitted |
+| our-work-digital-interface | Our Work | Digital | `/images/our-work/digital-interface.webp` | Image | 2000:1333 | Placeholder | Atmosphere only — product screenshots omitted |
 | about-main-01 | About | Hero | `/images/about/about-china-europe.webp` | Image | 3:2 | Placeholder | Replace with China–Europe industrial context — no flags/clichés |
 | team-max-marchesseau-laskar | About | Founders | `/images/team/profile-MM-2026.webp` | Image | 4:5 | Final | Founder portrait — Max Marchesseau Laskar |
 | team-raphael-levy | About | Founders | `/images/team/profile-RL-2026.webp` | Image | 4:5 | Final | Founder portrait — Raphael Sacha Antoine Levy |

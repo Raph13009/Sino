@@ -163,6 +163,23 @@ export default async function IndustryPage({ params }: Props) {
                   </ul>
                 </div>
               ) : null}
+              {slug === "industrial-equipment" ? (
+                <div className="mt-12">
+                  <Eyebrow>{dict.ourWork.relatedExperience.label}</Eyebrow>
+                  <p className="mt-4 text-[1.0625rem] leading-relaxed text-charcoal">
+                    {dict.ourWork.relatedExperience.body}
+                  </p>
+                  <Link
+                    href={localePath(
+                      locale,
+                      "/our-work#industrial-market-development",
+                    )}
+                    className="mt-4 inline-block text-[1.0625rem] font-medium transition-colors hover:text-accent"
+                  >
+                    {dict.ourWork.relatedExperience.cta} →
+                  </Link>
+                </div>
+              ) : null}
             </div>
           </div>
         </Container>

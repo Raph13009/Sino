@@ -191,6 +191,27 @@ export function EuropeanSalesRepresentationPage({
         </Container>
       </Section>
 
+      <Section className="border-t border-border py-14 md:py-16">
+        <Container>
+          <Eyebrow>{dict.ourWork.relatedExperience.label}</Eyebrow>
+          <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-charcoal">
+            {dict.ourWork.relatedExperience.body}
+          </p>
+          <div className="mt-5">
+            <Button
+              href={localePath(
+                locale,
+                "/our-work#industrial-market-development",
+              )}
+              variant="tertiary"
+              showArrow
+            >
+              {dict.ourWork.relatedExperience.cta}
+            </Button>
+          </div>
+        </Container>
+      </Section>
+
       <Section tone="concrete" className="py-16 md:py-20">
         <Container>
           <RelatedServiceCards

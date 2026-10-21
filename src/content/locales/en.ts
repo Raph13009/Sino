@@ -40,6 +40,7 @@ export const en = {
       services: "Services",
       industries: "Industries",
       insights: "Insights",
+      ourWork: "Our Work",
       about: "About",
       contact: "Contact",
     },
@@ -136,21 +137,43 @@ export const en = {
         },
       },
     },
+    clientLogos: {
+      eyebrow: "Experience",
+      title: "Companies Our Team Has Supported",
+      subtitle:
+        "Experience built through projects with businesses across Europe.",
+    },
     credibility: {
-      retentionFigure: "95%",
-      retention: "of our customers see results in the first six months.",
-      specialistsFigure: "50+",
-      specialists:
-        "European specialists in our collaborating expert network",
-      whyLabel: "Why choose our services",
+      eyebrow: "Credibility",
+      title:
+        "Built on hands-on business development experience in Europe.",
+      body: "OPOPA brings together local commercial expertise and access to independent European specialists — coordinated for Chinese industrial manufacturers entering Europe.",
+      whyLabel: "Why work with OPOPA",
       whyIntro:
-        "Rather than hiring a local team or opening a subsidiary:",
+        "Rather than hiring a full local team or opening a subsidiary first:",
       whyPoints: [
-        "Get the right experts adapted to you",
-        "No legal burdens",
-        "Cost reduction",
-        "Test and change experts and strategy without additional costs, before long-term commitments",
-        "Immediate results",
+        "Match specialists to your product, buyers and territory",
+        "Operate without opening a European subsidiary",
+        "Lower fixed cost than a permanent local sales office",
+        "Adjust representation or specialists as the mandate evolves",
+        "Stay involved in key commercial decisions",
+      ],
+    },
+    selectedWork: {
+      eyebrow: "Selected work",
+      title: "Experience Behind Our Work",
+      subtitle:
+        "Selected projects delivered by members of our team in European markets.",
+      explore: "Explore Our Work",
+      items: [
+        {
+          title: "Industrial Market Development",
+          body: "From targeted market research to customer meetings and on-site technical assessments.",
+        },
+        {
+          title: "Digital Consulting & Project Delivery",
+          body: "Supporting business clients in France and the UK, from needs assessment to implementation.",
+        },
       ],
     },
     useCase: {
@@ -170,12 +193,12 @@ export const en = {
         {
           label: "Time to first sale",
           without: "Often 6–9 months to stand up a direct team.",
-          with: "Around 90 days with an active representative network.",
+          with: "Typically shorter once a local representative is active.",
         },
         {
           label: "Market coverage",
           without: "Coverage built from scratch after hiring and setup.",
-          with: "Immediate access to qualified prospects through existing relationships.",
+          with: "Prospect access through the representative’s existing relationships.",
         },
         {
           label: "Year-one economics",
@@ -436,6 +459,11 @@ export const en = {
       title: "The founders.",
       description:
         "OPOPA is built by co-founders working across the China–Europe corridor, with one foot in European commercial reality and one in the practical needs of Chinese industrial expansion.",
+      selectedWork: {
+        label: "Selected work",
+        body: "See examples of market development and consulting projects delivered by members of our team in European markets.",
+        cta: "Explore Our Work",
+      },
       video: {
         label: "Founder introduction",
         playWithSound: "Play with sound",
@@ -505,6 +533,146 @@ export const en = {
           body: "People who understand both Chinese expansion goals and European commercial expectations.",
         },
       ],
+    },
+  },
+
+  ourWork: {
+    meta: {
+      title: "Our Work | Industrial Market Research & Consulting Experience",
+      description:
+        "Selected projects by OPOPA team members: industrial market development in Belgium and Spain, and business consulting in France and the UK.",
+    },
+    eyebrow: "Our Work",
+    title: "Our Work",
+    headline: "Selected Projects. Real Experience.",
+    subtitle:
+      "Examples of market development and consulting projects delivered by members of our team in European markets.",
+    disclaimer:
+      "These case studies describe professional experience gained by members of the OPOPA team, including work carried out before OPOPA was founded. They are not projects contracted through OPOPA.",
+    relatedExperience: {
+      label: "Related experience",
+      body: "Industrial market development: from customer identification to on-site technical assessments in European markets.",
+      cta: "Read the case",
+    },
+    cta: {
+      eyebrow: "Next step",
+      title: "Discuss Your European Market Plans",
+      description:
+        "Tell us about your products, target markets and commercial priorities.",
+      label: "Discuss with us",
+    },
+    labels: {
+      category: "Category",
+      geography: "Geographic focus",
+      client: "Client",
+      context: "Context",
+      challenge: "The challenge",
+      whatWeDid: "What we did",
+      deliverables: "Deliverables",
+      evidence: "Project evidence",
+      outcome: "Outcome",
+      relevance: "Relevance to our experience",
+    },
+    industrial: {
+      id: "industrial-market-development",
+      title: "Industrial Market Development in Belgium & Spain",
+      category: "Industrial Equipment / Market Research & Business Development",
+      geography: "Belgium & Spain",
+      client: "Anonymous industrial lifting equipment company",
+      evidenceMapCaption:
+        "Anonymised market map: target companies and projects across Belgium and Spain, with technical qualification extract.",
+      evidenceSiteCaption:
+        "On-site technical assessment: workshop review under lifting equipment and blueprint / CAD discussion with engineering teams.",
+      context: [
+        "This project involved supporting the commercial development of an industrial crane and lifting-equipment business in European markets.",
+        "The work focused on identifying relevant industrial customers and projects, understanding their equipment requirements, and developing potential commercial opportunities.",
+      ],
+      challenge: [
+        "Industrial lifting equipment requires highly specific customer targeting.",
+        "Potential buyers must be identified based on their industrial activity, projects, technical requirements and operational needs.",
+        "The assignment went beyond general market information: it required direct contact with prospective customers and coordination with technical teams.",
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Market Mapping",
+          body: "Identified relevant industrial companies, projects and potential buyers across Belgium and Spain.",
+        },
+        {
+          number: "02",
+          title: "Decision-Maker Identification",
+          body: "Identified relevant sector managers and business contacts associated with targeted projects.",
+        },
+        {
+          number: "03",
+          title: "Direct Outreach & Qualification",
+          body: "Contacted prospective customers to understand their requirements, including equipment dimensions, technical specifications and pricing expectations.",
+        },
+        {
+          number: "04",
+          title: "Commercial Meetings",
+          body: "Organised and participated in discussions with prospective customers to assess project requirements.",
+        },
+        {
+          number: "05",
+          title: "On-Site Technical Assessment",
+          body: "Participated in on-site meetings alongside engineers to examine installation constraints, review dimensions and refine technical requirements.",
+        },
+      ],
+      deliverables: [
+        "Target company and project identification",
+        "Relevant decision-maker research",
+        "Customer and project qualification",
+        "Commercial discussions and meetings",
+        "On-site technical assessments with engineering teams",
+      ],
+      outcome:
+        "Market research and targeted outreach progressed into direct customer meetings and on-site technical assessments with engineering teams.",
+      relevance:
+        "This experience shows how industrial market research can move beyond desk analysis into real customer conversations and technical meetings — the kind of commercial execution European buyers expect.",
+    },
+    digital: {
+      id: "digital-consulting",
+      title: "Digital Consulting & Project Delivery in France & the UK",
+      category: "Business Consulting / Digital Solutions",
+      geography: "France & United Kingdom",
+      client: "Multiple SMEs, anonymised",
+      framing:
+        "This case draws on professional experience through BoostAI Consulting, a separate digital consulting business founded by an OPOPA co-founder. It is not an OPOPA industrial sales project.",
+      context: [
+        "SMEs needed external expertise to structure and deliver digital projects tailored to their business requirements.",
+        "Their needs varied across internal tools, web platforms and workflow automation.",
+      ],
+      challenge: [
+        "Clients required clear scoping, coordinated delivery and practical solutions — not generic advice.",
+        "Projects had to fit operational realities across French and UK business environments.",
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Needs Assessment",
+          body: "Worked with clients to understand their business problems, objectives and operational requirements.",
+        },
+        {
+          number: "02",
+          title: "Solution Definition",
+          body: "Defined appropriate digital solutions, project scope and implementation priorities.",
+        },
+        {
+          number: "03",
+          title: "Project Coordination",
+          body: "Managed project delivery, client communication and relevant technical work.",
+        },
+        {
+          number: "04",
+          title: "Implementation",
+          body: "Delivered digital products and solutions according to the agreed scope.",
+        },
+      ],
+      outcome:
+        "Completed digital consulting and implementation projects for professional clients in France and the UK.",
+      relevance:
+        "This experience demonstrates hands-on consulting, client coordination, project execution and working across European business environments — capabilities that support how OPOPA engages industrial clients today.",
     },
   },
 
@@ -1401,6 +1569,12 @@ export const en = {
       "Industrial operations workstation supporting commercial workflows",
     "home-manufacturing-floor":
       "Industrial manufacturing floor with heavy machinery and production lines",
+    "client-bo-sco": "Bo-sco",
+    "client-codig": "CODiG SAS",
+    "client-kivaia-care": "kivaia care",
+    "client-koacher": "KOACHER",
+    "client-lola": "LOLA",
+    "client-tm": "TM",
     "industry-industrial-equipment":
       "Heavy industrial equipment on a construction site",
     "industry-advanced-manufacturing": "Advanced manufacturing production line",
@@ -1410,6 +1584,14 @@ export const en = {
       "Green-tech and energy infrastructure in an industrial landscape",
     "industry-mobility-infrastructure":
       "Rail and mobility infrastructure across an open landscape",
+    "our-work-industrial-market-map":
+      "Anonymised Belgium and Spain industrial lifting market map with target list and project overview",
+    "our-work-industrial-site-assessment":
+      "On-site industrial assessment: workshop visit under an overhead crane and blueprint review with technical drawings",
+    "our-work-digital-workspace":
+      "Laptop on a desk during digital product work — illustrative context, not a client deliverable",
+    "our-work-digital-interface":
+      "Team reviewing a digital interface on a laptop — illustrative context, not a client deliverable",
     "about-main-01": "Contemporary commercial architecture against a clear sky",
     "team-max-marchesseau-laskar":
       "Portrait of Max Marchesseau Laskar, co-founder of OPOPA",

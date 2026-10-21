@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { HomeClientLogos } from "@/components/home/HomeClientLogos";
 import { HomeContext } from "@/components/home/HomeContext";
 import { HomeCredibility } from "@/components/home/HomeCredibility";
+import { HomeSelectedWork } from "@/components/home/HomeSelectedWork";
 import { HomeServices } from "@/components/home/HomeServices";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeIndustries } from "@/components/home/HomeIndustries";
@@ -43,7 +45,9 @@ export default async function HomePage({ params }: Props) {
       <JsonLd data={websiteJsonLd(locale)} />
       <HomeHero locale={locale} dict={dict} />
       <HomeServices locale={locale} dict={dict} />
+      <HomeClientLogos dict={dict} />
       <HomeCredibility dict={dict} />
+      <HomeSelectedWork locale={locale} dict={dict} />
       <HomeUseCase dict={dict} />
       <HomeIndustriesFit dict={dict} />
       <HomeContext dict={dict} />

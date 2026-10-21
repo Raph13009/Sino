@@ -4,14 +4,23 @@ import { Container, Section } from "@/components/ui/Section";
 import type { Dictionary } from "@/content/locales/types";
 import { localePath, type Locale } from "@/i18n/config";
 
+type FinalCtaCopy = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  label: string;
+};
+
 export function FinalCta({
   locale,
   dict,
+  copy: copyOverride,
 }: {
   locale: Locale;
   dict: Dictionary;
+  copy?: FinalCtaCopy;
 }) {
-  const copy = dict.cta;
+  const copy = copyOverride ?? dict.cta;
 
   return (
     <Section tone="ink" className="py-28 md:py-36">

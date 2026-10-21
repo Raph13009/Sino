@@ -42,6 +42,7 @@ export const zh = {
       services: "服务",
       industries: "行业",
       insights: "洞察",
+      ourWork: "我们的工作",
       about: "关于我们",
       contact: "联系我们",
     },
@@ -135,19 +136,39 @@ export const zh = {
         },
       },
     },
+    clientLogos: {
+      eyebrow: "经验",
+      title: "我们团队曾支持过的企业",
+      subtitle: "经验来自在欧洲开展的项目。",
+    },
     credibility: {
-      retentionFigure: "95%",
-      retention: "的客户在前六个月看到成果。",
-      specialistsFigure: "50+",
-      specialists: "协作专家网络中的欧洲专业人士",
-      whyLabel: "为何选择我们的服务",
-      whyIntro: "相比招聘本地团队或设立子公司：",
+      eyebrow: "可信度",
+      title: "建立在欧洲一线商务拓展经验之上。",
+      body: "OPOPA 汇集本地商务能力，并协调独立的欧洲专业人士——面向进入欧洲市场的中国工业制造商。",
+      whyLabel: "为何与 OPOPA 合作",
+      whyIntro: "相比先招聘完整本地团队或设立子公司：",
       whyPoints: [
-        "获得适配您的合适专家",
-        "无法律负担",
-        "降低成本",
-        "在长期承诺前，可无额外成本测试并更换专家与策略",
-        "快速见效",
+        "按产品、买家与区域匹配专业人士",
+        "无需先设立欧洲子公司即可开展业务",
+        "固定成本低于常设本地销售办公室",
+        "可随委托调整代表或专业人士安排",
+        "关键商务决策仍由您参与",
+      ],
+    },
+    selectedWork: {
+      eyebrow: "精选项目",
+      title: "支撑我们工作的经验",
+      subtitle: "团队成员在欧洲市场交付的精选项目。",
+      explore: "了解我们的工作",
+      items: [
+        {
+          title: "工业市场拓展",
+          body: "从定向市场研究，到客户会面与现场技术评估。",
+        },
+        {
+          title: "数字化咨询与项目交付",
+          body: "在法国与英国支持企业客户，从需求评估到落地实施。",
+        },
       ],
     },
     useCase: {
@@ -167,12 +188,12 @@ export const zh = {
         {
           label: "首单时间",
           without: "组建直销团队通常需 6–9 个月。",
-          with: "在活跃代表网络下约 90 天。",
+          with: "本地代表到位后，通常更快推进。",
         },
         {
           label: "市场覆盖",
           without: "招聘与搭建之后，覆盖从零建立。",
-          with: "通过既有关系，即时触达合格潜在客户。",
+          with: "借助代表既有关系触达潜在客户。",
         },
         {
           label: "首年经济性",
@@ -428,6 +449,11 @@ export const zh = {
       title: "创始人。",
       description:
         "OPOPA 由横跨中国, 欧洲走廊的联合创始人共同创建，一只脚在欧洲商业现实中，另一只脚在中国工业拓展的实际需求中。",
+      selectedWork: {
+        label: "精选项目",
+        body: "查看团队成员在欧洲市场交付的市场拓展与咨询项目示例。",
+        cta: "了解我们的工作",
+      },
       video: {
         label: "创始人介绍",
         playWithSound: "开声音播放",
@@ -496,6 +522,144 @@ export const zh = {
           body: "同时理解中国拓展目标与欧洲商业期望的人。",
         },
       ],
+    },
+  },
+
+  ourWork: {
+    meta: {
+      title: "我们的工作 | 工业市场研究与咨询经验",
+      description:
+        "OPOPA 团队成员的精选项目：比利时与西班牙的工业市场拓展，以及法国与英国的商务咨询经验。",
+    },
+    eyebrow: "我们的工作",
+    title: "我们的工作",
+    headline: "精选项目。真实经验。",
+    subtitle:
+      "团队成员在欧洲市场交付的市场拓展与咨询项目示例。",
+    disclaimer:
+      "以下案例描述的是 OPOPA 团队成员积累的专业经验，包括在 OPOPA 成立之前完成的工作。它们并非通过 OPOPA 签约承接的项目。",
+    relatedExperience: {
+      label: "相关经验",
+      body: "工业市场拓展：从客户识别到欧洲市场的现场技术评估。",
+      cta: "阅读案例",
+    },
+    cta: {
+      eyebrow: "下一步",
+      title: "讨论您的欧洲市场计划",
+      description: "请告诉我们您的产品、目标市场与商业优先级。",
+      label: "与我们洽谈",
+    },
+    labels: {
+      category: "类别",
+      geography: "地理重点",
+      client: "客户",
+      context: "背景",
+      challenge: "挑战",
+      whatWeDid: "我们做了什么",
+      deliverables: "交付内容",
+      evidence: "项目证据",
+      outcome: "结果",
+      relevance: "与我们经验的关联",
+    },
+    industrial: {
+      id: "industrial-market-development",
+      title: "比利时与西班牙的工业市场拓展",
+      category: "工业设备 / 市场研究与商务拓展",
+      geography: "比利时与西班牙",
+      client: "匿名工业起重设备企业",
+      evidenceMapCaption:
+        "匿名市场地图：比利时与西班牙的目标企业与项目，含技术资格摘要。",
+      evidenceSiteCaption:
+        "现场技术评估：在起重设备下参观车间，并与工程团队审阅蓝图 / CAD。",
+      context: [
+        "该项目旨在支持一家工业起重机与起重设备企业在欧洲市场的商业拓展。",
+        "工作重点是识别相关工业客户与项目，理解其设备需求，并推进潜在商业机会。",
+      ],
+      challenge: [
+        "工业起重设备对客户定位要求极高。",
+        "潜在买家必须根据其工业活动、项目、技术要求与运营需求来识别。",
+        "任务超出一般市场信息：需要直接接触潜在客户，并与技术团队协调。",
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "市场梳理",
+          body: "在比利时与西班牙识别相关工业企业、项目与潜在买家。",
+        },
+        {
+          number: "02",
+          title: "决策人识别",
+          body: "识别与目标项目相关的行业负责人与商务联系人。",
+        },
+        {
+          number: "03",
+          title: "直接触达与资格确认",
+          body: "联系潜在客户，了解其需求，包括设备尺寸、技术规格与价格预期。",
+        },
+        {
+          number: "04",
+          title: "商务会面",
+          body: "组织并参与与潜在客户的讨论，评估项目需求。",
+        },
+        {
+          number: "05",
+          title: "现场技术评估",
+          body: "与工程师一同参与现场会议，检查安装约束、复核尺寸并细化技术要求。",
+        },
+      ],
+      deliverables: [
+        "目标企业与项目识别",
+        "相关决策人研究",
+        "客户与项目资格确认",
+        "商务讨论与会面",
+        "与工程团队共同进行的现场技术评估",
+      ],
+      outcome:
+        "市场研究与定向触达推进到直接客户会面，以及与工程团队共同开展的现场技术评估。",
+      relevance:
+        "这一经验表明，工业市场研究可以超越案头分析，进入真实的客户对话与技术会议——这也是欧洲买家所期待的商业执行方式。",
+    },
+    digital: {
+      id: "digital-consulting",
+      title: "法国与英国的数字化咨询与项目交付",
+      category: "商务咨询 / 数字化解决方案",
+      geography: "法国与英国",
+      client: "多家中小企业（匿名）",
+      framing:
+        "本案例基于 BoostAI Consulting 的专业经验——这是由 OPOPA 联合创始人创办的独立数字化咨询业务。它不是 OPOPA 的工业销售项目。",
+      context: [
+        "中小企业需要外部专业能力，以结构化并交付贴合其业务需求的数字化项目。",
+        "需求覆盖内部工具、网络平台与流程自动化等不同类型。",
+      ],
+      challenge: [
+        "客户需要清晰的范围界定、协调的交付与务实的方案——而非泛泛建议。",
+        "项目必须契合法国与英国商业环境中的运营现实。",
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "需求评估",
+          body: "与客户共同理解其业务问题、目标与运营要求。",
+        },
+        {
+          number: "02",
+          title: "方案定义",
+          body: "定义合适的数字化方案、项目范围与实施优先级。",
+        },
+        {
+          number: "03",
+          title: "项目协调",
+          body: "管理项目交付、客户沟通及相关技术工作。",
+        },
+        {
+          number: "04",
+          title: "落地实施",
+          body: "按约定范围交付数字化产品与解决方案。",
+        },
+      ],
+      outcome: "为法国与英国的专业客户完成数字化咨询与实施项目。",
+      relevance:
+        "这一经验体现了务实咨询、客户协调、项目执行，以及在欧洲商业环境中工作的能力——这些能力也支撑着 OPOPA 今天与工业客户的合作方式。",
     },
   },
 
@@ -1353,11 +1517,25 @@ export const zh = {
       "技师穿高可视背心检查工业设备",
     "service-sales-ai-automation": "支持商务流程的工业运营工作站",
     "home-manufacturing-floor": "配备重型机械与生产线的工业制造车间",
+    "client-bo-sco": "Bo-sco",
+    "client-codig": "CODiG SAS",
+    "client-kivaia-care": "kivaia care",
+    "client-koacher": "KOACHER",
+    "client-lola": "LOLA",
+    "client-tm": "TM",
     "industry-industrial-equipment": "施工现场的重型工业设备",
     "industry-advanced-manufacturing": "先进制造生产线",
     "industry-electrical-components": "电气元器件与电路组件特写",
     "industry-green-technology": "工业景观中的绿色科技与能源基础设施",
     "industry-mobility-infrastructure": "开阔地貌上的轨道与出行基础设施",
+    "our-work-industrial-market-map":
+      "比利时与西班牙工业起重设备市场地图（匿名）：目标清单与项目概览",
+    "our-work-industrial-site-assessment":
+      "现场技术评估：在桥式起重机下参观车间，并审阅蓝图与 CAD 图纸",
+    "our-work-digital-workspace":
+      "数字化产品工作中的桌面笔记本电脑——示意画面，并非客户交付物",
+    "our-work-digital-interface":
+      "团队在笔记本电脑上审阅数字界面——示意画面，并非客户交付物",
     "about-main-01": "晴空下的当代商业建筑",
     "team-max-marchesseau-laskar": "OPOPA 联合创始人 Max Marchesseau Laskar 肖像",
     "team-raphael-levy":

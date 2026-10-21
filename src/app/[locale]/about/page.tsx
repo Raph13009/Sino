@@ -109,6 +109,22 @@ export default async function AboutPage({ params }: Props) {
               />
             ))}
           </div>
+
+          <div className="mt-12 max-w-xl border-t border-border pt-8">
+            <Eyebrow>{copy.founders.selectedWork.label}</Eyebrow>
+            <p className="mt-3 text-[1.0625rem] leading-relaxed text-charcoal">
+              {copy.founders.selectedWork.body}
+            </p>
+            <div className="mt-5">
+              <Button
+                href={localePath(locale, "/our-work")}
+                variant="tertiary"
+                showArrow
+              >
+                {copy.founders.selectedWork.cta}
+              </Button>
+            </div>
+          </div>
         </Container>
       </Section>
 

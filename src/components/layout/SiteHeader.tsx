@@ -193,6 +193,7 @@ export function SiteHeader() {
 
   const primaryLinks = [
     { label: dict.nav.primary.insights, href: path("/insights") },
+    { label: dict.nav.primary.ourWork, href: path("/our-work") },
     { label: dict.nav.primary.about, href: path("/about") },
     { label: dict.nav.primary.contact, href: path("/contact") },
   ];

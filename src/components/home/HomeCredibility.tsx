@@ -1,7 +1,6 @@
 import type { Dictionary } from "@/content/locales/types";
 import { Reveal } from "@/components/ui/Reveal";
 import { Container, Section } from "@/components/ui/Section";
-import { cn } from "@/lib/utils";
 
 export function HomeCredibility({ dict }: { dict: Dictionary }) {
   const copy = dict.home.credibility;
@@ -9,40 +8,26 @@ export function HomeCredibility({ dict }: { dict: Dictionary }) {
   return (
     <Section tone="ink" className="py-24 md:py-32">
       <Container>
-        <ul role="list" className="grid list-none gap-0 lg:grid-cols-12">
-          <li
-            className={cn(
-              "border-b border-white/15 pb-14 lg:col-span-3 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10",
-            )}
-          >
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
             <Reveal>
-              <p className="font-display text-[4.5rem] leading-none tracking-[-0.05em] text-white-warm md:text-[5.5rem]">
-                {copy.retentionFigure}
-              </p>
-              <p className="mt-6 max-w-xs text-[1.0625rem] leading-relaxed text-pretty text-white-warm/65">
-                {copy.retention}
-              </p>
-            </Reveal>
-          </li>
-
-          <li className="border-b border-white/15 py-14 lg:col-span-3 lg:border-b-0 lg:border-r lg:px-10 lg:py-0">
-            <Reveal delayMs={80}>
-              <p className="font-display text-[4.5rem] leading-none tracking-[-0.05em] text-white-warm md:text-[5.5rem]">
-                {copy.specialistsFigure}
-              </p>
-              <p className="mt-6 max-w-xs text-[1.0625rem] leading-relaxed text-pretty text-white-warm/65">
-                {copy.specialists}
+              <p className="eyebrow text-accent">{copy.eyebrow}</p>
+              <h2 className="mt-5 max-w-xl text-[1.75rem] leading-tight tracking-[-0.03em] text-white-warm md:text-[2.15rem]">
+                {copy.title}
+              </h2>
+              <p className="mt-5 max-w-lg text-[1.0625rem] leading-relaxed text-pretty text-white-warm/70">
+                {copy.body}
               </p>
             </Reveal>
-          </li>
+          </div>
 
-          <li className="pt-14 lg:col-span-6 lg:pl-12 lg:pt-0">
-            <Reveal delayMs={140}>
+          <div className="lg:col-span-6">
+            <Reveal delayMs={100}>
               <p className="eyebrow text-accent">{copy.whyLabel}</p>
               <p className="mt-4 text-[1.0625rem] leading-relaxed text-white-warm/65">
                 {copy.whyIntro}
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-6 space-y-3.5">
                 {copy.whyPoints.map((point) => (
                   <li
                     key={point}
@@ -57,8 +42,8 @@ export function HomeCredibility({ dict }: { dict: Dictionary }) {
                 ))}
               </ul>
             </Reveal>
-          </li>
-        </ul>
+          </div>
+        </div>
       </Container>
     </Section>
   );
