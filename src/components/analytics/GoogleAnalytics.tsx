@@ -4,9 +4,14 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import {
+  buildPageViewParams,
   getGaMeasurementId,
+  isContactPath,
   isGaEnabled,
+  inferCtaLocation,
   readStoredAnalyticsConsent,
+  trackAiReferralLanding,
+  trackEvent,
 } from "@/lib/analytics";
 
 /**
@@ -41,17 +46,63 @@ export function GoogleAnalytics() {
 
   useEffect(() => {
     if (!enabled || !measurementId || typeof window.gtag !== "function") return;
-    // Consent Mode still receives the hit; cookies only when granted.
-    window.gtag("event", "page_view", {
-      page_path: pathname,
-      page_location: window.location.href,
-      page_title: document.title,
-    });
+    trackEvent("page_view", buildPageViewParams(pathname));
+    trackAiReferralLanding(pathname);
   }, [enabled, measurementId, pathname]);
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest("a");
+      if (!(anchor instanceof HTMLAnchorElement)) return;
+
+      const href = anchor.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+
+      let url: URL;
+      try {
+        url = new URL(href, window.location.origin);
+      } catch {
+        return;
+      }
+
+      if (isContactPath(url.pathname)) {
+        trackEvent("contact_cta_click", {
+          ...buildPageViewParams(pathname),
+          cta_location: inferCtaLocation(anchor),
+          link_url: url.pathname,
+        });
+        return;
+      }
+
+      if (url.protocol === "mailto:") {
+        trackEvent("outbound_click", {
+          ...buildPageViewParams(pathname),
+          outbound_destination: "email",
+          // Host only — never the full address path/query.
+          link_url: "mailto",
+        });
+        return;
+      }
+
+      if (/(^|\.)linkedin\.com$/i.test(url.hostname)) {
+        trackEvent("outbound_click", {
+          ...buildPageViewParams(pathname),
+          outbound_destination: "linkedin",
+          link_url: url.hostname,
+        });
+      }
+    };
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [enabled, pathname]);
 
   if (!enabled || !measurementId) return null;
 
-  // Re-apply stored choice after gtag loads (banner may have set it earlier).
   const onReady = () => {
     const stored = readStoredAnalyticsConsent();
     if (stored && typeof window.gtag === "function") {

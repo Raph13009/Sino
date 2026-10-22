@@ -36,6 +36,9 @@ type ButtonAsLink = CommonProps & {
   href: string;
   type?: never;
   disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  /** Optional analytics location when the link is a contact CTA. */
+  "data-cta"?: string;
 };
 
 export type ButtonProps = ButtonAsButton | ButtonAsLink;

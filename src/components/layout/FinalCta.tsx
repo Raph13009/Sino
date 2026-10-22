@@ -37,6 +37,7 @@ export function FinalCta({
               <Button
                 href={localePath(locale, "/contact")}
                 variant="primaryOnDark"
+                data-cta="final_cta"
               >
                 {copy.label}
               </Button>

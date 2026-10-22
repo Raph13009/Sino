@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Button } from "@/components/ui/Button";
@@ -8,6 +8,7 @@ import {
   submitContactForm,
   type ContactFormState,
 } from "@/lib/contact/actions";
+import { buildPageViewParams, trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const initialState: ContactFormState = {
@@ -20,6 +21,19 @@ export function ContactForm() {
     submitContactForm,
     initialState,
   );
+  const trackedSuccess = useRef(false);
+
+  useEffect(() => {
+    if (state.status !== "success" || trackedSuccess.current) return;
+    trackedSuccess.current = true;
+    // Success only — never form field values.
+    trackEvent("generate_lead", {
+      ...buildPageViewParams(
+        typeof window !== "undefined" ? window.location.pathname : "/contact",
+      ),
+      method: "contact_form",
+    });
+  }, [state.status]);
 
   if (state.status === "success") {
     return (

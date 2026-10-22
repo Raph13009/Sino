@@ -47,7 +47,11 @@ export function HomeHero({
             {copy.description}
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href={localePath(locale, "/contact")} variant="primaryOnDark">
+            <Button
+              href={localePath(locale, "/contact")}
+              variant="primaryOnDark"
+              data-cta="home_hero"
+            >
               {copy.primaryCta}
             </Button>
             <Button
