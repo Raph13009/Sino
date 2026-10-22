@@ -88,9 +88,9 @@ export const en = {
   home: {
     meta: {
       title:
-        "OPOPA: EU–China Commercial Partner & Greentech Outsourcing",
+        "OPOPA | EU–China Market Entry & European Sales Representation",
       description:
-        "OPOPA connects Chinese industrial and green-tech companies to Europe: market access, local experts, sales representation and commercial support, without a local subsidiary.",
+        "OPOPA is an EU–China commercial partner for Chinese industrial and greentech manufacturers: European sales representation, local specialists and market access — without opening a subsidiary.",
     },
     hero: {
       eyebrow: "01 / China → Europe",
@@ -392,9 +392,9 @@ export const en = {
 
   insightsPage: {
     meta: {
-      title: "Insights on China–Europe Expansion | OPOPA",
+      title: "EU–China Market Entry & European Sales Insights | OPOPA",
       description:
-        "Insights on European commercial expansion, industrial sales and market access for Chinese companies.",
+        "Practical insights on EU–China market entry, European sales representation for foreign companies, and industrial expansion into Europe.",
     },
     eyebrow: "Insights",
     title: "Perspective on China–Europe industrial expansion.",
@@ -1336,7 +1336,7 @@ export const en = {
       seoTitle:
         "European Sales Representation for Foreign Companies | OPOPA",
       seoDescription:
-        "European sales representation for foreign companies: local commercial professionals who represent Chinese industrial clients, provided as a service without a local subsidiary.",
+        "European sales representation for foreign companies and Chinese manufacturers: local commercial professionals under your brand, as a service — without a European subsidiary.",
       process: {
         eyebrow: "How it works",
         title: "How we build your European sales team",
@@ -1516,9 +1516,9 @@ export const en = {
         "Market and regulatory context",
         "European sales development",
       ],
-      seoTitle: "BESS and Greentech Outsourcing in Europe | OPOPA",
+      seoTitle: "Greentech Outsourcing Companies in Europe | OPOPA",
       seoDescription:
-        "OPOPA connects Chinese BESS and greentech manufacturers to European market access, local experts and sales representation.",
+        "Looking for greentech outsourcing partners in Europe? OPOPA connects Chinese BESS and greentech manufacturers to local sales, specialists and commercial execution.",
     },
     "mobility-infrastructure": {
       name: "Mobility & Infrastructure",

@@ -42,3 +42,11 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Brand dominates clicks; non-brand impressions exist with 0 clicks.
 - Priority query: EU–China market entry agencies (pos. ~5).
 - Legacy `/services/european-market-entry` still appears for that query (redirect target = sales representation).
+
+### 2026-10-22 — 28d / 90d refresh
+
+- Brand still drives almost all clicks (`opopa` ~219 impr / 5 clicks in 28d). Non-brand CTR still ~0.
+- Priority CTR gap: `which agencies specialize in eu–china market entry?` — pos ~4.1, 9 impr, 0 clicks (legacy service + Insight).
+- Volume gap: `european sales representation for foreign companies` — 23 impr, pos ~52 → new Insight published + ESR meta tightened.
+- Secondary: `best greentech outsourcing companies in europe` — 10 impr, pos ~49 → greentech industry SEO title aligned.
+- ChatGPT / AI discovery reported qualitatively (CN + EU visitors); reinforce clear Q&A Insights for GEO as well as Google.
