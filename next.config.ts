@@ -61,6 +61,16 @@ const nextConfig: NextConfig = {
       "outsourced-sales": "/services/european-sales-representation",
     };
 
+    // Renamed CMS insight slugs (old URLs still indexed / linked in GSC).
+    const legacyInsightMap: Record<string, string> = {
+      "selling-to-european-industrial-buyers":
+        "/insights/building-european-sales-presence",
+      "european-market-entry-for-chinese-industrial-companies":
+        "/insights/chinese-industrial-companies-enter-europe",
+      "finding-european-distributors-and-specialists":
+        "/insights/distributor-vs-agent-vs-local-sales-europe",
+    };
+
     const redirects = [
       { source: "/expertise", destination: "/services", permanent: true },
       { source: "/zh/expertise", destination: "/zh/services", permanent: true },
@@ -72,6 +82,17 @@ const nextConfig: NextConfig = {
         destination: "/zh/insights/:slug",
         permanent: true,
       },
+      // Common crawl traps → canonical homes (avoid hard 404 noise in GSC).
+      { source: "/home", destination: "/", permanent: true },
+      { source: "/zh/home", destination: "/zh", permanent: true },
+      { source: "/index.php", destination: "/", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/case-studies", destination: "/our-work", permanent: true },
+      { source: "/zh/case-studies", destination: "/zh/our-work", permanent: true },
+      { source: "/work", destination: "/our-work", permanent: true },
+      { source: "/zh/work", destination: "/zh/our-work", permanent: true },
+      { source: "/team", destination: "/about", permanent: true },
+      { source: "/zh/team", destination: "/zh/about", permanent: true },
       {
         source: "/images/hero/hero-industrial-port.jpg",
         destination: "/images/hero/hero-factory-visit.webp",
@@ -177,6 +198,17 @@ const nextConfig: NextConfig = {
         { source: `/services/${from}`, destination: to, permanent: true },
         {
           source: `/zh/services/${from}`,
+          destination: `/zh${to}`,
+          permanent: true,
+        },
+      );
+    }
+
+    for (const [from, to] of Object.entries(legacyInsightMap)) {
+      redirects.push(
+        { source: `/insights/${from}`, destination: to, permanent: true },
+        {
+          source: `/zh/insights/${from}`,
           destination: `/zh${to}`,
           permanent: true,
         },

@@ -15,7 +15,7 @@ function applyIndexHeaders(response: NextResponse) {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (
+  const isKnownStaticAsset =
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/brand") ||
@@ -30,10 +30,17 @@ export function middleware(request: NextRequest) {
     pathname === "/favicon-48.png" ||
     pathname === "/favicon-192.png" ||
     pathname === "/apple-touch-icon.png" ||
-    pathname === "/apple-touch-icon-precomposed.png" ||
-    PUBLIC_FILE.test(pathname)
-  ) {
+    pathname === "/apple-touch-icon-precomposed.png";
+
+  // Only bypass locale routing for known asset trees. A broad `*.ext` bypass
+  // lets junk paths like `/wp-login.php` soft-200 as the homepage via [locale].
+  if (isKnownStaticAsset) {
     return applyIndexHeaders(NextResponse.next());
+  }
+
+  // Unknown extension paths (e.g. .php, .asp) should 404, not rewrite to locale.
+  if (PUBLIC_FILE.test(pathname)) {
+    return applyIndexHeaders(new NextResponse(null, { status: 404 }));
   }
 
   const segments = pathname.split("/").filter(Boolean);

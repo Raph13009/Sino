@@ -15,6 +15,9 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+/** Only `en` / `zh` — prevents soft-200 homepage for junk paths like `/wp-login.php`. */
+export const dynamicParams = false;
+
 export const revalidate = 180;
 
 export default async function LocaleLayout({
