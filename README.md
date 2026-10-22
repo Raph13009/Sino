@@ -77,7 +77,7 @@ Setup details: `docs/CONTACT-FORM.md`.
 - No public pricing.
 - Do not invent proof, logos, testimonials or metrics.
 - Placeholder media is centrally managed in `src/content/media.ts` and listed in `docs/MEDIA-INVENTORY.md`.
-- Analytics / Search Console: Vercel Web Analytics loads in production. Search Console HTML verification is in `src/app/layout.tsx` (URL-prefix property only — Domain verification is DNS). GA4 is not shipped.
+- Analytics / Search Console: Vercel Web Analytics loads in production. Optional GA4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID` (Production only, Consent Mode + banner). Search Console HTML verification is in `src/app/layout.tsx` (URL-prefix property only — Domain verification is DNS).
 - Contact form delivery: native Server Action + Resend. Requires `RESEND_API_KEY` (see `docs/CONTACT-FORM.md`).
 - Legal / privacy pages are placeholders pending review.
 

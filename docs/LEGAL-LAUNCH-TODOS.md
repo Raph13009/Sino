@@ -9,7 +9,7 @@ Outstanding items before treating `/legal` and `/privacy` as final.
 - SIRET: **92011864300021**
 - Contact email: **contact@opopa-partners.com**
 - Activity: European market-entry, commercial advisory and outsourced sales for Chinese industrial and green-tech companies
-- Analytics: **Vercel Web Analytics** is mounted in production (`@vercel/analytics`). It is cookieless. **Google Analytics 4 is not shipped.** The privacy policy still says third-party analytics requiring consent are not used — counsel should decide whether Vercel Analytics needs to be named.
+- Analytics: **Vercel Web Analytics** (cookieless) + optional **GA4** via `NEXT_PUBLIC_GA_MEASUREMENT_ID` (Production only). GA4 uses Consent Mode v2 + site banner; inactive when the env var is unset. Privacy “Analytics and cookies” names both tools.
 - Search Console: HTML meta verification is in `src/app/layout.tsx`. That can verify a **URL-prefix** property. A **Domain** property still requires DNS.
 - Contact form email delivery: **Resend** (see `docs/CONTACT-FORM.md`)
 
@@ -24,9 +24,11 @@ Outstanding items before treating `/legal` and `/privacy` as final.
 
 ## After analytics / tracking is added
 
-- [ ] Update Privacy Policy “Analytics and cookies” section
-- [ ] Document consent mechanism if required
-- [ ] Document international transfer safeguards for new processors
+- [x] Update Privacy Policy “Analytics and cookies” section (EN/ZH)
+- [x] Consent Mode v2 + cookie banner when GA4 Measurement ID is set
+- [x] Document international transfers for Google Analytics in privacy copy
+- [ ] Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` on Vercel Production once the GA4 web stream exists
+- [ ] Optional counsel review of analytics wording
 
 ## Source of truth in code
 

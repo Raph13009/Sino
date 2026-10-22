@@ -37,6 +37,15 @@ export const zh = {
     chinaToEurope: "中国 → 欧洲",
   },
 
+  cookieConsent: {
+    title: "分析 Cookie",
+    description:
+      "仅在您同意后，我们才会使用 Google Analytics，以了解哪些页面更有用。不会发送联系表单内容。您可以拒绝——网站功能不受影响。",
+    accept: "接受",
+    reject: "拒绝",
+    privacyLink: "隐私政策",
+  },
+
   nav: {
     primary: {
       services: "服务",
@@ -874,8 +883,10 @@ export const zh = {
         id: "cookies",
         title: "分析与 Cookie",
         paragraphs: [
-          "OPOPA 目前不使用需要同意的广告 Cookie 或第三方分析工具。若引入分析、广告或其他追踪技术，将更新本政策。",
-          "网站功能所需的必要技术 Cookie 或存储仍可能被使用。",
+          "OPOPA 使用 Vercel Web Analytics（由 Vercel Inc. 运营的无 Cookie 受众测量服务），不设置广告 Cookie。",
+          "在完成配置后，OPOPA 还可能使用 Google Analytics 4（Google LLC）了解流量与内容表现。GA4 使用 Cookie 或类似存储，且仅在您通过网站横幅接受分析 Cookie 后启用。广告功能与广告个性化已关闭。我们不会将联系表单字段值、电子邮箱或留言正文发送至分析工具。",
+          "Google 可能在欧洲经济区以外（包括美国）处理分析数据。发生跨境传输时，将适用相应的合同保障措施。",
+          "网站功能所需的必要技术 Cookie 或存储仍可能被使用。如需更改此前的分析选择，可清除本域名的网站数据，或联系 contact@opopa-partners.com。",
         ],
       },
       {

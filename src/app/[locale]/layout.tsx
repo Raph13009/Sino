@@ -1,3 +1,4 @@
+import { CookieConsent } from "@/components/analytics/CookieConsent";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -42,6 +43,7 @@ export default async function LocaleLayout({
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />
+      <CookieConsent />
     </LocaleProvider>
   );
 }

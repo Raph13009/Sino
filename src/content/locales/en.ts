@@ -35,6 +35,15 @@ export const en = {
     chinaToEurope: "China → Europe",
   },
 
+  cookieConsent: {
+    title: "Analytics cookies",
+    description:
+      "We use Google Analytics only if you accept. It helps us understand which pages are useful. No contact-form content is sent. You can refuse — the site works the same either way.",
+    accept: "Accept",
+    reject: "Reject",
+    privacyLink: "Privacy policy",
+  },
+
   nav: {
     primary: {
       services: "Services",
@@ -891,8 +900,10 @@ export const en = {
         id: "cookies",
         title: "Analytics and cookies",
         paragraphs: [
-          "OPOPA does not currently use advertising cookies or third-party analytics tools requiring consent. This policy will be updated if analytics, advertising or additional tracking technologies are introduced.",
-          "Essential technical cookies or storage required for website functionality may still be used.",
+          "OPOPA uses Vercel Web Analytics, a cookieless audience-measurement service operated by Vercel Inc. It does not set advertising cookies.",
+          "When configured, OPOPA may also use Google Analytics 4 (Google LLC) to understand traffic and content performance. GA4 uses cookies or similar storage and is activated only after you accept analytics cookies via the site banner. Advertising features and ads personalization are disabled. We do not send contact-form field values, email addresses, or message text to analytics tools.",
+          "Google may process analytics data outside the European Economic Area, including in the United States. Where transfers occur, appropriate contractual safeguards apply.",
+          "Essential technical cookies or storage required for website functionality may still be used. You can change a previous analytics choice by clearing site data for this domain or contacting contact@opopa-partners.com.",
         ],
       },
       {
