@@ -411,9 +411,9 @@ export const zh = {
 
   about: {
     meta: {
-      title: "关于 OPOPA Partners",
+      title: "关于 OPOPA | 中欧商业伙伴",
       description:
-        "OPOPA 是面向中国工业与绿色技术企业的欧洲商业合作伙伴，立足中国与欧洲之间。",
+        "OPOPA 是谁：面向中国工业与绿色科技企业的中欧商业伙伴——市场准入、本地支持与欧洲销售代表。",
     },
     eyebrow: "关于我们",
     title: "立足中国与欧洲之间。",
@@ -1484,9 +1484,9 @@ export const zh = {
         "市场与监管背景",
         "欧洲销售拓展",
       ],
-      seoTitle: "欧洲绿色科技外包与合作伙伴 | OPOPA",
+      seoTitle: "欧洲绿色科技外包与本地合作伙伴 | OPOPA",
       seoDescription:
-        "寻找欧洲绿色科技外包合作伙伴？OPOPA 为中国 BESS 与绿色科技制造商对接本地销售、专业人士与商业落地。",
+        "中国 BESS 与绿色科技企业如何选择欧洲外包与本地合作伙伴：销售、专业人士与商业落地——不是泛泛的供应商名单。",
     },
     "mobility-infrastructure": {
       name: "出行与基础设施",

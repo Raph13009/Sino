@@ -421,9 +421,9 @@ export const en = {
 
   about: {
     meta: {
-      title: "About OPOPA Partners",
+      title: "About OPOPA | EU–China Commercial Partner",
       description:
-        "OPOPA is the European commercial partner for Chinese industrial and green-tech companies, built between China and Europe.",
+        "Who OPOPA is: the EU–China commercial partner for Chinese industrial and greentech companies — market access, local support and European sales representation.",
     },
     eyebrow: "About",
     title: "Built between China and Europe.",
@@ -1527,9 +1527,10 @@ export const en = {
         "Market and regulatory context",
         "European sales development",
       ],
-      seoTitle: "Greentech Outsourcing Companies in Europe | OPOPA",
+      seoTitle:
+        "Greentech Outsourcing & Local Partners in Europe | OPOPA",
       seoDescription:
-        "Looking for greentech outsourcing partners in Europe? OPOPA connects Chinese BESS and greentech manufacturers to local sales, specialists and commercial execution.",
+        "How Chinese BESS and greentech companies choose outsourcing partners in Europe: local sales, specialists and commercial execution — not a generic supplier list.",
     },
     "mobility-infrastructure": {
       name: "Mobility & Infrastructure",

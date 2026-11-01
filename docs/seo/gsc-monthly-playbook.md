@@ -50,3 +50,10 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Volume gap: `european sales representation for foreign companies` — 23 impr, pos ~52 → new Insight published + ESR meta tightened.
 - Secondary: `best greentech outsourcing companies in europe` — 10 impr, pos ~49 → greentech industry SEO title aligned.
 - ChatGPT / AI discovery reported qualitatively (CN + EU visitors); reinforce clear Q&A Insights for GEO as well as Google.
+
+### 2026-11-01 — 14d GSC + GA check
+
+- **GA is live** (Home UI lagged): ~16 sessions (22 Oct–1 Nov), 71 `page_view`, 3 `contact_cta_click`, 1 `ai_referral` (`chatgpt.com` / AI Assistant channel). Mostly Direct + some Organic.
+- GSC (18–30 Oct): brand still drives clicks (`opopa`); non-brand impressions with 0 CTR.
+- CTR gaps: `which agencies specialize in eu–china market entry?` (17 impr, pos ~1) → Insight SEO title tightened; `best greentech outsourcing companies in europe` (20 impr, pos ~8) → greentech industry meta + new Insight published; ESR query still strong on dedicated Insight (pos ~1) while service page ~pos 24.
+- Ignore: RPA/sales-automation spam on `/services/sales-ai-automation` (high impr, deep positions).
