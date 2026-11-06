@@ -106,9 +106,8 @@ export const zh = {
       eyebrow: "01 / 亚洲 → 欧洲",
       title: "OPOPA 连接亚洲与欧洲。",
       rhythm:
-        "您专注制造。我们为您对接本地专家。我们管理他们的执行。您来销售。",
-      description:
         "为亚洲工业与绿色技术企业进入欧洲提供市场准入与本地支持。",
+      description: "",
       primaryCta: "与我们洽谈",
       secondaryCta: "我们的服务",
       caption: "亚洲 / 欧洲 / 工业拓展",

@@ -43,9 +43,11 @@ export function HomeHero({
           <p className="mt-7 max-w-xl text-[1.125rem] leading-relaxed text-white-warm/90 md:text-[1.35rem]">
             {copy.rhythm}
           </p>
-          <p className="mt-4 max-w-lg text-[1.0125rem] leading-relaxed text-white-warm/70 md:text-[1.0625rem]">
-            {copy.description}
-          </p>
+          {copy.description ? (
+            <p className="mt-4 max-w-lg text-[1.0125rem] leading-relaxed text-white-warm/70 md:text-[1.0625rem]">
+              {copy.description}
+            </p>
+          ) : null}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button
               href={localePath(locale, "/contact")}

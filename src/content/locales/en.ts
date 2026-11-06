@@ -105,9 +105,8 @@ export const en = {
       eyebrow: "01 / Asia → Europe",
       title: "OPOPA connects Asia to Europe.",
       rhythm:
-        "You build. We introduce you to local experts. We manage their execution. You sell.",
-      description:
         "Market access and local support for Asian industrial and green-tech companies selling into Europe.",
+      description: "",
       primaryCta: "Discuss with us",
       secondaryCta: "Our services",
       caption: "Asia / Europe / Industrial Expansion",
