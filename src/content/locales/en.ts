@@ -103,7 +103,7 @@ export const en = {
     },
     hero: {
       eyebrow: "01 / Asia → Europe",
-      title: "OPOPA connects Asia to Europe.",
+      title: "Going Global. Growing Local.",
       rhythm:
         "Market access and local support for Asian industrial and green-tech companies selling into Europe.",
       description: "",

@@ -104,7 +104,7 @@ export const zh = {
     },
     hero: {
       eyebrow: "01 / 亚洲 → 欧洲",
-      title: "OPOPA 连接亚洲与欧洲。",
+      title: "Going Global. Growing Local.",
       rhythm:
         "为亚洲工业与绿色技术企业进入欧洲提供市场准入与本地支持。",
       description: "",
