@@ -57,3 +57,18 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - GSC (18–30 Oct): brand still drives clicks (`opopa`); non-brand impressions with 0 CTR.
 - CTR gaps: `which agencies specialize in eu–china market entry?` (17 impr, pos ~1) → Insight SEO title tightened; `best greentech outsourcing companies in europe` (20 impr, pos ~8) → greentech industry meta + new Insight published; ESR query still strong on dedicated Insight (pos ~1) while service page ~pos 24.
 - Ignore: RPA/sales-automation spam on `/services/sales-ai-automation` (high impr, deep positions).
+
+### 2026-11-03 — Insight from data (theme A)
+
+- Skill run: GSC/GA → themes A/B/C; user picked **A** (European after-sales for Chinese industrial manufacturers).
+- Published EN+ZH Insight `european-after-sales-chinese-manufacturers` (`translation_group` european-after-sales-008), CTA Market Entry, cover Unsplash spare-parts workshop.
+- Target intent: `manufacturing after sales service` / after-sales page impressions without a dedicated Insight.
+- Themes B (why agencies) and C (manufacturing expansion services) left for a later run.
+
+### 2026-11-06 — Insight from data (theme B) + home Asia wording
+
+- Skill run: fresh GSC/GA; user picked **B** (manufacturing expansion services in Europe).
+- Published EN+ZH Insight `manufacturing-expansion-services-europe` (`translation_group` manufacturing-expansion-009), CTA Market Entry.
+- Target intent: `manufacturing expansion services` (impr on advanced-manufacturing, deep position, 0 clicks).
+- Home wordings broadened China→Asia (landing only); themes A (why agencies) and C (manufacturer representation) still open.
+- Skill updated: post-publish team HTML email (raphael@ + max@); Gmail Composio connect required before first send.

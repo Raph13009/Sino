@@ -88,29 +88,29 @@ export const en = {
 
   cta: {
     eyebrow: "Next step",
-    title: "Ready to connect your company to Europe?",
+    title: "Ready to connect Asia to Europe?",
     description:
-      "Tell us what you manufacture and which markets you are considering. We will discuss how market access and local support fit your commercial goals.",
+      "Tell us what you manufacture and which European markets you are considering. We will discuss how market access and local support fit your commercial goals.",
     label: "Discuss with us",
   },
 
   home: {
     meta: {
       title:
-        "OPOPA | EU–China Market Entry & European Sales Representation",
+        "OPOPA | Connect Asia to Europe — Market Entry & Sales Representation",
       description:
-        "OPOPA is an EU–China commercial partner for Chinese industrial and greentech manufacturers: European sales representation, local specialists and market access — without opening a subsidiary.",
+        "OPOPA connects Asian industrial and greentech companies to Europe: market access, local specialists and European sales representation — without opening a subsidiary.",
     },
     hero: {
-      eyebrow: "01 / China → Europe",
-      title: "OPOPA connects Chinese companies to Europe.",
+      eyebrow: "01 / Asia → Europe",
+      title: "OPOPA connects Asia to Europe.",
       rhythm:
         "You build. We introduce you to local experts. We manage their execution. You sell.",
       description:
-        "Market access and local support for Chinese industrial and green-tech companies selling into Europe.",
+        "Market access and local support for Asian industrial and green-tech companies selling into Europe.",
       primaryCta: "Discuss with us",
       secondaryCta: "Our services",
-      caption: "China / Europe / Industrial Expansion",
+      caption: "Asia / Europe / Industrial Expansion",
       imageAlt:
         "Three specialists in high-visibility vests inspecting automated machinery on a factory floor",
     },
@@ -156,7 +156,7 @@ export const en = {
       eyebrow: "Credibility",
       title:
         "Built on hands-on business development experience in Europe.",
-      body: "OPOPA brings together local commercial expertise and access to independent European specialists — coordinated for Chinese industrial manufacturers entering Europe.",
+      body: "OPOPA brings together local commercial expertise and access to independent European specialists — coordinated for Asian industrial manufacturers entering Europe.",
       whyLabel: "Why work with OPOPA",
       whyIntro:
         "Rather than hiring a full local team or opening a subsidiary first:",
@@ -233,14 +233,14 @@ export const en = {
     why: {
       number: "06",
       eyebrow: "Why OPOPA",
-      title: "Your commercial bridge between China and Europe.",
+      title: "Your commercial bridge between Asia and Europe.",
       description:
-        "We connect Chinese industrial and green-tech companies to the local experts and sales capacity Europe expects, then coordinate execution so you close the deal.",
+        "We connect Asian industrial and green-tech companies to the local experts and sales capacity Europe expects, then coordinate execution so you close the deal.",
       reasons: [
         {
           number: "01",
-          title: "China–Europe focus",
-          body: "Built for Chinese industrial and green-tech companies entering European markets, including agencies that specialise in EU–China commercial expansion.",
+          title: "Asia–Europe focus",
+          body: "Built for Asian industrial and green-tech companies entering European markets — a commercial bridge across the Asia–Europe corridor.",
         },
         {
           number: "02",
@@ -297,7 +297,7 @@ export const en = {
     insight: {
       number: "09",
       eyebrow: "Insights",
-      title: "Practical perspective on China–Europe expansion.",
+      title: "Practical perspective on Asia–Europe expansion.",
       readCta: "Read the insight",
     },
   },
