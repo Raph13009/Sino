@@ -58,6 +58,7 @@ export default async function IndustryPage({ params }: Props) {
     locale,
     industry.slug as IndustrySlug,
   );
+  const page = dict.industriesPage;
 
   return (
     <>
@@ -65,7 +66,7 @@ export default async function IndustryPage({ params }: Props) {
         data={breadcrumbJsonLd(
           [
             { name: dict.common.home, path: "/" },
-            { name: dict.industriesPage.eyebrow, path: "/industries" },
+            { name: page.eyebrow, path: "/industries" },
             { name: industry.name, path: `/industries/${slug}` },
           ],
           locale,
@@ -79,7 +80,7 @@ export default async function IndustryPage({ params }: Props) {
             items={[
               { label: dict.common.home, href: localePath(locale, "/") },
               {
-                label: dict.industriesPage.eyebrow,
+                label: page.eyebrow,
                 href: localePath(locale, "/industries"),
               },
               { label: industry.name },
@@ -88,7 +89,7 @@ export default async function IndustryPage({ params }: Props) {
           <div className="mt-10 grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
               <Eyebrow accent>
-                {industry.number} / {dict.industriesPage.detailEyebrowSuffix}
+                {industry.number} / {page.detailEyebrowSuffix}
               </Eyebrow>
               <h1 className="display-section mt-4">{industry.name}</h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal">
@@ -117,6 +118,37 @@ export default async function IndustryPage({ params }: Props) {
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
+              <Eyebrow>{page.situationLabel}</Eyebrow>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7">
+              <p className="text-lg leading-relaxed text-charcoal">
+                {industry.situation}
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="concrete" className="py-16 md:py-24">
+        <Container>
+          <Eyebrow>{page.challengesLabel}</Eyebrow>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {industry.challenges.map((challenge) => (
+              <div key={challenge.title} className="border-t border-border pt-6">
+                <h2 className="text-[1.25rem] leading-snug">{challenge.title}</h2>
+                <p className="mt-4 text-[1.0625rem] leading-relaxed text-charcoal">
+                  {challenge.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
               <Eyebrow>{dict.common.focusAreas}</Eyebrow>
               <ul className="mt-6 border-t border-border">
                 {industry.focusAreas.map((area) => (
@@ -129,12 +161,59 @@ export default async function IndustryPage({ params }: Props) {
                 ))}
               </ul>
             </div>
-            <div className="lg:col-span-6 lg:col-start-7">
+            <div className="space-y-12 lg:col-span-6 lg:col-start-7">
+              <div>
+                <Eyebrow>{page.buyerExpectsLabel}</Eyebrow>
+                <ul className="mt-6 space-y-3">
+                  {industry.buyerExpects.map((item) => (
+                    <li
+                      key={item}
+                      className="border-l-2 border-accent pl-4 text-[1.0625rem] leading-relaxed text-charcoal"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Eyebrow>{page.readinessLabel}</Eyebrow>
+                <ul className="mt-6 space-y-3">
+                  {industry.readiness.map((item) => (
+                    <li
+                      key={item}
+                      className="border-l-2 border-border pl-4 text-[1.0625rem] leading-relaxed text-charcoal"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section tone="concrete" className="py-16 md:py-24">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
               <Eyebrow>{dict.common.howWeHelp}</Eyebrow>
               <p className="mt-4 text-lg leading-relaxed text-charcoal">
-                {dict.industriesPage.howWeHelpBody}
+                {industry.howWeHelp}
               </p>
-              <ul className="mt-8 space-y-4">
+              <ul className="mt-8 space-y-3">
+                {industry.howWeHelpPoints.map((point) => (
+                  <li
+                    key={point}
+                    className="text-[1.0625rem] leading-relaxed text-charcoal"
+                  >
+                    — {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7">
+              <ul className="space-y-4">
                 {services.map((service) => (
                   <li key={service.slug}>
                     <Link

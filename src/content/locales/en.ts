@@ -384,8 +384,12 @@ export const en = {
     description:
       "Broad industrial coverage, not a single niche, for companies entering and selling in European markets.",
     detailEyebrowSuffix: "Industries",
+    situationLabel: "The European reality",
+    challengesLabel: "What usually blocks progress",
+    buyerExpectsLabel: "What European buyers look for",
+    readinessLabel: "Before you approach Europe",
     howWeHelpBody:
-      "Across this industry, OPOPA connects commercial strategy to local experts, coordinates sales representation and, where the product requires it, local after-sales partnerships.",
+      "Across this industry, OPOPA works as your operating partner for Europe: you set the targets, we find and approach projects and clients, backed by local specialists and our network.",
   },
 
   insightsPage: {
@@ -1471,71 +1475,222 @@ export const en = {
     "industrial-equipment": {
       name: "Industrial Equipment and Tools",
       summary:
-        "Heavy machinery, industrial tools and systems entering European buyer environments.",
+        "Cranes, heavy machinery, industrial tools and systems sold into European factories and project sites.",
       description:
-        "European industrial buyers evaluate equipment and tools on technical fit, service capability, local support and long procurement cycles. OPOPA helps Chinese manufacturers structure market entry and commercial execution accordingly.",
+        "European buyers of industrial equipment judge more than price: CE conformity, technical fit, installation support and a credible spare-parts path decide who stays on the shortlist.",
       focusAreas: [
-        "Heavy machinery",
-        "Industrial tools",
-        "Construction equipment",
-        "Industrial systems",
-        "After-sales and service readiness",
+        "Heavy machinery and lifting equipment",
+        "Industrial tools and systems",
+        "Construction and site equipment",
+        "CE / Machinery Regulation readiness",
+        "After-sales, parts and field support",
       ],
-      seoTitle: "Industrial Equipment and Tools Market Entry in Europe | OPOPA",
+      situation:
+        "Industrial equipment sales in Europe run on long procurement cycles. Engineering, HSE, procurement and maintenance all sit in the process. A strong Chinese product still stalls when CE documentation is incomplete, instructions are not buyer-ready, or nobody local can join a site visit.",
+      challenges: [
+        {
+          title: "Conformity is not a brochure claim",
+          body: "Machinery placed on the EU market must meet the Machinery Directive today, and Machinery Regulation (EU) 2023/1230 becomes mandatory from 20 January 2027. Buyers expect a real technical file, risk assessment and Declaration of Conformity — not a vague “CE available”.",
+        },
+        {
+          title: "After-sales decides the second order",
+          body: "European plants expect spare parts, commissioning support and escalation paths. Remote HQ-only service rarely survives the first serious RFQ comparison.",
+        },
+        {
+          title: "Distributors without a mandate underperform",
+          body: "Naming a distributor without territory, reporting or product onboarding rarely creates account ownership. Buyers notice the gap quickly.",
+        },
+      ],
+      buyerExpects: [
+        "Application fit and comparable European references",
+        "Clear CE / conformity documentation for the exact model",
+        "A named commercial and technical contact in Europe time",
+        "Installation, training and spare-parts logic before the PO",
+        "Transparent lead times and escalation for warranty issues",
+      ],
+      readiness: [
+        "Prioritise first countries and buyer segments — not “all of Europe”",
+        "Prepare the compliance pack buyers actually request",
+        "Decide who answers technical questions within one European working day",
+        "Describe local support: parts, field response or partner model under review",
+        "Set commercial targets you control and keep every result visible",
+      ],
+      howWeHelp:
+        "OPOPA helps industrial equipment manufacturers develop commercial targets in Europe, approach projects and buyers, and connect the specialists or after-sales partners the product requires — without opening a subsidiary first.",
+      howWeHelpPoints: [
+        "Commercial development toward OEMs, contractors and industrial end users",
+        "Local experts for technical, regulatory or partner qualification needs",
+        "After-sales and spare-parts partnership models European buyers expect",
+        "You set the targets and decide what comes next",
+      ],
+      seoTitle: "Industrial Equipment Market Entry in Europe | OPOPA",
       seoDescription:
-        "European sales support for Chinese industrial equipment and tools manufacturers.",
+        "Help Chinese industrial equipment manufacturers sell in Europe: CE readiness, local support, commercial development and buyer expectations.",
     },
     "advanced-manufacturing": {
       name: "Advanced Manufacturing",
       summary:
-        "Manufacturing technology and industrial production capabilities for European customers.",
+        "Automation, robotics and production technology sold through European integrators and industrial buyers.",
       description:
-        "Advanced manufacturing companies expanding into Europe need precise positioning, credible local partners and sales approaches that match technical procurement processes.",
+        "Advanced manufacturing wins in Europe when technology is paired with a local integrator or commercial path that can install, train and support — not when the product is only pitched from abroad.",
       focusAreas: [
-        "Production technology",
-        "Industrial automation",
-        "Manufacturing systems",
+        "Warehouse and factory automation",
+        "Industrial robotics and cobots",
+        "Production and welding systems",
+        "Integrator and partner models",
         "Technical buyer engagement",
-        "Local partnership models",
+      ],
+      situation:
+        "European automation buyers usually buy through integrators, OEMs or in-house engineering teams. Recent market moves show Chinese automation brands expanding via regional partners who cover sales, integration and service — because buyers rarely accept a box-only offer.",
+      challenges: [
+        {
+          title: "The integrator is often the real gatekeeper",
+          body: "Many deals are won or lost at the integrator layer. A manufacturer without a credible local partner struggles to enter live projects, even with competitive hardware.",
+        },
+        {
+          title: "Proof beats feature lists",
+          body: "Technical buyers want cycle-time evidence, safety documentation, interface clarity and references in comparable plants — not only a catalogue of SKUs.",
+        },
+        {
+          title: "Service and training close the sale",
+          body: "Installation, operator training and maintenance define total cost of ownership. Remote support alone is a frequent reason European teams keep Chinese options off the shortlist.",
+        },
+      ],
+      buyerExpects: [
+        "A clear application story for their process, not a generic robot pitch",
+        "Safety and conformity documentation matched to the installed system",
+        "Local integration, commissioning and training capacity",
+        "Spare parts and response times that match production risk",
+        "A commercial counterpart who can stay involved across a long project cycle",
+      ],
+      readiness: [
+        "Choose first verticals and countries where your references are strongest",
+        "Map whether you need an integrator, agent-style representation, or both",
+        "Prepare demo, FAT/SAT and training materials European teams can use",
+        "Define who owns warranty and field support after handover",
+        "Set account and project targets you control before outreach starts",
+      ],
+      howWeHelp:
+        "OPOPA supports advanced manufacturing companies with commercial development in Europe and the local specialists or partners each opportunity requires — so progress stays visible and decisions stay yours.",
+      howWeHelpPoints: [
+        "Find and approach industrial buyers, OEMs and integrators for defined targets",
+        "Qualify local partners without handing over commercial ownership",
+        "Coordinate technical and commercial follow-up across long cycles",
+        "Connect after-sales or expert support when the project needs it",
       ],
       seoTitle: "Advanced Manufacturing Expansion into Europe | OPOPA",
       seoDescription:
-        "Market-entry and commercial support for Chinese advanced manufacturing companies expanding into Europe.",
+        "Market entry for Chinese automation and advanced manufacturing companies in Europe: integrators, local support and commercial development.",
     },
     "green-technology": {
       name: "BESS and Greentech",
       summary:
-        "Battery energy storage, energy equipment and greentech solutions navigating European commercial and regulatory expectations.",
+        "Battery energy storage, power conversion and greentech equipment for European projects and buyers.",
       description:
-        "BESS and greentech companies face layered market, regulatory and commercial requirements in Europe. OPOPA connects Chinese manufacturers to European buyers, local experts and sales representation.",
+        "European BESS and greentech buyers now treat local delivery, grid compliance and after-sales as hard procurement criteria — alongside price and performance.",
       focusAreas: [
-        "BESS and energy storage",
-        "Energy equipment",
-        "Industrial greentech",
-        "Market and regulatory context",
-        "European sales development",
+        "Utility-scale and C&I BESS",
+        "Power conversion and energy equipment",
+        "Grid-code and Battery Regulation context",
+        "Developers, EPCs and project buyers",
+        "Local commissioning and service partners",
       ],
-      seoTitle:
-        "Greentech Outsourcing & Local Partners in Europe | OPOPA",
+      situation:
+        "European storage capacity continues to grow, and Chinese OEMs are active in supply deals across the continent. At the same time, buyers and EU-funded projects raise the bar on compliance, local service and who can legally deliver power-conversion equipment into financed schemes. Developers often buy batteries and EPCs separately — which creates more entry points, but also more qualification steps.",
+      challenges: [
+        {
+          title: "Compliance is model- and firmware-specific",
+          body: "Grid connection typically runs through EN 50549 series requirements under national grid codes. A generic “EN 50549 compliant” claim is weak: buyers and network operators care about the exact model, firmware and configuration certified.",
+        },
+        {
+          title: "Battery Regulation raises the documentation bar",
+          body: "Regulation (EU) 2023/1542 brings industrial batteries above 2 kWh into CE, labelling, performance and producer-responsibility obligations. Carbon-footprint and battery-passport requirements are staged — manufacturers without data readiness become bottlenecks.",
+        },
+        {
+          title: "Local service wins tenders",
+          body: "Commissioning, warranty handling, spare parts and O&M are now treated as core criteria. Chinese OEMs that win Europe usually authorise local service partners or build a European support footprint — not remote support alone.",
+        },
+      ],
+      buyerExpects: [
+        "Certificates and test evidence matched to the installed model and firmware",
+        "UN 38.3 and logistics readiness for lithium systems",
+        "A credible European service path for commissioning, warranty and RMA",
+        "Clarity on who is the producer for EPR obligations in countries of sale",
+        "Commercial counterparts who understand developer / EPC buying sequences",
+      ],
+      readiness: [
+        "Decide whether you sell to developers, EPCs, distributors or all three — and in which countries first",
+        "Assemble the compliance pack for the exact SKUs you will offer",
+        "Define local commissioning and after-sales coverage before outreach",
+        "Prepare a short qualification story buyers can circulate internally",
+        "Set a small number of commercial targets and keep every result visible",
+      ],
+      howWeHelp:
+        "OPOPA works with Chinese BESS and greentech manufacturers as an operating partner for Europe: find and approach the right project and buyer targets, backed by local specialists, while you keep control of decisions.",
+      howWeHelpPoints: [
+        "Commercial development toward OEMs’ priority markets and buyer types",
+        "Introductions and follow-up with developers, EPCs and project stakeholders",
+        "Access to specialists for qualification, compliance or delivery questions",
+        "Local support partners for commissioning, parts and service where needed",
+      ],
+      seoTitle: "BESS & Greentech Market Entry in Europe | OPOPA",
       seoDescription:
-        "How Chinese BESS and greentech companies choose outsourcing partners in Europe: local sales, specialists and commercial execution — not a generic supplier list.",
+        "Help Chinese BESS and greentech companies enter Europe: grid compliance, Battery Regulation context, local service and commercial development.",
     },
     "mobility-infrastructure": {
       name: "Mobility & Infrastructure",
       summary:
-        "Mobility systems and infrastructure-related industrial offerings for European markets.",
+        "Rail, mobility and infrastructure equipment sold into long European project cycles.",
       description:
-        "Mobility and infrastructure projects involve long cycles, multiple stakeholders and local delivery expectations. OPOPA helps Chinese industrial companies approach these markets with commercial clarity.",
+        "Mobility and infrastructure sales in Europe depend on interoperability rules, multi-stakeholder approvals and local delivery credibility — not only a competitive factory price.",
       focusAreas: [
-        "Mobility systems",
-        "Infrastructure equipment",
-        "Industrial components",
-        "Stakeholder mapping",
+        "Rail and trackside equipment",
+        "Mobility systems and components",
+        "Infrastructure project equipment",
+        "TSI / standards and stakeholder mapping",
         "Long-cycle commercial development",
       ],
-      seoTitle: "Mobility & Infrastructure Market Entry | OPOPA",
+      situation:
+        "European rail and infrastructure projects involve operators, contractors, notified bodies and national authorities. For many subsystems, Technical Specifications for Interoperability (TSIs) and EC verification are mandatory. Chinese manufacturers that succeed usually arrive with a clear conformity plan and a commercial path that can survive multi-year project timelines.",
+      challenges: [
+        {
+          title: "Interoperability is a process, not a stamp",
+          body: "TSIs define mandatory requirements for interoperable railway subsystems. Conformity assessment often requires Notified Bodies and, where applicable, national rules. Buyers expect a realistic homologation path before serious commercial talks.",
+        },
+        {
+          title: "Stakeholders multiply the sales cycle",
+          body: "Engineering, safety, procurement and project owners rarely move together. A single meeting rarely closes anything; sustained local follow-up does.",
+        },
+        {
+          title: "Local delivery expectations are high",
+          body: "Installation support, documentation language, spare parts and site presence matter as much as the product sheet — especially on public or regulated projects.",
+        },
+      ],
+      buyerExpects: [
+        "A clear product scope against the relevant TSI / standards path",
+        "Evidence of previous project delivery or a credible first-project plan",
+        "Technical documentation that project teams can review internally",
+        "Local commercial and technical follow-up across long cycles",
+        "After-sales and spare-parts arrangements matched to asset life",
+      ],
+      readiness: [
+        "Define which subsystems or components you can defend in Europe first",
+        "Map the conformity and stakeholder path before outreach",
+        "Choose priority countries and project types with realistic timelines",
+        "Prepare references, dossiers and site-support options buyers can trust",
+        "Set targets you control — accounts, meetings, next decisions — and track them",
+      ],
+      howWeHelp:
+        "OPOPA helps mobility and infrastructure manufacturers approach European projects with commercial clarity: find the right targets, involve the right specialists, and keep ownership of key decisions with you.",
+      howWeHelpPoints: [
+        "Commercial development for long-cycle project and buyer targets",
+        "Coordination with local experts for standards, partners or delivery questions",
+        "Support models that match project and after-sales expectations",
+        "Visible progress reporting so HQ stays in control",
+      ],
+      seoTitle: "Mobility & Infrastructure Market Entry in Europe | OPOPA",
       seoDescription:
-        "European expansion support for Chinese mobility and infrastructure industrial companies.",
+        "European market entry for Chinese mobility and infrastructure manufacturers: TSI context, project cycles, local support and commercial development.",
     },
   },
 
