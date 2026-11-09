@@ -40,11 +40,11 @@ export function HomeHero({
           <p className="eyebrow text-accent">{copy.eyebrow}</p>
           <h1 className="display-hero mt-5 text-white-warm">{copy.title}</h1>
           <div className="rule-accent mt-7" />
-          <p className="mt-7 max-w-xl text-[1.125rem] leading-relaxed text-white-warm/90 md:text-[1.35rem]">
+          <p className="mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-white-warm/75 md:text-[1.125rem]">
             {copy.rhythm}
           </p>
           {copy.description ? (
-            <p className="mt-4 max-w-lg text-[1.0125rem] leading-relaxed text-white-warm/70 md:text-[1.0625rem]">
+            <p className="mt-6 max-w-2xl text-[1.2rem] leading-relaxed text-white-warm md:text-[1.45rem]">
               {copy.description}
             </p>
           ) : null}

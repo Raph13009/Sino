@@ -20,7 +20,13 @@ export function HomeMethod({ dict }: { dict: Dictionary }) {
           </p>
         </Reveal>
 
-        <ol className="mt-16 grid gap-px bg-white/10 md:mt-20 md:grid-cols-2 xl:grid-cols-4">
+        <ol
+          className={
+            copy.steps.length <= 2
+              ? "mt-16 grid gap-px bg-white/10 md:mt-20 md:grid-cols-2"
+              : "mt-16 grid gap-px bg-white/10 md:mt-20 md:grid-cols-2 xl:grid-cols-4"
+          }
+        >
           {copy.steps.map((step, index) => (
             <li key={step.label} className="bg-ink">
               <Reveal delayMs={index * 70}>

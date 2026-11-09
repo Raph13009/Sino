@@ -121,9 +121,11 @@ export function HomeServices({
             {copy.number} / {copy.eyebrow}
           </p>
           <h2 className="display-section max-w-3xl">{copy.title}</h2>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal">
-            {copy.description}
-          </p>
+          {copy.description ? (
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal">
+              {copy.description}
+            </p>
+          ) : null}
         </Reveal>
 
         <div className="mt-14 space-y-16 md:mt-16 md:space-y-20">
@@ -139,9 +141,11 @@ export function HomeServices({
                 <Reveal delayMs={groupIndex * 40}>
                   <div className="mb-7 max-w-2xl md:mb-8">
                     <p className="eyebrow-accent">{group.title}</p>
-                    <p className="mt-3 text-[1.0625rem] leading-relaxed text-charcoal md:text-lg">
-                      {group.description}
-                    </p>
+                    {group.description ? (
+                      <p className="mt-3 text-[1.0625rem] leading-relaxed text-charcoal md:text-lg">
+                        {group.description}
+                      </p>
+                    ) : null}
                   </div>
                 </Reveal>
 

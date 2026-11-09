@@ -72,3 +72,12 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Target intent: `manufacturing expansion services` (impr on advanced-manufacturing, deep position, 0 clicks).
 - Home wordings broadened China→Asia (landing only); themes A (why agencies) and C (manufacturer representation) still open.
 - Skill updated: post-publish team HTML email (raphael@ + max@); Gmail Composio connect required before first send.
+
+### 2026-11-09 — Insight from data (theme A: European industrial buyers)
+
+- Skill run: GSC 14d/28d + GA; inventory avoided duplicates (ESR, greentech, after-sales, manufacturing expansion, agencies, etc.).
+- User picked **A** — buyer-side expectations for Chinese suppliers.
+- Published EN+ZH Insight `european-industrial-buyers-chinese-suppliers` (`translation_group` european-industrial-buyers-010), CTA Sales Outsourcing.
+- Cover: real Pexels photo (engineer with tablet in industrial factory), shared with CMS SA.
+- Live EN+ZH + cover verified; team email sent to raphael@ + max@.
+- Themes B (relocation vs plant) and C (keep control / operating partner) left for a later run.

@@ -115,6 +115,19 @@ export const media = {
     },
     clientLogos: [
       {
+        id: "client-eurocrane-china",
+        src: "/images/clients/client-eurocrane-china-mono.webp",
+        alt: "Eurocrane China",
+        width: 900,
+        height: 220,
+        aspectRatio: "900:220",
+        page: "home",
+        section: "client-logos",
+        status: "placeholder" as const,
+        replacementNote:
+          "Companies our team has supported — Eurocrane China (replace with official mono logo when available)",
+      },
+      {
         id: "client-bo-sco",
         src: "/images/clients/client-bo-sco-mono.webp",
         alt: "Bo-sco",
