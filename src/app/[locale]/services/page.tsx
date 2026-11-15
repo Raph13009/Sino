@@ -151,9 +151,6 @@ export default async function ServicesPage({ params }: Props) {
                   <h2 className="display-section text-[1.85rem] md:text-[2.5rem]">
                     {groupCopy.title}
                   </h2>
-                  <p className="mt-3 max-w-xl text-[1.0125rem] leading-relaxed text-charcoal md:text-[1.0625rem]">
-                    {groupCopy.note}
-                  </p>
                 </div>
 
                 <ul

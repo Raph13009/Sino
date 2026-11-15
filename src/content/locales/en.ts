@@ -324,11 +324,9 @@ export const en = {
     groups: {
       access: {
         title: "Commercial development in Europe",
-        note: "Target identification, outreach and commercial execution in Europe — with results you can see and decisions that stay yours.",
       },
       support: {
         title: "Local support in Europe",
-        note: "After-sales partners, warehousing and spare parts, and technical, regulatory, legal and operational specialists.",
       },
     },
     cards: {

@@ -69,7 +69,6 @@ export function getHomeServiceGroups(locale: Locale, dict: Dictionary) {
       id,
       title: hubPillar?.title ?? homePillar.title,
       description: hubPillar?.description ?? "",
-      note: dict.servicesPage.groups[id].note,
       featuredSlug: order.featured,
       services: orderedSlugs
         .map((slug) => services.find((item) => item.slug === slug))
@@ -95,8 +94,6 @@ export function getServiceGroups(locale: Locale, dict: Dictionary) {
     return {
       id,
       label: dict.nav.megaMenu.groups[id].label,
-      // Single source with hub category notes (avoids dual mega/hub variants)
-      note: dict.servicesPage.groups[id].note,
       href: localePath(locale, `/services#${anchor.primary}`),
       anchorPrimary: anchor.primary,
       anchorAlias: anchor.alias,

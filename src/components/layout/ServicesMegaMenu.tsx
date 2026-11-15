@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 export type ServicesMegaGroup = {
   id: string;
   label: string;
-  note: string;
   href: string;
   items: {
     key: string;
@@ -81,7 +80,6 @@ export function ServicesMegaMenu({
                   <div key={group.id} className="min-w-0">
                     <GroupLabel
                       label={group.label}
-                      note={group.note}
                       href={group.href}
                       open={open}
                       onNavigate={closeMenu}
@@ -141,31 +139,24 @@ export function ServicesMegaMenu({
 
 function GroupLabel({
   label,
-  note,
   href,
   open,
   onNavigate,
 }: {
   label: string;
-  note: string;
   href: string;
   open: boolean;
   onNavigate: () => void;
 }) {
   return (
-    <div className="min-w-0">
-      <Link
-        href={href}
-        tabIndex={open ? undefined : -1}
-        className="eyebrow text-accent transition-colors hover:text-ink"
-        onClick={onNavigate}
-      >
-        {label}
-      </Link>
-      <p className="mt-1.5 max-w-sm text-[0.8125rem] leading-snug text-charcoal">
-        {note}
-      </p>
-    </div>
+    <Link
+      href={href}
+      tabIndex={open ? undefined : -1}
+      className="eyebrow text-accent transition-colors hover:text-ink"
+      onClick={onNavigate}
+    >
+      {label}
+    </Link>
   );
 }
 

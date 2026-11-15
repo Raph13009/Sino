@@ -318,11 +318,9 @@ export const zh = {
     groups: {
       access: {
         title: "欧洲商务拓展",
-        note: "在欧洲识别目标、开展触达与商务执行——结果可见，决策始终在您。",
       },
       support: {
         title: "欧洲本地支持",
-        note: "售后伙伴、仓储与备件，以及技术、监管、法律与运营类专业力量。",
       },
     },
     cards: {

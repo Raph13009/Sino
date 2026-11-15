@@ -201,7 +201,6 @@ export function SiteHeader() {
   const serviceMenuGroups = serviceGroups.map((group) => ({
     id: group.id,
     label: group.label,
-    note: group.note,
     href: group.href,
     items: group.services.map((service) => ({
       key: service.slug,
