@@ -81,3 +81,12 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Cover: real Pexels photo (engineer with tablet in industrial factory), shared with CMS SA.
 - Live EN+ZH + cover verified; team email sent to raphael@ + max@.
 - Themes B (relocation vs plant) and C (keep control / operating partner) left for a later run.
+
+### 2026-11-15 — Insight from data (theme B: Machinery Regulation 2027)
+
+- Skill run: GSC 14d/28d + GA4; top non-brand CTR gaps already covered (agencies, greentech, ESR); AI Assistant 4 sessions / 4 `ai_referral`.
+- User picked **B** — EU Machinery Regulation 2027 readiness for Chinese manufacturers (GEO + industrial-equipment page fit; no duplicate Insight).
+- Published EN+ZH Insight `eu-machinery-regulation-2027-chinese-manufacturers` (`translation_group` machinery-regulation-2027-011), CTA Market Entry.
+- Cover: Unsplash industrial technicians photo, shared with CMS SA; industrial-equipment SEO description tightened for 2027 readiness.
+- Themes A (advanced manufacturing relocation) and C (AI sales automation consulting) left for a later run.
+- Team email sent to raphael@ + max@.

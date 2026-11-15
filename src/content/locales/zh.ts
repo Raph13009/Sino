@@ -1487,7 +1487,7 @@ export const zh = {
       ],
       seoTitle: "工业设备进入欧洲市场 | OPOPA",
       seoDescription:
-        "帮助中国工业设备制造商开拓欧洲：CE 就绪、本地支持、商业拓展与买家期望。",
+        "帮助中国工业设备制造商开拓欧洲：《机械法规》2027 就绪、CE 证据、本地支持与商业拓展。",
     },
     "advanced-manufacturing": {
       name: "先进制造",

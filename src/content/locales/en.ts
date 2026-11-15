@@ -1525,7 +1525,7 @@ export const en = {
       ],
       seoTitle: "Industrial Equipment Market Entry in Europe | OPOPA",
       seoDescription:
-        "Help Chinese industrial equipment manufacturers sell in Europe: CE readiness, local support, commercial development and buyer expectations.",
+        "Help Chinese industrial equipment manufacturers sell in Europe: Machinery Regulation 2027 readiness, CE evidence, local support and commercial development.",
     },
     "advanced-manufacturing": {
       name: "Advanced Manufacturing",
