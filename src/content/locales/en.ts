@@ -357,6 +357,12 @@ export const en = {
         description:
           "Bounded tools for research, lead handling, CRM hygiene and follow-up, reviewed by people.",
       },
+      "digital-marketing": {
+        tag: "Commercial development in Europe",
+        subline: "From market insights to customer acquisition.",
+        description:
+          "Market research, digital acquisition and e-commerce optimization for European growth.",
+      },
     },
     closing: {
       title: "Discuss with us",
@@ -1467,6 +1473,192 @@ export const en = {
       seoDescription:
         "AI-driven sales process automation consulting for industrial teams: audit commercial workflows and implement bounded tools for research, CRM, inquiries and follow-up, with human review.",
     },
+    "digital-marketing": {
+      name: "Digital Marketing & Growth Strategy",
+      shortName: "Digital Marketing & Growth",
+      positioning: "From market insights to customer acquisition.",
+      megaDescription:
+        "Market research, digital acquisition and e-commerce optimization to help companies develop their business in Europe.",
+      summary:
+        "OPOPA helps companies understand European markets, select relevant acquisition channels and turn commercial insights into practical digital growth initiatives.",
+      situationTitle:
+        "When European growth needs market clarity and channel focus",
+      situation: [
+        "Entering or expanding in Europe often fails when companies launch every channel at once, or treat digital marketing as creative work detached from commercial reality.",
+        "The useful path starts with market and customer understanding, then tests the channels that make commercial sense — with clear ownership and measurable objectives.",
+      ],
+      coordinatesTitle: "Market insight, channel choice and practical execution",
+      coordinates: [
+        "OPOPA approaches digital marketing as a commercial growth capability: research the market, prioritise channels, then implement selected actions.",
+        "Work stays scoped to what the business can measure — search, content, e-commerce conversion, partnerships and B2B outreach — not a full-service advertising agency promise.",
+      ],
+      scope: [
+        "European market research and go-to-market strategy",
+        "SEO and search-oriented content strategy",
+        "Google Ads and Microsoft Ads setup and review",
+        "E-commerce and conversion optimisation",
+        "Influencer and affiliate partnership planning",
+        "Email marketing and CRM sequences",
+        "B2B lead generation and distribution outreach",
+      ],
+      receivesTitle: "What moves forward",
+      receives: [
+        "A clear view of market, customers and competitors",
+        "Prioritised channels and initiatives worth testing",
+        "Selected actions with responsibilities and measurable objectives",
+        "Evidence-based adjustments after review",
+      ],
+      startsTitle: "Discuss your project",
+      starts:
+        "Share your product, target markets and current commercial performance. We propose which research and acquisition steps are worth starting first.",
+      cta: "Discuss Your Project",
+      seoTitle: "Digital Marketing & Growth Strategy in Europe | OPOPA",
+      seoDescription:
+        "Market research, digital acquisition and e-commerce optimization to help companies develop their business in Europe. Discuss your project with OPOPA.",
+      detail: {
+        headline: "Digital Marketing & Growth Strategy",
+        lead: "From market insights to customer acquisition.",
+        intro:
+          "Market research, digital acquisition and e-commerce optimization to help companies develop their business in Europe.",
+        heroCta: "Discuss Your Project",
+        outcomes: {
+          title: "What we help you achieve",
+          items: [
+            {
+              title: "Understand your market and customers",
+              body: "Clarify demand, segments, competitors and where commercial opportunity is realistic.",
+            },
+            {
+              title: "Identify the most relevant growth channels",
+              body: "Prioritise search, content, partnerships, e-commerce and B2B outreach based on fit — not habit.",
+            },
+            {
+              title: "Turn insights into measurable acquisition",
+              body: "Launch selected initiatives with clear ownership, tracking and review criteria.",
+            },
+          ],
+        },
+        services: {
+          title: "Our services",
+          intro:
+            "Capabilities that combine market understanding with practical digital customer acquisition.",
+          items: [
+            {
+              title: "Market Research & Go-to-Market Strategy",
+              points: [
+                "European market assessment",
+                "Customer segmentation",
+                "Competitor benchmarking",
+                "Market prioritisation",
+                "Positioning and go-to-market recommendations",
+              ],
+            },
+            {
+              title: "SEO & Content Strategy",
+              points: [
+                "SEO audits",
+                "Keyword research",
+                "Website structure and on-page optimisation",
+                "Search-oriented content recommendations",
+                "Organic visibility improvements",
+              ],
+            },
+            {
+              title: "Paid Search — Google Ads & Microsoft Ads",
+              points: [
+                "Keyword research",
+                "Campaign setup",
+                "Conversion tracking",
+                "Search-term analysis",
+                "Performance review and optimisation",
+              ],
+            },
+            {
+              title: "E-commerce & Conversion Optimisation",
+              points: [
+                "Shopify store audits",
+                "Product page optimisation",
+                "Checkout and customer journey review",
+                "Conversion tracking",
+                "Prioritised website improvements",
+              ],
+            },
+            {
+              title: "Influencer & Affiliate Marketing",
+              points: [
+                "Identification of relevant niche creators",
+                "Creator outreach",
+                "Affiliate partnership development",
+                "Campaign planning and performance tracking",
+              ],
+            },
+            {
+              title: "Email Marketing & CRM",
+              points: [
+                "Email campaign planning",
+                "Welcome sequences",
+                "Customer lifecycle communications",
+                "Abandoned checkout workflows, where appropriate",
+                "Marketing automation",
+              ],
+            },
+            {
+              title: "B2B Lead Generation & Distribution",
+              points: [
+                "Prospect and retailer identification",
+                "Distributor sourcing",
+                "Targeted B2B outreach",
+                "Commercial follow-up",
+                "Partnership development",
+              ],
+            },
+          ],
+        },
+        process: {
+          eyebrow: "How we work",
+          title: "Research, prioritise, implement, optimise",
+          steps: [
+            {
+              number: "01",
+              title: "Research",
+              description:
+                "Understand the market, customers, competitors and current commercial performance.",
+            },
+            {
+              number: "02",
+              title: "Prioritise",
+              description:
+                "Identify the channels and initiatives most likely to be relevant.",
+            },
+            {
+              number: "03",
+              title: "Implement",
+              description:
+                "Launch selected actions with clear responsibilities and measurable objectives.",
+            },
+            {
+              number: "04",
+              title: "Optimise",
+              description:
+                "Review results and adjust priorities based on evidence.",
+            },
+          ],
+        },
+        approach: {
+          title: "Our approach",
+          lead: "Commercial strategy meets digital execution.",
+          body: [
+            "Unlike a purely creative marketing agency, OPOPA approaches digital marketing through market understanding, customer acquisition and business development.",
+            "Our goal is not to launch every channel simultaneously, but to identify and test the initiatives that make commercial sense for each business.",
+          ],
+        },
+        closing: {
+          title: "Looking to grow your business in Europe?",
+          body: "Let's discuss your market, your customers and the channels worth testing.",
+          cta: "Contact OPOPA",
+        },
+      },
+    },
   },
 
   industries: {
@@ -1718,6 +1910,8 @@ export const en = {
       "Technician in a high-visibility vest inspecting industrial equipment",
     "service-sales-ai-automation":
       "Industrial operations workstation supporting commercial workflows",
+    "service-digital-marketing":
+      "Map showing commercial connections from China to markets across Europe",
     "home-manufacturing-floor":
       "Industrial manufacturing floor with heavy machinery and production lines",
     "client-eurocrane-china": "Eurocrane China",

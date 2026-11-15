@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FinalCta } from "@/components/layout/FinalCta";
 import { AfterSalesPage } from "@/components/services/AfterSalesPage";
+import { DigitalMarketingPage } from "@/components/services/DigitalMarketingPage";
 import { EuropeanSalesRepresentationPage } from "@/components/services/EuropeanSalesRepresentationPage";
 import { RelatedServiceCards } from "@/components/services/RelatedServiceCards";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -85,6 +86,16 @@ export default async function ServicePage({ params }: Props) {
   if (service.slug === "european-sales-representation") {
     return (
       <EuropeanSalesRepresentationPage
+        locale={locale}
+        dict={dict}
+        relatedInsights={relatedInsights}
+      />
+    );
+  }
+
+  if (service.slug === "digital-marketing") {
+    return (
+      <DigitalMarketingPage
         locale={locale}
         dict={dict}
         relatedInsights={relatedInsights}

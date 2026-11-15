@@ -5,6 +5,7 @@ export const serviceSlugs = [
   "after-sales-maintenance",
   "european-sales-representation",
   "sales-ai-automation",
+  "digital-marketing",
 ] as const;
 
 export type ServiceSlug = (typeof serviceSlugs)[number];
@@ -19,7 +20,11 @@ export const serviceGroupIds = ["access", "support"] as const;
 export type ServiceGroupId = (typeof serviceGroupIds)[number];
 
 export const serviceGroups: Record<ServiceGroupId, readonly ServiceSlug[]> = {
-  access: ["european-sales-representation", "sales-ai-automation"],
+  access: [
+    "european-sales-representation",
+    "sales-ai-automation",
+    "digital-marketing",
+  ],
   support: ["european-experts-and-partners", "after-sales-maintenance"],
 };
 
@@ -33,7 +38,7 @@ export const homeServiceOrder: Record<
 > = {
   access: {
     featured: "european-sales-representation",
-    secondary: ["sales-ai-automation"],
+    secondary: ["sales-ai-automation", "digital-marketing"],
   },
   support: {
     featured: "after-sales-maintenance",
@@ -42,7 +47,10 @@ export const homeServiceOrder: Record<
 };
 
 /** Supporting capabilities: kept as URLs, de-emphasized in nav/hub. */
-export const supportingServiceSlugs = ["sales-ai-automation"] as const;
+export const supportingServiceSlugs = [
+  "sales-ai-automation",
+  "digital-marketing",
+] as const;
 
 export type SupportingServiceSlug = (typeof supportingServiceSlugs)[number];
 
@@ -78,7 +86,7 @@ export const serviceMeta: Record<
     complementary: [
       "after-sales-maintenance",
       "european-sales-representation",
-      "sales-ai-automation",
+      "digital-marketing",
     ],
   },
   "after-sales-maintenance": {
@@ -95,9 +103,9 @@ export const serviceMeta: Record<
     group: "access",
     image: media.services.outsourcedSales,
     complementary: [
+      "digital-marketing",
       "sales-ai-automation",
       "european-experts-and-partners",
-      "after-sales-maintenance",
     ],
   },
   "sales-ai-automation": {
@@ -106,6 +114,17 @@ export const serviceMeta: Record<
     image: media.services.salesAiAutomation,
     complementary: [
       "european-sales-representation",
+      "digital-marketing",
+      "european-experts-and-partners",
+    ],
+  },
+  "digital-marketing": {
+    number: "05",
+    group: "access",
+    image: media.services.digitalMarketing,
+    complementary: [
+      "european-sales-representation",
+      "sales-ai-automation",
       "european-experts-and-partners",
     ],
   },

@@ -311,6 +311,19 @@ export const media = {
       replacementNote:
         "Replace with restrained commercial-operations / industrial workflow photography: avoid generic AI imagery",
     },
+    digitalMarketing: {
+      id: "service-digital-marketing",
+      src: "/images/services/map-china-to-eu.webp",
+      alt: "Map showing commercial connections from China to markets across Europe",
+      width: 1672,
+      height: 941,
+      aspectRatio: "1672:941",
+      page: "services",
+      section: "digital-marketing",
+      status: "final" as const,
+      replacementNote:
+        "Reuse China–Europe map for digital growth / European market development until dedicated photography is available",
+    },
   },
   industries: {
     industrialEquipment: {
