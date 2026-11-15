@@ -33,11 +33,18 @@ export async function fetchBlogIndexRows(): Promise<SheetRow[]> {
   const range = encodeURIComponent(`${getBlogSheetTab()}!A:Z`);
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?valueRenderOption=FORMATTED_VALUE`;
 
+  // Throw on transport/API failure so unstable_cache does not store an empty
+  // index for the full revalidate window (that made /insights look unpublished).
   const response = await googleFetch(url);
-  if (!response) return [];
+  if (!response) {
+    const message = `Sheets API request failed for ${sheetId}`;
+    cmsError(message);
+    throw new Error(message);
+  }
   if (!response.ok) {
-    cmsError(`Sheets API returned ${response.status} for ${sheetId}`);
-    return [];
+    const message = `Sheets API returned ${response.status} for ${sheetId}`;
+    cmsError(message);
+    throw new Error(message);
   }
 
   const data = (await response.json()) as { values?: string[][] };

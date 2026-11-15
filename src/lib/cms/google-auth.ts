@@ -57,6 +57,7 @@ export async function googleFetch(
   url: string,
   init: RequestInit & {
     timeoutMs?: number;
+    retries?: number;
     revalidate?: number;
     tags?: string[];
   } = {},
@@ -65,25 +66,36 @@ export async function googleFetch(
   if (!token) return null;
 
   const {
-    timeoutMs = 10_000,
+    timeoutMs = 20_000,
+    retries = 2,
     revalidate = CMS_REVALIDATE_SECONDS,
     tags = [CMS_CACHE_TAG],
     headers,
     ...rest
   } = init;
-  try {
-    const response = await fetch(url, {
-      ...rest,
-      headers: {
-        Authorization: `Bearer ${token}`,
-        ...headers,
-      },
-      signal: AbortSignal.timeout(timeoutMs),
-      next: { revalidate, tags },
-    } as RequestInit);
-    return response;
-  } catch (error) {
-    cmsError(`Google request failed: ${url}`, error);
-    return null;
+
+  let lastError: unknown;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        ...rest,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          ...headers,
+        },
+        signal: AbortSignal.timeout(timeoutMs),
+        next: { revalidate, tags },
+      } as RequestInit);
+      return response;
+    } catch (error) {
+      lastError = error;
+      if (attempt < retries) {
+        await new Promise((resolve) => setTimeout(resolve, 400 * (attempt + 1)));
+        continue;
+      }
+    }
   }
+
+  cmsError(`Google request failed: ${url}`, lastError);
+  return null;
 }
