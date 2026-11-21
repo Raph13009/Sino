@@ -90,3 +90,11 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Cover: Unsplash industrial technicians photo, shared with CMS SA; industrial-equipment SEO description tightened for 2027 readiness.
 - Themes A (advanced manufacturing relocation) and C (AI sales automation consulting) left for a later run.
 - Team email sent to raphael@ + max@.
+
+### 2026-11-21 — Autonomous Insight (advanced manufacturing relocation)
+
+- Windows: GSC/GA 14d 6–19 Nov and 28d 23 Oct–19 Nov (final, skipped 20–21 Nov). GA 14d: 34 sessions (3 Google organic, 2 AI Assistant, 2 LinkedIn); 28d: 63 sessions, 4 `ai_referral` from chatgpt.com, 5 `contact_cta_click`.
+- Chose relocation: `advanced manufacturing relocation europe` — 14d 5 impressions, 0 clicks, position 9.4, landing on `/industries/advanced-manufacturing`. No dedicated Insight. Left the generics-consultancy query (index landing, pharma-adjacent) and RPA/AI service-page spam for later.
+- Published EN+ZH `advanced-manufacturing-relocation-europe` (`translation_group` advanced-manufacturing-relocation-012), CTA Market Entry. Cover: Pexels CNC factory photo, shared with the CMS reader.
+- Live EN+ZH + cover verified (200). Team email sent to raphael@ + max@.
+- Still open: “which consultancy” for a Chinese generics manufacturer (lands on `/insights`); AI sales-automation consulting CTR gap on `/services/sales-ai-automation`.
