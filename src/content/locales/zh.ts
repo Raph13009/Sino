@@ -817,6 +817,14 @@ export const zh = {
         ],
       },
       {
+        id: "newsletter",
+        title: "洞察通讯",
+        paragraphs: [
+          "若你订阅洞察通讯，我们会收集你提交的邮箱、订阅时使用的网站语言，以及订阅状态记录。这些数据仅用于在网站发布新洞察时发送偶尔的邮件通知。",
+          "你可随时通过每封通讯邮件中的链接取消订阅，也可发邮件至 contact@opopa-partners.com 联系我们。",
+        ],
+      },
+      {
         id: "technical-data",
         title: "技术数据",
         paragraphs: [
@@ -832,6 +840,7 @@ export const zh = {
           "讨论潜在项目",
           "提供所请求的信息",
           "管理潜在或现有客户关系",
+          "在你已订阅的情况下发送洞察通讯邮件",
           "运营并保障网站安全",
           "履行法定义务",
         ],
@@ -845,7 +854,7 @@ export const zh = {
           "合同履行",
           "回复商务咨询并管理专业关系的合法利益",
           "法定义务",
-          "在明确要求时的同意",
+          "在明确要求时的同意（包括洞察通讯订阅）",
         ],
       },
       {
@@ -935,6 +944,32 @@ export const zh = {
     description:
       "OPOPA 连接中国工业与绿色技术企业与欧洲：市场准入、本地支持与销售代表。",
     tagline: "市场同频",
+  },
+
+  newsletter: {
+    eyebrow: "超越头条",
+    title: "中国变化很快。保持领先。",
+    body: "获取关于中国创新、新兴技术，以及塑造中欧商业机遇的最新洞察。",
+    emailLabel: "工作邮箱",
+    placeholder: "你的工作邮箱",
+    submit: "获取洞察",
+    submitting: "提交中…",
+    successBody: "订阅成功。有新洞察上线时我们会发邮件通知你。",
+    consent: "没有噪音。只有有价值的洞察，直接送到你的收件箱。",
+    privacyLink: "隐私政策",
+    errors: {
+      email: "请输入有效的邮箱地址。",
+      generic: "出现问题，请重试。",
+    },
+    unsubscribe: {
+      metaTitle: "取消订阅",
+      metaDescription: "取消订阅 OPOPA 洞察通讯。",
+      title: "取消订阅",
+      success: "你已取消订阅 OPOPA 洞察通讯。",
+      already: "该邮箱此前已取消订阅。",
+      missing: "取消订阅链接无效或不完整。",
+      failed: "无法完成取消订阅。请重试或直接联系我们。",
+    },
   },
 
   services: {

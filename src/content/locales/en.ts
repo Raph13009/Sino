@@ -829,6 +829,14 @@ export const en = {
         ],
       },
       {
+        id: "newsletter",
+        title: "Insights newsletter",
+        paragraphs: [
+          "If you subscribe to the Insights newsletter, we collect the email address you submit, the site language you used when subscribing, and a subscription status record. We use this only to send occasional emails when a new Insight is published on the website.",
+          "You can unsubscribe at any time using the link in each newsletter email. You may also contact us at contact@opopa-partners.com.",
+        ],
+      },
+      {
         id: "technical-data",
         title: "Technical data",
         paragraphs: [
@@ -844,6 +852,7 @@ export const en = {
           "discussing potential projects",
           "providing requested information",
           "managing prospective or existing client relationships",
+          "sending Insights newsletter emails when you have subscribed",
           "operating and securing the website",
           "complying with legal obligations",
         ],
@@ -859,7 +868,7 @@ export const en = {
           "performance of a contract",
           "legitimate interests in responding to business enquiries and managing professional relationships",
           "legal obligations",
-          "consent where specifically required",
+          "consent where specifically required (including Insights newsletter subscription)",
         ],
       },
       {
@@ -953,6 +962,32 @@ export const en = {
     description:
       "OPOPA connects Chinese industrial and green-tech companies to Europe: market access, local support and sales representation.",
     tagline: "Markets in Sync",
+  },
+
+  newsletter: {
+    eyebrow: "Beyond the headlines",
+    title: "China moves fast. Stay ahead.",
+    body: "Get fresh insights on Chinese innovation, emerging technologies, and the opportunities shaping business between China and Europe.",
+    emailLabel: "Work email",
+    placeholder: "Your work email",
+    submit: "Get insights",
+    submitting: "Subscribing…",
+    successBody: "You are subscribed. We will email you when a new Insight goes live.",
+    consent: "No noise. Just valuable insights, straight to your inbox.",
+    privacyLink: "Privacy",
+    errors: {
+      email: "Enter a valid email address.",
+      generic: "Something went wrong. Please try again.",
+    },
+    unsubscribe: {
+      metaTitle: "Unsubscribe",
+      metaDescription: "Unsubscribe from the OPOPA Insights newsletter.",
+      title: "Unsubscribe",
+      success: "You have been unsubscribed from the OPOPA Insights newsletter.",
+      already: "This address was already unsubscribed.",
+      missing: "This unsubscribe link is invalid or incomplete.",
+      failed: "We could not complete the unsubscribe request. Please try again or email us.",
+    },
   },
 
   services: {

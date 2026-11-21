@@ -119,6 +119,7 @@ Publish:
 - [ ] Optional safe meta tweak on related service/industry page
 - [ ] Verify live EN+ZH URLs + cover
 - [ ] Team email (EN HTML) → raphael@ + max@ — see team-publish-email.md
+- [ ] Newsletter blast → POST /api/newsletter/broadcast (Resend to Sheet subscribers)
 - [ ] Append dated note to docs/seo/gsc-monthly-playbook.md
 - [ ] Commit/push only if code/assets changed; redeploy/wait ~3m for CMS cache
 ```
@@ -150,8 +151,9 @@ Append two rows (EN then zh-CN) with columns in order — see cms-ids.md.
 1. Hit `/insights/[slug]` and `/zh/insights/[slug]` → expect 200 + cover.
 2. If 404: wait CMS revalidate (~180s) or empty-commit push / revalidate endpoint if secret available.
 3. **Team publish email** — once live, send branded HTML email per team-publish-email.md via `GMAIL_SEND_EMAIL` (`is_html=true`) to `raphael@opopa-partners.com` + `max@opopa-partners.com`. Subject: `A new article has been published on the website`. If Gmail disconnected: attempt `COMPOSIO_MANAGE_CONNECTIONS` toolkit=`gmail` once; if auth still required, note “email not sent — reconnect Gmail” in the run summary and playbook (do not block forever).
-4. Log 4–6 bullets under `docs/seo/gsc-monthly-playbook.md` (date + autonomous pick A/B/C titles + what shipped + email status).
-5. Commit/push **only** repo changes (locales, cover under `public/`, playbook). Do not commit skill folders as part of a publish run.
+4. **Newsletter blast** — after the team email step, `POST https://www.opopa-partners.com/api/newsletter/broadcast` with `Authorization: Bearer` + `NEWSLETTER_BROADCAST_SECRET` (from env / Vercel; never invent). Body JSON: `enTitle`, `seoDescription`, `angle`, `enUrl`, `zhUrl`, optional `coverUrl`, `ctaService`, `publishedAt` (`YYYY-MM-DD`), optional `bullets` string array. Prefer public cover `https://www.opopa-partners.com/media/insights/{FILE_ID}`. If secret unknown / 501 / empty subscribers: note “newsletter blast skipped” and continue (do not fail the run).
+5. Log 4–6 bullets under `docs/seo/gsc-monthly-playbook.md` (date + autonomous pick A/B/C titles + what shipped + team email + newsletter blast status).
+6. Commit/push **only** repo changes (locales, cover under `public/`, playbook). Do not commit skill folders as part of a publish run.
 
 ### End-of-run summary (always)
 
@@ -161,6 +163,7 @@ Reply with a short status block:
 - EN + ZH live URLs (or failure reason)
 - Cover status
 - Team email sent / skipped
+- Newsletter blast sent / skipped (counts if known)
 - Playbook / git commit status
 
 ## How this is launched

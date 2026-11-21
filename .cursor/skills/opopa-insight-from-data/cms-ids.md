@@ -14,6 +14,7 @@
 |----------|-----|
 | Blog Index spreadsheet | `1w2TMVQK-SzSqGgo7VinOrZ89vDQb-25GWOPmEeyRj54` |
 | Sheet tab | `Blog Index` |
+| Newsletter tab | `Newsletter` (same spreadsheet; SA needs **Editor**) |
 | Articles folder | `18KNlx6QEcBCqBQWF5shvlTl_zrnVDtyA` |
 | Images folder | `1dc6cYYDFl9yatjxBiXSDZ7kwOdt9BmVc` |
 | CMS service account | `opopa-blog-reader@opopa-blog-cms.iam.gserviceaccount.com` |
@@ -39,6 +40,13 @@
 
 Template + HTML: [team-publish-email.md](team-publish-email.md).  
 Tool: `GMAIL_SEND_EMAIL` from connected Gmail (**raphael@opopa-partners.com**).
+
+### Newsletter blast (after team email)
+
+`POST https://www.opopa-partners.com/api/newsletter/broadcast`  
+Header: `Authorization: Bearer $NEWSLETTER_BROADCAST_SECRET`  
+JSON body: `enTitle`, `seoDescription`, `angle`, `enUrl`, `zhUrl`, `coverUrl?`, `ctaService`, `publishedAt`, `bullets?` (string array).  
+Sends via Resend to Sheet tab `Newsletter` rows with `status=active`. No-op if secret missing or no subscribers.
 
 ## Composio tools (typical)
 

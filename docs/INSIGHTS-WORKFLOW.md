@@ -96,9 +96,10 @@ Do not prefix these with `NEXT_PUBLIC_`. Google APIs run server-side only.
    - Google Drive API
 2. Create a **service account** (no Google Workspace needed).
 3. Download the JSON key. Use `client_email` and `private_key` as env vars.
-4. Share these Drive items with the service account email (`...@....iam.gserviceaccount.com`) as **Viewer**:
-   - the **OPOPA Blog Index** spreadsheet
-   - the CMS folder that contains **Articles** and **Images** (sharing the parent folder is enough)
+4. Share these Drive items with the service account email (`...@....iam.gserviceaccount.com`):
+   - the **OPOPA Blog Index** spreadsheet as **Editor** (Insights CMS read + newsletter signup writes to the `Newsletter` tab)
+   - the CMS folder that contains **Articles** and **Images** as **Viewer** (sharing the parent folder is enough)
+5. Set `NEWSLETTER_BROADCAST_SECRET` on Vercel so publish skills can `POST /api/newsletter/broadcast` to email active newsletter subscribers when a new Insight goes live.
 
 Editors can keep using a normal Gmail account. They never use the service account.
 

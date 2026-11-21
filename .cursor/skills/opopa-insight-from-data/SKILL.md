@@ -94,6 +94,7 @@ Publish:
 - [ ] Optional safe meta tweak on related service/industry page
 - [ ] Verify live EN+ZH URLs + cover
 - [ ] Team email (EN HTML) → raphael@ + max@ — see team-publish-email.md
+- [ ] Newsletter blast → POST /api/newsletter/broadcast
 - [ ] Append dated note to docs/seo/gsc-monthly-playbook.md
 - [ ] Commit/push only if code/assets changed; redeploy/wait ~3m for CMS cache
 ```
@@ -124,8 +125,9 @@ Append two rows (EN then zh-CN) with columns in order — see [cms-ids.md](cms-i
 1. Hit `/insights/[slug]` and `/zh/insights/[slug]` → expect 200 + cover.
 2. If 404: wait CMS revalidate (~180s) or empty-commit push / revalidate endpoint if secret available.
 3. **Team publish email** — once live, send branded HTML email per [team-publish-email.md](team-publish-email.md) via `GMAIL_SEND_EMAIL` (`is_html=true`) to `raphael@opopa-partners.com` + `max@opopa-partners.com`. Subject stays simple: `A new article has been published on the website`. Include OPOPA logo (`/brand/logo-dark.png`), article recap, EN+ZH links, and a reply CTA for the next topic. If Gmail disconnected: `COMPOSIO_MANAGE_CONNECTIONS` toolkit=`gmail` (account **raphael@opopa-partners.com**), wait for user auth, then send. Do not claim sent without a successful tool response.
-4. Log 4–6 bullets under `docs/seo/gsc-monthly-playbook.md` (date + what shipped + “team email sent”).
-5. Commit/push **only** repo changes (locales, cover under `public/`, playbook). Do not commit this skill folder.
+4. **Newsletter blast** — `POST https://www.opopa-partners.com/api/newsletter/broadcast` with Bearer `NEWSLETTER_BROADCAST_SECRET` and the article payload (see [cms-ids.md](cms-ids.md)). Skip cleanly if secret missing / 501 / no subscribers.
+5. Log 4–6 bullets under `docs/seo/gsc-monthly-playbook.md` (date + what shipped + team email + newsletter blast).
+6. Commit/push **only** repo changes (locales, cover under `public/`, playbook). Do not commit this skill folder.
 
 ### Hard stops
 
