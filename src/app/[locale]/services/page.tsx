@@ -19,6 +19,7 @@ import { getDictionary } from "@/content/locales";
 import { getServiceGroups, localizeMediaAsset } from "@/content/localized";
 import { getLocaleFromParams, localePath } from "@/i18n/config";
 import { breadcrumbJsonLd, createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -131,9 +132,7 @@ export default async function ServicesPage({ params }: Props) {
       <div id="services">
         {groups.map((group, groupIndex) => {
           const groupCopy = copy.groups[group.id as ServiceGroupId];
-          const primary = group.services.filter((s) => !s.supporting);
-          const supporting = group.services.filter((s) => s.supporting);
-          const cardCount = primary.length;
+          const cardCount = group.services.length;
 
           return (
             <Section
@@ -154,21 +153,28 @@ export default async function ServicesPage({ params }: Props) {
                 </div>
 
                 <ul
-                  className={`mt-10 gap-4 md:gap-5 ${
-                    cardCount === 1
-                      ? "grid max-w-xl"
-                      : cardCount === 2
-                        ? "grid md:grid-cols-2"
-                        : "grid md:grid-cols-2 xl:grid-cols-3"
-                  }`}
+                  className={cn(
+                    "mt-10 grid items-stretch gap-4 md:gap-5",
+                    cardCount <= 1 && "grid-cols-1",
+                    cardCount === 2 && "md:grid-cols-2",
+                    cardCount >= 3 && "md:grid-cols-2 xl:grid-cols-3",
+                  )}
                 >
-                  {primary.map((service) => {
+                  {group.services.map((service, index) => {
                     const card = copy.cards[service.slug as ServiceSlug];
+                    const fillsTabletRow =
+                      cardCount >= 3 &&
+                      cardCount % 2 === 1 &&
+                      index === cardCount - 1;
+
                     return (
                       <li
                         key={service.slug}
                         id={service.slug}
-                        className="min-h-0 scroll-mt-32"
+                        className={cn(
+                          "flex min-h-0 scroll-mt-32",
+                          fillsTabletRow && "md:col-span-2 xl:col-span-1",
+                        )}
                       >
                         <ServiceHubCard
                           service={{
@@ -185,34 +191,6 @@ export default async function ServicesPage({ params }: Props) {
                     );
                   })}
                 </ul>
-
-                {supporting.length > 0 ? (
-                  <ul className="mt-4 grid gap-4 md:mt-5 md:max-w-xl md:gap-5">
-                    {supporting.map((service) => {
-                      const card = copy.cards[service.slug as ServiceSlug];
-                      return (
-                        <li
-                          key={service.slug}
-                          id={service.slug}
-                          className="min-h-0 scroll-mt-32"
-                        >
-                          <ServiceHubCard
-                            supporting
-                            service={{
-                              id: `${service.slug}-card`,
-                              href: service.href,
-                              name: service.name,
-                              tag: card.tag,
-                              description: card.description,
-                              image: service.image,
-                              learnMoreLabel: dict.common.learnMore,
-                            }}
-                          />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
               </Container>
             </Section>
           );

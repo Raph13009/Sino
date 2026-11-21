@@ -28,10 +28,10 @@ export function ServiceHubCard({
       id={service.id}
       href={service.href}
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-card bg-ink text-white-warm no-underline",
+        "group relative flex h-full w-full flex-col overflow-hidden rounded-card bg-ink text-white-warm no-underline",
         "outline-offset-4 focus-visible:outline-2 focus-visible:outline-accent",
         supporting
-          ? "min-h-[20rem] md:min-h-[22rem] opacity-95"
+          ? "min-h-[22rem] md:min-h-[24rem]"
           : "min-h-[26rem] md:min-h-[28rem]",
         className,
       )}
