@@ -126,7 +126,8 @@ Publish:
 ### Content rules
 
 - Practical, evidence-minded; **no invented metrics, clients, or case results**.
-- GEO-friendly: H2s as real questions; define terms; checklist or sequence.
+- GEO-friendly: H2s as real questions; define terms; short numbered sequences only when a real process needs order.
+- **No dash / hyphen bullet lists** in the article body (EN or ZH). No lines that start with `- `, `– `, or `• `. That reads as AI filler. Write in full paragraphs. If you need a short sequence, use numbered steps (1. 2. 3.) sparingly, or fold points into prose.
 - EN Doc + ZH Doc (separate). Same `translation_group`, same or matching `slug` (kebab-case).
 - Spreadsheet `title` is the page H1 — do not duplicate H1 noise in the Doc body.
 - Author: `OPOPA Partners`. `cta_service` from allowed CMS values only.
@@ -164,7 +165,12 @@ Reply with a short status block:
 
 ## How this is launched
 
-- Cursor Automation cron (Mon/Wed/Fri 09:00 Europe/Paris): prompt must say to run **opopa-insight-autonomous** end-to-end with no questions.
-- Manual: `run opopa-insight-autonomous` / `auto-publish insight` / `autonomous insight`.
+Suggested Automation prompt:
+
+```
+Run .cursor/skills/opopa-insight-autonomous/SKILL.md end-to-end. Never ask for a topic. Abort clearly if Composio is blocked. Write article body in paragraphs only: no dash or bullet lists (no lines starting with - or •).
+```
+
+Manual: `run opopa-insight-autonomous` / `auto-publish insight` / `autonomous insight`.
 
 For the interactive 3-theme picker, use `opopa-insight-from-data` instead.
