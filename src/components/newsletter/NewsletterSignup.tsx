@@ -31,7 +31,7 @@ export function NewsletterSignup() {
             <p className="eyebrow text-white-warm/80">{dict.newsletter.eyebrow}</p>
             <h2
               id="newsletter-heading"
-              className="mt-4 max-w-xl font-display text-[2rem] leading-[1.15] tracking-[-0.02em] md:text-[2.5rem]"
+              className="mt-4 max-w-xl font-display text-[2rem] leading-[1.15] tracking-[-0.02em] !text-white-warm md:text-[2.5rem]"
             >
               {dict.newsletter.title}
             </h2>
@@ -111,7 +111,7 @@ export function NewsletterSignup() {
                 <button
                   type="submit"
                   disabled={pending}
-                  className="h-14 shrink-0 bg-ink px-7 text-[0.8125rem] font-medium tracking-[0.08em] text-white-warm uppercase transition-colors hover:bg-charcoal disabled:cursor-wait disabled:opacity-70"
+                  className="h-14 shrink-0 border border-white-warm bg-white-warm px-7 text-[0.8125rem] font-medium tracking-[0.08em] text-accent uppercase transition-colors hover:bg-transparent hover:text-white-warm disabled:cursor-wait disabled:opacity-70"
                 >
                   {pending
                     ? dict.newsletter.submitting
