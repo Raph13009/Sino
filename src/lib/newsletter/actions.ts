@@ -25,6 +25,7 @@ import {
   reactivateSubscriber,
   updateSubscriberStatus,
 } from "./sheets";
+import { sendWelcomeEmail } from "./welcome";
 
 export type NewsletterFormState = {
   status: "idle" | "success" | "error";
@@ -103,21 +104,32 @@ export async function subscribeNewsletter(
       if (!ok) {
         return failedState(dict.newsletter.errors.generic, values);
       }
+      await sendWelcomeEmail({
+        email: parsed.data.email,
+        locale,
+        unsubToken: token,
+      });
       markSubmitted(key);
       return { status: "success", message: dict.newsletter.successBody };
     }
 
+    const unsubToken = randomUUID();
     const result = await appendSubscriber({
       email: parsed.data.email,
       locale,
       source: "footer",
-      unsubToken: randomUUID(),
+      unsubToken,
     });
 
     if (!result.ok) {
       return failedState(dict.newsletter.errors.generic, values);
     }
 
+    await sendWelcomeEmail({
+      email: parsed.data.email,
+      locale,
+      unsubToken,
+    });
     markSubmitted(key);
     return { status: "success", message: dict.newsletter.successBody };
   } catch (error) {
