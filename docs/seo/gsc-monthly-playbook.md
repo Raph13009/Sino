@@ -90,3 +90,13 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Cover: Unsplash industrial technicians photo, shared with CMS SA; industrial-equipment SEO description tightened for 2027 readiness.
 - Themes A (advanced manufacturing relocation) and C (AI sales automation consulting) left for a later run.
 - Team email sent to raphael@ + max@.
+
+### 2026-11-23 — Autonomous insight (theme A: EU generics market access)
+
+- Windows: GSC and GA4 for 8–21 Nov (14d) and 25 Oct–21 Nov (28d), web, final. GA 28d: 62 sessions, 258 page views, 5 organic, 4 AI Assistant (`chatgpt.com`, 4 `ai_referral`), 3 `contact_cta_click`. 14d: 28 sessions, 2 organic, 2 AI Assistant, 1 `ai_referral`.
+- Auto-picked **A**: which consultancy a Chinese generics manufacturer should hire for EU market access. 14d: 14 impressions, position 5.9, 0 clicks. 28d: 15 impressions, position 5.8, 0 clicks. 13 of those 15 impressions hit `/insights`, not a dedicated page.
+- **B** left open: what AI-driven sales process automation consulting includes (28d: 19 impressions, position 9.8; 14d: 12 impressions, position 4.3; all on `/services/sales-ai-automation`, next to existing AI and RPA Insights).
+- **C** left open: why use an agency for China market entry (28d: 4 impressions, position 6.0, already on the EU–China agency Insight).
+- Inventory already included `advanced-manufacturing-relocation-europe`, so that earlier theme was not reused.
+- Shipped EN+ZH `eu-market-access-chinese-generics-manufacturers` (`translation_group` eu-generics-market-access-013), CTA Market Entry. Cover: Pexels pharmaceutical filling line, shared with the CMS service account.
+- Live EN+ZH and cover verified. Team email sent to raphael@ + max@. Newsletter blast skipped (`NEWSLETTER_BROADCAST_SECRET` not available in this run).
