@@ -90,3 +90,11 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Cover: Unsplash industrial technicians photo, shared with CMS SA; industrial-equipment SEO description tightened for 2027 readiness.
 - Themes A (advanced manufacturing relocation) and C (AI sales automation consulting) left for a later run.
 - Team email sent to raphael@ + max@.
+
+### 2026-11-25 — Autonomous Insight (theme A: AI sales process consulting)
+
+- Windows: GSC and GA4 for 2026-10-27 to 2026-11-23 (28d) and 2026-11-10 to 2026-11-23 (14d), web, final data. GA 28d: 64 sessions, 273 page views, Direct 44, Organic Search 5, AI Assistant 4 (`chatgpt.com`, 4 `ai_referral`), LinkedIn 2. 14d: 23 sessions, 1 `ai_referral`. `contact_cta_click` 3 in 28d. No `generate_lead`.
+- Ranked themes. **A (selected):** what AI-driven sales process automation consulting includes. 14d query: 9 impressions, position 1.0, 0 clicks, all on `/services/sales-ai-automation`. 28d: 19 impressions, position 8.6, 0 clicks. Not a duplicate of the RPA Insight or the “how AI can support B2B sales teams” Insight.
+- **B:** why hire a China market-entry agency (28d: 3 impressions, position 6.0, 0 clicks, already on the agency Insight). **C:** China market entry consulting as a workplan (13 impressions, position ~71, on the existing partners Insight). Relocation and generics already published.
+- Shipped EN+ZH `ai-driven-sales-process-automation-consulting` (`translation_group` ai-sales-consulting-014), CTA AI Sales Automation. Cover: Unsplash assembly-line laptop photo on Drive `1qkjPEa-Wp6fIwZUXL69NIro0Q9LKdHRX`. CMS service account already has reader via the Articles folder.
+- Live EN+ZH verified (200, H1, body, cover). Team email sent to raphael@ + max@. Newsletter blast skipped: `NEWSLETTER_BROADCAST_SECRET` is not in this environment.
