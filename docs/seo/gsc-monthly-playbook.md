@@ -90,3 +90,12 @@ GSC via Composio: free for this workflow. No Ahrefs/Semrush.
 - Cover: Unsplash industrial technicians photo, shared with CMS SA; industrial-equipment SEO description tightened for 2027 readiness.
 - Themes A (advanced manufacturing relocation) and C (AI sales automation consulting) left for a later run.
 - Team email sent to raphael@ + max@.
+
+### 2026-11-27 — Autonomous Insight (theme A: China market entry consulting)
+
+- Windows: GSC + GA4 12–25 Nov (14d) and 29 Oct–25 Nov (28d), `final`. GA4 14d: 22 sessions, 16 users, 78 page views; 28d: 59 sessions, 44 users, 253 page views. `chatgpt.com` 1 session / 1 `ai_referral` (14d) and 5 / 5 (28d). Direct still dominates.
+- Ranked themes: **A (selected)** China market entry consulting workplan; **B** why use an agency for China market entry; **C** what market-entry compliance support should leave in-house.
+- Evidence for A: `china market entry consulting` 15 impressions, position 74.5, 0 clicks, on `/insights/eu-china-market-entry-partners` in both windows; companion `china market consultant` 12 impressions, position 88.8 (28d). Stronger CTR gaps (agencies, greentech, relocation, generics, AI sales consulting) already have Insights.
+- Published EN+ZH `china-market-entry-consulting-workplan` (`translation_group` china-market-entry-consulting-015), CTA Market Entry. Cover: Unsplash container-port photo, reader granted to the CMS service account. Docs sit in Articles and inherit that folder’s reader access.
+- Live EN+ZH verified 200 with cover `/media/insights/13fyXvIG8yWpje4IRchstci4Ah85AIrdC`. Team email sent to raphael@ + max@. Newsletter blast skipped (`NEWSLETTER_BROADCAST_SECRET` is not in this environment).
+- Themes B (why use an agency: 3 impressions, position 6) and C (compliance services: 3 impressions, position ~95) left open.
